@@ -395,8 +395,9 @@
             return;
         }
 
+        const thumbUrl = getThumbnailUrl(votd);
         dom.votdPreview.innerHTML = `
-            <iframe src="https://drive.google.com/file/d/${votd.driveFileId}/preview" allow="autoplay"></iframe>
+            ${thumbUrl ? `<img class="votd-thumb-img" src="${thumbUrl}" alt="${escAttr(votd.title)}" onerror="this.style.display='none'">` : ''}
             <div class="votd-preview-play">
                 <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
@@ -674,13 +675,13 @@
 
     // --- Render App ---
     function renderApp() {
-        renderVideoOfTheDay();
         renderHeroStats();
-        renderLearningPaths();
-        renderFeatured();
-        renderCategories();
-        renderWiderReading();
-        renderProgress();
+        renderFeatured();        // Start Here — top of content
+        renderVideoOfTheDay();   // VOTD — after featured
+        renderLearningPaths();   // Learning Paths
+        renderCategories();      // Browse by Category
+        renderWiderReading();    // Wider Reading docs
+        renderProgress();        // Your Progress summary
     }
 
     // --- Hero Stats ---
@@ -983,6 +984,19 @@
         dom.progressGrid.innerHTML = html;
     }
 
+    // --- Thumbnail URL ---
+    function getThumbnailUrl(item) {
+        if (!item.driveFileId) return '';
+        // Google Drive provides thumbnail images for files
+        if (item.type === 'video') {
+            return `https://drive.google.com/thumbnail?id=${item.driveFileId}&sz=w640`;
+        }
+        if (item.type === 'pdf' || item.type === 'image') {
+            return `https://drive.google.com/thumbnail?id=${item.driveFileId}&sz=w640`;
+        }
+        return '';
+    }
+
     // --- Content Card ---
     function renderContentCard(item) {
         const cat = CATEGORIES[item.category] || {};
@@ -990,17 +1004,26 @@
         const newBadge = isNew(item) ? '<span class="thumb-badge-new">New</span>' : '';
         const typeBadge = `<span class="thumb-badge-type type-${item.type}">${item.type}</span>`;
         const diffBadge = item.difficulty ? `<span class="meta-badge difficulty-${item.difficulty}">${cap(item.difficulty)}</span>` : '';
+        const catBadge = cat.title ? `<span class="meta-badge">${cat.title}</span>` : '';
+        const thumbUrl = getThumbnailUrl(item);
+
+        // Build thumbnail: real image with fallback to placeholder
+        const thumbContent = thumbUrl
+            ? `<img class="content-card-thumb-img" src="${thumbUrl}" alt="${escAttr(item.title)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+               <div class="content-card-thumb-placeholder" style="display:none;--cat-color: ${cat.color || '#9b1844'}">${typeIcon(item.type)}</div>`
+            : `<div class="content-card-thumb-placeholder" style="--cat-color: ${cat.color || '#9b1844'}">${typeIcon(item.type)}</div>`;
 
         return `
             <div class="content-card" data-id="${item.id}" style="--cat-color: ${cat.color || '#9b1844'}">
                 <div class="content-card-thumb">
-                    <div class="content-card-thumb-placeholder" style="--cat-color: ${cat.color || '#9b1844'}">${typeIcon(item.type)}</div>
+                    ${thumbContent}
                     ${newBadge}${typeBadge}
+                    ${watched ? '<span class="thumb-badge-watched">&#10003;</span>' : ''}
                 </div>
                 <div class="content-card-body">
                     <div class="content-card-title">${esc(item.title)}</div>
                     ${item.description ? `<div class="content-card-desc">${esc(item.description)}</div>` : ''}
-                    <div class="content-card-meta">${diffBadge}</div>
+                    <div class="content-card-meta">${diffBadge}${catBadge}</div>
                 </div>
                 <div class="content-card-footer">
                     <label class="watched-indicator ${watched ? 'is-watched' : ''}" onclick="event.stopPropagation()">
@@ -1013,17 +1036,23 @@
 
     // --- Series Card ---
     function renderSeriesCard(name, items, color) {
+        const totalWatched = items.filter(i => isWatched(i.id)).length;
+        const pct = items.length > 0 ? Math.round((totalWatched / items.length) * 100) : 0;
+
         return `
             <div class="series-card" style="--cat-color: ${color}">
                 <div class="series-card-header">
                     <div class="series-card-title">${esc(name)}</div>
-                    <div class="series-card-count">${items.length} video${items.length !== 1 ? 's' : ''} in this series</div>
+                    <div class="series-card-count">${items.length} video${items.length !== 1 ? 's' : ''} in this series · ${totalWatched}/${items.length} watched</div>
+                    <div class="series-progress"><div class="series-progress-fill" style="width:${pct}%;background:${color}"></div></div>
                 </div>
                 ${items.map((item, i) => {
                     const w = isWatched(item.id);
+                    const thumbUrl = getThumbnailUrl(item);
                     return `
-                        <div class="series-item" data-id="${item.id}">
-                            <div class="series-number">${i + 1}</div>
+                        <div class="series-item ${w ? 'series-item-done' : ''}" data-id="${item.id}">
+                            <div class="series-number">${w ? '&#10003;' : i + 1}</div>
+                            ${thumbUrl ? `<img class="series-item-thumb" src="${thumbUrl}" alt="" loading="lazy" onerror="this.style.display='none'">` : ''}
                             <div class="series-item-info">
                                 <div class="series-item-title">${esc(item.title)}</div>
                                 ${item.description ? `<div class="series-item-desc">${esc(item.description)}</div>` : ''}
