@@ -1,12 +1,13 @@
 /* ============================================
    Haileybury Tech Tips Training Hub
-   Main Application Script — v2
+   Main Application Script — v3
+   Gamification Edition
    ============================================ */
 
 (function () {
     'use strict';
 
-    // --- Category Definitions (matching 25/26 folder structure) ---
+    // --- Category Definitions ---
     const CATEGORIES = {
         'essential-reading': {
             title: 'Essential Reading',
@@ -50,6 +51,74 @@
         }
     };
 
+    // --- Learning Paths ---
+    const LEARNING_PATHS = [
+        {
+            id: 'getting-started',
+            title: 'Getting Started',
+            description: 'Everything you need for your first week with Haileybury tech',
+            icon: '🚀',
+            color: '#9b1844',
+            xpReward: 150,
+            steps: [
+                'apps-for-tasks-2526',
+                'learning-resource-hub-intro',
+                'gc-customisation-and-notifications',
+                'google-classroom-assignment-codes',
+                'gemini-revision-prompts'
+            ]
+        },
+        {
+            id: 'google-classroom-master',
+            title: 'Google Classroom Mastery',
+            description: 'From setup to advanced features, become a Classroom pro',
+            icon: '🎓',
+            color: '#009fe3',
+            xpReward: 200,
+            steps: [
+                'gc-customisation-and-notifications',
+                'gc-classroom-sharing-link',
+                'gc-mark-work-as-missing',
+                'gc-comment-banks',
+                'gc-creating-a-rubric',
+                'gc-weighted-marks',
+                'gc-creating-a-practice-set'
+            ]
+        },
+        {
+            id: 'ai-explorer',
+            title: 'AI Explorer',
+            description: 'Discover how AI tools can transform your teaching workflow',
+            icon: '🤖',
+            color: '#2a2b7c',
+            xpReward: 200,
+            steps: [
+                'gemini-and-google-workspace',
+                'brisk-pro-marking-example',
+                'brisk-activities',
+                'notebooklm-overview',
+                'perplexity-overview',
+                'deep-research-gemini'
+            ]
+        },
+        {
+            id: 'marking-feedback',
+            title: 'Marking & Feedback',
+            description: 'Speed up marking and give better feedback with these tools',
+            icon: '✅',
+            color: '#009870',
+            xpReward: 175,
+            steps: [
+                'gc-comment-banks',
+                'gc-creating-a-rubric',
+                'gc-using-rubrics-part-2',
+                'gc-checking-for-plagiarism',
+                'brisk-pro-marking-example',
+                'answering-exam-papers'
+            ]
+        }
+    ];
+
     // --- Welcome Tips ---
     const WELCOME_TIPS = [
         "Did you know? You can mark videos as watched to track your progress across all categories.",
@@ -59,10 +128,14 @@
         "Brisk can help you mark work faster with AI-powered feedback.",
         "PressReader gives you access to thousands of newspapers and magazines for free.",
         "NotebookLM can create flashcards, mind maps and audio overviews from your documents.",
-        "Check out the Pupil Tech Tips section for resources to share with students."
+        "Check out the Pupil Tech Tips section for resources to share with students.",
+        "Watch resources to earn XP and level up! Can you reach Legend status?",
+        "Build a daily streak by watching at least one resource per day!",
+        "Follow Learning Paths for guided step-by-step skill building.",
+        "Unlock achievements by exploring different categories and completing series!"
     ];
 
-    // --- Filter Chip Definitions ---
+    // --- Filter Chips ---
     const FILTER_CHIPS = [
         { id: 'all', label: 'All' },
         { id: 'new', label: 'New', className: 'chip-new' },
@@ -87,6 +160,10 @@
         darkModeToggle: $('#darkModeToggle'),
         heroSection: $('#heroSection'),
         heroStats: $('#heroStats'),
+        heroLevelBadge: $('#heroLevelBadge'),
+        heroLevelIcon: $('#heroLevelIcon'),
+        heroLevelTitle: $('#heroLevelTitle'),
+        heroParticles: $('#heroParticles'),
         welcomeBanner: $('#welcomeBanner'),
         welcomeText: $('#welcomeText'),
         welcomeDismiss: $('#welcomeDismiss'),
@@ -101,6 +178,8 @@
         votdPlayBtn: $('#votdPlayBtn'),
         essentialCta: $('#essentialCta'),
         essentialCtaBtn: $('#essentialCtaBtn'),
+        learningPathsSection: $('#learningPathsSection'),
+        learningPathsGrid: $('#learningPathsGrid'),
         startHereSection: $('#startHereSection'),
         featuredGrid: $('#featuredGrid'),
         categoriesSection: $('#categoriesSection'),
@@ -112,6 +191,12 @@
         searchResults: $('#searchResults'),
         searchResultsTitle: $('#searchResultsTitle'),
         searchResultsGrid: $('#searchResultsGrid'),
+        achievementsSection: $('#achievementsSection'),
+        achievementsBackButton: $('#achievementsBackButton'),
+        achievementsProfile: $('#achievementsProfile'),
+        achievementsGrid: $('#achievementsGrid'),
+        achievementsBtn: $('#achievementsBtn'),
+        achievementsBadge: $('#achievementsBadge'),
         widerReadingSection: $('#widerReadingSection'),
         readingList: $('#readingList'),
         progressSection: $('#progressSection'),
@@ -121,7 +206,14 @@
         modalClose: $('#modalClose'),
         videoContainer: $('#videoContainer'),
         modalMeta: $('#modalMeta'),
-        modalWatchedCheckbox: $('#modalWatchedCheckbox')
+        modalWatchedCheckbox: $('#modalWatchedCheckbox'),
+        modalXPHint: $('#modalXPHint'),
+        headerLevel: $('#headerLevel'),
+        headerXPFill: $('#headerXPFill'),
+        headerXPAmount: $('#headerXPAmount'),
+        headerStreak: $('#headerStreak'),
+        streakCount: $('#streakCount'),
+        toastContainer: $('#toastContainer'),
     };
 
     // --- Init ---
@@ -134,15 +226,145 @@
         initModal();
         initEssentialCta();
         initRouting();
+        initGamification();
+        initHeroParticles();
 
         try {
             const resp = await fetch('data/content.json');
             contentData = await resp.json();
             renderApp();
+            Gamification.checkAchievements(contentData);
+            updateGamificationUI();
         } catch (err) {
             console.error('Failed to load content data:', err);
             dom.categoryGrid.innerHTML = '<div class="empty-state"><p>Unable to load training content. Please check that data/content.json exists.</p></div>';
         }
+    }
+
+    // --- Gamification Integration ---
+    function initGamification() {
+        Gamification.init();
+
+        // Listen for events
+        Gamification.on('achievement-unlocked', (achievement) => {
+            showToast({
+                type: 'achievement',
+                icon: achievement.icon,
+                title: 'Achievement Unlocked!',
+                desc: `${achievement.title} — ${achievement.description}`,
+            });
+            Confetti.miniCelebrate(window.innerWidth - 60, 60);
+            updateGamificationUI();
+        });
+
+        Gamification.on('level-up', (data) => {
+            showToast({
+                type: 'levelup',
+                icon: data.newLevel.icon,
+                title: `Level Up! You're now Level ${data.newLevel.level}`,
+                desc: data.newLevel.title,
+            });
+            Confetti.celebrate();
+            updateGamificationUI();
+        });
+
+        Gamification.on('xp-gained', (data) => {
+            updateGamificationUI();
+        });
+
+        Gamification.on('streak-updated', () => {
+            updateGamificationUI();
+        });
+
+        // Achievements button
+        dom.achievementsBtn.addEventListener('click', () => {
+            window.location.hash = 'achievements';
+        });
+
+        updateGamificationUI();
+    }
+
+    function updateGamificationUI() {
+        const level = Gamification.getLevel();
+        const progress = Gamification.getXPProgress();
+        const state = Gamification.getState();
+
+        // Header XP
+        dom.headerLevel.textContent = `Lv ${level.level}`;
+        dom.headerXPFill.style.width = `${progress.percentage}%`;
+        dom.headerXPAmount.textContent = `${state.xp} XP`;
+
+        // Header streak
+        dom.streakCount.textContent = state.currentStreak;
+        if (state.currentStreak > 0) {
+            dom.headerStreak.classList.add('has-streak');
+        } else {
+            dom.headerStreak.classList.remove('has-streak');
+        }
+
+        // Achievements badge
+        const unlockedCount = Object.keys(state.unlockedAchievements).length;
+        dom.achievementsBadge.textContent = unlockedCount;
+
+        // Hero level badge
+        if (dom.heroLevelIcon) dom.heroLevelIcon.textContent = level.icon;
+        if (dom.heroLevelTitle) dom.heroLevelTitle.textContent = `Level ${level.level} — ${level.title}`;
+    }
+
+    // --- Hero Particles ---
+    function initHeroParticles() {
+        if (!dom.heroParticles) return;
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'hero-particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.width = (2 + Math.random() * 4) + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.animationDuration = (8 + Math.random() * 12) + 's';
+            particle.style.animationDelay = (Math.random() * 10) + 's';
+            particle.style.opacity = (0.2 + Math.random() * 0.4);
+            dom.heroParticles.appendChild(particle);
+        }
+    }
+
+    // --- Toast Notifications ---
+    function showToast({ type, icon, title, desc, xp }) {
+        const toast = document.createElement('div');
+        toast.className = `toast toast-${type || 'default'}`;
+        toast.innerHTML = `
+            <div class="toast-icon">${icon || '🎉'}</div>
+            <div class="toast-body">
+                <div class="toast-title">${esc(title)}</div>
+                ${desc ? `<div class="toast-desc">${esc(desc)}</div>` : ''}
+                ${xp ? `<div class="toast-xp"><span class="toast-xp-badge">+${xp} XP</span></div>` : ''}
+            </div>
+        `;
+
+        toast.addEventListener('click', () => {
+            toast.classList.add('toast-exit');
+            setTimeout(() => toast.remove(), 300);
+        });
+
+        dom.toastContainer.appendChild(toast);
+
+        // Auto remove
+        setTimeout(() => {
+            if (toast.parentNode) {
+                toast.classList.add('toast-exit');
+                setTimeout(() => toast.remove(), 300);
+            }
+        }, 5000);
+    }
+
+    // --- Floating XP Animation ---
+    function showFloatingXP(x, y, amount) {
+        const el = document.createElement('div');
+        el.className = 'xp-float';
+        el.textContent = `+${amount} XP`;
+        el.style.left = x + 'px';
+        el.style.top = y + 'px';
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 1500);
     }
 
     // --- Essential Reading CTA ---
@@ -160,10 +382,8 @@
     function getVideoOfTheDay() {
         const videos = contentData.filter(i => i.type === 'video' && i.driveFileId);
         if (!videos.length) return null;
-        // Deterministic daily pick using date as seed
         const today = new Date();
         const daysSinceEpoch = Math.floor(today.getTime() / (1000 * 60 * 60 * 24));
-        // Simple hash to spread picks evenly
         const seed = ((daysSinceEpoch * 2654435761) >>> 0) % videos.length;
         return videos[seed];
     }
@@ -200,6 +420,7 @@
             const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
             document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
             localStorage.setItem('tt-dark-mode', String(!isDark));
+            Gamification.onDarkModeToggle();
         });
     }
 
@@ -224,8 +445,12 @@
             dom.searchClear.classList.toggle('visible', q.length > 0);
             clearTimeout(timer);
             timer = setTimeout(() => {
-                if (q.length >= 2) showSearchResults(q);
-                else if (q.length === 0) showHome();
+                if (q.length >= 2) {
+                    showSearchResults(q);
+                    Gamification.onSearch();
+                } else if (q.length === 0) {
+                    showHome();
+                }
             }, 250);
         });
         dom.searchClear.addEventListener('click', () => {
@@ -251,7 +476,7 @@
         });
     }
 
-    // --- Watched State (FIXED: robust persistence) ---
+    // --- Watched State ---
     function loadWatchedState() {
         try {
             const stored = localStorage.getItem('tt-watched');
@@ -271,14 +496,38 @@
 
     function toggleWatched(id, e) {
         if (e) { e.stopPropagation(); e.preventDefault(); }
-        if (watchedItems[id]) {
+
+        const item = contentData.find(i => i.id === id);
+        const wasWatched = !!watchedItems[id];
+
+        if (wasWatched) {
             delete watchedItems[id];
         } else {
             watchedItems[id] = Date.now();
         }
         saveWatchedState();
 
-        // Update UI in place without full re-render for better UX
+        // Gamification
+        if (!wasWatched && item) {
+            Gamification.onItemWatched(id, item, contentData, watchedItems);
+
+            // Show floating XP near the clicked element
+            if (e && e.target) {
+                const rect = e.target.getBoundingClientRect();
+                const xpAmount = item.type === 'video' ? 25 : 15;
+                showFloatingXP(rect.left + rect.width / 2, rect.top, xpAmount);
+            }
+
+            // Mini confetti burst
+            if (e && e.target) {
+                const rect = e.target.getBoundingClientRect();
+                Confetti.miniCelebrate(rect.left + rect.width / 2, rect.top + rect.height / 2);
+            }
+        } else if (wasWatched) {
+            Gamification.onItemUnwatched(id, contentData, watchedItems);
+        }
+
+        // Update UI in place
         document.querySelectorAll(`[data-watched-id="${id}"]`).forEach(cb => {
             cb.checked = isWatched(id);
             const label = cb.closest('.watched-indicator');
@@ -289,14 +538,14 @@
             }
         });
 
-        // Update series watched indicators
         document.querySelectorAll(`.series-item[data-id="${id}"] .series-item-watched`).forEach(el => {
             el.style.display = isWatched(id) ? '' : 'none';
         });
 
-        // Re-render progress bars (lightweight)
         renderProgress();
         renderCategories();
+        renderLearningPaths();
+        updateGamificationUI();
     }
 
     function isWatched(id) {
@@ -323,7 +572,7 @@
         if (!item.dateAdded) return false;
         const added = new Date(item.dateAdded);
         const ago = new Date();
-        ago.setDate(ago.getDate() - 60); // 60 days for "new"
+        ago.setDate(ago.getDate() - 60);
         return added >= ago;
     }
 
@@ -341,6 +590,8 @@
             const q = decodeURIComponent(hash.replace('search/', ''));
             dom.searchInput.value = q;
             showSearchResults(q);
+        } else if (hash === 'achievements') {
+            showAchievements();
         } else {
             showHome();
         }
@@ -353,10 +604,12 @@
         dom.heroSection.style.display = '';
         dom.votdSection.style.display = '';
         dom.essentialCta.style.display = '';
+        dom.learningPathsSection.style.display = '';
         dom.startHereSection.style.display = '';
         dom.categoriesSection.style.display = '';
         dom.categoryDetail.style.display = 'none';
         dom.searchResults.style.display = 'none';
+        dom.achievementsSection.style.display = 'none';
         dom.widerReadingSection.style.display = '';
         dom.progressSection.style.display = '';
         if (window.location.hash) history.pushState(null, '', window.location.pathname);
@@ -369,10 +622,12 @@
         dom.heroSection.style.display = 'none';
         dom.votdSection.style.display = 'none';
         dom.essentialCta.style.display = 'none';
+        dom.learningPathsSection.style.display = 'none';
         dom.startHereSection.style.display = 'none';
         dom.categoriesSection.style.display = 'none';
         dom.categoryDetail.style.display = '';
         dom.searchResults.style.display = 'none';
+        dom.achievementsSection.style.display = 'none';
         dom.widerReadingSection.style.display = 'none';
         dom.progressSection.style.display = 'none';
         renderCategoryDetail(catId);
@@ -383,18 +638,37 @@
         dom.heroSection.style.display = 'none';
         dom.votdSection.style.display = 'none';
         dom.essentialCta.style.display = 'none';
+        dom.learningPathsSection.style.display = 'none';
         dom.startHereSection.style.display = 'none';
         dom.categoriesSection.style.display = 'none';
         dom.categoryDetail.style.display = 'none';
         dom.searchResults.style.display = '';
+        dom.achievementsSection.style.display = 'none';
         dom.widerReadingSection.style.display = 'none';
         dom.progressSection.style.display = 'none';
         renderSearchResults(query);
     }
 
+    function showAchievements() {
+        currentView = 'achievements';
+        dom.heroSection.style.display = 'none';
+        dom.votdSection.style.display = 'none';
+        dom.essentialCta.style.display = 'none';
+        dom.learningPathsSection.style.display = 'none';
+        dom.startHereSection.style.display = 'none';
+        dom.categoriesSection.style.display = 'none';
+        dom.categoryDetail.style.display = 'none';
+        dom.searchResults.style.display = 'none';
+        dom.achievementsSection.style.display = '';
+        dom.widerReadingSection.style.display = 'none';
+        dom.progressSection.style.display = 'none';
+        renderAchievements();
+    }
+
     function renderCurrentView() {
         if (currentView === 'category' && currentCategory) renderCategoryDetail(currentCategory);
         else if (currentView === 'search') renderSearchResults(dom.searchInput.value.trim());
+        else if (currentView === 'achievements') renderAchievements();
         else renderApp();
     }
 
@@ -402,6 +676,7 @@
     function renderApp() {
         renderVideoOfTheDay();
         renderHeroStats();
+        renderLearningPaths();
         renderFeatured();
         renderCategories();
         renderWiderReading();
@@ -412,13 +687,61 @@
     function renderHeroStats() {
         const videos = contentData.filter(i => i.type === 'video').length;
         const cats = Object.keys(CATEGORIES).length;
-        const docs = contentData.filter(i => ['pdf', 'gdoc', 'image'].includes(i.type)).length;
+        const watched = Object.keys(watchedItems).length;
 
         dom.heroStats.innerHTML = `
             <div class="hero-stat"><div class="hero-stat-value">${videos}</div><div class="hero-stat-label">Videos</div></div>
             <div class="hero-stat"><div class="hero-stat-value">${cats}</div><div class="hero-stat-label">Categories</div></div>
-            <div class="hero-stat"><div class="hero-stat-value">${docs}</div><div class="hero-stat-label">Guides & Docs</div></div>
+            <div class="hero-stat"><div class="hero-stat-value">${watched}</div><div class="hero-stat-label">Completed</div></div>
         `;
+    }
+
+    // --- Learning Paths ---
+    function renderLearningPaths() {
+        dom.learningPathsGrid.innerHTML = LEARNING_PATHS.map(path => {
+            const steps = path.steps.map(id => contentData.find(i => i.id === id)).filter(Boolean);
+            const completed = steps.filter(s => isWatched(s.id)).length;
+            const pct = steps.length > 0 ? Math.round((completed / steps.length) * 100) : 0;
+            const isComplete = completed === steps.length && steps.length > 0;
+
+            return `
+                <div class="learning-path-card" style="--path-color: ${path.color}">
+                    <div class="learning-path-header">
+                        <div class="learning-path-icon">${path.icon}</div>
+                        <div class="learning-path-title">${esc(path.title)}</div>
+                        <div class="learning-path-desc">${esc(path.description)}</div>
+                    </div>
+                    <div class="learning-path-progress">
+                        <div class="learning-path-progress-bar">
+                            <div class="learning-path-progress-fill" style="width:${pct}%"></div>
+                        </div>
+                        <div class="learning-path-progress-label">
+                            <span>${completed}/${steps.length} completed</span>
+                            <span>${isComplete ? 'Complete!' : pct + '%'}</span>
+                        </div>
+                    </div>
+                    <div class="learning-path-steps">
+                        ${steps.map((step, i) => {
+                            const done = isWatched(step.id);
+                            const isCurrent = !done && (i === 0 || isWatched(steps[i-1]?.id));
+                            return `
+                                <div class="learning-path-step ${done ? 'completed' : ''} ${isCurrent ? 'current' : ''}" data-id="${step.id}">
+                                    <div class="learning-path-step-dot">${done ? '&#10003;' : i + 1}</div>
+                                    <div class="learning-path-step-title">${esc(step.title)}</div>
+                                </div>`;
+                        }).join('')}
+                    </div>
+                    <div class="learning-path-xp">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        ${path.xpReward} XP for completion
+                    </div>
+                </div>`;
+        }).join('');
+
+        // Attach click handlers to steps
+        dom.learningPathsGrid.querySelectorAll('.learning-path-step').forEach(el => {
+            el.addEventListener('click', () => openModal(el.dataset.id));
+        });
     }
 
     // --- Featured ---
@@ -436,12 +759,13 @@
             const items = contentData.filter(i => i.category === id);
             const watched = items.filter(i => isWatched(i.id)).length;
             const pct = items.length > 0 ? Math.round((watched / items.length) * 100) : 0;
+            const isComplete = pct === 100 && items.length > 0;
 
             return `
-                <div class="category-card" data-category="${id}" style="--cat-color: ${cat.color}">
+                <div class="category-card ${isComplete ? 'category-complete' : ''}" data-category="${id}" style="--cat-color: ${cat.color}">
                     <div class="category-card-icon">${cat.icon}</div>
                     <div class="category-card-title">${cat.title}</div>
-                    <div class="category-card-count">${items.length} resource${items.length !== 1 ? 's' : ''}</div>
+                    <div class="category-card-count">${items.length} resource${items.length !== 1 ? 's' : ''}${isComplete ? ' &#10003;' : ''}</div>
                     <div class="category-card-progress">
                         <div class="category-card-progress-bar" style="width: ${pct}%"></div>
                     </div>
@@ -497,14 +821,86 @@
 
         dom.searchResultsTitle.textContent = `Search Results (${results.length})`;
         if (!results.length) {
-            dom.searchResultsGrid.innerHTML = `<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><p>No results for "${query}"</p></div>`;
+            dom.searchResultsGrid.innerHTML = `<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><p>No results for "${esc(query)}"</p></div>`;
             return;
         }
         dom.searchResultsGrid.innerHTML = results.map(i => renderContentCard(i)).join('');
         attachCardListeners(dom.searchResultsGrid);
     }
 
-    // --- Wider Reading (Grouped by category) ---
+    // --- Achievements Panel ---
+    function renderAchievements() {
+        const level = Gamification.getLevel();
+        const nextLevel = Gamification.getNextLevel();
+        const progress = Gamification.getXPProgress();
+        const state = Gamification.getState();
+        const allAchievements = Gamification.getAchievements();
+        const unlockedCount = Object.keys(state.unlockedAchievements).length;
+
+        // Profile card
+        dom.achievementsProfile.innerHTML = `
+            <div class="achievements-level-icon">${level.icon}</div>
+            <div class="achievements-level-info">
+                <div class="achievements-level-title">Level ${level.level} — ${level.title}</div>
+                <div class="achievements-level-subtitle">${state.xp} XP earned${nextLevel ? ` · ${nextLevel.xpRequired - state.xp} XP to Level ${nextLevel.level}` : ' · Max level!'}</div>
+                <div class="achievements-xp-bar">
+                    <div class="achievements-xp-fill" style="width:${progress.percentage}%"></div>
+                </div>
+                <div class="achievements-xp-label">
+                    <span>${progress.current} / ${progress.needed} XP</span>
+                    <span>${progress.percentage}%</span>
+                </div>
+            </div>
+            <div class="achievements-stats">
+                <div><div class="achievements-stat-value">${unlockedCount}</div><div class="achievements-stat-label">Unlocked</div></div>
+                <div><div class="achievements-stat-value">${state.currentStreak}</div><div class="achievements-stat-label">Streak</div></div>
+                <div><div class="achievements-stat-value">${state.longestStreak}</div><div class="achievements-stat-label">Best</div></div>
+            </div>
+        `;
+
+        // Group by category
+        const groups = {};
+        allAchievements.forEach(a => {
+            if (!groups[a.category]) groups[a.category] = [];
+            groups[a.category].push(a);
+        });
+
+        const categoryTitles = {
+            'getting-started': 'Getting Started',
+            'categories': 'Category Mastery',
+            'series': 'Series',
+            'streaks': 'Streaks',
+            'special': 'Special',
+        };
+
+        let html = '';
+        Object.entries(groups).forEach(([catId, achievements]) => {
+            html += `<div class="achievement-category-title">${categoryTitles[catId] || catId}</div>`;
+            html += achievements.map(a => {
+                const unlocked = !!state.unlockedAchievements[a.id];
+                const date = unlocked ? new Date(state.unlockedAchievements[a.id]).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+                return `
+                    <div class="achievement-card ${unlocked ? 'unlocked' : 'locked'}">
+                        <div class="achievement-icon">${a.icon}</div>
+                        <div class="achievement-info">
+                            <div class="achievement-title">${esc(a.title)}</div>
+                            <div class="achievement-desc">${esc(a.description)}</div>
+                            ${unlocked ? `<div class="achievement-date">Unlocked ${date}</div>` : ''}
+                        </div>
+                    </div>`;
+            }).join('');
+        });
+
+        dom.achievementsGrid.innerHTML = html;
+
+        // Back button
+        dom.achievementsBackButton.onclick = () => {
+            window.location.hash = '';
+            showHome();
+        };
+    }
+
+    // --- Wider Reading ---
     function renderWiderReading() {
         const items = contentData.filter(i => ['pdf', 'gdoc', 'image'].includes(i.type));
         if (!items.length) { dom.widerReadingSection.style.display = 'none'; return; }
@@ -573,7 +969,7 @@
 
         Object.entries(CATEGORIES).forEach(([id, cat]) => {
             const vids = contentData.filter(i => i.category === id && i.type === 'video');
-            if (!vids.length) return; // Skip categories with no videos
+            if (!vids.length) return;
             const w = vids.filter(i => isWatched(i.id)).length;
             const p = Math.round((w / vids.length) * 100);
             html += `
@@ -684,8 +1080,20 @@
         if (item.tags && item.tags.length) meta += `<div class="modal-meta-tags">${item.tags.map(t => `<span class="meta-badge">${esc(t)}</span>`).join('')}</div>`;
         dom.modalMeta.innerHTML = meta;
 
+        // XP hint
+        const xpAmount = item.type === 'video' ? 25 : 15;
+        dom.modalXPHint.innerHTML = isWatched(itemId)
+            ? '<span style="color:var(--color-green);font-size:0.82rem;font-weight:600">&#10003; Completed</span>'
+            : `<span class="xp-sparkle">+${xpAmount} XP</span>`;
+
         dom.modalWatchedCheckbox.checked = isWatched(itemId);
-        dom.modalWatchedCheckbox.onchange = () => { toggleWatched(itemId); dom.modalWatchedCheckbox.checked = isWatched(itemId); };
+        dom.modalWatchedCheckbox.onchange = (e) => {
+            toggleWatched(itemId, e);
+            dom.modalWatchedCheckbox.checked = isWatched(itemId);
+            dom.modalXPHint.innerHTML = isWatched(itemId)
+                ? '<span style="color:var(--color-green);font-size:0.82rem;font-weight:600">&#10003; Completed</span>'
+                : `<span class="xp-sparkle">+${xpAmount} XP</span>`;
+        };
 
         dom.videoModal.classList.add('active');
         document.body.style.overflow = 'hidden';

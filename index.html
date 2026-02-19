@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Tech Tips | Haileybury Staff Training Hub</title>
     <meta name="description" content="Haileybury staff training videos, guides and resources for digital tools and technology.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#9b1844">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/icon-192.png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +25,27 @@
                 <img src="assets/haileybury-logo.png" alt="Haileybury" class="haileybury-logo">
             </div>
             <div class="header-actions">
+                <!-- XP Bar in header -->
+                <div class="header-xp" id="headerXP">
+                    <div class="header-xp-level" id="headerLevel">Lv 1</div>
+                    <div class="header-xp-bar">
+                        <div class="header-xp-fill" id="headerXPFill" style="width:0%"></div>
+                    </div>
+                    <div class="header-xp-amount" id="headerXPAmount">0 XP</div>
+                </div>
+                <!-- Streak indicator -->
+                <div class="header-streak" id="headerStreak" title="Current streak">
+                    <span class="streak-flame">&#128293;</span>
+                    <span class="streak-count" id="streakCount">0</span>
+                </div>
+                <!-- Achievements button -->
+                <button class="header-achievements-btn" id="achievementsBtn" aria-label="View achievements" title="Achievements">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="8" r="7"></circle>
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                    <span class="achievements-badge" id="achievementsBadge">0</span>
+                </button>
                 <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
                     <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -40,16 +66,25 @@
         </div>
     </header>
 
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
     <!-- Hero Section -->
     <section class="hero-section" id="heroSection">
         <div class="hero-bg">
             <div class="hero-orb hero-orb-1"></div>
             <div class="hero-orb hero-orb-2"></div>
             <div class="hero-orb hero-orb-3"></div>
+            <div class="hero-particles" id="heroParticles"></div>
         </div>
         <div class="hero-inner">
             <img src="assets/tech-tips-banner.jpg" alt="Tech Tips" class="hero-logo">
             <p class="hero-subtitle">Videos, guides and resources to help you make the most of Haileybury's digital tools</p>
+            <!-- Level Badge -->
+            <div class="hero-level-badge" id="heroLevelBadge">
+                <span class="hero-level-icon" id="heroLevelIcon"></span>
+                <span class="hero-level-title" id="heroLevelTitle">Newcomer</span>
+            </div>
             <div class="hero-stats" id="heroStats">
                 <!-- Populated by JS -->
             </div>
@@ -124,6 +159,26 @@
             </div>
         </section>
 
+        <!-- Learning Paths -->
+        <section class="learning-paths-section" id="learningPathsSection">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-icon section-icon-paths">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 20V10"></path>
+                            <path d="M12 20V4"></path>
+                            <path d="M6 20v-6"></path>
+                        </svg>
+                    </span>
+                    Learning Paths
+                </h2>
+                <p class="section-subtitle">Follow guided journeys to build your skills step by step</p>
+            </div>
+            <div class="learning-paths-grid" id="learningPathsGrid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
         <!-- Start Here Section -->
         <section class="start-here-section" id="startHereSection">
             <div class="section-header">
@@ -174,6 +229,25 @@
         <section class="search-results" id="searchResults" style="display:none;">
             <h2 class="section-title" id="searchResultsTitle">Search Results</h2>
             <div class="content-grid" id="searchResultsGrid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Achievements Panel (hidden by default) -->
+        <section class="achievements-section" id="achievementsSection" style="display:none;">
+            <button class="back-button" id="achievementsBackButton">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Hub
+            </button>
+            <div class="achievements-header">
+                <div class="achievements-profile" id="achievementsProfile">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+            <div class="achievements-grid" id="achievementsGrid">
                 <!-- Populated by JS -->
             </div>
         </section>
@@ -235,6 +309,9 @@
                     <input type="checkbox" id="modalWatchedCheckbox">
                     <span>Mark as watched</span>
                 </label>
+                <div class="modal-xp-hint" id="modalXPHint">
+                    <span class="xp-sparkle">+25 XP</span>
+                </div>
             </div>
         </div>
     </div>
@@ -250,6 +327,15 @@
         </div>
     </footer>
 
+    <script src="js/confetti.js"></script>
+    <script src="js/gamification.js"></script>
     <script src="js/app.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(() => {});
+        }
+    </script>
 </body>
 </html>
