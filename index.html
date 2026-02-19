@@ -15,7 +15,7 @@
     <header class="site-header">
         <div class="header-inner">
             <div class="header-brand">
-                <img src="assets/tech-tips-logo.svg" alt="Tech Tips" class="tech-tips-logo">
+                <img src="assets/tech-tips-banner.jpg" alt="Tech Tips" class="tech-tips-logo">
                 <span class="header-divider"></span>
                 <img src="assets/haileybury-logo.png" alt="Haileybury" class="haileybury-logo">
             </div>
@@ -48,7 +48,7 @@
             <div class="hero-orb hero-orb-3"></div>
         </div>
         <div class="hero-inner">
-            <h1 class="hero-title">Staff Training Hub</h1>
+            <img src="assets/tech-tips-banner.jpg" alt="Tech Tips" class="hero-logo">
             <p class="hero-subtitle">Videos, guides and resources to help you make the most of Haileybury's digital tools</p>
             <div class="hero-stats" id="heroStats">
                 <!-- Populated by JS -->
@@ -84,6 +84,46 @@
 
     <!-- Main Content -->
     <main class="main-content" id="mainContent">
+        <!-- Video of the Day -->
+        <section class="votd-section" id="votdSection">
+            <div class="votd-card" id="votdCard">
+                <div class="votd-preview" id="votdPreview">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="votd-info">
+                    <div class="votd-label">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Video of the Day
+                    </div>
+                    <h2 class="votd-title" id="votdTitle"></h2>
+                    <p class="votd-desc" id="votdDesc"></p>
+                    <button class="votd-play-btn" id="votdPlayBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        Watch Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Essential Reading CTA -->
+        <section class="essential-cta" id="essentialCta">
+            <div class="essential-cta-inner">
+                <div class="essential-cta-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                </div>
+                <div class="essential-cta-text">
+                    <h3 class="essential-cta-title">New to Tech Tips? Start here</h3>
+                    <p class="essential-cta-subtitle">Essential reading, key documents and getting-started guides to help you hit the ground running.</p>
+                </div>
+                <button class="essential-cta-btn" id="essentialCtaBtn">
+                    View Essential Reading
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+        </section>
+
         <!-- Start Here Section -->
         <section class="start-here-section" id="startHereSection">
             <div class="section-header">
@@ -95,7 +135,7 @@
                     </span>
                     Start Here
                 </h2>
-                <p class="section-subtitle">Essential guides for getting started</p>
+                <p class="section-subtitle">Featured guides and resources</p>
             </div>
             <div class="content-grid featured-grid" id="featuredGrid">
                 <!-- Populated by JS -->
@@ -203,7 +243,7 @@
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-brand">
-                <img src="assets/tech-tips-logo.svg" alt="Tech Tips" class="footer-logo">
+                <img src="assets/tech-tips-banner.jpg" alt="Tech Tips" class="footer-logo">
             </div>
             <p class="footer-text">Haileybury Digital Strategy &mdash; Tech Tips Training Hub</p>
             <p class="footer-sub">Questions? Contact <a href="mailto:t.wade@haileybury.com">t.wade@haileybury.com</a></p>

@@ -1,724 +1,86 @@
 [
   {
-    "id": "brisk-pro-marking",
-    "title": "Brisk - AI Marking Example",
-    "description": "Watch Brisk analyse and mark a piece of student work, generating detailed feedback in seconds.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1ZKSYVvY0azZs5HB0YyE1VZXEuXgTgVsp",
+    "id": "apps-for-tasks-2526",
+    "title": "Apps for Tasks 2025-26",
+    "description": "A one-page guide mapping common teaching tasks such as marking, quizzes and presentations to the best app for each job.",
+    "type": "pdf",
+    "category": "essential-reading",
+    "driveFileId": "1nvu_4OR4b-NZNhWUvv2xX6-6OfS4Akup",
     "tags": [
-      "brisk",
-      "marking",
-      "ai",
-      "feedback"
-    ],
-    "difficulty": "beginner",
-    "series": "Brisk",
-    "seriesOrder": 1,
-    "featured": true,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "brisk-activities",
-    "title": "Brisk - Creating Activities",
-    "description": "Use Brisk to auto-generate classroom activities like quizzes, discussions and worksheets from any topic.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1pYtNzyGMXa3BjShMk7zqn_Wh9NQAkx_1",
-    "tags": [
-      "brisk",
-      "activities",
-      "ai",
-      "classroom"
-    ],
-    "difficulty": "beginner",
-    "series": "Brisk",
-    "seriesOrder": 2,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "brisk-next",
-    "title": "Brisk - What's New",
-    "description": "A look at the latest Brisk features including improved feedback, new activity types and integrations.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1enrkSDBz_-CuNwxRXgwUJwwX6xwmQRXu",
-    "tags": [
-      "brisk",
-      "updates",
-      "ai",
-      "new features"
-    ],
-    "difficulty": "beginner",
-    "series": "Brisk",
-    "seriesOrder": 3,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "brisk-teaching",
-    "title": "Brisk - Teaching Workflow",
-    "description": "See how Brisk fits into a typical lesson cycle, from planning through to giving feedback on student work.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1EHbcpUtEKN7hWizdbtFyCoo1MV_iIkpj",
-    "tags": [
-      "brisk",
-      "teaching",
-      "ai",
-      "workflow"
-    ],
-    "difficulty": "beginner",
-    "series": "Brisk",
-    "seriesOrder": 4,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "notebooklm-overview",
-    "title": "NotebookLM - Getting Started",
-    "description": "Upload sources to NotebookLM and let it generate summaries, answer questions and create study materials.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1SCMM4WYHrML_zMnEgZYpUag75L_t0wMt",
-    "tags": [
-      "notebooklm",
-      "ai",
-      "google",
+      "apps",
+      "tools",
+      "reference",
+      "guide",
       "overview"
     ],
     "difficulty": "beginner",
-    "series": "NotebookLM",
-    "seriesOrder": 1,
     "featured": true,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-09-01"
   },
   {
-    "id": "notebooklm-mindmaps",
-    "title": "NotebookLM - Mind Maps",
-    "description": "Turn your uploaded documents into visual mind maps that show how key concepts connect.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1mPKGtRMnwcFc77_zfeIboDMAfGrROyf7",
-    "tags": [
-      "notebooklm",
-      "ai",
-      "mind maps",
-      "google"
-    ],
-    "difficulty": "beginner",
-    "series": "NotebookLM",
-    "seriesOrder": 2,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "notebooklm-flashcards",
-    "title": "NotebookLM - Flashcards",
-    "description": "Automatically generate revision flashcards from any document you upload to NotebookLM.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1lZ6e3um-KyhCmte5S3eEVpr-gcK_VY0g",
-    "tags": [
-      "notebooklm",
-      "ai",
-      "flashcards",
-      "revision"
-    ],
-    "difficulty": "beginner",
-    "series": "NotebookLM",
-    "seriesOrder": 3,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "notebooklm-pdf",
-    "title": "NotebookLM - Setup Guide (PDF)",
-    "description": "Step-by-step printed guide walking through how to create your first notebook and add sources.",
+    "id": "google-classroom-assignment-codes",
+    "title": "Google Classroom Assignment Codes",
+    "description": "A printable reference sheet explaining the different assignment type codes used in Google Classroom and what each one means.",
     "type": "pdf",
-    "category": "ai-tools",
-    "driveFileId": "1J_bmpa5pz4ajMtKoU7R5l_lrd2h4nJto",
+    "category": "essential-reading",
+    "driveFileId": "1g9_i6rfz7r0CQ3NKrzTfYg45jvoxXX0b",
     "tags": [
-      "notebooklm",
-      "ai",
-      "google",
-      "guide",
-      "pdf"
-    ],
-    "difficulty": "beginner",
-    "series": "NotebookLM",
-    "seriesOrder": 4,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "magicschool-text-questions",
-    "title": "MagicSchool AI - Generate Questions",
-    "description": "Paste any text and MagicSchool will create differentiated comprehension questions in seconds.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "14cRXUful66vGo9AJCWxKTY6eFNdm5ptN",
-    "tags": [
-      "magicschool",
-      "ai",
-      "questions",
-      "assessment"
-    ],
-    "difficulty": "beginner",
-    "series": "MagicSchool AI",
-    "seriesOrder": 1,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "magicschool-google-forms",
-    "title": "MagicSchool AI - Export to Google Forms",
-    "description": "Take your AI-generated questions and export them straight into a Google Form for easy distribution.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "12cuKQNuruF4IouMvCtnKRKz617UTw4_I",
-    "tags": [
-      "magicschool",
-      "ai",
-      "google forms",
-      "export"
-    ],
-    "difficulty": "beginner",
-    "series": "MagicSchool AI",
-    "seriesOrder": 2,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "magicschool-jeopardy",
-    "title": "MagicSchool AI - Jeopardy Game",
-    "description": "Generate a Jeopardy-style quiz game on any topic for a fun, competitive revision activity.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1qOPfX2lzqfi-xA_e9cJxbrUMLBt1Vble",
-    "tags": [
-      "magicschool",
-      "ai",
-      "jeopardy",
-      "games",
-      "revision"
-    ],
-    "difficulty": "beginner",
-    "series": "MagicSchool AI",
-    "seriesOrder": 3,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "magicstudent",
-    "title": "MagicSchool AI - MagicStudent",
-    "description": "How the student-facing side of MagicSchool works, with guardrails to guide rather than give answers.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "11cnQVDZ8onIru5wBc1Bvl82bYMGkjXKE",
-    "tags": [
-      "magicschool",
-      "ai",
-      "student",
-      "learning"
-    ],
-    "difficulty": "beginner",
-    "series": "MagicSchool AI",
-    "seriesOrder": 4,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "perplexity-new",
-    "title": "Perplexity AI - Introduction",
-    "description": "An AI search engine that gives source-backed answers \u2014 great for checking facts and exploring topics quickly.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1ELHifRxK7VD4fWn0rt8HbjsLh-THHWGz",
-    "tags": [
-      "perplexity",
-      "ai",
-      "research",
-      "search"
-    ],
-    "difficulty": "beginner",
-    "series": "Perplexity AI",
-    "seriesOrder": 1,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "perplexity-research",
-    "title": "Perplexity AI - Deep Research",
-    "description": "Use Perplexity's Pro Search to dig deeper into academic topics with cited, reliable sources.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "11s34Tgw0xmSaAyRfIsn9aY-_4Jc074oZ",
-    "tags": [
-      "perplexity",
-      "ai",
-      "research"
-    ],
-    "difficulty": "intermediate",
-    "series": "Perplexity AI",
-    "seriesOrder": 2,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "perplexity-pages",
-    "title": "Perplexity AI - Pages",
-    "description": "Create and share polished research pages that combine your Perplexity findings into a readable format.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "18BTExWtt6hR14JdEOi-Oddeyo5uyZtA9",
-    "tags": [
-      "perplexity",
-      "ai",
-      "pages",
-      "sharing"
-    ],
-    "difficulty": "intermediate",
-    "series": "Perplexity AI",
-    "seriesOrder": 3,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "diffit-1",
-    "title": "Diffit - Getting Started",
-    "description": "Paste any text or topic and Diffit creates reading materials at different ability levels automatically.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1-9UV7xxC2eWT6OUS4jSs5iACX2dLoMln",
-    "tags": [
-      "diffit",
-      "ai",
-      "differentiation",
-      "reading"
-    ],
-    "difficulty": "beginner",
-    "series": "Diffit",
-    "seriesOrder": 1,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "diffit-2",
-    "title": "Diffit - Advanced Features",
-    "description": "Create levelled vocabulary lists, comprehension questions and translated versions of your resources.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1-9PZQcTkrmI3Wgb8hwRytNKGrzcd6giU",
-    "tags": [
-      "diffit",
-      "ai",
-      "differentiation",
-      "assessment"
-    ],
-    "difficulty": "intermediate",
-    "series": "Diffit",
-    "seriesOrder": 2,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "upload-docs-gpt",
-    "title": "ChatGPT - Upload and Analyse Documents",
-    "description": "Upload a PDF, image or spreadsheet to ChatGPT and ask questions about its content.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "18BtDGXy_Pu8B_QxzZMAk9Zky__nwT5hp",
-    "tags": [
-      "chatgpt",
-      "ai",
-      "documents",
-      "upload"
-    ],
-    "difficulty": "beginner",
-    "series": "ChatGPT",
-    "seriesOrder": 1,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "create-gpt",
-    "title": "ChatGPT - Build a Custom GPT",
-    "description": "Create your own specialised GPT with custom instructions, e.g. a revision tutor for your subject.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "18FaO-3t3gMg1LJ6FqV2jpd_NZz4Cp12k",
-    "tags": [
-      "chatgpt",
-      "ai",
-      "custom gpt",
-      "personalisation"
-    ],
-    "difficulty": "intermediate",
-    "series": "ChatGPT",
-    "seriesOrder": 2,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "youtube-lesson-chatgpt",
-    "title": "ChatGPT - Build a Lesson from YouTube",
-    "description": "Give ChatGPT a YouTube link and it will create a structured lesson plan with activities and questions.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1sBJrXkrcNceNfvqxjiZgU9P_qy0Ey512",
-    "tags": [
-      "chatgpt",
-      "ai",
-      "youtube",
-      "lessons"
-    ],
-    "difficulty": "intermediate",
-    "series": "ChatGPT",
-    "seriesOrder": 3,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "ai-image-creation",
-    "title": "AI Images - Creating from Text Prompts",
-    "description": "Type a description and watch AI generate an image \u2014 useful for worksheets, slides and displays.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1-9KBEqXTf-0cfMGo_JZOMjaHoLB9TDPg",
-    "tags": [
-      "ai",
-      "images",
-      "creation",
-      "visual"
-    ],
-    "difficulty": "beginner",
-    "series": "AI Images",
-    "seriesOrder": 1,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "ai-image-editing",
-    "title": "AI Images - Editing and Enhancing",
-    "description": "Use AI to remove backgrounds, extend images, fix quality and make edits without Photoshop.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "13BczJj4-TOE9FUPVdQ8LF4Sy8QTndWbJ",
-    "tags": [
-      "ai",
-      "images",
-      "editing",
-      "creative"
-    ],
-    "difficulty": "beginner",
-    "series": "AI Images",
-    "seriesOrder": 2,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "visual-stories-ai",
-    "title": "AI Images - Visual Stories",
-    "description": "Combine AI-generated images into visual narratives for creative writing prompts or presentations.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "13EJie06gj7CrXdjzfZ-Trxa6xW7shsTx",
-    "tags": [
-      "ai",
-      "visual",
-      "stories",
-      "creative"
-    ],
-    "difficulty": "beginner",
-    "series": "AI Images",
-    "seriesOrder": 3,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "ai-tools-list-2024",
-    "title": "AI Tools to Try 2024",
-    "description": "A curated document listing the best AI tools for educators, with links and use cases for each one.",
-    "type": "gdoc",
-    "category": "ai-tools",
-    "driveFileId": "1FaQF4iHZvsHCNoIM2KoIWOLrtzaThN1wSY2N_BXGkkk",
-    "tags": [
-      "ai",
-      "tools",
-      "overview",
-      "recommendations"
+      "google classroom",
+      "assignments",
+      "reference",
+      "codes"
     ],
     "difficulty": "beginner",
     "featured": true,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "agent-ai-example",
-    "title": "AI Agents - How They Work",
-    "description": "See an AI agent complete a multi-step task automatically, like researching a topic and drafting a summary.",
+    "id": "learning-resource-hub-intro",
+    "title": "Learning Resource Hub Introduction",
+    "description": "A tour of the school's central Learning Resource Hub, showing where to find shared teaching materials, databases and digital resources.",
     "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "12wdvdMyx0E9LVzK4GWPlhfNNNoEMiGZK",
+    "category": "essential-reading",
+    "driveFileId": "17XlzruT8wpimzc3ZCsvC0Lo_etN5SGya",
     "tags": [
-      "ai",
-      "agents",
-      "automation"
+      "learning resource hub",
+      "introduction",
+      "resources",
+      "overview"
     ],
-    "difficulty": "intermediate",
-    "featured": false,
+    "difficulty": "beginner",
+    "featured": true,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "answering-exam-papers",
-    "title": "AI for Exam Preparation",
-    "description": "Use AI to generate model answers and mark schemes, helping you prepare students more efficiently.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "12w1wuKtng4I4DLlupSKxaFnuVM3z45nQ",
-    "tags": [
-      "ai",
-      "exams",
-      "marking",
-      "assessment"
-    ],
-    "difficulty": "intermediate",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "gemini-deep-research",
-    "title": "Gemini - Deep Research",
-    "description": "Ask Gemini to do extended research on a topic and get a comprehensive, sourced report back.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "13qKXzwmkQUeWGJu2XX_saw2WN7Ndxn7E",
+    "id": "gemini-revision-prompts",
+    "title": "Gemini Revision Prompts",
+    "description": "A curated collection of effective prompts you can use with Google Gemini to help students revise, generate practice questions and prepare for exams.",
+    "type": "gdoc",
+    "category": "essential-reading",
+    "driveFileId": "1Yz_UVEDqCs-n_zp5NDEvPhbvVA6mlJgEkc4nUKG1JvI",
     "tags": [
       "gemini",
       "ai",
-      "research",
-      "google"
-    ],
-    "difficulty": "intermediate",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "comet-ai",
-    "title": "Comet AI",
-    "description": "A quick look at Comet AI \u2014 an AI assistant designed specifically for education and lesson planning.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1qmQ87IS9KnvEYB-FrVGFsBSnqKpf6ltB",
-    "tags": [
-      "comet",
-      "ai",
-      "tools"
+      "revision",
+      "prompts",
+      "exams"
     ],
     "difficulty": "beginner",
-    "featured": false,
+    "featured": true,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "cove-ai",
-    "title": "Cove AI",
-    "description": "Use Cove to collaboratively brainstorm, plan and build resources with an AI canvas interface.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1uPRNTezq0j4DvSDXT15pl8ly0ohsRBF1",
-    "tags": [
-      "cove",
-      "ai",
-      "content creation"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "credo-source",
-    "title": "Credo Source",
-    "description": "Search across trusted academic databases to find peer-reviewed sources for research projects.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "11afP0CMpctJRpIzuiHHeWYxIfyE6ya8r",
-    "tags": [
-      "credo",
-      "research",
-      "sources",
-      "academic"
-    ],
-    "difficulty": "intermediate",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "elicit-research",
-    "title": "Elicit - AI Research Assistant",
-    "description": "Find relevant academic papers, extract key findings and compare studies using AI-powered search.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1-9ZS0_s4zxaQQZ8erLRDcXbOkt1vrjru",
-    "tags": [
-      "elicit",
-      "ai",
-      "research",
-      "academic"
-    ],
-    "difficulty": "intermediate",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "gamma-quizizz",
-    "title": "Gamma and Quizizz",
-    "description": "Create a polished AI presentation with Gamma, then turn it into an interactive quiz with Quizizz.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "11X1CfMpzTO5G1SAGGWMLnJS0x37NA9T5",
-    "tags": [
-      "gamma",
-      "quizizz",
-      "ai",
-      "presentations",
-      "quizzes"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "napkin-ai",
-    "title": "Napkin AI",
-    "description": "Paste any text and Napkin instantly turns it into clean diagrams, flowcharts and infographics.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1E5f7naQqS4TCdHjO3d_lfte9BAbvnu4s",
-    "tags": [
-      "napkin",
-      "ai",
-      "visuals",
-      "diagrams",
-      "infographics"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "scanning-transcribing",
-    "title": "Scanning and Transcribing",
-    "description": "Point your phone at handwritten notes or printed text and get an editable digital transcript instantly.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1mMvqfBKVCL1S-A63E6s2WoXvrlWaLYg9",
-    "tags": [
-      "ai",
-      "scanning",
-      "transcription",
-      "ocr"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "mote",
-    "title": "Mote - Voice Feedback",
-    "description": "Record short voice comments on student work in Google Docs instead of typing written feedback.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1-GjKgA7m__T2Y5g6hs1Pb9O5wmmH_TGH",
-    "tags": [
-      "mote",
-      "voice",
-      "feedback",
-      "marking"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "youtube-quiz-questions",
-    "title": "Create Questions from YouTube",
-    "description": "Generate a set of comprehension questions based on any YouTube video for classroom use.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1ymlZ2YO5_Xoa-Hqz4J_ekpXdID1PfC5-",
-    "tags": [
-      "youtube",
-      "quizzes",
-      "questions",
-      "assessment"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "canva-basics",
-    "title": "Canva Basics",
-    "description": "Get started with Canva \u2014 create slides, posters, worksheets and social graphics using drag-and-drop.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1yyPXoJTmKGWEld62Solk5mLqygGQM824",
-    "tags": [
-      "canva",
-      "design",
-      "presentations",
-      "visual"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "heygen-labs",
-    "title": "HeyGen Labs",
-    "description": "Create an AI video avatar of yourself that can deliver a script \u2014 useful for flipped learning content.",
-    "type": "video",
-    "category": "ai-tools",
-    "driveFileId": "1ypQbvGzLeJtZsOv0hETqtmZI8I5RI_RG",
-    "tags": [
-      "heygen",
-      "ai",
-      "video",
-      "avatar"
-    ],
-    "difficulty": "intermediate",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "masters-forum-ai",
-    "title": "Master's Forum - AI Discussion",
-    "description": "Audio recording of the Master's Forum where staff discussed AI's role and impact at Haileybury.",
-    "type": "audio",
-    "category": "ai-tools",
-    "driveFileId": "1SCG_7OvTA8vHh1qqsyxLK2H6hG8c-phB",
-    "tags": [
-      "ai",
-      "discussion",
-      "masters forum",
-      "audio"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "gc-customisation",
-    "title": "Google Classroom - Setup and Notifications",
-    "description": "Personalise your Classroom with a theme, set notification preferences and organise your class list.",
+    "id": "gc-customisation-and-notifications",
+    "title": "Customisation and Notifications",
+    "description": "Personalise your Google Classroom with a theme, configure notification preferences and organise your class list for a smoother start to the year.",
     "type": "video",
     "category": "google-workspace",
     "driveFileId": "1lV_bXyvVOVv5ATTnfN2fsV-s2RuT5jr7",
     "tags": [
       "google classroom",
       "customisation",
-      "notifications"
+      "notifications",
+      "setup"
     ],
     "difficulty": "beginner",
     "series": "Google Classroom: Getting Started",
@@ -727,9 +89,9 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gc-sharing-link",
-    "title": "Google Classroom - Sharing Link",
-    "description": "Generate and share a direct link to your Classroom so colleagues can view your setup and resources.",
+    "id": "gc-classroom-sharing-link",
+    "title": "Classroom Sharing Link",
+    "description": "Generate and share a direct link to your Google Classroom so colleagues can view your setup, resources and class structure.",
     "type": "video",
     "category": "google-workspace",
     "driveFileId": "12dnPpUAw386u1wGn0K2d24ZdbSpdi5xR",
@@ -746,12 +108,12 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gc-visiting-classroom",
-    "title": "Google Classroom - Visiting a Colleague's Class",
-    "description": "How to join and browse another teacher's Google Classroom to share ideas and observe their setup.",
+    "id": "gc-visiting-a-classroom",
+    "title": "Visiting a Classroom",
+    "description": "Learn how to join and browse another teacher's Google Classroom to share ideas, observe their setup and find inspiration for your own classes.",
     "type": "video",
     "category": "google-workspace",
-    "driveFileId": "1y7IRf7GgygT2rsWA5gWN6DQVNpCL1e0z",
+    "driveFileId": "1-79f4eTa_IoQpSdaSbliy3Vp-6Dag8R6",
     "tags": [
       "google classroom",
       "visiting",
@@ -765,17 +127,17 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gc-checking-comments",
-    "title": "Google Classroom - Helping Pupils Find Feedback",
-    "description": "Show students where to find your comments and feedback on their submitted work.",
+    "id": "gc-mark-work-as-missing",
+    "title": "Mark Work as Missing",
+    "description": "Flag assignments as missing in Google Classroom and see at a glance which students have not yet submitted their work.",
     "type": "video",
     "category": "google-workspace",
-    "driveFileId": "1Dsc5hCOuVD8AmsOrjq85MSdmmMz0v8Ee",
+    "driveFileId": "1TA_Iy3V-A_vTESFlInwXpKzb_p4NdGgw",
     "tags": [
       "google classroom",
-      "comments",
-      "feedback",
-      "pupils"
+      "missing work",
+      "tracking",
+      "submissions"
     ],
     "difficulty": "beginner",
     "series": "Google Classroom: Getting Started",
@@ -784,9 +146,29 @@
     "dateAdded": "2025-01-15"
   },
   {
+    "id": "gc-weighted-marks",
+    "title": "Google Classroom Weighted Marks",
+    "description": "Set up category weighting in Google Classroom so that homework, classwork and exams each count for different percentages of the overall grade.",
+    "type": "video",
+    "category": "google-workspace",
+    "driveFileId": "1lo52M_uogMxG1p7pUCu8vvHiEbY5R1bA",
+    "tags": [
+      "google classroom",
+      "marking",
+      "weighted",
+      "assessment",
+      "grades"
+    ],
+    "difficulty": "intermediate",
+    "series": "Google Classroom: Marking & Assessment",
+    "seriesOrder": 1,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
     "id": "gc-comment-banks",
-    "title": "Google Classroom - Comment Banks",
-    "description": "Save and reuse common feedback phrases so you can mark consistently without retyping the same comments.",
+    "title": "Google Classroom Comment Banks",
+    "description": "Save and reuse common feedback phrases in Google Classroom so you can mark consistently without retyping the same comments.",
     "type": "video",
     "category": "google-workspace",
     "driveFileId": "1ll1VsJn-1A1_mvTM0kZi42iu652ATNKQ",
@@ -794,26 +176,8 @@
       "google classroom",
       "comments",
       "feedback",
-      "marking"
-    ],
-    "difficulty": "beginner",
-    "series": "Google Classroom: Marking & Assessment",
-    "seriesOrder": 1,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "gc-creating-rubric",
-    "title": "Google Classroom - Creating a Rubric",
-    "description": "Build a marking rubric with criteria and levels so students see exactly what's expected.",
-    "type": "video",
-    "category": "google-workspace",
-    "driveFileId": "1luB9AWWaPKjyfusH163iGeyniZ3jRen7",
-    "tags": [
-      "google classroom",
-      "rubrics",
-      "assessment",
-      "marking"
+      "marking",
+      "comment banks"
     ],
     "difficulty": "beginner",
     "series": "Google Classroom: Marking & Assessment",
@@ -822,9 +186,29 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gc-rubrics-part-2",
-    "title": "Google Classroom - Reusing Rubrics",
-    "description": "Import rubrics from other assignments, view rubric analytics and streamline your marking workflow.",
+    "id": "gc-creating-a-rubric",
+    "title": "Google Classroom Creating a Rubric",
+    "description": "Build a marking rubric with criteria and achievement levels so students know exactly what is expected for each grade.",
+    "type": "video",
+    "category": "google-workspace",
+    "driveFileId": "1luB9AWWaPKjyfusH163iGeyniZ3jRen7",
+    "tags": [
+      "google classroom",
+      "rubrics",
+      "assessment",
+      "marking",
+      "criteria"
+    ],
+    "difficulty": "beginner",
+    "series": "Google Classroom: Marking & Assessment",
+    "seriesOrder": 3,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "gc-using-rubrics-part-2",
+    "title": "Google Classroom Using Rubrics Part 2",
+    "description": "Import rubrics from other assignments, view rubric analytics and streamline your marking workflow with reusable assessment templates.",
     "type": "video",
     "category": "google-workspace",
     "driveFileId": "1lvE8bAKI4F-bYejWgIWsWQd1jvnRbIz5",
@@ -832,26 +216,8 @@
       "google classroom",
       "rubrics",
       "assessment",
-      "analytics"
-    ],
-    "difficulty": "intermediate",
-    "series": "Google Classroom: Marking & Assessment",
-    "seriesOrder": 3,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "gc-weighted-marks",
-    "title": "Google Classroom - Weighted Marks",
-    "description": "Set up category weighting so homework, classwork and exams each count for different percentages.",
-    "type": "video",
-    "category": "google-workspace",
-    "driveFileId": "1lo52M_uogMxG1p7pUCu8vvHiEbY5R1bA",
-    "tags": [
-      "google classroom",
-      "marking",
-      "weighted",
-      "assessment"
+      "analytics",
+      "advanced"
     ],
     "difficulty": "intermediate",
     "series": "Google Classroom: Marking & Assessment",
@@ -860,27 +226,9 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gc-marking-scales",
-    "title": "Google Classroom - Marking Scales",
-    "description": "Create custom grading scales (A*-U, 1-9, or your own) to match your department's assessment system.",
-    "type": "video",
-    "category": "google-workspace",
-    "driveFileId": "1y75yEt0rQP1zMgUmcKG-nxV4hyWwNQNH",
-    "tags": [
-      "google classroom",
-      "marking scales",
-      "grading"
-    ],
-    "difficulty": "beginner",
-    "series": "Google Classroom: Marking & Assessment",
-    "seriesOrder": 5,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
     "id": "gc-marking-periods",
-    "title": "Google Classroom - Marking Periods",
-    "description": "Organise assignments into terms or half-terms so grades are grouped by assessment window.",
+    "title": "Marking Periods",
+    "description": "Organise assignments into terms or half-terms in Google Classroom so grades are grouped by assessment window.",
     "type": "video",
     "category": "google-workspace",
     "driveFileId": "1y4lYj7a-r0TgHKyfuFXAflssl0nvI26D",
@@ -892,14 +240,33 @@
     ],
     "difficulty": "beginner",
     "series": "Google Classroom: Marking & Assessment",
+    "seriesOrder": 5,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "gc-marking-scales",
+    "title": "Marking Scales",
+    "description": "Create custom grading scales such as A*-U, 1-9 or your own department system to match your assessment framework.",
+    "type": "video",
+    "category": "google-workspace",
+    "driveFileId": "1y75yEt0rQP1zMgUmcKG-nxV4hyWwNQNH",
+    "tags": [
+      "google classroom",
+      "marking scales",
+      "grading",
+      "assessment"
+    ],
+    "difficulty": "beginner",
+    "series": "Google Classroom: Marking & Assessment",
     "seriesOrder": 6,
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gc-plagiarism",
-    "title": "Google Classroom - Originality Reports",
-    "description": "Run plagiarism checks on student submissions using Google's built-in originality detection.",
+    "id": "gc-checking-for-plagiarism",
+    "title": "Checking for Plagiarism",
+    "description": "Run plagiarism checks on student submissions using Google Classroom's built-in originality detection tool.",
     "type": "video",
     "category": "google-workspace",
     "driveFileId": "1sgpiHKMyBdC9AVHGeZRy9QE7eYA0FUGc",
@@ -916,16 +283,18 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gc-mark-missing",
-    "title": "Google Classroom - Tracking Missing Work",
-    "description": "Flag assignments as missing and see at a glance which students haven't submitted.",
+    "id": "gc-pupils-checking-comments",
+    "title": "Pupils Checking Google Classroom Comments",
+    "description": "Show students exactly where to find your comments and feedback on their submitted work in Google Classroom.",
     "type": "video",
     "category": "google-workspace",
-    "driveFileId": "1TA_Iy3V-A_vTESFlInwXpKzb_p4NdGgw",
+    "driveFileId": "1Dsc5hCOuVD8AmsOrjq85MSdmmMz0v8Ee",
     "tags": [
       "google classroom",
-      "missing work",
-      "tracking"
+      "comments",
+      "feedback",
+      "pupils",
+      "student guide"
     ],
     "difficulty": "beginner",
     "series": "Google Classroom: Marking & Assessment",
@@ -934,9 +303,9 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gc-practice-sets",
-    "title": "Google Classroom - Practice Sets",
-    "description": "Create auto-graded interactive question sets that give students instant feedback as they practise.",
+    "id": "gc-creating-a-practice-set",
+    "title": "Google Classroom: Creating a Practice Set",
+    "description": "Create auto-graded interactive question sets in Google Classroom that give students instant feedback as they practise.",
     "type": "video",
     "category": "google-workspace",
     "driveFileId": "1m3bZp9frOhpWjya8JrTS3VnUE6otyBD3",
@@ -944,7 +313,7 @@
       "google classroom",
       "practice sets",
       "quiz",
-      "revision"
+      "auto-grading"
     ],
     "difficulty": "intermediate",
     "series": "Google Classroom: Advanced",
@@ -953,9 +322,9 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gc-practice-sets-insights",
-    "title": "Google Classroom - Practice Set Insights",
-    "description": "View detailed analytics on how students performed across practice set questions.",
+    "id": "gc-practice-sets-assigning-and-insights",
+    "title": "Practice Sets: Assigning and Insights",
+    "description": "Assign practice sets to your class and view detailed analytics on how students performed across each question.",
     "type": "video",
     "category": "google-workspace",
     "driveFileId": "1m4hgE5VSCedckUsfODHBdYH5Lx2fKr65",
@@ -963,7 +332,8 @@
       "google classroom",
       "practice sets",
       "insights",
-      "data"
+      "data",
+      "analytics"
     ],
     "difficulty": "intermediate",
     "series": "Google Classroom: Advanced",
@@ -972,27 +342,9 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gc-student-selector",
-    "title": "Google Classroom - Student Selector",
-    "description": "Randomly pick students for questions or tasks \u2014 a simple way to keep everyone engaged.",
-    "type": "video",
-    "category": "google-workspace",
-    "driveFileId": "1y8egIyqBqw1FuzjpT4aDo5HAhBKNmKEQ",
-    "tags": [
-      "google classroom",
-      "student selector",
-      "engagement"
-    ],
-    "difficulty": "beginner",
-    "series": "Google Classroom: Advanced",
-    "seriesOrder": 3,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "gc-notability-auto-update",
-    "title": "Google Classroom - Auto-sync Notability",
-    "description": "Link Notability assignments so pupil changes sync to Google Classroom automatically.",
+    "id": "gc-auto-updating-notability",
+    "title": "Google Classroom: Automatically Updating Notability Documents",
+    "description": "Link Notability assignments so that student changes sync automatically to Google Classroom without manual uploads.",
     "type": "video",
     "category": "google-workspace",
     "driveFileId": "1nJLKlgn9S5IF72YGgAv8ilKhjavp9Nyu",
@@ -1000,7 +352,28 @@
       "google classroom",
       "notability",
       "sync",
-      "automation"
+      "automation",
+      "ipad"
+    ],
+    "difficulty": "intermediate",
+    "series": "Google Classroom: Advanced",
+    "seriesOrder": 3,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "gc-notebooklm-and-google-classroom",
+    "title": "NotebookLM and Google Classroom",
+    "description": "Connect NotebookLM to your Google Classroom materials to create AI-powered revision aids, summaries and study guides.",
+    "type": "video",
+    "category": "google-workspace",
+    "driveFileId": "1FCzw_Q56l14W06eH5fmgaIeFzJARxBpm",
+    "tags": [
+      "google classroom",
+      "notebooklm",
+      "ai",
+      "integration",
+      "revision"
     ],
     "difficulty": "intermediate",
     "series": "Google Classroom: Advanced",
@@ -1009,73 +382,55 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gc-notebooklm-integration",
-    "title": "Google Classroom - Using NotebookLM",
-    "description": "Connect NotebookLM to your Google Classroom materials for AI-powered revision and study aids.",
+    "id": "gc-student-selector-11",
+    "title": "Student Selector",
+    "description": "Use the Student Selector feature in Google Classroom to randomly pick students for questions or tasks and keep everyone engaged.",
     "type": "video",
     "category": "google-workspace",
-    "driveFileId": "1FCzw_Q56l14W06eH5fmgaIeFzJARxBpm",
+    "driveFileId": "1y8egIyqBqw1FuzjpT4aDo5HAhBKNmKEQ",
     "tags": [
       "google classroom",
-      "notebooklm",
-      "ai",
-      "integration"
+      "student selector",
+      "engagement",
+      "random"
     ],
-    "difficulty": "intermediate",
+    "difficulty": "beginner",
     "series": "Google Classroom: Advanced",
     "seriesOrder": 5,
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gmail-settings",
-    "title": "Gmail - Settings and Customisation",
-    "description": "Set up your signature, choose a layout, manage labels and tweak notification preferences.",
+    "id": "gc-student-selector-12",
+    "title": "Student Selector (Advanced)",
+    "description": "Further tips on using the Student Selector including grouping options, history tracking and customising selection behaviour.",
     "type": "video",
     "category": "google-workspace",
-    "driveFileId": "1sAURX2z-ksOuvTst_zOx1m9MFrNcUPuM",
+    "driveFileId": "1yASNEsabL_LEkVCM6kwZFFy_SvpbJonG",
     "tags": [
-      "gmail",
-      "settings",
-      "customisation",
-      "email"
+      "google classroom",
+      "student selector",
+      "engagement",
+      "advanced"
     ],
-    "difficulty": "beginner",
-    "series": "Gmail",
-    "seriesOrder": 1,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "gmail-email-filters",
-    "title": "Gmail - Email Filters",
-    "description": "Automatically sort, label or archive incoming emails based on sender, subject or keywords.",
-    "type": "video",
-    "category": "google-workspace",
-    "driveFileId": "1EAqwAufbHQ8_jAB5UsNfO8UHXtqcosVm",
-    "tags": [
-      "gmail",
-      "filters",
-      "email",
-      "organisation"
-    ],
-    "difficulty": "beginner",
-    "series": "Gmail",
-    "seriesOrder": 2,
+    "difficulty": "intermediate",
+    "series": "Google Classroom: Advanced",
+    "seriesOrder": 6,
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
     "id": "google-slides-speaker-spotlight",
-    "title": "Google Slides - Speaker Spotlight",
-    "description": "Overlay your webcam feed on top of your slides during a live presentation or recording.",
+    "title": "Google Slides Speaker Spotlight",
+    "description": "Overlay your webcam feed on top of your Google Slides during a live presentation or recording for a more engaging delivery.",
     "type": "video",
     "category": "google-workspace",
     "driveFileId": "13N7epcB6Mb3TOm6iEiU9XXo5kIZ_s_Su",
     "tags": [
       "google slides",
       "speaker spotlight",
-      "presentations"
+      "presentations",
+      "video"
     ],
     "difficulty": "beginner",
     "series": "Google Slides",
@@ -1085,8 +440,8 @@
   },
   {
     "id": "google-slides-timers",
-    "title": "Google Slides - Adding Timers",
-    "description": "Embed a countdown timer directly into your slides for timed tasks, quizzes and transition breaks.",
+    "title": "Timers in Slides",
+    "description": "Embed a countdown timer directly into your Google Slides for timed tasks, quizzes and transition breaks.",
     "type": "video",
     "category": "google-workspace",
     "driveFileId": "1P7CHIslxQ8uWrN84Y7iFLmNF6imgb26r",
@@ -1103,12 +458,72 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "appointment-schedule",
-    "title": "Google Calendar - Appointment Slots",
-    "description": "Create bookable appointment slots for parent evenings, student meetings or office hours.",
+    "id": "gmail-settings-and-customisation",
+    "title": "Gmail: Settings and Customisation",
+    "description": "Set up your Gmail signature, choose a layout, manage labels and tweak notification preferences for a cleaner inbox.",
     "type": "video",
     "category": "google-workspace",
-    "driveFileId": "1w02NsMEQewRh_IIc-uUexQOxThoGwPWH",
+    "driveFileId": "1sAURX2z-ksOuvTst_zOx1m9MFrNcUPuM",
+    "tags": [
+      "gmail",
+      "settings",
+      "customisation",
+      "email",
+      "layout"
+    ],
+    "difficulty": "beginner",
+    "series": "Gmail",
+    "seriesOrder": 1,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "gmail-email-filters",
+    "title": "Email Filters",
+    "description": "Set up Gmail filters to automatically sort, label and organise incoming emails so you never miss what is important.",
+    "type": "video",
+    "category": "google-workspace",
+    "driveFileId": "1EAqwAufbHQ8_jAB5UsNfO8UHXtqcosVm",
+    "tags": [
+      "gmail",
+      "filters",
+      "email",
+      "organisation",
+      "automation"
+    ],
+    "difficulty": "beginner",
+    "series": "Gmail",
+    "seriesOrder": 2,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "google-calendar-importing-birthdays",
+    "title": "Importing Pupil Birthdays",
+    "description": "Bulk-import your form group's birthdays into Google Calendar so you never miss one during the year.",
+    "type": "video",
+    "category": "google-workspace",
+    "driveFileId": "12Jst_2om0osAz2YOI5cHou3BasjNFnq9",
+    "tags": [
+      "google calendar",
+      "birthdays",
+      "pupils",
+      "pastoral",
+      "import"
+    ],
+    "difficulty": "beginner",
+    "series": "Google Calendar",
+    "seriesOrder": 1,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "google-calendar-appointment-schedule",
+    "title": "Appointment Schedule",
+    "description": "Create bookable appointment slots in Google Calendar for parent evenings, student meetings or office hours.",
+    "type": "video",
+    "category": "google-workspace",
+    "driveFileId": "1yOr6SBnotEL1JawO5RaEkPcRFmoKphZJ",
     "tags": [
       "google calendar",
       "appointments",
@@ -1117,33 +532,48 @@
     ],
     "difficulty": "beginner",
     "series": "Google Calendar",
-    "seriesOrder": 1,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "importing-birthdays",
-    "title": "Google Calendar - Import Pupil Birthdays",
-    "description": "Bulk-import your form group's birthdays so you never miss one during the year.",
-    "type": "video",
-    "category": "google-workspace",
-    "driveFileId": "12Jst_2om0osAz2YOI5cHou3BasjNFnq9",
-    "tags": [
-      "google calendar",
-      "birthdays",
-      "pupils",
-      "pastoral"
-    ],
-    "difficulty": "beginner",
-    "series": "Google Calendar",
     "seriesOrder": 2,
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gemini-google-workspace",
-    "title": "Gemini in Google Workspace",
-    "description": "Use Google's built-in AI to draft emails, summarise documents, create slides and analyse spreadsheets.",
+    "id": "google-forms-updates",
+    "title": "Google Forms Updates",
+    "description": "A rundown of new features in Google Forms including branching logic, quiz improvements, themes and response validation.",
+    "type": "gdoc",
+    "category": "google-workspace",
+    "driveFileId": "1eGQk16mPq2PrNEvleDohDOt16FG5t53SFTAIX9fZaB8",
+    "tags": [
+      "google forms",
+      "updates",
+      "new features",
+      "quizzes"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-09-01"
+  },
+  {
+    "id": "google-workspace-updates",
+    "title": "Google Updates",
+    "description": "A roundup of the latest changes across Gmail, Docs, Slides, Classroom and other Google Workspace apps.",
+    "type": "video",
+    "category": "google-workspace",
+    "driveFileId": "1-BsMUHD712g2PEwSwe8kpaDfiM8uk66D",
+    "tags": [
+      "google workspace",
+      "updates",
+      "new features",
+      "overview"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-09-01"
+  },
+  {
+    "id": "gemini-and-google-workspace",
+    "title": "Gemini and Google Workspace",
+    "description": "Use Google's built-in Gemini AI to draft emails, summarise documents, create slides and analyse spreadsheets directly within Workspace apps.",
     "type": "video",
     "category": "google-workspace",
     "driveFileId": "1EN8xzbd9FkhJIzVBSb13400AgukXIVxr",
@@ -1151,39 +581,8 @@
       "gemini",
       "ai",
       "google workspace",
-      "productivity"
-    ],
-    "difficulty": "beginner",
-    "featured": true,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "google-forms-updates",
-    "title": "Google Forms - Recent Updates",
-    "description": "A rundown of new features in Google Forms including branching logic, quiz improvements and themes.",
-    "type": "gdoc",
-    "category": "google-workspace",
-    "driveFileId": "1eGQk16mPq2PrNEvleDohDOt16FG5t53SFTAIX9fZaB8",
-    "tags": [
-      "google forms",
-      "updates",
-      "new features"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "google-updates",
-    "title": "Google Workspace - What's New",
-    "description": "A roundup of the latest changes across Gmail, Docs, Slides, Classroom and other Workspace apps.",
-    "type": "video",
-    "category": "google-workspace",
-    "driveFileId": "1-BsMUHD712g2PEwSwe8kpaDfiM8uk66D",
-    "tags": [
-      "google workspace",
-      "updates",
-      "new features"
+      "productivity",
+      "integration"
     ],
     "difficulty": "beginner",
     "featured": false,
@@ -1191,212 +590,802 @@
   },
   {
     "id": "tech-tips-gems",
-    "title": "Google Workspace - Hidden Gems",
-    "description": "A collection of lesser-known tips and shortcuts across Google apps that will save you time daily.",
+    "title": "Gems",
+    "description": "A collection of lesser-known tips and hidden features across Google Workspace apps that will save you time every day.",
     "type": "video",
-    "category": "google-workspace",
+    "category": "ai-tools",
     "driveFileId": "1C4cUzvsjFrgASjMK8l4VPzKf4yrS1PJ7",
     "tags": [
-      "google workspace",
+      "google",
       "tips",
       "productivity",
-      "gems"
+      "gems",
+      "shortcuts"
     ],
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "gc-assignment-codes",
-    "title": "Google Classroom - Assignment Codes (PDF)",
-    "description": "A printable reference sheet listing all the assignment type codes used in Google Classroom.",
-    "type": "pdf",
-    "category": "google-workspace",
-    "driveFileId": "1g9_i6rfz7r0CQ3NKrzTfYg45jvoxXX0b",
-    "tags": [
-      "google classroom",
-      "assignment codes",
-      "reference"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "apple-classroom-1",
-    "title": "Apple Classroom - View and Lock Screens",
-    "description": "See every student's iPad screen in real time and lock devices with one tap when you need their attention.",
+    "id": "visual-stories-ai",
+    "title": "Visual Stories AI",
+    "description": "Combine AI-generated images into visual narratives for creative writing prompts, presentations or classroom displays.",
     "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "1cmMHLEoF58taC4xTyOW3D0rJP2C59ObX",
+    "category": "ai-tools",
+    "driveFileId": "13EJie06gj7CrXdjzfZ-Trxa6xW7shsTx",
     "tags": [
-      "apple classroom",
-      "ipad",
-      "screen viewing",
-      "locking"
+      "ai",
+      "visual",
+      "stories",
+      "creative",
+      "images"
     ],
     "difficulty": "beginner",
-    "series": "Apple Classroom",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "scanning-and-transcribing",
+    "title": "Scanning and Transcribing",
+    "description": "Point your device at handwritten notes or printed text and get an editable digital transcript instantly using AI-powered recognition.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "1mMvqfBKVCL1S-A63E6s2WoXvrlWaLYg9",
+    "tags": [
+      "ai",
+      "scanning",
+      "transcription",
+      "ocr",
+      "handwriting"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "comet-ai",
+    "title": "Comet AI",
+    "description": "A quick look at Comet AI, an AI assistant designed specifically for education that helps with lesson planning and resource creation.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "1qmQ87IS9KnvEYB-FrVGFsBSnqKpf6ltB",
+    "tags": [
+      "comet",
+      "ai",
+      "tools",
+      "lesson planning"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "brisk-pro-marking-example",
+    "title": "Brisk Pro Marking Example",
+    "description": "Watch Brisk analyse and mark a piece of student work, generating detailed feedback with grades and improvement suggestions in seconds.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "1ZKSYVvY0azZs5HB0YyE1VZXEuXgTgVsp",
+    "tags": [
+      "brisk",
+      "marking",
+      "ai",
+      "feedback",
+      "assessment"
+    ],
+    "difficulty": "beginner",
+    "series": "Brisk",
     "seriesOrder": 1,
     "featured": true,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "apple-classroom-2",
-    "title": "Apple Classroom - Lock into an App",
-    "description": "Force all students into a single app so they can't switch away during a focused task.",
+    "id": "brisk-activities",
+    "title": "Brisk Activities",
+    "description": "Use Brisk to auto-generate classroom activities like quizzes, discussions and worksheets from any topic or source material.",
     "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "1d1OF_g6AW2_jMKtsqQAQslee6C9hwq0K",
+    "category": "ai-tools",
+    "driveFileId": "1pYtNzyGMXa3BjShMk7zqn_Wh9NQAkx_1",
     "tags": [
-      "apple classroom",
-      "ipad",
-      "app lock",
-      "focus"
+      "brisk",
+      "activities",
+      "ai",
+      "classroom",
+      "quizzes"
     ],
     "difficulty": "beginner",
-    "series": "Apple Classroom",
+    "series": "Brisk",
     "seriesOrder": 2,
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "apple-classroom-3",
-    "title": "Apple Classroom - Lock Groups into Apps",
-    "description": "Send different groups to different apps at the same time for differentiated activities.",
+    "id": "brisk-teaching",
+    "title": "Brisk Teaching",
+    "description": "See how Brisk fits into a typical lesson cycle, from planning through to delivering activities and giving feedback on student work.",
     "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "1l4c1bGi77OPsKa-7iCRdEYSDVfOUmAbK",
+    "category": "ai-tools",
+    "driveFileId": "1EHbcpUtEKN7hWizdbtFyCoo1MV_iIkpj",
     "tags": [
-      "apple classroom",
-      "ipad",
-      "groups",
-      "differentiation"
+      "brisk",
+      "teaching",
+      "ai",
+      "workflow",
+      "lessons"
     ],
     "difficulty": "beginner",
-    "series": "Apple Classroom",
+    "series": "Brisk",
     "seriesOrder": 3,
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "apple-classroom-4",
-    "title": "Apple Classroom - Create an Agenda",
-    "description": "Build a lesson agenda with links to apps, websites and files that students tap through in order.",
+    "id": "brisk-next",
+    "title": "Brisk Next",
+    "description": "A look at the latest Brisk features including improved feedback tools, new activity types and expanded integrations.",
     "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "1lB5Z49H5vEc4pEAhhzElKpo9NdVscGwX",
+    "category": "ai-tools",
+    "driveFileId": "1enrkSDBz_-CuNwxRXgwUJwwX6xwmQRXu",
     "tags": [
-      "apple classroom",
-      "ipad",
-      "agenda",
-      "planning"
+      "brisk",
+      "updates",
+      "ai",
+      "new features"
     ],
     "difficulty": "beginner",
-    "series": "Apple Classroom",
+    "series": "Brisk",
     "seriesOrder": 4,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-09-01"
   },
   {
-    "id": "apple-classroom-5",
-    "title": "Apple Classroom - Run an Agenda in a Lesson",
-    "description": "Walk your class through a pre-built agenda, moving everyone to the next activity together.",
+    "id": "perplexity-new",
+    "title": "Perplexity (Updated)",
+    "description": "An updated walkthrough of Perplexity AI, the search engine that gives source-backed answers and is ideal for checking facts and exploring topics quickly.",
     "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "1lIEifRapx6KTQRBSnrjcbHiyodtViV45",
+    "category": "ai-tools",
+    "driveFileId": "1ELHifRxK7VD4fWn0rt8HbjsLh-THHWGz",
     "tags": [
-      "apple classroom",
-      "ipad",
-      "agenda",
-      "lessons"
+      "perplexity",
+      "ai",
+      "research",
+      "search"
     ],
     "difficulty": "beginner",
-    "series": "Apple Classroom",
-    "seriesOrder": 5,
+    "series": "Perplexity AI",
+    "seriesOrder": 2,
+    "featured": false,
+    "dateAdded": "2025-09-01"
+  },
+  {
+    "id": "answering-exam-papers",
+    "title": "Answering Exam Papers",
+    "description": "Use AI to generate model answers and mark schemes for exam papers, helping you prepare students more efficiently.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "12w1wuKtng4I4DLlupSKxaFnuVM3z45nQ",
+    "tags": [
+      "ai",
+      "exams",
+      "marking",
+      "assessment",
+      "model answers"
+    ],
+    "difficulty": "intermediate",
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "notability-backing-up",
-    "title": "Notability - Backing Up Notes",
-    "description": "Show students how to back up their Notability notebooks to iCloud or Google Drive to avoid losing work.",
-    "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "12ITFmhJcOQiK0Twic3ANKrCpIeRS14YI",
+    "id": "notebooklm-setup-guide",
+    "title": "Creating a New Notebook in NotebookLM (PDF Guide)",
+    "description": "A step-by-step printed guide walking through how to create your first notebook in Google NotebookLM and add sources.",
+    "type": "pdf",
+    "category": "ai-tools",
+    "driveFileId": "1J_bmpa5pz4ajMtKoU7R5l_lrd2h4nJto",
     "tags": [
-      "notability",
-      "backup",
-      "ipad"
+      "notebooklm",
+      "ai",
+      "google",
+      "guide",
+      "setup"
     ],
     "difficulty": "beginner",
-    "series": "Notability",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "notebooklm-overview",
+    "title": "Notebook LM",
+    "description": "Upload sources to Google NotebookLM and let it generate summaries, answer questions and create study materials from your documents.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "1SCMM4WYHrML_zMnEgZYpUag75L_t0wMt",
+    "tags": [
+      "notebooklm",
+      "ai",
+      "google",
+      "overview",
+      "study"
+    ],
+    "difficulty": "beginner",
+    "series": "NotebookLM",
     "seriesOrder": 1,
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "notability-organising",
-    "title": "Notability - Organising Documents",
-    "description": "Set up subjects, dividers and folders in Notability so students can find their notes quickly.",
+    "id": "notebooklm-flashcards",
+    "title": "NotebookLM Flashcards",
+    "description": "Automatically generate revision flashcards from any document you upload to NotebookLM, perfect for student exam preparation.",
     "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "12JS3m0XIAU8fAohNqKx0mbyoeGNb_BNm",
+    "category": "ai-tools",
+    "driveFileId": "1lZ6e3um-KyhCmte5S3eEVpr-gcK_VY0g",
     "tags": [
-      "notability",
-      "organisation",
-      "ipad"
+      "notebooklm",
+      "ai",
+      "flashcards",
+      "revision",
+      "study"
     ],
     "difficulty": "beginner",
-    "series": "Notability",
+    "series": "NotebookLM",
     "seriesOrder": 2,
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "notability-templates",
-    "title": "Notability - Using Templates",
-    "description": "Create or import note templates (lined paper, grids, Cornell notes) for consistent student notetaking.",
+    "id": "notebooklm-mindmaps",
+    "title": "Notebook LM Mind Maps",
+    "description": "Turn your uploaded documents into visual mind maps in NotebookLM that show how key concepts connect.",
     "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "12IP_8tWBDHqmJPTjcRWxVST5EmG6ySWz",
+    "category": "ai-tools",
+    "driveFileId": "1mPKGtRMnwcFc77_zfeIboDMAfGrROyf7",
     "tags": [
-      "notability",
-      "templates",
-      "ipad",
-      "notetaking"
+      "notebooklm",
+      "ai",
+      "mind maps",
+      "visual",
+      "concepts"
     ],
     "difficulty": "beginner",
-    "series": "Notability",
+    "series": "NotebookLM",
     "seriesOrder": 3,
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "notability-syncing",
-    "title": "Notability - Syncing Across Devices",
-    "description": "Ensure Notability syncs properly between iPad and the cloud so students always have the latest version.",
+    "id": "perplexity-overview",
+    "title": "Perplexity",
+    "description": "An introduction to Perplexity AI, showing how this AI-powered search engine gives source-backed answers for research and fact-checking.",
     "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "1yVGfGnA2NxoMohnvAy8ZqGPKo4cK7L5I",
+    "category": "ai-tools",
+    "driveFileId": "11s34Tgw0xmSaAyRfIsn9aY-_4Jc074oZ",
     "tags": [
-      "notability",
-      "syncing",
-      "ipad",
-      "backup"
+      "perplexity",
+      "ai",
+      "research",
+      "search",
+      "introduction"
     ],
     "difficulty": "beginner",
-    "series": "Notability",
+    "series": "Perplexity AI",
+    "seriesOrder": 1,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "perplexity-pages",
+    "title": "Perplexity Pages",
+    "description": "Create and share polished research pages that combine your Perplexity findings into a readable, shareable format.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "18BTExWtt6hR14JdEOi-Oddeyo5uyZtA9",
+    "tags": [
+      "perplexity",
+      "ai",
+      "pages",
+      "sharing",
+      "research"
+    ],
+    "difficulty": "intermediate",
+    "series": "Perplexity AI",
+    "seriesOrder": 3,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "deep-research-gemini",
+    "title": "Deep Research Gemini",
+    "description": "Ask Google Gemini to conduct extended research on a topic and receive a comprehensive, sourced report back.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "13qKXzwmkQUeWGJu2XX_saw2WN7Ndxn7E",
+    "tags": [
+      "gemini",
+      "ai",
+      "research",
+      "google",
+      "deep research"
+    ],
+    "difficulty": "intermediate",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "agent-ai-example",
+    "title": "Agent AI Example",
+    "description": "See an AI agent complete a multi-step task automatically, demonstrating how agent-based AI can research topics and draft summaries.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "12wdvdMyx0E9LVzK4GWPlhfNNNoEMiGZK",
+    "tags": [
+      "ai",
+      "agents",
+      "automation",
+      "example"
+    ],
+    "difficulty": "intermediate",
+    "featured": false,
+    "dateAdded": "2025-09-01"
+  },
+  {
+    "id": "gamma-and-quizizz",
+    "title": "Gamma and Quizizz",
+    "description": "Create a polished AI-generated presentation with Gamma, then turn it into an interactive quiz with Quizizz for formative assessment.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "11X1CfMpzTO5G1SAGGWMLnJS0x37NA9T5",
+    "tags": [
+      "gamma",
+      "quizizz",
+      "ai",
+      "presentations",
+      "quizzes"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "canva-code",
+    "title": "Canva Code",
+    "description": "Generate a shareable Canva code so students can duplicate your template and work on their own copy independently.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "1-Glo6bbcojTuDyf6l6TO-a6ix2FqC5tR",
+    "tags": [
+      "canva",
+      "code",
+      "templates",
+      "sharing",
+      "students"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "ai-image-editing",
+    "title": "AI Image Editing",
+    "description": "Use AI to remove backgrounds, extend images, fix quality and make edits without needing professional design software.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "13BczJj4-TOE9FUPVdQ8LF4Sy8QTndWbJ",
+    "tags": [
+      "ai",
+      "images",
+      "editing",
+      "creative",
+      "design"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "cove-ai",
+    "title": "Cove",
+    "description": "Use Cove to collaboratively brainstorm, plan and build resources with an AI-powered canvas interface.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "1-2NREJdy63J1qpzFUAHkGUYdOfd-_c2R",
+    "tags": [
+      "cove",
+      "ai",
+      "collaboration",
+      "planning",
+      "canvas"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "napkin-ai",
+    "title": "Napkin AI",
+    "description": "Paste any text and Napkin AI instantly turns it into clean diagrams, flowcharts and infographics for lessons and resources.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "1E5f7naQqS4TCdHjO3d_lfte9BAbvnu4s",
+    "tags": [
+      "napkin",
+      "ai",
+      "visuals",
+      "diagrams",
+      "infographics"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "create-questions-youtube",
+    "title": "Create Questions on a YouTube Video",
+    "description": "Generate a set of comprehension questions based on any YouTube video for classroom use, saving you time on resource creation.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "1ymlZ2YO5_Xoa-Hqz4J_ekpXdID1PfC5-",
+    "tags": [
+      "youtube",
+      "questions",
+      "assessment",
+      "ai",
+      "video"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "magicschool-text-questions",
+    "title": "Magic School - Text Questions",
+    "description": "Paste any text and MagicSchool will create differentiated comprehension questions in seconds, ready for classroom use.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "14cRXUful66vGo9AJCWxKTY6eFNdm5ptN",
+    "tags": [
+      "magicschool",
+      "ai",
+      "questions",
+      "assessment",
+      "differentiation"
+    ],
+    "difficulty": "beginner",
+    "series": "MagicSchool AI",
+    "seriesOrder": 1,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "magicschool-export-google-forms",
+    "title": "MagicSchool AI Export to Google Forms",
+    "description": "Take your AI-generated questions from MagicSchool and export them straight into a Google Form for easy distribution and auto-marking.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "12cuKQNuruF4IouMvCtnKRKz617UTw4_I",
+    "tags": [
+      "magicschool",
+      "ai",
+      "google forms",
+      "export",
+      "assessment"
+    ],
+    "difficulty": "beginner",
+    "series": "MagicSchool AI",
+    "seriesOrder": 2,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "magicstudent",
+    "title": "MagicStudent",
+    "description": "How the student-facing side of MagicSchool works, with built-in guardrails that guide learning rather than simply giving answers.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "11cnQVDZ8onIru5wBc1Bvl82bYMGkjXKE",
+    "tags": [
+      "magicschool",
+      "ai",
+      "student",
+      "learning",
+      "guardrails"
+    ],
+    "difficulty": "beginner",
+    "series": "MagicSchool AI",
+    "seriesOrder": 3,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "ai-assessment-no-ai",
+    "title": "No AI",
+    "description": "Visual reference card for the 'No AI' level of the AI Assessment Scale, where work must be entirely the student's own without any AI assistance.",
+    "type": "image",
+    "category": "ai-tools",
+    "driveFileId": "1OetPUsobP4RUxubHxEZn6MjF8fi1GL7H",
+    "tags": [
+      "ai",
+      "assessment",
+      "scale",
+      "no ai",
+      "reference"
+    ],
+    "difficulty": "intermediate",
+    "series": "AI Assessment Scale",
+    "seriesOrder": 1,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "ai-assessment-planning",
+    "title": "AI Planning",
+    "description": "Visual reference card for the 'AI Planning' level, where students may use AI for brainstorming and outlining only.",
+    "type": "image",
+    "category": "ai-tools",
+    "driveFileId": "1bGd_bBcR3jsk_3LVYsyzCOzGHpTdv4SX",
+    "tags": [
+      "ai",
+      "assessment",
+      "scale",
+      "planning",
+      "reference"
+    ],
+    "difficulty": "intermediate",
+    "series": "AI Assessment Scale",
+    "seriesOrder": 2,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "ai-assessment-collaboration",
+    "title": "AI Collaboration",
+    "description": "Visual reference card for the 'AI Collaboration' level, where students work alongside AI as a co-author or editor.",
+    "type": "image",
+    "category": "ai-tools",
+    "driveFileId": "1gQYKgsuC1rhLJJqZB9bTJ_HRJZuwG8t5",
+    "tags": [
+      "ai",
+      "assessment",
+      "scale",
+      "collaboration",
+      "reference"
+    ],
+    "difficulty": "intermediate",
+    "series": "AI Assessment Scale",
+    "seriesOrder": 3,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "ai-assessment-full-ai",
+    "title": "Full AI",
+    "description": "Visual reference card for the 'Full AI' level, where students direct the AI to produce the output and then evaluate and refine it.",
+    "type": "image",
+    "category": "ai-tools",
+    "driveFileId": "1siJuuCX-UXR5iU9B3MKiMe6nkVkB27KA",
+    "tags": [
+      "ai",
+      "assessment",
+      "scale",
+      "full ai",
+      "reference"
+    ],
+    "difficulty": "intermediate",
+    "series": "AI Assessment Scale",
     "seriesOrder": 4,
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "isams-preferred-name",
-    "title": "iSams - Pupil Preferred Name",
+    "id": "ai-assessment-teacher-version",
+    "title": "Teacher Version",
+    "description": "The complete teacher reference showing all levels of the AI Assessment Scale from No AI to Full AI, with guidance on when to use each.",
+    "type": "image",
+    "category": "ai-tools",
+    "driveFileId": "1V4stZVkvPHexmYlFGfMzQGo7pLsbRg6c",
+    "tags": [
+      "ai",
+      "assessment",
+      "scale",
+      "teachers",
+      "reference"
+    ],
+    "difficulty": "intermediate",
+    "series": "AI Assessment Scale",
+    "seriesOrder": 5,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "ai-assessment-pupil-version",
+    "title": "Pupil Version",
+    "description": "The student-friendly version of the AI Assessment Scale, designed to be shared with classes when setting assignments that involve AI.",
+    "type": "image",
+    "category": "ai-tools",
+    "driveFileId": "1NVg-XF64uPyaMQmKTVRKOVjHG-CNtsL7",
+    "tags": [
+      "ai",
+      "assessment",
+      "scale",
+      "pupils",
+      "student guide"
+    ],
+    "difficulty": "intermediate",
+    "series": "AI Assessment Scale",
+    "seriesOrder": 6,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "screen-mirroring",
+    "title": "Screen Mirroring",
+    "description": "Wirelessly display your Mac or iPad on the classroom screen using AirPlay or a direct connection for presentations and demos.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "11T3TsrILgBkArsBf0u4ASf6N2eIOOgvI",
+    "tags": [
+      "screen mirroring",
+      "airplay",
+      "display",
+      "classroom",
+      "presenting"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "wristbands-replacement",
+    "title": "Issuing Replacement Wristbands",
+    "description": "The step-by-step process for issuing a new access wristband when a student loses or damages theirs.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "1DdiOKZy6tH8qeSBhUvGj81VYKHAUXZ5x",
+    "tags": [
+      "wristbands",
+      "replacement",
+      "access",
+      "admin"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "apple-sidecar-part-1",
+    "title": "Apple Sidecar (Part 1)",
+    "description": "Turn your iPad into a second monitor for your Mac using Apple Sidecar, great for keeping notes visible while presenting.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "1-3VY9fI77UwyVh43jtk3qwipsB0qfQU7",
+    "tags": [
+      "apple",
+      "sidecar",
+      "ipad",
+      "mac",
+      "dual display"
+    ],
+    "difficulty": "beginner",
+    "series": "Apple Sidecar",
+    "seriesOrder": 1,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "apple-sidecar-part-2",
+    "title": "Apple Sidecar (Part 2)",
+    "description": "Advanced Sidecar tips including gesture controls, app positioning and troubleshooting common connection issues.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "1jHmsATUmJ-qSmTCgFoATnlJANZZcJqWF",
+    "tags": [
+      "apple",
+      "sidecar",
+      "ipad",
+      "mac",
+      "advanced"
+    ],
+    "difficulty": "intermediate",
+    "series": "Apple Sidecar",
+    "seriesOrder": 2,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "apple-notes-transcript",
+    "title": "Apple Notes - Transcript",
+    "description": "Record audio in Apple Notes and get an automatic, searchable transcript alongside your recording for meetings and observations.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "11Qud72Q4XUFM91PO3dYfWQCGGSUWfAIu",
+    "tags": [
+      "apple notes",
+      "transcription",
+      "audio",
+      "mac",
+      "recording"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "canva-basics",
+    "title": "Canva Basics",
+    "description": "Get started with Canva to create slides, posters, worksheets and social graphics using simple drag-and-drop tools.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "1yyPXoJTmKGWEld62Solk5mLqygGQM824",
+    "tags": [
+      "canva",
+      "design",
+      "presentations",
+      "visual",
+      "basics"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "camera-setup",
+    "title": "Camera Set Up",
+    "description": "Position and configure your webcam or document camera for clear recordings and video calls in your classroom.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "1F5T-ef-DkIKeYJupnwQo2nxGoHFIyinS",
+    "tags": [
+      "camera",
+      "setup",
+      "video",
+      "recording",
+      "classroom"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "signing-out",
+    "title": "Signing Out",
+    "description": "How to properly sign out of your school Mac, Google account and apps at the end of the day to keep your data secure.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "1eEW2xt-DLLQlUB7r7YF_FunK_Hkp6WOC",
+    "tags": [
+      "security",
+      "sign out",
+      "accounts",
+      "devices"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "bulk-print",
+    "title": "Bulk Print",
+    "description": "Set up bulk print jobs from your Mac so you can print class sets of worksheets and handouts efficiently.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "11ktuinsF6rw-8KUrX8jspj12bkQuGhB_",
+    "tags": [
+      "printing",
+      "mac",
+      "bulk",
+      "admin",
+      "worksheets"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "isams-pupil-preferred-name",
+    "title": "iSams Pupil Preferred Name",
     "description": "Look up and update a pupil's preferred name in iSams when it differs from their registered name.",
     "type": "video",
-    "category": "classroom-devices",
+    "category": "general-tips",
     "driveFileId": "1E1kqSmVUyNYfya3CZ6nvT-C0Pee58wa4",
     "tags": [
       "isams",
@@ -1411,11 +1400,11 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "isams-google-calendar",
-    "title": "iSams - Sync to Google Calendar",
-    "description": "Import your iSams timetable into Google Calendar so all your lessons appear alongside meetings.",
+    "id": "isams-into-google-calendar",
+    "title": "iSams into Google Calendar",
+    "description": "Import your iSams timetable into Google Calendar so all your lessons appear alongside meetings and events.",
     "type": "video",
-    "category": "classroom-devices",
+    "category": "general-tips",
     "driveFileId": "1lPYWhbPw9zS9TD8EUJMYwaDed9nmZWjr",
     "tags": [
       "isams",
@@ -1430,240 +1419,192 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "isams-app",
-    "title": "iSams - Mobile App",
-    "description": "Access pupil photos, contact details and timetables on your phone or iPad using the iSams app.",
+    "id": "apple-classroom-viewing-locking-screens",
+    "title": "Viewing and Locking Screens",
+    "description": "See every student's iPad screen in real time and lock devices with one tap when you need their attention.",
     "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "13HFey-FWv0M1sUN4VDBr2_5dEpfUOmBR",
+    "category": "apple-classroom",
+    "driveFileId": "1cmMHLEoF58taC4xTyOW3D0rJP2C59ObX",
     "tags": [
-      "isams",
-      "app",
-      "mobile",
-      "ipad"
+      "apple classroom",
+      "ipad",
+      "screen viewing",
+      "locking"
     ],
     "difficulty": "beginner",
-    "series": "iSams",
+    "series": "Apple Classroom",
+    "seriesOrder": 1,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "apple-classroom-locking-into-app",
+    "title": "Locking into an App",
+    "description": "Force all students into a single app using Apple Classroom so they cannot switch away during a focused task.",
+    "type": "video",
+    "category": "apple-classroom",
+    "driveFileId": "1d1OF_g6AW2_jMKtsqQAQslee6C9hwq0K",
+    "tags": [
+      "apple classroom",
+      "ipad",
+      "app lock",
+      "focus"
+    ],
+    "difficulty": "beginner",
+    "series": "Apple Classroom",
+    "seriesOrder": 2,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "apple-classroom-locking-groups",
+    "title": "Locking Groups of Students into an App",
+    "description": "Send different groups of students to different apps at the same time for differentiated activities using Apple Classroom.",
+    "type": "video",
+    "category": "apple-classroom",
+    "driveFileId": "1l4c1bGi77OPsKa-7iCRdEYSDVfOUmAbK",
+    "tags": [
+      "apple classroom",
+      "ipad",
+      "groups",
+      "differentiation"
+    ],
+    "difficulty": "beginner",
+    "series": "Apple Classroom",
     "seriesOrder": 3,
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "canva-code",
-    "title": "Canva Code",
-    "description": "Generate a shareable Canva code so students can duplicate your template and work on their own copy.",
+    "id": "apple-classroom-creating-agenda",
+    "title": "Creating an Agenda",
+    "description": "Build a lesson agenda in Apple Classroom with links to apps, websites and files that students tap through in order.",
     "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "1-Glo6bbcojTuDyf6l6TO-a6ix2FqC5tR",
+    "category": "apple-classroom",
+    "driveFileId": "1lB5Z49H5vEc4pEAhhzElKpo9NdVscGwX",
     "tags": [
-      "canva",
-      "code",
-      "templates",
-      "sharing"
+      "apple classroom",
+      "ipad",
+      "agenda",
+      "planning",
+      "lessons"
     ],
     "difficulty": "beginner",
+    "series": "Apple Classroom",
+    "seriesOrder": 4,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "apple-classroom-using-agendas",
+    "title": "Using Agendas in Lessons",
+    "description": "Walk your class through a pre-built Apple Classroom agenda, moving everyone to the next activity together during the lesson.",
+    "type": "video",
+    "category": "apple-classroom",
+    "driveFileId": "1lIEifRapx6KTQRBSnrjcbHiyodtViV45",
+    "tags": [
+      "apple classroom",
+      "ipad",
+      "agenda",
+      "lessons",
+      "teaching"
+    ],
+    "difficulty": "beginner",
+    "series": "Apple Classroom",
+    "seriesOrder": 5,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "notability-syncing",
+    "title": "Syncing Notability",
+    "description": "Ensure Notability syncs properly between iPad and the cloud so students always have the latest version of their notes.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "1yVGfGnA2NxoMohnvAy8ZqGPKo4cK7L5I",
+    "tags": [
+      "notability",
+      "syncing",
+      "ipad",
+      "backup",
+      "cloud"
+    ],
+    "difficulty": "beginner",
+    "series": "Notability",
+    "seriesOrder": 1,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "notability-backing-up",
+    "title": "Backing Up Notability",
+    "description": "Show students how to back up their Notability notebooks to iCloud or Google Drive to avoid losing important work.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "12ITFmhJcOQiK0Twic3ANKrCpIeRS14YI",
+    "tags": [
+      "notability",
+      "backup",
+      "ipad",
+      "students"
+    ],
+    "difficulty": "beginner",
+    "series": "Notability",
+    "seriesOrder": 2,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "notability-organising-documents",
+    "title": "Organising Documents",
+    "description": "Set up subjects, dividers and folders in Notability so students can find their notes and resources quickly.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "12JS3m0XIAU8fAohNqKx0mbyoeGNb_BNm",
+    "tags": [
+      "notability",
+      "organisation",
+      "ipad",
+      "folders"
+    ],
+    "difficulty": "beginner",
+    "series": "Notability",
+    "seriesOrder": 3,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "notability-templates",
+    "title": "Using Templates for Notetaking",
+    "description": "Create or import note templates in Notability such as lined paper, grids and Cornell notes for consistent student notetaking.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "12IP_8tWBDHqmJPTjcRWxVST5EmG6ySWz",
+    "tags": [
+      "notability",
+      "templates",
+      "ipad",
+      "notetaking"
+    ],
+    "difficulty": "beginner",
+    "series": "Notability",
+    "seriesOrder": 4,
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
     "id": "clickview",
     "title": "ClickView",
-    "description": "Browse, assign and track educational videos from ClickView's curated library aligned to the curriculum.",
+    "description": "Browse, assign and track educational videos from ClickView's curated library of curriculum-aligned content.",
     "type": "video",
-    "category": "classroom-devices",
+    "category": "learning-resource-hub",
     "driveFileId": "1p_AIspJ7GMfaotW6bIKOmSObxqozkM2A",
     "tags": [
       "clickview",
       "video",
       "resources",
-      "educational"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "screen-mirroring",
-    "title": "Screen Mirroring",
-    "description": "Wirelessly display your Mac or iPad on the classroom screen using AirPlay or a direct connection.",
-    "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "11T3TsrILgBkArsBf0u4ASf6N2eIOOgvI",
-    "tags": [
-      "screen mirroring",
-      "airplay",
-      "display",
-      "classroom"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "apple-sidecar",
-    "title": "Apple Sidecar",
-    "description": "Turn your iPad into a second monitor for your Mac \u2014 great for keeping notes visible while presenting.",
-    "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "1jHmsATUmJ-qSmTCgFoATnlJANZZcJqWF",
-    "tags": [
-      "apple",
-      "sidecar",
-      "ipad",
-      "mac",
-      "dual display"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "apple-notes-transcript",
-    "title": "Apple Notes - Live Transcription",
-    "description": "Record audio in Apple Notes and get an automatic, searchable transcript alongside your recording.",
-    "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "11Qud72Q4XUFM91PO3dYfWQCGGSUWfAIu",
-    "tags": [
-      "apple notes",
-      "transcription",
-      "audio",
-      "mac"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "camera-setup",
-    "title": "Camera Set Up",
-    "description": "Position and configure your webcam or document camera for clear recordings and video calls.",
-    "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "1F5T-ef-DkIKeYJupnwQo2nxGoHFIyinS",
-    "tags": [
-      "camera",
-      "setup",
-      "video",
-      "recording"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "macbook-keyboard-shortcuts",
-    "title": "MacBook Keyboard Shortcuts (PDF)",
-    "description": "A printable cheat sheet of the most useful Mac shortcuts for copy, paste, screenshots and more.",
-    "type": "pdf",
-    "category": "classroom-devices",
-    "driveFileId": "1Cfy2Uj8MTdt5ZY-zeG_s68gdkd7ZlWxZ",
-    "tags": [
-      "mac",
-      "keyboard shortcuts",
-      "productivity",
-      "reference"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "extracting-text-ipad",
-    "title": "Extracting Text on iPad",
-    "description": "Use Live Text to copy text from photos, screenshots or real-world objects using your iPad camera.",
-    "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "1sKX2zMS2ZpnzTPqFl9XLnIbn2Pi7LGTC",
-    "tags": [
-      "ipad",
-      "live text",
-      "ocr",
-      "text extraction"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "schoolytics-dashboard",
-    "title": "Schoolytics Dashboard",
-    "description": "View analytics on student engagement, assignment completion rates and class activity across Google Classroom.",
-    "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "1-9bWYN-M25xhjFSuOlDRrmPhSzsa5xsq",
-    "tags": [
-      "schoolytics",
-      "dashboard",
-      "analytics",
-      "google classroom"
-    ],
-    "difficulty": "intermediate",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "bulk-print",
-    "title": "Bulk Printing from Mac",
-    "description": "Set up bulk print jobs from your Mac so you can print class sets of worksheets efficiently.",
-    "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "11ktuinsF6rw-8KUrX8jspj12bkQuGhB_",
-    "tags": [
-      "printing",
-      "mac",
-      "bulk",
-      "admin"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "signing-out",
-    "title": "Signing Out of Devices",
-    "description": "How to properly sign out of your school Mac, Google account and apps at the end of the day.",
-    "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "1eEW2xt-DLLQlUB7r7YF_FunK_Hkp6WOC",
-    "tags": [
-      "security",
-      "sign out",
-      "accounts",
-      "devices"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "wristband-replacement",
-    "title": "Issuing Replacement Wristbands",
-    "description": "The step-by-step process for issuing a new access wristband when a student loses theirs.",
-    "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "1DdiOKZy6tH8qeSBhUvGj81VYKHAUXZ5x",
-    "tags": [
-      "wristbands",
-      "replacement",
-      "access",
-      "admin"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "learning-resource-hub",
-    "title": "Learning Resource Hub",
-    "description": "A tour of the school's central resource hub \u2014 where to find shared teaching materials and templates.",
-    "type": "video",
-    "category": "classroom-devices",
-    "driveFileId": "17XlzruT8wpimzc3ZCsvC0Lo_etN5SGya",
-    "tags": [
-      "learning resource hub",
-      "resources",
-      "introduction"
+      "educational",
+      "library"
     ],
     "difficulty": "beginner",
     "featured": false,
@@ -1671,35 +1612,55 @@
   },
   {
     "id": "pressreader-setup",
-    "title": "PressReader - Initial Setup",
-    "description": "Download the app, connect to the school's PressReader account and start browsing publications.",
+    "title": "PressReader Set Up",
+    "description": "Download the PressReader app, connect to the school's account and start browsing newspapers and magazines.",
     "type": "video",
-    "category": "pressreader-library",
+    "category": "learning-resource-hub",
     "driveFileId": "1TRkBACkMN_pQt1LckM27ZZwxGOuU4v1V",
     "tags": [
       "pressreader",
       "setup",
       "library",
-      "newspapers"
+      "newspapers",
+      "magazines"
     ],
     "difficulty": "beginner",
     "series": "PressReader",
     "seriesOrder": 1,
-    "featured": true,
+    "featured": false,
+    "dateAdded": "2025-01-15"
+  },
+  {
+    "id": "credo-source",
+    "title": "Credo Source",
+    "description": "Search across trusted academic databases using Credo Source to find peer-reviewed sources for student research projects.",
+    "type": "video",
+    "category": "learning-resource-hub",
+    "driveFileId": "11afP0CMpctJRpIzuiHHeWYxIfyE6ya8r",
+    "tags": [
+      "credo",
+      "research",
+      "sources",
+      "academic",
+      "library"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
     "id": "pressreader-overview",
-    "title": "PressReader - Browsing and Features",
-    "description": "Navigate the PressReader interface, bookmark publications and download issues for offline reading.",
+    "title": "PressReader",
+    "description": "Navigate the PressReader interface, bookmark publications and download issues for offline reading on any device.",
     "type": "video",
-    "category": "pressreader-library",
+    "category": "learning-resource-hub",
     "driveFileId": "11EcHGl7NwpXeW_KoH4FTyxWTuwfcCT-j",
     "tags": [
       "pressreader",
       "overview",
       "library",
-      "reading"
+      "reading",
+      "newspapers"
     ],
     "difficulty": "beginner",
     "series": "PressReader",
@@ -1709,10 +1670,10 @@
   },
   {
     "id": "pressreader-login",
-    "title": "PressReader - Logging In",
-    "description": "How to log in with your Haileybury credentials for full access to thousands of newspapers and magazines.",
+    "title": "PressReader Log In",
+    "description": "How to log in with your Haileybury credentials for full access to thousands of newspapers and magazines on PressReader.",
     "type": "video",
-    "category": "pressreader-library",
+    "category": "learning-resource-hub",
     "driveFileId": "1IbooC2H8RHHfLU-Gm3wRJsEsoJYvG47u",
     "tags": [
       "pressreader",
@@ -1727,150 +1688,17 @@
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "pressreader-ipad",
-    "title": "PressReader - Using on iPad",
-    "description": "Tips for reading PressReader on an iPad, including text view, clipping articles and sharing.",
-    "type": "video",
-    "category": "pressreader-library",
-    "driveFileId": "11J9R-zrs1sjsVTDogM_mU7VMis5GZ_Xd",
-    "tags": [
-      "pressreader",
-      "ipad",
-      "library",
-      "reading"
-    ],
-    "difficulty": "beginner",
-    "series": "PressReader",
-    "seriesOrder": 4,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "ai-assessment-teacher",
-    "title": "AI Assessment Scale - Teacher Version",
-    "description": "The complete teacher reference showing all levels from No AI to Full AI, with guidance on when to use each.",
-    "type": "image",
-    "category": "support-reference",
-    "driveFileId": "1V4stZVkvPHexmYlFGfMzQGo7pLsbRg6c",
-    "tags": [
-      "ai",
-      "assessment",
-      "scale",
-      "teachers"
-    ],
-    "difficulty": "beginner",
-    "series": "AI Assessment Scale",
-    "seriesOrder": 1,
-    "featured": true,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "ai-assessment-pupil",
-    "title": "AI Assessment Scale - Pupil Version",
-    "description": "The student-friendly version of the scale, designed to be shared with classes when setting assignments.",
-    "type": "image",
-    "category": "support-reference",
-    "driveFileId": "1NVg-XF64uPyaMQmKTVRKOVjHG-CNtsL7",
-    "tags": [
-      "ai",
-      "assessment",
-      "scale",
-      "pupils"
-    ],
-    "difficulty": "beginner",
-    "series": "AI Assessment Scale",
-    "seriesOrder": 2,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "ai-assessment-no-ai",
-    "title": "AI Assessment Scale - No AI",
-    "description": "Visual card for the 'No AI' level \u2014 work must be entirely the student's own without any AI assistance.",
-    "type": "image",
-    "category": "support-reference",
-    "driveFileId": "1OetPUsobP4RUxubHxEZn6MjF8fi1GL7H",
-    "tags": [
-      "ai",
-      "assessment",
-      "scale",
-      "no ai"
-    ],
-    "difficulty": "beginner",
-    "series": "AI Assessment Scale",
-    "seriesOrder": 3,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "ai-assessment-planning",
-    "title": "AI Assessment Scale - AI Planning",
-    "description": "Visual card for the 'AI Planning' level \u2014 students may use AI for brainstorming and outlining only.",
-    "type": "image",
-    "category": "support-reference",
-    "driveFileId": "1bGd_bBcR3jsk_3LVYsyzCOzGHpTdv4SX",
-    "tags": [
-      "ai",
-      "assessment",
-      "scale",
-      "planning"
-    ],
-    "difficulty": "beginner",
-    "series": "AI Assessment Scale",
-    "seriesOrder": 4,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "ai-assessment-collaboration",
-    "title": "AI Assessment Scale - AI Collaboration",
-    "description": "Visual card for the 'AI Collaboration' level \u2014 students work alongside AI as a co-author or editor.",
-    "type": "image",
-    "category": "support-reference",
-    "driveFileId": "1gQYKgsuC1rhLJJqZB9bTJ_HRJZuwG8t5",
-    "tags": [
-      "ai",
-      "assessment",
-      "scale",
-      "collaboration"
-    ],
-    "difficulty": "beginner",
-    "series": "AI Assessment Scale",
-    "seriesOrder": 5,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "ai-assessment-full",
-    "title": "AI Assessment Scale - Full AI",
-    "description": "Visual card for the 'Full AI' level \u2014 students direct the AI to produce the output they evaluate and refine.",
-    "type": "image",
-    "category": "support-reference",
-    "driveFileId": "1siJuuCX-UXR5iU9B3MKiMe6nkVkB27KA",
-    "tags": [
-      "ai",
-      "assessment",
-      "scale",
-      "full ai"
-    ],
-    "difficulty": "beginner",
-    "series": "AI Assessment Scale",
-    "seriesOrder": 6,
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "ai-school-policy",
-    "title": "AI Policy and Approach (Oct 2023)",
-    "description": "Webinar slides outlining Haileybury's framework for responsible AI use across teaching and assessment.",
+    "id": "macbook-keyboard-shortcuts",
+    "title": "MacBook Keyboard Shortcuts",
+    "description": "A printable cheat sheet of the most useful Mac keyboard shortcuts for copy, paste, screenshots, window management and more.",
     "type": "pdf",
-    "category": "support-reference",
-    "driveFileId": "1-41w-BDF8hg3olp-C-J19W65UWMEwIia",
+    "category": "reading",
+    "driveFileId": "1Cfy2Uj8MTdt5ZY-zeG_s68gdkd7ZlWxZ",
     "tags": [
-      "ai",
-      "policy",
-      "school",
-      "webinar"
+      "mac",
+      "keyboard shortcuts",
+      "productivity",
+      "reference"
     ],
     "difficulty": "beginner",
     "featured": false,
@@ -1878,118 +1706,70 @@
   },
   {
     "id": "ai-education-key-terms",
-    "title": "AI in Education - Key Terms Glossary",
-    "description": "A plain-English glossary covering LLMs, prompts, hallucinations, tokens and other AI terminology.",
+    "title": "AI in Education Key Terms",
+    "description": "A plain-English glossary covering LLMs, prompts, hallucinations, tokens and other essential AI terminology for educators.",
     "type": "gdoc",
-    "category": "support-reference",
+    "category": "reading",
     "driveFileId": "13CqVRdHVeW5VNDOR1dfTOp8pGjXv8nxL66hfHKAmf74",
     "tags": [
       "ai",
       "glossary",
       "key terms",
-      "education"
+      "education",
+      "reference"
     ],
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "form-talk-ai",
-    "title": "Form Group AI Talk - Video Resource",
-    "description": "A ready-to-play video for form time that introduces pupils to responsible AI use at Haileybury.",
-    "type": "video",
-    "category": "support-reference",
-    "driveFileId": "1yWHJVnQFBJxoa-sa_qJtLCblYGPIgw1y",
-    "tags": [
-      "ai",
-      "form group",
-      "talk",
-      "pastoral"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "staff-inset-jan-2025",
-    "title": "Staff INSET - January 2025 Slides",
-    "description": "The full slide deck from the January 2025 INSET session covering AI tools and digital strategy updates.",
+    "id": "educators-ai-guide-2026",
+    "title": "The Educators' AI Guide 2026 eBook",
+    "description": "A comprehensive eBook covering AI pedagogy, classroom tools, policy frameworks and case studies for educators looking to deepen their understanding.",
     "type": "pdf",
-    "category": "support-reference",
-    "driveFileId": "1KSK8JSGzGR70JFgKu7hASKpaWi-8FPY8",
-    "tags": [
-      "inset",
-      "training",
-      "staff",
-      "presentation"
-    ],
-    "difficulty": "beginner",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "bett-2025",
-    "title": "Bett 2025 - Teaching Theatre Slides",
-    "description": "Tom Wade's Bett 2025 presentation on how Haileybury implements AI and digital strategy in practice.",
-    "type": "pdf",
-    "category": "support-reference",
-    "driveFileId": "1orqCi9Rwp7pbhDw1pLgX0wLw8TcN1l-B",
-    "tags": [
-      "bett",
-      "conference",
-      "presentation",
-      "2025"
-    ],
-    "difficulty": "intermediate",
-    "featured": false,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "apps-for-tasks",
-    "title": "Apps for Tasks 2025-26",
-    "description": "A one-page guide mapping common teaching tasks (marking, quizzes, presentations) to the best app for each.",
-    "type": "pdf",
-    "category": "support-reference",
-    "driveFileId": "1nvu_4OR4b-NZNhWUvv2xX6-6OfS4Akup",
-    "tags": [
-      "apps",
-      "tools",
-      "reference",
-      "guide"
-    ],
-    "difficulty": "beginner",
-    "featured": true,
-    "dateAdded": "2025-01-15"
-  },
-  {
-    "id": "educators-ai-guide",
-    "title": "The Educators' AI Guide 2026",
-    "description": "A comprehensive 50+ page eBook covering AI pedagogy, classroom tools, policy frameworks and case studies.",
-    "type": "pdf",
-    "category": "support-reference",
+    "category": "reading",
     "driveFileId": "1YARnEY7gq0WzC3CRjxqssMyslE-H8mP7",
     "tags": [
       "ai",
       "guide",
       "ebook",
       "educators",
-      "comprehensive"
+      "comprehensive",
+      "2026"
+    ],
+    "difficulty": "intermediate",
+    "featured": false,
+    "dateAdded": "2025-09-01"
+  },
+  {
+    "id": "pupil-tech-tips-2",
+    "title": "Pupil Tech Tips 2",
+    "description": "A printable handout of technology tips designed for students, covering useful shortcuts and tools for their devices.",
+    "type": "pdf",
+    "category": "pupil-tech-tips",
+    "driveFileId": null,
+    "tags": [
+      "pupils",
+      "tech tips",
+      "student guide",
+      "handout"
     ],
     "difficulty": "beginner",
-    "featured": true,
+    "featured": false,
     "dateAdded": "2025-01-15"
   },
   {
-    "id": "new-parent-intro",
-    "title": "Digital Technology - Parent Introduction",
-    "description": "The video shown to new parents explaining how Haileybury uses technology, devices and digital tools.",
-    "type": "video",
-    "category": "support-reference",
-    "driveFileId": "13Lgdj0u_Bi85XFMryFRWW7SPyAE6Aqau",
+    "id": "pupil-tech-tips-1",
+    "title": "Tech Tips 1",
+    "description": "A printable handout of essential technology tips for students, covering key apps, shortcuts and good digital habits.",
+    "type": "pdf",
+    "category": "pupil-tech-tips",
+    "driveFileId": "1ylveL3N1B8xArksiu1ESPIEFhs4qVS1u",
     "tags": [
-      "parents",
-      "introduction",
-      "digital technology"
+      "pupils",
+      "tech tips",
+      "student guide",
+      "handout"
     ],
     "difficulty": "beginner",
     "featured": false,
