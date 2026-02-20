@@ -228,6 +228,7 @@
         initRouting();
         initGamification();
         initHeroParticles();
+        Effects.init();
 
         try {
             const resp = await fetch('data/content.json');
@@ -235,6 +236,7 @@
             renderApp();
             Gamification.checkAchievements(contentData);
             updateGamificationUI();
+            Effects.refreshScrollReveal();
         } catch (err) {
             console.error('Failed to load content data:', err);
             dom.categoryGrid.innerHTML = '<div class="empty-state"><p>Unable to load training content. Please check that data/content.json exists.</p></div>';
@@ -682,6 +684,7 @@
         renderCategories();      // Browse by Category
         renderWiderReading();    // Wider Reading docs
         renderProgress();        // Your Progress summary
+        Effects.refreshScrollReveal();
     }
 
     // --- Hero Stats ---
@@ -691,10 +694,11 @@
         const watched = Object.keys(watchedItems).length;
 
         dom.heroStats.innerHTML = `
-            <div class="hero-stat"><div class="hero-stat-value">${videos}</div><div class="hero-stat-label">Videos</div></div>
-            <div class="hero-stat"><div class="hero-stat-value">${cats}</div><div class="hero-stat-label">Categories</div></div>
-            <div class="hero-stat"><div class="hero-stat-value">${watched}</div><div class="hero-stat-label">Completed</div></div>
+            <div class="hero-stat"><div class="hero-stat-value counter-animate">${videos}</div><div class="hero-stat-label">Videos</div></div>
+            <div class="hero-stat"><div class="hero-stat-value counter-animate">${cats}</div><div class="hero-stat-label">Categories</div></div>
+            <div class="hero-stat"><div class="hero-stat-value counter-animate">${watched}</div><div class="hero-stat-label">Completed</div></div>
         `;
+        Effects.animateCounters();
     }
 
     // --- Learning Paths ---
@@ -1014,7 +1018,7 @@
             : `<div class="content-card-thumb-placeholder" style="--cat-color: ${cat.color || '#9b1844'}">${typeIcon(item.type)}</div>`;
 
         return `
-            <div class="content-card" data-id="${item.id}" style="--cat-color: ${cat.color || '#9b1844'}">
+            <div class="content-card tilt-card" data-id="${item.id}" style="--cat-color: ${cat.color || '#9b1844'}">
                 <div class="content-card-thumb">
                     ${thumbContent}
                     ${newBadge}${typeBadge}

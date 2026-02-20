@@ -124,7 +124,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .header-brand { display: flex; align-items: center; gap: var(--space-md); }
-.tech-tips-logo { height: 44px; width: auto; border-radius: var(--radius-sm); }
+.tech-tips-logo { height: 44px; width: auto; }
 .header-divider { width: 1.5px; height: 32px; background: rgba(255,255,255,0.3); }
 .haileybury-logo { height: 40px; width: auto; filter: brightness(0) invert(1); }
 
@@ -209,10 +209,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .hero-logo {
-    max-width: 500px;
+    max-width: 560px;
     width: 90%;
     margin: 0 auto var(--space-lg);
-    filter: drop-shadow(0 4px 24px rgba(0,0,0,0.3));
+    mix-blend-mode: screen;
     animation: heroLogoIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
@@ -490,9 +490,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     transition: all var(--transition-spring);
 }
 .content-card:hover {
-    transform: translateY(-8px) scale(1.01);
     box-shadow: 0 20px 50px var(--color-shadow-hover);
     border-color: color-mix(in srgb, var(--cat-color, var(--color-magenta)) 50%, var(--color-border));
+}
+/* Tilt-card handles its own transform via JS; fallback for non-hover/touch */
+.content-card:not(.tilt-card):hover {
+    transform: translateY(-8px) scale(1.01);
 }
 
 .content-card-thumb {
@@ -904,7 +907,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     padding: var(--space-2xl) var(--space-lg);
 }
 .footer-brand { margin-bottom: var(--space-md); }
-.footer-logo { height: 40px; width: auto; border-radius: var(--radius-sm); filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); }
+.footer-logo { height: 40px; width: auto; mix-blend-mode: screen; }
 .footer-text { color: rgba(255,255,255,0.9); font-size: 0.9rem; font-weight: var(--font-weight-medium); }
 .footer-sub { font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-top: var(--space-xs); }
 .footer-sub a { color: #fff; text-decoration: underline; }
@@ -1056,7 +1059,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* --- Essential Reading CTA --- */
 .essential-cta {
     margin-bottom: var(--space-2xl);
-    animation: cardAppear 0.5s 0.2s ease both;
 }
 
 .essential-cta-inner {
@@ -1141,25 +1143,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     to { opacity: 1; transform: translateY(0); }
 }
 
-.content-card, .category-card, .series-card, .reading-item, .progress-card {
+/* Card appear animations are now handled by scroll-reveal.
+   Only apply the legacy stagger when inside an already-revealed section. */
+.revealed .content-card,
+.revealed .category-card,
+.revealed .series-card,
+.revealed .reading-item,
+.revealed .progress-card {
     animation: cardAppear 0.4s ease both;
 }
 
-.content-grid > :nth-child(1) { animation-delay: 0ms; }
-.content-grid > :nth-child(2) { animation-delay: 60ms; }
-.content-grid > :nth-child(3) { animation-delay: 120ms; }
-.content-grid > :nth-child(4) { animation-delay: 180ms; }
-.content-grid > :nth-child(5) { animation-delay: 240ms; }
-.content-grid > :nth-child(6) { animation-delay: 300ms; }
+.revealed .content-grid > :nth-child(1) { animation-delay: 0ms; }
+.revealed .content-grid > :nth-child(2) { animation-delay: 60ms; }
+.revealed .content-grid > :nth-child(3) { animation-delay: 120ms; }
+.revealed .content-grid > :nth-child(4) { animation-delay: 180ms; }
+.revealed .content-grid > :nth-child(5) { animation-delay: 240ms; }
+.revealed .content-grid > :nth-child(6) { animation-delay: 300ms; }
 
-.category-grid > :nth-child(1) { animation-delay: 0ms; }
-.category-grid > :nth-child(2) { animation-delay: 70ms; }
-.category-grid > :nth-child(3) { animation-delay: 140ms; }
-.category-grid > :nth-child(4) { animation-delay: 210ms; }
-.category-grid > :nth-child(5) { animation-delay: 280ms; }
-.category-grid > :nth-child(6) { animation-delay: 350ms; }
-.category-grid > :nth-child(7) { animation-delay: 420ms; }
-.category-grid > :nth-child(8) { animation-delay: 490ms; }
+.revealed .category-grid > :nth-child(1) { animation-delay: 0ms; }
+.revealed .category-grid > :nth-child(2) { animation-delay: 70ms; }
+.revealed .category-grid > :nth-child(3) { animation-delay: 140ms; }
+.revealed .category-grid > :nth-child(4) { animation-delay: 210ms; }
+.revealed .category-grid > :nth-child(5) { animation-delay: 280ms; }
+.revealed .category-grid > :nth-child(6) { animation-delay: 350ms; }
+.revealed .category-grid > :nth-child(7) { animation-delay: 420ms; }
+.revealed .category-grid > :nth-child(8) { animation-delay: 490ms; }
 
 /* --- Empty State --- */
 .empty-state { text-align: center; padding: var(--space-3xl) var(--space-lg); color: var(--color-text-muted); }
@@ -1811,4 +1819,134 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 @media (max-width: 479px) {
     .category-grid { grid-template-columns: 1fr; }
     .progress-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   VISUAL EFFECTS
+   ============================================ */
+
+/* --- Scroll Reveal --- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered children reveal */
+.reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-stagger > .revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Reveal from left */
+.reveal-on-scroll.reveal-left {
+    transform: translateX(-40px);
+}
+.reveal-on-scroll.reveal-left.revealed {
+    transform: translateX(0);
+}
+
+/* Reveal from right */
+.reveal-on-scroll.reveal-right {
+    transform: translateX(40px);
+}
+.reveal-on-scroll.reveal-right.revealed {
+    transform: translateX(0);
+}
+
+/* Reveal with scale */
+.reveal-on-scroll.reveal-scale {
+    transform: scale(0.92);
+}
+.reveal-on-scroll.reveal-scale.revealed {
+    transform: scale(1);
+}
+
+/* --- 3D Card Tilt --- */
+.tilt-card {
+    transition: transform 0.15s ease-out, box-shadow var(--transition-spring);
+    will-change: transform;
+}
+
+/* --- Animated Gradient Border (VOTD) --- */
+.votd-card {
+    position: relative;
+}
+.votd-card::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: calc(var(--radius-xl) + 3px);
+    background: conic-gradient(
+        from var(--gradient-angle, 0deg),
+        #9b1844, #e6007e, #009fe3, #ec6608, #009870, #7c3aed, #9b1844
+    );
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: rotateGradient 4s linear infinite;
+}
+.votd-card:hover::after {
+    opacity: 1;
+}
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes rotateGradient {
+    to { --gradient-angle: 360deg; }
+}
+
+/* Fallback for browsers without @property support — static gradient border */
+@supports not (background: conic-gradient(from 0deg, red, blue)) {
+    .votd-card:hover {
+        border-image: linear-gradient(135deg, #9b1844, #e6007e, #009fe3, #ec6608) 1;
+    }
+}
+
+/* --- Back to Top Button --- */
+.back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-magenta);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 90;
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    transition: all var(--transition-spring);
+    box-shadow: 0 6px 24px rgba(155, 24, 68, 0.4);
+    pointer-events: none;
+    border: none;
+    cursor: pointer;
+}
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+.back-to-top:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 10px 32px rgba(155, 24, 68, 0.6);
+    background: var(--color-magenta-light);
+}
+
+@media (max-width: 767px) {
+    .back-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
 }
