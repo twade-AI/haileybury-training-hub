@@ -152,6 +152,7 @@
     let currentCategory = null;
     let activeFilter = 'all';
     let watchedItems = {};
+    let savedItems = {};
 
     // --- DOM ---
     const $ = (sel) => document.querySelector(sel);
@@ -214,11 +215,20 @@
         headerStreak: $('#headerStreak'),
         streakCount: $('#streakCount'),
         toastContainer: $('#toastContainer'),
+        recentlyWatchedSection: $('#recentlyWatchedSection'),
+        recentlyWatchedGrid: $('#recentlyWatchedGrid'),
+        whatsNewSection: $('#whatsNewSection'),
+        whatsNewGrid: $('#whatsNewGrid'),
+        savedSection: $('#savedSection'),
+        savedGrid: $('#savedGrid'),
+        savedBackButton: $('#savedBackButton'),
+        mobileNav: $('#mobileNav'),
     };
 
     // --- Init ---
     async function init() {
         loadWatchedState();
+        loadSavedState();
         initDarkMode();
         initWelcomeBanner();
         initSearch();
@@ -228,6 +238,8 @@
         initRouting();
         initGamification();
         initHeroParticles();
+        initKeyboardShortcuts();
+        initMobileNav();
         Effects.init();
 
         try {
@@ -555,6 +567,45 @@
         return !!watchedItems[id];
     }
 
+    // --- Saved/Bookmark State ---
+    function loadSavedState() {
+        try {
+            const stored = localStorage.getItem('tt-saved');
+            savedItems = stored ? JSON.parse(stored) : {};
+        } catch {
+            savedItems = {};
+        }
+    }
+
+    function saveSavedState() {
+        try {
+            localStorage.setItem('tt-saved', JSON.stringify(savedItems));
+        } catch (e) {
+            console.warn('Could not save bookmarks:', e);
+        }
+    }
+
+    function toggleSaved(id, e) {
+        if (e) { e.stopPropagation(); e.preventDefault(); }
+        if (savedItems[id]) {
+            delete savedItems[id];
+        } else {
+            savedItems[id] = Date.now();
+        }
+        saveSavedState();
+        // Update all save buttons for this item
+        document.querySelectorAll(`[data-save-id="${id}"]`).forEach(btn => {
+            const isSaved = !!savedItems[id];
+            btn.classList.toggle('is-saved', isSaved);
+            const span = btn.querySelector('span');
+            if (span) span.textContent = isSaved ? 'Saved' : 'Save';
+        });
+    }
+
+    function isSaved(id) {
+        return !!savedItems[id];
+    }
+
     // --- Filtering ---
     function filterContent(items) {
         if (activeFilter === 'all') return items;
@@ -579,7 +630,49 @@
         return added >= ago;
     }
 
+    // --- Keyboard Shortcuts ---
+    function initKeyboardShortcuts() {
+        document.addEventListener('keydown', (e) => {
+            // Don't trigger shortcuts when typing in an input
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            if (e.key === '/' || e.key === 's') {
+                e.preventDefault();
+                dom.searchInput.focus();
+            }
+            if (e.key === 'h') {
+                window.location.hash = '';
+                showHome();
+            }
+        });
+    }
+
+    // --- Mobile Navigation ---
+    function initMobileNav() {
+        dom.mobileNav.querySelectorAll('.mobile-nav-item').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const nav = btn.dataset.nav;
+                if (nav === 'home') { window.location.hash = ''; showHome(); }
+                else if (nav === 'search') { dom.searchInput.focus(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+                else if (nav === 'saved') { window.location.hash = 'saved'; }
+                else if (nav === 'achievements') { window.location.hash = 'achievements'; }
+            });
+        });
+    }
+
+    function updateMobileNav() {
+        dom.mobileNav.querySelectorAll('.mobile-nav-item').forEach(btn => {
+            const nav = btn.dataset.nav;
+            const isActive = (nav === 'home' && currentView === 'home') ||
+                (nav === 'search' && currentView === 'search') ||
+                (nav === 'saved' && currentView === 'saved') ||
+                (nav === 'achievements' && currentView === 'achievements');
+            btn.classList.toggle('active', isActive);
+        });
+    }
+
     // --- Routing ---
+    let isFirstRoute = true;
+
     function initRouting() {
         window.addEventListener('hashchange', handleRoute);
         handleRoute();
@@ -587,17 +680,32 @@
 
     function handleRoute() {
         const hash = window.location.hash.slice(1);
+        const navigate = (fn) => isFirstRoute ? fn() : transitionView(fn);
+
         if (hash.startsWith('category/')) {
-            showCategoryDetail(hash.replace('category/', ''));
+            navigate(() => showCategoryDetail(hash.replace('category/', '')));
         } else if (hash.startsWith('search/')) {
             const q = decodeURIComponent(hash.replace('search/', ''));
             dom.searchInput.value = q;
-            showSearchResults(q);
+            navigate(() => showSearchResults(q));
         } else if (hash === 'achievements') {
-            showAchievements();
+            navigate(() => showAchievements());
+        } else if (hash === 'saved') {
+            navigate(() => showSaved());
         } else {
-            showHome();
+            navigate(() => showHome());
         }
+        isFirstRoute = false;
+    }
+
+    function transitionView(callback) {
+        const main = document.querySelector('.main-content');
+        main.classList.add('view-transition-out');
+        setTimeout(() => {
+            callback();
+            main.classList.remove('view-transition-out');
+            window.scrollTo({ top: 0 });
+        }, 150);
     }
 
     // --- Views ---
@@ -613,9 +721,15 @@
         dom.categoryDetail.style.display = 'none';
         dom.searchResults.style.display = 'none';
         dom.achievementsSection.style.display = 'none';
+        dom.savedSection.style.display = 'none';
         dom.widerReadingSection.style.display = '';
         dom.progressSection.style.display = '';
+        dom.recentlyWatchedSection.style.display = '';
+        dom.whatsNewSection.style.display = '';
+        renderRecentlyWatched();
+        renderWhatsNew();
         if (window.location.hash) history.pushState(null, '', window.location.pathname);
+        updateMobileNav();
     }
 
     function showCategoryDetail(catId) {
@@ -631,9 +745,13 @@
         dom.categoryDetail.style.display = '';
         dom.searchResults.style.display = 'none';
         dom.achievementsSection.style.display = 'none';
+        dom.savedSection.style.display = 'none';
         dom.widerReadingSection.style.display = 'none';
         dom.progressSection.style.display = 'none';
+        dom.recentlyWatchedSection.style.display = 'none';
+        dom.whatsNewSection.style.display = 'none';
         renderCategoryDetail(catId);
+        updateMobileNav();
     }
 
     function showSearchResults(query) {
@@ -647,9 +765,13 @@
         dom.categoryDetail.style.display = 'none';
         dom.searchResults.style.display = '';
         dom.achievementsSection.style.display = 'none';
+        dom.savedSection.style.display = 'none';
         dom.widerReadingSection.style.display = 'none';
         dom.progressSection.style.display = 'none';
+        dom.recentlyWatchedSection.style.display = 'none';
+        dom.whatsNewSection.style.display = 'none';
         renderSearchResults(query);
+        updateMobileNav();
     }
 
     function showAchievements() {
@@ -663,21 +785,48 @@
         dom.categoryDetail.style.display = 'none';
         dom.searchResults.style.display = 'none';
         dom.achievementsSection.style.display = '';
+        dom.savedSection.style.display = 'none';
         dom.widerReadingSection.style.display = 'none';
         dom.progressSection.style.display = 'none';
+        dom.recentlyWatchedSection.style.display = 'none';
+        dom.whatsNewSection.style.display = 'none';
         renderAchievements();
+        updateMobileNav();
+    }
+
+    function showSaved() {
+        currentView = 'saved';
+        dom.heroSection.style.display = 'none';
+        dom.votdSection.style.display = 'none';
+        dom.essentialCta.style.display = 'none';
+        dom.learningPathsSection.style.display = 'none';
+        dom.startHereSection.style.display = 'none';
+        dom.categoriesSection.style.display = 'none';
+        dom.categoryDetail.style.display = 'none';
+        dom.searchResults.style.display = 'none';
+        dom.achievementsSection.style.display = 'none';
+        dom.savedSection.style.display = '';
+        dom.widerReadingSection.style.display = 'none';
+        dom.progressSection.style.display = 'none';
+        dom.recentlyWatchedSection.style.display = 'none';
+        dom.whatsNewSection.style.display = 'none';
+        renderSaved();
+        updateMobileNav();
     }
 
     function renderCurrentView() {
         if (currentView === 'category' && currentCategory) renderCategoryDetail(currentCategory);
         else if (currentView === 'search') renderSearchResults(dom.searchInput.value.trim());
         else if (currentView === 'achievements') renderAchievements();
+        else if (currentView === 'saved') renderSaved();
         else renderApp();
     }
 
     // --- Render App ---
     function renderApp() {
         renderHeroStats();
+        renderRecentlyWatched(); // Continue Watching
+        renderWhatsNew();        // What's New
         renderFeatured();        // Start Here — top of content
         renderVideoOfTheDay();   // VOTD — after featured
         renderLearningPaths();   // Learning Paths
@@ -685,6 +834,63 @@
         renderWiderReading();    // Wider Reading docs
         renderProgress();        // Your Progress summary
         Effects.refreshScrollReveal();
+    }
+
+    // --- Recently Watched ---
+    function renderRecentlyWatched() {
+        // Get watched items sorted by most recently watched
+        const recentIds = Object.entries(watchedItems)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 6)
+            .map(([id]) => id);
+        const recentItems = recentIds.map(id => contentData.find(i => i.id === id)).filter(Boolean);
+
+        if (!recentItems.length) {
+            dom.recentlyWatchedSection.style.display = 'none';
+            return;
+        }
+        dom.recentlyWatchedSection.style.display = '';
+        dom.recentlyWatchedGrid.innerHTML = recentItems.map(i => renderContentCard(i)).join('');
+        attachCardListeners(dom.recentlyWatchedGrid);
+        attachSaveListeners(dom.recentlyWatchedGrid);
+    }
+
+    // --- What's New ---
+    function renderWhatsNew() {
+        const newItems = contentData
+            .filter(i => isNew(i))
+            .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
+            .slice(0, 8);
+
+        if (!newItems.length) {
+            dom.whatsNewSection.style.display = 'none';
+            return;
+        }
+        dom.whatsNewSection.style.display = '';
+        dom.whatsNewGrid.innerHTML = newItems.map(i => renderContentCard(i)).join('');
+        attachCardListeners(dom.whatsNewGrid);
+        attachSaveListeners(dom.whatsNewGrid);
+    }
+
+    // --- Saved Items ---
+    function renderSaved() {
+        const savedIds = Object.entries(savedItems)
+            .sort((a, b) => b[1] - a[1])
+            .map(([id]) => id);
+        const items = savedIds.map(id => contentData.find(i => i.id === id)).filter(Boolean);
+
+        if (!items.length) {
+            dom.savedGrid.innerHTML = '<div class="empty-state"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg><p>No saved resources yet. Click the bookmark icon on any resource to save it for later.</p></div>';
+            return;
+        }
+        dom.savedGrid.innerHTML = items.map(i => renderContentCard(i)).join('');
+        attachCardListeners(dom.savedGrid);
+        attachSaveListeners(dom.savedGrid);
+
+        dom.savedBackButton.onclick = () => {
+            window.location.hash = '';
+            showHome();
+        };
     }
 
     // --- Hero Stats ---
@@ -756,6 +962,7 @@
         dom.startHereSection.style.display = '';
         dom.featuredGrid.innerHTML = featured.map(i => renderContentCard(i)).join('');
         attachCardListeners(dom.featuredGrid);
+        attachSaveListeners(dom.featuredGrid);
     }
 
     // --- Categories ---
@@ -786,11 +993,22 @@
     // --- Category Detail ---
     function renderCategoryDetail(catId) {
         const cat = CATEGORIES[catId];
-        const items = filterContent(contentData.filter(i => i.category === catId));
+        const allCatItems = contentData.filter(i => i.category === catId);
+        const items = filterContent(allCatItems);
+        const watchedCount = allCatItems.filter(i => isWatched(i.id)).length;
+        const pct = allCatItems.length > 0 ? Math.round((watchedCount / allCatItems.length) * 100) : 0;
 
         dom.categoryDetailHeader.innerHTML = `
-            <h2 class="category-detail-title" style="color: ${cat.color}">${cat.title}</h2>
-            <p class="category-detail-count">${items.length} resource${items.length !== 1 ? 's' : ''}</p>
+            <div class="category-detail-banner" style="--cat-color: ${cat.color}">
+                <div class="category-detail-banner-icon">${cat.icon}</div>
+                <div class="category-detail-banner-info">
+                    <div class="category-detail-banner-title">${cat.title}</div>
+                    <div class="category-detail-banner-count">${allCatItems.length} resource${allCatItems.length !== 1 ? 's' : ''} &middot; ${watchedCount} completed</div>
+                    <div class="category-detail-banner-progress">
+                        <div class="category-detail-banner-progress-fill" style="width:${pct}%"></div>
+                    </div>
+                </div>
+            </div>
         `;
 
         const seriesMap = {};
@@ -812,6 +1030,7 @@
 
         dom.categoryContentGrid.innerHTML = html;
         attachCardListeners(dom.categoryContentGrid);
+        attachSaveListeners(dom.categoryContentGrid);
         attachSeriesListeners(dom.categoryContentGrid);
     }
 
@@ -831,6 +1050,7 @@
         }
         dom.searchResultsGrid.innerHTML = results.map(i => renderContentCard(i)).join('');
         attachCardListeners(dom.searchResultsGrid);
+        attachSaveListeners(dom.searchResultsGrid);
     }
 
     // --- Achievements Panel ---
@@ -1034,6 +1254,10 @@
                         <input type="checkbox" ${watched ? 'checked' : ''} data-watched-id="${item.id}">
                         <span>${watched ? 'Watched' : 'Mark as watched'}</span>
                     </label>
+                    <button class="save-button ${isSaved(item.id) ? 'is-saved' : ''}" data-save-id="${item.id}" onclick="event.stopPropagation()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                        <span>${isSaved(item.id) ? 'Saved' : 'Save'}</span>
+                    </button>
                 </div>
             </div>`;
     }
@@ -1077,6 +1301,12 @@
         });
         container.querySelectorAll('input[data-watched-id]').forEach(cb => {
             cb.addEventListener('change', (e) => { toggleWatched(cb.dataset.watchedId, e); });
+        });
+    }
+
+    function attachSaveListeners(container) {
+        container.querySelectorAll('.save-button[data-save-id]').forEach(btn => {
+            btn.addEventListener('click', (e) => { toggleSaved(btn.dataset.saveId, e); });
         });
     }
 
