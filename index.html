@@ -11,11 +11,17 @@
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="assets/icon-192.png">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Skip to content for accessibility -->
+    <style>
+        .skip-to-content { position: absolute; top: -100px; left: 50%; transform: translateX(-50%); z-index: 10000; background: var(--color-magenta, #9b1844); color: #fff; padding: 12px 24px; border-radius: 0 0 12px 12px; font-weight: 700; text-decoration: none; transition: top 0.2s ease; }
+        .skip-to-content:focus { top: 0; }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#mainContent" class="skip-to-content">Skip to content</a>
     <!-- Header -->
     <header class="site-header">
         <div class="header-inner">
@@ -45,6 +51,9 @@
                         <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
                     </svg>
                     <span class="achievements-badge" id="achievementsBadge">0</span>
+                </button>
+                <button class="focus-mode-toggle" id="focusModeToggle" aria-label="Toggle focus mode" title="Focus Mode — hide gamification">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 </button>
                 <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
                     <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -327,6 +336,68 @@
             </div>
         </section>
 
+        <!-- Most Popular -->
+        <section class="most-popular-section reveal-on-scroll" id="mostPopularSection" style="display:none;">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-icon section-icon-popular">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                    </span>
+                    Most Popular
+                </h2>
+                <p class="section-subtitle">Highest rated resources by staff</p>
+            </div>
+            <div class="most-popular-scroll" id="mostPopularGrid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Weekly Challenge -->
+        <section class="weekly-challenge-section reveal-on-scroll" id="weeklyChallengeSection">
+            <div class="weekly-challenge-card" id="weeklyChallengeCard">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Leaderboard -->
+        <section class="leaderboard-section reveal-on-scroll" id="leaderboardSection">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-icon section-icon-leaderboard">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                    </span>
+                    Leaderboard
+                </h2>
+                <p class="section-subtitle">Your position based on XP earned</p>
+            </div>
+            <div class="leaderboard-card" id="leaderboardCard">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Personal Stats Dashboard (hidden, accessed via achievements) -->
+        <section class="stats-section" id="statsSection" style="display:none;">
+            <button class="back-button" id="statsBackButton">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Hub
+            </button>
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-icon section-icon-stats">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    Your Stats
+                </h2>
+                <p class="section-subtitle">Your learning activity and progress over time</p>
+            </div>
+            <div class="stats-grid" id="statsGrid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
         <!-- Progress Summary -->
         <section class="progress-section reveal-on-scroll" id="progressSection">
             <div class="section-header">
@@ -371,6 +442,45 @@
             </div>
         </div>
     </div>
+
+    <!-- Quiz Modal -->
+    <div class="modal-overlay" id="quizModal">
+        <div class="modal-content quiz-modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="quizModalTitle">Quick Quiz</h3>
+                <button class="modal-close" id="quizModalClose" aria-label="Close">&times;</button>
+            </div>
+            <div class="quiz-body" id="quizBody">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Request Modal -->
+    <div class="modal-overlay" id="requestModal">
+        <div class="modal-content request-modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Suggest a Topic</h3>
+                <button class="modal-close" id="requestModalClose" aria-label="Close">&times;</button>
+            </div>
+            <div class="request-body">
+                <p class="request-desc">What training topic would you like to see? We'll review all suggestions.</p>
+                <textarea class="request-input" id="requestInput" placeholder="e.g. How to use Google Forms for quizzes..." rows="4"></textarea>
+                <div class="request-actions">
+                    <button class="request-submit-btn" id="requestSubmit">Submit Suggestion</button>
+                </div>
+                <div class="request-thanks" id="requestThanks" style="display:none;">
+                    <span class="request-thanks-icon">&#10003;</span>
+                    <span>Thanks! Your suggestion has been recorded.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Request FAB -->
+    <button class="request-fab" id="requestFab" aria-label="Suggest a topic" title="Suggest a topic">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </button>
 
     <!-- Footer -->
     <footer class="site-footer">
