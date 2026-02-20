@@ -1948,5 +1948,215 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 767px) {
-    .back-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+    .back-to-top { bottom: 76px; right: 20px; width: 42px; height: 42px; }
+}
+
+/* --- Page Transitions --- */
+.main-content {
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.main-content.view-transition-out {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+/* --- Recently Watched / What's New Horizontal Scroll --- */
+.recently-watched-section { margin-bottom: var(--space-2xl); }
+.whats-new-section { margin-bottom: var(--space-2xl); }
+
+.section-icon-recent {
+    background: color-mix(in srgb, var(--color-blue) 12%, transparent);
+    color: var(--color-blue);
+}
+.section-icon-new {
+    background: color-mix(in srgb, var(--color-green) 12%, transparent);
+    color: var(--color-green);
+}
+.section-icon-saved {
+    background: color-mix(in srgb, var(--color-orange) 12%, transparent);
+    color: var(--color-orange);
+}
+
+.recently-watched-scroll,
+.whats-new-scroll {
+    display: flex;
+    gap: var(--space-lg);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--space-sm);
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+}
+.recently-watched-scroll::-webkit-scrollbar,
+.whats-new-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+.recently-watched-scroll::-webkit-scrollbar-track,
+.whats-new-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+.recently-watched-scroll::-webkit-scrollbar-thumb,
+.whats-new-scroll::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+}
+
+.recently-watched-scroll > .content-card,
+.whats-new-scroll > .content-card {
+    min-width: 280px;
+    max-width: 320px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+/* --- Bookmark / Save Button --- */
+.save-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-fast);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    padding: 0;
+}
+.save-button:hover { color: var(--color-orange); }
+.save-button.is-saved { color: var(--color-orange); }
+.save-button svg { width: 16px; height: 16px; transition: transform var(--transition-spring); }
+.save-button:hover svg { transform: scale(1.15); }
+.save-button.is-saved svg { fill: var(--color-orange); }
+
+/* --- Category Detail Banner --- */
+.category-detail-banner {
+    background: linear-gradient(135deg, var(--cat-color, var(--color-magenta)) 0%, color-mix(in srgb, var(--cat-color, var(--color-magenta)) 60%, #1a1a2e) 100%);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl) var(--space-xl);
+    margin-bottom: var(--space-xl);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    position: relative;
+    overflow: hidden;
+}
+.category-detail-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -15%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+.category-detail-banner-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: var(--radius-lg);
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    backdrop-filter: blur(8px);
+}
+.category-detail-banner-icon svg { width: 36px; height: 36px; color: #fff; }
+.category-detail-banner-info { flex: 1; }
+.category-detail-banner-title {
+    font-size: 2rem;
+    font-weight: var(--font-weight-black);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+.category-detail-banner-count {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    margin-top: 6px;
+    font-weight: var(--font-weight-medium);
+}
+.category-detail-banner-progress {
+    margin-top: var(--space-md);
+    height: 8px;
+    background: rgba(255,255,255,0.2);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    max-width: 300px;
+}
+.category-detail-banner-progress-fill {
+    height: 100%;
+    background: #fff;
+    border-radius: var(--radius-full);
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Mobile Bottom Navigation --- */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-xs) 0 calc(var(--space-xs) + env(safe-area-inset-bottom, 0px));
+    justify-content: space-around;
+    box-shadow: 0 -4px 20px var(--color-shadow);
+}
+
+.mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 16px;
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-fast);
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.mobile-nav-item.active {
+    color: var(--color-magenta);
+}
+.mobile-nav-item svg { transition: transform var(--transition-spring); }
+.mobile-nav-item.active svg { transform: scale(1.1); }
+
+/* --- Keyboard Shortcut Hint --- */
+.search-shortcut-hint {
+    position: absolute;
+    right: 56px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    background: var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    font-weight: var(--font-weight-bold);
+    font-family: monospace;
+    pointer-events: none;
+    transition: opacity var(--transition-fast);
+}
+#searchInput:focus ~ .search-shortcut-hint { opacity: 0; }
+
+@media (max-width: 767px) {
+    .mobile-nav { display: flex; }
+    body { padding-bottom: 64px; }
+    .site-footer { padding-bottom: calc(var(--space-2xl) + 64px); }
+    .search-shortcut-hint { display: none; }
+    .category-detail-banner { flex-direction: column; text-align: center; padding: var(--space-xl) var(--space-lg); }
+    .category-detail-banner-progress { margin-left: auto; margin-right: auto; }
+    .recently-watched-scroll > .content-card,
+    .whats-new-scroll > .content-card { min-width: 240px; max-width: 280px; }
 }
