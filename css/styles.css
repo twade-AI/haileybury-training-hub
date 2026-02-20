@@ -124,7 +124,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .header-brand { display: flex; align-items: center; gap: var(--space-md); }
-.tech-tips-logo { height: 44px; width: auto; border-radius: var(--radius-sm); }
+.tech-tips-logo { height: 44px; width: auto; }
 .header-divider { width: 1.5px; height: 32px; background: rgba(255,255,255,0.3); }
 .haileybury-logo { height: 40px; width: auto; filter: brightness(0) invert(1); }
 
@@ -209,10 +209,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .hero-logo {
-    max-width: 500px;
+    max-width: 560px;
     width: 90%;
     margin: 0 auto var(--space-lg);
-    filter: drop-shadow(0 4px 24px rgba(0,0,0,0.3));
+    mix-blend-mode: screen;
     animation: heroLogoIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
@@ -907,7 +907,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     padding: var(--space-2xl) var(--space-lg);
 }
 .footer-brand { margin-bottom: var(--space-md); }
-.footer-logo { height: 40px; width: auto; border-radius: var(--radius-sm); filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); }
+.footer-logo { height: 40px; width: auto; mix-blend-mode: screen; }
 .footer-text { color: rgba(255,255,255,0.9); font-size: 0.9rem; font-weight: var(--font-weight-medium); }
 .footer-sub { font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-top: var(--space-xs); }
 .footer-sub a { color: #fff; text-decoration: underline; }
