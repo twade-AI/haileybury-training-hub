@@ -535,25 +535,27 @@
         });
 
         // Strategy filter chips
-        dom.strategyFilters.innerHTML =
-            '<span class="strategy-filters-label">Strategy:</span>' +
-            Object.entries(STRATEGIES).map(([name, s]) =>
-                `<button class="strategy-chip" data-strategy="${name}" style="--strat-color: ${s.color}"><span class="strategy-chip-icon">${s.icon}</span>${name}</button>`
-            ).join('');
+        if (dom.strategyFilters) {
+            dom.strategyFilters.innerHTML =
+                '<span class="strategy-filters-label">Strategy:</span>' +
+                Object.entries(STRATEGIES).map(([name, s]) =>
+                    `<button class="strategy-chip" data-strategy="${name}" style="--strat-color: ${s.color}"><span class="strategy-chip-icon">${s.icon}</span>${name}</button>`
+                ).join('');
 
-        dom.strategyFilters.addEventListener('click', (e) => {
-            const chip = e.target.closest('.strategy-chip');
-            if (!chip) return;
-            const wasActive = chip.classList.contains('active');
-            dom.strategyFilters.querySelectorAll('.strategy-chip').forEach(c => c.classList.remove('active'));
-            if (wasActive) {
-                activeStrategy = null;
-            } else {
-                chip.classList.add('active');
-                activeStrategy = chip.dataset.strategy;
-            }
-            renderCurrentView();
-        });
+            dom.strategyFilters.addEventListener('click', (e) => {
+                const chip = e.target.closest('.strategy-chip');
+                if (!chip) return;
+                const wasActive = chip.classList.contains('active');
+                dom.strategyFilters.querySelectorAll('.strategy-chip').forEach(c => c.classList.remove('active'));
+                if (wasActive) {
+                    activeStrategy = null;
+                } else {
+                    chip.classList.add('active');
+                    activeStrategy = chip.dataset.strategy;
+                }
+                renderCurrentView();
+            });
+        }
     }
 
     // --- Watched State ---
