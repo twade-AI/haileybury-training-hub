@@ -153,6 +153,9 @@
     let activeFilter = 'all';
     let watchedItems = {};
     let savedItems = {};
+    let ratings = {};       // { itemId: 'up' | 'down' }
+    let viewCounts = {};    // { itemId: count }
+    let contentRequests = [];
 
     // --- DOM ---
     const $ = (sel) => document.querySelector(sel);
@@ -223,17 +226,41 @@
         savedGrid: $('#savedGrid'),
         savedBackButton: $('#savedBackButton'),
         mobileNav: $('#mobileNav'),
+        focusModeToggle: $('#focusModeToggle'),
+        mostPopularSection: $('#mostPopularSection'),
+        mostPopularGrid: $('#mostPopularGrid'),
+        weeklyChallengeSection: $('#weeklyChallengeSection'),
+        weeklyChallengeCard: $('#weeklyChallengeCard'),
+        leaderboardSection: $('#leaderboardSection'),
+        leaderboardCard: $('#leaderboardCard'),
+        statsSection: $('#statsSection'),
+        statsGrid: $('#statsGrid'),
+        statsBackButton: $('#statsBackButton'),
+        quizModal: $('#quizModal'),
+        quizModalClose: $('#quizModalClose'),
+        quizBody: $('#quizBody'),
+        requestModal: $('#requestModal'),
+        requestModalClose: $('#requestModalClose'),
+        requestInput: $('#requestInput'),
+        requestSubmit: $('#requestSubmit'),
+        requestThanks: $('#requestThanks'),
+        requestFab: $('#requestFab'),
     };
 
     // --- Init ---
     async function init() {
         loadWatchedState();
         loadSavedState();
+        loadRatings();
+        loadViewCounts();
         initDarkMode();
+        initFocusMode();
         initWelcomeBanner();
         initSearch();
         initFilterChips();
         initModal();
+        initQuizModal();
+        initRequestModal();
         initEssentialCta();
         initRouting();
         initGamification();
@@ -606,6 +633,50 @@
         return !!savedItems[id];
     }
 
+    // --- Ratings State ---
+    function loadRatings() {
+        try { ratings = JSON.parse(localStorage.getItem('tt-ratings') || '{}'); } catch { ratings = {}; }
+    }
+    function saveRatings() {
+        try { localStorage.setItem('tt-ratings', JSON.stringify(ratings)); } catch {}
+    }
+    function toggleRating(id, type, e) {
+        if (e) { e.stopPropagation(); e.preventDefault(); }
+        if (ratings[id] === type) { delete ratings[id]; } else { ratings[id] = type; }
+        saveRatings();
+        document.querySelectorAll(`.rating-btn[data-rate-id="${id}"]`).forEach(btn => {
+            btn.classList.toggle('rated-up', btn.dataset.rateType === 'up' && ratings[id] === 'up');
+            btn.classList.toggle('rated-down', btn.dataset.rateType === 'down' && ratings[id] === 'down');
+        });
+    }
+
+    // --- View Counts ---
+    function loadViewCounts() {
+        try { viewCounts = JSON.parse(localStorage.getItem('tt-views') || '{}'); } catch { viewCounts = {}; }
+    }
+    function saveViewCounts() {
+        try { localStorage.setItem('tt-views', JSON.stringify(viewCounts)); } catch {}
+    }
+    function incrementViewCount(id) {
+        viewCounts[id] = (viewCounts[id] || 0) + 1;
+        saveViewCounts();
+    }
+
+    // --- Focus Mode ---
+    function initFocusMode() {
+        const saved = localStorage.getItem('tt-focus-mode');
+        if (saved === 'true') {
+            document.documentElement.setAttribute('data-focus-mode', 'true');
+            dom.focusModeToggle.classList.add('active');
+        }
+        dom.focusModeToggle.addEventListener('click', () => {
+            const isActive = document.documentElement.getAttribute('data-focus-mode') === 'true';
+            document.documentElement.setAttribute('data-focus-mode', String(!isActive));
+            dom.focusModeToggle.classList.toggle('active', !isActive);
+            localStorage.setItem('tt-focus-mode', String(!isActive));
+        });
+    }
+
     // --- Filtering ---
     function filterContent(items) {
         if (activeFilter === 'all') return items;
@@ -628,6 +699,149 @@
         const ago = new Date();
         ago.setDate(ago.getDate() - 60);
         return added >= ago;
+    }
+
+    // --- Quiz Modal ---
+    function initQuizModal() {
+        dom.quizModalClose.addEventListener('click', closeQuiz);
+        dom.quizModal.addEventListener('click', (e) => { if (e.target === dom.quizModal) closeQuiz(); });
+    }
+
+    function openQuiz(item) {
+        if (!item) return;
+        const q = generateQuiz(item);
+        if (!q) return;
+
+        dom.quizBody.innerHTML = `
+            <div class="quiz-question">${esc(q.question)}</div>
+            <div class="quiz-options">
+                ${q.options.map((opt, i) => `<button class="quiz-option" data-index="${i}">${esc(opt)}</button>`).join('')}
+            </div>
+        `;
+
+        dom.quizBody.querySelectorAll('.quiz-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const idx = parseInt(btn.dataset.index);
+                const correct = idx === q.correctIndex;
+                btn.classList.add(correct ? 'correct' : 'incorrect');
+                if (!correct) {
+                    dom.quizBody.querySelectorAll('.quiz-option')[q.correctIndex].classList.add('correct');
+                }
+                dom.quizBody.querySelectorAll('.quiz-option').forEach(b => b.classList.add('disabled'));
+
+                const xp = correct ? 15 : 0;
+                if (correct) Gamification.addXP(15, 'Quiz correct answer');
+
+                setTimeout(() => {
+                    dom.quizBody.innerHTML = `
+                        <div class="quiz-result">
+                            <div class="quiz-result-icon">${correct ? '&#127881;' : '&#128172;'}</div>
+                            <div class="quiz-result-text">${correct ? 'Correct!' : 'Not quite!'}</div>
+                            ${correct ? '<div class="quiz-result-xp">+15 XP earned</div>' : '<div class="quiz-result-xp">Better luck next time!</div>'}
+                            <button class="quiz-close-btn" id="quizDoneBtn">Continue</button>
+                        </div>
+                    `;
+                    document.getElementById('quizDoneBtn').addEventListener('click', closeQuiz);
+                }, 1200);
+            });
+        });
+
+        dom.quizModal.classList.add('active');
+    }
+
+    function closeQuiz() {
+        dom.quizModal.classList.remove('active');
+    }
+
+    function generateQuiz(item) {
+        const quizzes = [];
+        if (item.category) {
+            const cat = CATEGORIES[item.category];
+            if (cat) {
+                quizzes.push({
+                    question: `Which category does "${item.title}" belong to?`,
+                    options: shuffleWithCorrect(
+                        Object.values(CATEGORIES).map(c => c.title).filter(t => t !== cat.title).slice(0, 3),
+                        cat.title
+                    ),
+                });
+            }
+        }
+        if (item.type) {
+            quizzes.push({
+                question: `What type of resource is "${item.title}"?`,
+                options: shuffleWithCorrect(
+                    ['Video', 'PDF', 'Google Doc', 'Image'].filter(t => t.toLowerCase() !== item.type.toLowerCase()).slice(0, 3),
+                    cap(item.type === 'gdoc' ? 'Google Doc' : item.type)
+                ),
+            });
+        }
+        if (item.tags && item.tags.length >= 2) {
+            const wrongTags = ['Excel', 'PowerPoint', 'Zoom', 'Teams', 'Slack', 'Canvas', 'Moodle'].filter(t => !item.tags.includes(t.toLowerCase()));
+            quizzes.push({
+                question: `Which tag is associated with "${item.title}"?`,
+                options: shuffleWithCorrect(wrongTags.slice(0, 3), item.tags[0]),
+            });
+        }
+        if (!quizzes.length) return null;
+        const chosen = quizzes[Math.floor(Math.random() * quizzes.length)];
+        const correctIndex = chosen.options.indexOf(chosen.options.find(o => o === chosen.correctAnswer));
+        return { question: chosen.question, options: chosen.options.map(o => o), correctIndex: chosen.correctIdx };
+    }
+
+    function shuffleWithCorrect(wrongOptions, correctAnswer) {
+        const opts = wrongOptions.slice(0, 3);
+        const insertIdx = Math.floor(Math.random() * (opts.length + 1));
+        opts.splice(insertIdx, 0, correctAnswer);
+        const result = { options: opts, correctAnswer, correctIdx: insertIdx };
+        // Store correctIdx on the result
+        return result;
+    }
+
+    // Overwrite generateQuiz properly
+    function generateQuiz(item) {
+        const quizzes = [];
+        if (item.category) {
+            const cat = CATEGORIES[item.category];
+            if (cat) {
+                const wrong = Object.values(CATEGORIES).map(c => c.title).filter(t => t !== cat.title).slice(0, 3);
+                const s = shuffleWithCorrect(wrong, cat.title);
+                quizzes.push({ question: `Which category does "${item.title}" belong to?`, options: s.options, correctIndex: s.correctIdx });
+            }
+        }
+        if (item.type) {
+            const typeLabel = item.type === 'gdoc' ? 'Google Doc' : cap(item.type);
+            const wrong = ['Video', 'PDF', 'Google Doc', 'Image'].filter(t => t !== typeLabel).slice(0, 3);
+            const s = shuffleWithCorrect(wrong, typeLabel);
+            quizzes.push({ question: `What type of resource is "${item.title}"?`, options: s.options, correctIndex: s.correctIdx });
+        }
+        if (!quizzes.length) return null;
+        return quizzes[Math.floor(Math.random() * quizzes.length)];
+    }
+
+    // --- Content Request Modal ---
+    function initRequestModal() {
+        dom.requestFab.addEventListener('click', () => {
+            dom.requestModal.classList.add('active');
+            dom.requestInput.value = '';
+            dom.requestThanks.style.display = 'none';
+            dom.requestInput.style.display = '';
+            document.querySelector('.request-actions').style.display = '';
+            document.querySelector('.request-desc').style.display = '';
+        });
+        dom.requestModalClose.addEventListener('click', () => dom.requestModal.classList.remove('active'));
+        dom.requestModal.addEventListener('click', (e) => { if (e.target === dom.requestModal) dom.requestModal.classList.remove('active'); });
+        dom.requestSubmit.addEventListener('click', () => {
+            const text = dom.requestInput.value.trim();
+            if (!text) return;
+            contentRequests.push({ text, date: Date.now() });
+            try { localStorage.setItem('tt-requests', JSON.stringify(contentRequests)); } catch {}
+            dom.requestInput.style.display = 'none';
+            document.querySelector('.request-actions').style.display = 'none';
+            document.querySelector('.request-desc').style.display = 'none';
+            dom.requestThanks.style.display = '';
+        });
+        try { contentRequests = JSON.parse(localStorage.getItem('tt-requests') || '[]'); } catch { contentRequests = []; }
     }
 
     // --- Keyboard Shortcuts ---
@@ -709,25 +923,37 @@
     }
 
     // --- Views ---
+    function hideAllSections() {
+        const sections = [dom.heroSection, dom.votdSection, dom.essentialCta, dom.learningPathsSection,
+            dom.startHereSection, dom.categoriesSection, dom.categoryDetail, dom.searchResults,
+            dom.achievementsSection, dom.savedSection, dom.widerReadingSection, dom.progressSection,
+            dom.recentlyWatchedSection, dom.whatsNewSection, dom.mostPopularSection,
+            dom.weeklyChallengeSection, dom.leaderboardSection, dom.statsSection];
+        sections.forEach(s => { if (s) s.style.display = 'none'; });
+    }
+
     function showHome() {
         currentView = 'home';
         currentCategory = null;
+        hideAllSections();
         dom.heroSection.style.display = '';
         dom.votdSection.style.display = '';
         dom.essentialCta.style.display = '';
         dom.learningPathsSection.style.display = '';
         dom.startHereSection.style.display = '';
         dom.categoriesSection.style.display = '';
-        dom.categoryDetail.style.display = 'none';
-        dom.searchResults.style.display = 'none';
-        dom.achievementsSection.style.display = 'none';
-        dom.savedSection.style.display = 'none';
         dom.widerReadingSection.style.display = '';
         dom.progressSection.style.display = '';
         dom.recentlyWatchedSection.style.display = '';
         dom.whatsNewSection.style.display = '';
+        dom.mostPopularSection.style.display = '';
+        dom.weeklyChallengeSection.style.display = '';
+        dom.leaderboardSection.style.display = '';
         renderRecentlyWatched();
         renderWhatsNew();
+        renderMostPopular();
+        renderWeeklyChallenge();
+        renderLeaderboard();
         if (window.location.hash) history.pushState(null, '', window.location.pathname);
         updateMobileNav();
     }
@@ -736,81 +962,41 @@
         if (!CATEGORIES[catId]) return showHome();
         currentView = 'category';
         currentCategory = catId;
-        dom.heroSection.style.display = 'none';
-        dom.votdSection.style.display = 'none';
-        dom.essentialCta.style.display = 'none';
-        dom.learningPathsSection.style.display = 'none';
-        dom.startHereSection.style.display = 'none';
-        dom.categoriesSection.style.display = 'none';
+        hideAllSections();
         dom.categoryDetail.style.display = '';
-        dom.searchResults.style.display = 'none';
-        dom.achievementsSection.style.display = 'none';
-        dom.savedSection.style.display = 'none';
-        dom.widerReadingSection.style.display = 'none';
-        dom.progressSection.style.display = 'none';
-        dom.recentlyWatchedSection.style.display = 'none';
-        dom.whatsNewSection.style.display = 'none';
         renderCategoryDetail(catId);
         updateMobileNav();
     }
 
     function showSearchResults(query) {
         currentView = 'search';
-        dom.heroSection.style.display = 'none';
-        dom.votdSection.style.display = 'none';
-        dom.essentialCta.style.display = 'none';
-        dom.learningPathsSection.style.display = 'none';
-        dom.startHereSection.style.display = 'none';
-        dom.categoriesSection.style.display = 'none';
-        dom.categoryDetail.style.display = 'none';
+        hideAllSections();
         dom.searchResults.style.display = '';
-        dom.achievementsSection.style.display = 'none';
-        dom.savedSection.style.display = 'none';
-        dom.widerReadingSection.style.display = 'none';
-        dom.progressSection.style.display = 'none';
-        dom.recentlyWatchedSection.style.display = 'none';
-        dom.whatsNewSection.style.display = 'none';
         renderSearchResults(query);
         updateMobileNav();
     }
 
     function showAchievements() {
         currentView = 'achievements';
-        dom.heroSection.style.display = 'none';
-        dom.votdSection.style.display = 'none';
-        dom.essentialCta.style.display = 'none';
-        dom.learningPathsSection.style.display = 'none';
-        dom.startHereSection.style.display = 'none';
-        dom.categoriesSection.style.display = 'none';
-        dom.categoryDetail.style.display = 'none';
-        dom.searchResults.style.display = 'none';
+        hideAllSections();
         dom.achievementsSection.style.display = '';
-        dom.savedSection.style.display = 'none';
-        dom.widerReadingSection.style.display = 'none';
-        dom.progressSection.style.display = 'none';
-        dom.recentlyWatchedSection.style.display = 'none';
-        dom.whatsNewSection.style.display = 'none';
         renderAchievements();
         updateMobileNav();
     }
 
     function showSaved() {
         currentView = 'saved';
-        dom.heroSection.style.display = 'none';
-        dom.votdSection.style.display = 'none';
-        dom.essentialCta.style.display = 'none';
-        dom.learningPathsSection.style.display = 'none';
-        dom.startHereSection.style.display = 'none';
-        dom.categoriesSection.style.display = 'none';
-        dom.categoryDetail.style.display = 'none';
-        dom.searchResults.style.display = 'none';
-        dom.achievementsSection.style.display = 'none';
+        hideAllSections();
         dom.savedSection.style.display = '';
-        dom.widerReadingSection.style.display = 'none';
-        dom.progressSection.style.display = 'none';
-        dom.recentlyWatchedSection.style.display = 'none';
-        dom.whatsNewSection.style.display = 'none';
         renderSaved();
+        updateMobileNav();
+    }
+
+    function showStats() {
+        currentView = 'stats';
+        hideAllSections();
+        dom.statsSection.style.display = '';
+        renderStats();
         updateMobileNav();
     }
 
