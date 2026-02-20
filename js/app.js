@@ -51,6 +51,22 @@
         }
     };
 
+    // --- Teaching & Learning Strategies ---
+    const STRATEGIES = {
+        'Adaptive Teaching':      { color: '#009870', icon: '🎯' },
+        'Formative Assessment':   { color: '#009fe3', icon: '📋' },
+        'Retrieval Practice':     { color: '#7c3aed', icon: '🔁' },
+        'Extended Thinking':      { color: '#2a2b7c', icon: '🔬' },
+        'Feedback & Marking':     { color: '#e6007e', icon: '✏️' },
+        'Scaffolding':            { color: '#ec6608', icon: '🪜' },
+        'Collaborative Learning': { color: '#0d9488', icon: '🤝' },
+        'Dual Coding':            { color: '#f59e0b', icon: '🖼️' },
+        'Metacognition':          { color: '#9b1844', icon: '🧠' },
+        'Classroom Management':   { color: '#64748b', icon: '📐' }
+    };
+
+    let activeStrategy = null; // Currently selected strategy filter
+
     // --- Learning Paths ---
     const LEARNING_PATHS = [
         {
@@ -174,6 +190,7 @@
         searchInput: $('#searchInput'),
         searchClear: $('#searchClear'),
         filterChips: $('#filterChips'),
+        strategyFilters: $('#strategyFilters'),
         votdSection: $('#votdSection'),
         votdCard: $('#votdCard'),
         votdPreview: $('#votdPreview'),
@@ -516,6 +533,27 @@
             activeFilter = chip.dataset.filter;
             renderCurrentView();
         });
+
+        // Strategy filter chips
+        dom.strategyFilters.innerHTML =
+            '<span class="strategy-filters-label">Strategy:</span>' +
+            Object.entries(STRATEGIES).map(([name, s]) =>
+                `<button class="strategy-chip" data-strategy="${name}" style="--strat-color: ${s.color}"><span class="strategy-chip-icon">${s.icon}</span>${name}</button>`
+            ).join('');
+
+        dom.strategyFilters.addEventListener('click', (e) => {
+            const chip = e.target.closest('.strategy-chip');
+            if (!chip) return;
+            const wasActive = chip.classList.contains('active');
+            dom.strategyFilters.querySelectorAll('.strategy-chip').forEach(c => c.classList.remove('active'));
+            if (wasActive) {
+                activeStrategy = null;
+            } else {
+                chip.classList.add('active');
+                activeStrategy = chip.dataset.strategy;
+            }
+            renderCurrentView();
+        });
     }
 
     // --- Watched State ---
@@ -679,18 +717,31 @@
 
     // --- Filtering ---
     function filterContent(items) {
-        if (activeFilter === 'all') return items;
-        return items.filter(item => {
-            switch (activeFilter) {
-                case 'new': return isNew(item);
-                case 'video': return item.type === 'video';
-                case 'pdf': return item.type === 'pdf';
-                case 'ai': return item.tags && item.tags.some(t => ['ai', 'gemini', 'brisk', 'notebooklm', 'chatgpt', 'perplexity', 'magicschool', 'diffit', 'cove', 'comet', 'napkin', 'gamma', 'deep-research'].includes(t.toLowerCase()));
-                case 'google': return item.tags && item.tags.some(t => ['google', 'gmail', 'classroom', 'slides', 'docs', 'forms', 'calendar', 'workspace', 'gemini'].includes(t.toLowerCase()));
-                case 'beginner': return item.difficulty === 'beginner';
-                default: return true;
-            }
-        });
+        let filtered = items;
+
+        // Apply type/tag filter
+        if (activeFilter !== 'all') {
+            filtered = filtered.filter(item => {
+                switch (activeFilter) {
+                    case 'new': return isNew(item);
+                    case 'video': return item.type === 'video';
+                    case 'pdf': return item.type === 'pdf';
+                    case 'ai': return item.tags && item.tags.some(t => ['ai', 'gemini', 'brisk', 'notebooklm', 'chatgpt', 'perplexity', 'magicschool', 'diffit', 'cove', 'comet', 'napkin', 'gamma', 'deep-research'].includes(t.toLowerCase()));
+                    case 'google': return item.tags && item.tags.some(t => ['google', 'gmail', 'classroom', 'slides', 'docs', 'forms', 'calendar', 'workspace', 'gemini'].includes(t.toLowerCase()));
+                    case 'beginner': return item.difficulty === 'beginner';
+                    default: return true;
+                }
+            });
+        }
+
+        // Apply strategy filter
+        if (activeStrategy) {
+            filtered = filtered.filter(item =>
+                item.strategies && item.strategies.includes(activeStrategy)
+            );
+        }
+
+        return filtered;
     }
 
     function isNew(item) {
@@ -1226,7 +1277,8 @@
         const results = filterContent(contentData.filter(i => {
             return i.title.toLowerCase().includes(q) ||
                 (i.description && i.description.toLowerCase().includes(q)) ||
-                (i.tags && i.tags.some(t => t.toLowerCase().includes(q)));
+                (i.tags && i.tags.some(t => t.toLowerCase().includes(q))) ||
+                (i.strategies && i.strategies.some(s => s.toLowerCase().includes(q)));
         }));
 
         dom.searchResultsTitle.textContent = `Search Results (${results.length})`;
@@ -1415,6 +1467,10 @@
         const typeBadge = `<span class="thumb-badge-type type-${item.type}">${item.type}</span>`;
         const diffBadge = item.difficulty ? `<span class="meta-badge difficulty-${item.difficulty}">${cap(item.difficulty)}</span>` : '';
         const catBadge = cat.title ? `<span class="meta-badge">${cat.title}</span>` : '';
+        const stratBadges = (item.strategies || []).map(s => {
+            const strat = STRATEGIES[s];
+            return strat ? `<span class="strategy-badge" style="--strat-color: ${strat.color}" title="${s}">${strat.icon} ${s}</span>` : '';
+        }).join('');
         const thumbUrl = getThumbnailUrl(item);
 
         // Build thumbnail: real image with fallback to placeholder
@@ -1434,6 +1490,7 @@
                     <div class="content-card-title">${esc(item.title)}</div>
                     ${item.description ? `<div class="content-card-desc">${esc(item.description)}</div>` : ''}
                     <div class="content-card-meta">${diffBadge}${catBadge}</div>
+                    ${stratBadges ? `<div class="content-card-strategies">${stratBadges}</div>` : ''}
                 </div>
                 <div class="content-card-footer">
                     <label class="watched-indicator ${watched ? 'is-watched' : ''}" onclick="event.stopPropagation()">

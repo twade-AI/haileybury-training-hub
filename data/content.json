@@ -15,7 +15,12 @@
     ],
     "difficulty": "beginner",
     "featured": true,
-    "dateAdded": "2025-09-01"
+    "dateAdded": "2025-09-01",
+    "strategies": [
+      "Formative Assessment",
+      "Feedback & Marking",
+      "Dual Coding"
+    ]
   },
   {
     "id": "google-classroom-assignment-codes",
@@ -32,7 +37,10 @@
     ],
     "difficulty": "beginner",
     "featured": true,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding"
+    ]
   },
   {
     "id": "learning-resource-hub-intro",
@@ -49,7 +57,10 @@
     ],
     "difficulty": "beginner",
     "featured": true,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Collaborative Learning"
+    ]
   },
   {
     "id": "gemini-revision-prompts",
@@ -67,7 +78,11 @@
     ],
     "difficulty": "beginner",
     "featured": true,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Formative Assessment",
+      "Retrieval Practice"
+    ]
   },
   {
     "id": "gc-customisation-and-notifications",
@@ -86,7 +101,10 @@
     "series": "Google Classroom: Getting Started",
     "seriesOrder": 1,
     "featured": true,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Classroom Management"
+    ]
   },
   {
     "id": "gc-classroom-sharing-link",
@@ -105,7 +123,11 @@
     "series": "Google Classroom: Getting Started",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Collaborative Learning",
+      "Classroom Management"
+    ]
   },
   {
     "id": "gc-visiting-a-classroom",
@@ -124,7 +146,11 @@
     "series": "Google Classroom: Getting Started",
     "seriesOrder": 3,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Collaborative Learning",
+      "Classroom Management"
+    ]
   },
   {
     "id": "gc-mark-work-as-missing",
@@ -143,7 +169,10 @@
     "series": "Google Classroom: Getting Started",
     "seriesOrder": 4,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Feedback & Marking"
+    ]
   },
   {
     "id": "gc-weighted-marks",
@@ -163,7 +192,12 @@
     "series": "Google Classroom: Marking & Assessment",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Retrieval Practice",
+      "Feedback & Marking",
+      "Classroom Management"
+    ]
   },
   {
     "id": "gc-comment-banks",
@@ -183,7 +217,10 @@
     "series": "Google Classroom: Marking & Assessment",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Feedback & Marking"
+    ]
   },
   {
     "id": "gc-creating-a-rubric",
@@ -203,7 +240,10 @@
     "series": "Google Classroom: Marking & Assessment",
     "seriesOrder": 3,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Feedback & Marking"
+    ]
   },
   {
     "id": "gc-using-rubrics-part-2",
@@ -223,7 +263,12 @@
     "series": "Google Classroom: Marking & Assessment",
     "seriesOrder": 4,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Feedback & Marking",
+      "Scaffolding",
+      "Classroom Management"
+    ]
   },
   {
     "id": "gc-marking-periods",
@@ -242,7 +287,10 @@
     "series": "Google Classroom: Marking & Assessment",
     "seriesOrder": 5,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Feedback & Marking"
+    ]
   },
   {
     "id": "gc-marking-scales",
@@ -261,7 +309,10 @@
     "series": "Google Classroom: Marking & Assessment",
     "seriesOrder": 6,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Feedback & Marking"
+    ]
   },
   {
     "id": "gc-checking-for-plagiarism",
@@ -280,7 +331,10 @@
     "series": "Google Classroom: Marking & Assessment",
     "seriesOrder": 7,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Feedback & Marking"
+    ]
   },
   {
     "id": "gc-pupils-checking-comments",
@@ -300,7 +354,10 @@
     "series": "Google Classroom: Marking & Assessment",
     "seriesOrder": 8,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Feedback & Marking"
+    ]
   },
   {
     "id": "gc-creating-a-practice-set",
@@ -319,7 +376,12 @@
     "series": "Google Classroom: Advanced",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Formative Assessment",
+      "Retrieval Practice",
+      "Feedback & Marking"
+    ]
   },
   {
     "id": "gc-practice-sets-assigning-and-insights",
@@ -339,7 +401,11 @@
     "series": "Google Classroom: Advanced",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Formative Assessment",
+      "Retrieval Practice"
+    ]
   },
   {
     "id": "gc-auto-updating-notability",
@@ -359,7 +425,10 @@
     "series": "Google Classroom: Advanced",
     "seriesOrder": 3,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Classroom Management"
+    ]
   },
   {
     "id": "gc-notebooklm-and-google-classroom",
@@ -379,7 +448,11 @@
     "series": "Google Classroom: Advanced",
     "seriesOrder": 4,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Retrieval Practice",
+      "Metacognition"
+    ]
   },
   {
     "id": "gc-student-selector-11",
@@ -398,7 +471,10 @@
     "series": "Google Classroom: Advanced",
     "seriesOrder": 5,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Adaptive Teaching"
+    ]
   },
   {
     "id": "gc-student-selector-12",
@@ -417,7 +493,10 @@
     "series": "Google Classroom: Advanced",
     "seriesOrder": 6,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Adaptive Teaching"
+    ]
   },
   {
     "id": "google-slides-speaker-spotlight",
@@ -436,7 +515,10 @@
     "series": "Google Slides",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Dual Coding"
+    ]
   },
   {
     "id": "google-slides-timers",
@@ -455,7 +537,12 @@
     "series": "Google Slides",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Formative Assessment",
+      "Dual Coding",
+      "Classroom Management"
+    ]
   },
   {
     "id": "gmail-settings-and-customisation",
@@ -475,7 +562,10 @@
     "series": "Gmail",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Classroom Management"
+    ]
   },
   {
     "id": "gmail-email-filters",
@@ -495,7 +585,10 @@
     "series": "Gmail",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Classroom Management"
+    ]
   },
   {
     "id": "google-calendar-importing-birthdays",
@@ -515,7 +608,10 @@
     "series": "Google Calendar",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Classroom Management"
+    ]
   },
   {
     "id": "google-calendar-appointment-schedule",
@@ -534,7 +630,10 @@
     "series": "Google Calendar",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Classroom Management"
+    ]
   },
   {
     "id": "google-forms-updates",
@@ -551,7 +650,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-09-01"
+    "dateAdded": "2025-09-01",
+    "strategies": [
+      "Formative Assessment"
+    ]
   },
   {
     "id": "google-workspace-updates",
@@ -568,7 +670,11 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-09-01"
+    "dateAdded": "2025-09-01",
+    "strategies": [
+      "Dual Coding",
+      "Classroom Management"
+    ]
   },
   {
     "id": "gemini-and-google-workspace",
@@ -586,7 +692,11 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Dual Coding",
+      "Classroom Management"
+    ]
   },
   {
     "id": "tech-tips-gems",
@@ -604,7 +714,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding"
+    ]
   },
   {
     "id": "visual-stories-ai",
@@ -622,7 +735,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Dual Coding"
+    ]
   },
   {
     "id": "scanning-and-transcribing",
@@ -640,7 +756,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Metacognition"
+    ]
   },
   {
     "id": "comet-ai",
@@ -657,7 +776,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding"
+    ]
   },
   {
     "id": "brisk-pro-marking-example",
@@ -677,7 +799,11 @@
     "series": "Brisk",
     "seriesOrder": 1,
     "featured": true,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Retrieval Practice",
+      "Feedback & Marking"
+    ]
   },
   {
     "id": "brisk-activities",
@@ -697,7 +823,11 @@
     "series": "Brisk",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Formative Assessment",
+      "Scaffolding"
+    ]
   },
   {
     "id": "brisk-teaching",
@@ -717,7 +847,11 @@
     "series": "Brisk",
     "seriesOrder": 3,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Feedback & Marking",
+      "Scaffolding"
+    ]
   },
   {
     "id": "brisk-next",
@@ -736,7 +870,10 @@
     "series": "Brisk",
     "seriesOrder": 4,
     "featured": false,
-    "dateAdded": "2025-09-01"
+    "dateAdded": "2025-09-01",
+    "strategies": [
+      "Feedback & Marking"
+    ]
   },
   {
     "id": "perplexity-new",
@@ -755,7 +892,10 @@
     "series": "Perplexity AI",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-09-01"
+    "dateAdded": "2025-09-01",
+    "strategies": [
+      "Extended Thinking"
+    ]
   },
   {
     "id": "answering-exam-papers",
@@ -773,7 +913,11 @@
     ],
     "difficulty": "intermediate",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Retrieval Practice",
+      "Feedback & Marking"
+    ]
   },
   {
     "id": "notebooklm-setup-guide",
@@ -791,7 +935,12 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding",
+      "Metacognition",
+      "Classroom Management"
+    ]
   },
   {
     "id": "notebooklm-overview",
@@ -811,7 +960,11 @@
     "series": "NotebookLM",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Formative Assessment",
+      "Metacognition"
+    ]
   },
   {
     "id": "notebooklm-flashcards",
@@ -831,7 +984,12 @@
     "series": "NotebookLM",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Retrieval Practice",
+      "Metacognition",
+      "Classroom Management"
+    ]
   },
   {
     "id": "notebooklm-mindmaps",
@@ -851,7 +1009,11 @@
     "series": "NotebookLM",
     "seriesOrder": 3,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Dual Coding",
+      "Metacognition"
+    ]
   },
   {
     "id": "perplexity-overview",
@@ -871,7 +1033,10 @@
     "series": "Perplexity AI",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Extended Thinking"
+    ]
   },
   {
     "id": "perplexity-pages",
@@ -891,7 +1056,11 @@
     "series": "Perplexity AI",
     "seriesOrder": 3,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Extended Thinking",
+      "Collaborative Learning"
+    ]
   },
   {
     "id": "deep-research-gemini",
@@ -909,7 +1078,10 @@
     ],
     "difficulty": "intermediate",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Extended Thinking"
+    ]
   },
   {
     "id": "agent-ai-example",
@@ -926,7 +1098,12 @@
     ],
     "difficulty": "intermediate",
     "featured": false,
-    "dateAdded": "2025-09-01"
+    "dateAdded": "2025-09-01",
+    "strategies": [
+      "Retrieval Practice",
+      "Extended Thinking",
+      "Classroom Management"
+    ]
   },
   {
     "id": "gamma-and-quizizz",
@@ -944,7 +1121,11 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Formative Assessment",
+      "Dual Coding"
+    ]
   },
   {
     "id": "canva-code",
@@ -962,7 +1143,12 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding",
+      "Collaborative Learning",
+      "Dual Coding"
+    ]
   },
   {
     "id": "ai-image-editing",
@@ -980,7 +1166,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Dual Coding"
+    ]
   },
   {
     "id": "cove-ai",
@@ -998,7 +1187,12 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding",
+      "Collaborative Learning",
+      "Dual Coding"
+    ]
   },
   {
     "id": "napkin-ai",
@@ -1016,7 +1210,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Dual Coding"
+    ]
   },
   {
     "id": "create-questions-youtube",
@@ -1034,7 +1231,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Formative Assessment"
+    ]
   },
   {
     "id": "magicschool-text-questions",
@@ -1054,7 +1254,11 @@
     "series": "MagicSchool AI",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Adaptive Teaching",
+      "Formative Assessment"
+    ]
   },
   {
     "id": "magicschool-export-google-forms",
@@ -1074,7 +1278,11 @@
     "series": "MagicSchool AI",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Formative Assessment",
+      "Feedback & Marking"
+    ]
   },
   {
     "id": "magicstudent",
@@ -1094,7 +1302,11 @@
     "series": "MagicSchool AI",
     "seriesOrder": 3,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Metacognition",
+      "Adaptive Teaching"
+    ]
   },
   {
     "id": "ai-assessment-no-ai",
@@ -1114,7 +1326,11 @@
     "series": "AI Assessment Scale",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Dual Coding",
+      "Metacognition"
+    ]
   },
   {
     "id": "ai-assessment-planning",
@@ -1134,7 +1350,12 @@
     "series": "AI Assessment Scale",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding",
+      "Dual Coding",
+      "Metacognition"
+    ]
   },
   {
     "id": "ai-assessment-collaboration",
@@ -1154,7 +1375,12 @@
     "series": "AI Assessment Scale",
     "seriesOrder": 3,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Collaborative Learning",
+      "Dual Coding",
+      "Metacognition"
+    ]
   },
   {
     "id": "ai-assessment-full-ai",
@@ -1174,7 +1400,11 @@
     "series": "AI Assessment Scale",
     "seriesOrder": 4,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Dual Coding",
+      "Metacognition"
+    ]
   },
   {
     "id": "ai-assessment-teacher-version",
@@ -1194,7 +1424,10 @@
     "series": "AI Assessment Scale",
     "seriesOrder": 5,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Metacognition"
+    ]
   },
   {
     "id": "ai-assessment-pupil-version",
@@ -1214,7 +1447,11 @@
     "series": "AI Assessment Scale",
     "seriesOrder": 6,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Collaborative Learning",
+      "Metacognition"
+    ]
   },
   {
     "id": "screen-mirroring",
@@ -1232,7 +1469,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Dual Coding"
+    ]
   },
   {
     "id": "wristbands-replacement",
@@ -1249,7 +1489,11 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding",
+      "Classroom Management"
+    ]
   },
   {
     "id": "apple-sidecar-part-1",
@@ -1269,7 +1513,11 @@
     "series": "Apple Sidecar",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Dual Coding",
+      "Metacognition"
+    ]
   },
   {
     "id": "apple-sidecar-part-2",
@@ -1289,7 +1537,10 @@
     "series": "Apple Sidecar",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Dual Coding"
+    ]
   },
   {
     "id": "apple-notes-transcript",
@@ -1307,7 +1558,11 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Metacognition",
+      "Classroom Management"
+    ]
   },
   {
     "id": "canva-basics",
@@ -1325,7 +1580,11 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding",
+      "Dual Coding"
+    ]
   },
   {
     "id": "camera-setup",
@@ -1343,7 +1602,11 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Classroom Management",
+      "Dual Coding"
+    ]
   },
   {
     "id": "signing-out",
@@ -1360,7 +1623,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Classroom Management"
+    ]
   },
   {
     "id": "bulk-print",
@@ -1378,7 +1644,11 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding",
+      "Classroom Management"
+    ]
   },
   {
     "id": "isams-pupil-preferred-name",
@@ -1397,7 +1667,10 @@
     "series": "iSams",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Classroom Management"
+    ]
   },
   {
     "id": "isams-into-google-calendar",
@@ -1416,7 +1689,10 @@
     "series": "iSams",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Classroom Management"
+    ]
   },
   {
     "id": "apple-classroom-viewing-locking-screens",
@@ -1435,7 +1711,11 @@
     "series": "Apple Classroom",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Adaptive Teaching",
+      "Classroom Management"
+    ]
   },
   {
     "id": "apple-classroom-locking-into-app",
@@ -1454,7 +1734,11 @@
     "series": "Apple Classroom",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Adaptive Teaching",
+      "Classroom Management"
+    ]
   },
   {
     "id": "apple-classroom-locking-groups",
@@ -1473,7 +1757,11 @@
     "series": "Apple Classroom",
     "seriesOrder": 3,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Adaptive Teaching",
+      "Classroom Management"
+    ]
   },
   {
     "id": "apple-classroom-creating-agenda",
@@ -1493,7 +1781,11 @@
     "series": "Apple Classroom",
     "seriesOrder": 4,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Adaptive Teaching",
+      "Scaffolding"
+    ]
   },
   {
     "id": "apple-classroom-using-agendas",
@@ -1513,7 +1805,11 @@
     "series": "Apple Classroom",
     "seriesOrder": 5,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Adaptive Teaching",
+      "Scaffolding"
+    ]
   },
   {
     "id": "notability-syncing",
@@ -1533,7 +1829,11 @@
     "series": "Notability",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Metacognition",
+      "Classroom Management"
+    ]
   },
   {
     "id": "notability-backing-up",
@@ -1552,7 +1852,11 @@
     "series": "Notability",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Metacognition",
+      "Classroom Management"
+    ]
   },
   {
     "id": "notability-organising-documents",
@@ -1571,7 +1875,11 @@
     "series": "Notability",
     "seriesOrder": 3,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Metacognition",
+      "Classroom Management"
+    ]
   },
   {
     "id": "notability-templates",
@@ -1590,7 +1898,12 @@
     "series": "Notability",
     "seriesOrder": 4,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding",
+      "Metacognition",
+      "Classroom Management"
+    ]
   },
   {
     "id": "clickview",
@@ -1608,7 +1921,12 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Dual Coding",
+      "Scaffolding",
+      "Extended Thinking"
+    ]
   },
   {
     "id": "pressreader-setup",
@@ -1628,7 +1946,11 @@
     "series": "PressReader",
     "seriesOrder": 1,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Classroom Management",
+      "Extended Thinking"
+    ]
   },
   {
     "id": "credo-source",
@@ -1646,7 +1968,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Extended Thinking"
+    ]
   },
   {
     "id": "pressreader-overview",
@@ -1666,7 +1991,10 @@
     "series": "PressReader",
     "seriesOrder": 2,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Extended Thinking"
+    ]
   },
   {
     "id": "pressreader-login",
@@ -1685,7 +2013,10 @@
     "series": "PressReader",
     "seriesOrder": 3,
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Extended Thinking"
+    ]
   },
   {
     "id": "macbook-keyboard-shortcuts",
@@ -1702,7 +2033,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding"
+    ]
   },
   {
     "id": "ai-education-key-terms",
@@ -1720,7 +2054,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Metacognition"
+    ]
   },
   {
     "id": "educators-ai-guide-2026",
@@ -1739,7 +2076,11 @@
     ],
     "difficulty": "intermediate",
     "featured": false,
-    "dateAdded": "2025-09-01"
+    "dateAdded": "2025-09-01",
+    "strategies": [
+      "Extended Thinking",
+      "Metacognition"
+    ]
   },
   {
     "id": "pupil-tech-tips-2",
@@ -1756,7 +2097,10 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding"
+    ]
   },
   {
     "id": "pupil-tech-tips-1",
@@ -1773,6 +2117,9 @@
     ],
     "difficulty": "beginner",
     "featured": false,
-    "dateAdded": "2025-01-15"
+    "dateAdded": "2025-01-15",
+    "strategies": [
+      "Scaffolding"
+    ]
   }
 ]
