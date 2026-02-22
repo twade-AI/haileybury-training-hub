@@ -1,17 +1,17 @@
 // Service Worker for Haileybury Tech Tips Training Hub
-const CACHE_NAME = 'techtips-v2';
+const CACHE_NAME = 'techtips-v3';
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/css/styles.css',
-  '/js/app.js',
-  '/js/gamification.js',
-  '/js/confetti.js',
-  '/js/effects.js',
-  '/data/content.json',
-  '/assets/tech-tips-banner.jpg',
-  '/assets/haileybury-logo.png',
-  '/manifest.json'
+  './',
+  './index.html',
+  './css/styles.css',
+  './js/app.js',
+  './js/gamification.js',
+  './js/confetti.js',
+  './js/effects.js',
+  './data/content.json',
+  './assets/tech-tips-banner.jpg',
+  './assets/haileybury-logo.png',
+  './manifest.json'
 ];
 
 self.addEventListener('install', (e) => {

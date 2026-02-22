@@ -190,7 +190,6 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [
-      "Retrieval Practice",
       "Feedback & Marking"
     ]
   },
@@ -531,7 +530,6 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [
-      "Formative Assessment",
       "Dual Coding"
     ]
   },
@@ -654,9 +652,7 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-09-01",
-    "strategies": [
-      "Dual Coding"
-    ]
+    "strategies": []
   },
   {
     "id": "gemini-and-google-workspace",
@@ -675,9 +671,7 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": [
-      "Dual Coding"
-    ]
+    "strategies": []
   },
   {
     "id": "tech-tips-gems",
@@ -738,9 +732,7 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": [
-      "Metacognition"
-    ]
+    "strategies": []
   },
   {
     "id": "comet-ai",
@@ -782,7 +774,6 @@
     "featured": true,
     "dateAdded": "2025-01-15",
     "strategies": [
-      "Retrieval Practice",
       "Feedback & Marking"
     ]
   },
@@ -942,7 +933,6 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [
-      "Formative Assessment",
       "Metacognition"
     ]
   },
@@ -1079,7 +1069,6 @@
     "featured": false,
     "dateAdded": "2025-09-01",
     "strategies": [
-      "Retrieval Practice",
       "Extended Thinking"
     ]
   },
@@ -1468,9 +1457,7 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": [
-      "Scaffolding"
-    ]
+    "strategies": []
   },
   {
     "id": "apple-sidecar-part-1",
@@ -1492,8 +1479,7 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [
-      "Dual Coding",
-      "Metacognition"
+      "Dual Coding"
     ]
   },
   {
@@ -1536,9 +1522,7 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": [
-      "Metacognition"
-    ]
+    "strategies": []
   },
   {
     "id": "canva-basics",
@@ -1579,9 +1563,7 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": [
-      "Dual Coding"
-    ]
+    "strategies": []
   },
   {
     "id": "signing-out",
@@ -1618,9 +1600,7 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": [
-      "Scaffolding"
-    ]
+    "strategies": []
   },
   {
     "id": "isams-pupil-preferred-name",

@@ -620,7 +620,8 @@
             if (label) {
                 label.classList.toggle('is-watched', isWatched(id));
                 const span = label.querySelector('span');
-                if (span) span.textContent = isWatched(id) ? 'Watched' : 'Mark as watched';
+                const isVideo = cb.dataset.contentType === 'video';
+                if (span) span.textContent = isWatched(id) ? (isVideo ? 'Watched' : 'Read') : (isVideo ? 'Mark as watched' : 'Mark as read');
             }
         });
 
@@ -1584,8 +1585,8 @@
                 </div>
                 <div class="content-card-footer">
                     <label class="watched-indicator ${watched ? 'is-watched' : ''}" onclick="event.stopPropagation()">
-                        <input type="checkbox" ${watched ? 'checked' : ''} data-watched-id="${item.id}">
-                        <span>${watched ? 'Watched' : 'Mark as watched'}</span>
+                        <input type="checkbox" ${watched ? 'checked' : ''} data-watched-id="${item.id}" data-content-type="${item.type}">
+                        <span>${watched ? (item.type === 'video' ? 'Watched' : 'Read') : (item.type === 'video' ? 'Mark as watched' : 'Mark as read')}</span>
                     </label>
                     <button class="save-button ${isSaved(item.id) ? 'is-saved' : ''}" data-save-id="${item.id}" onclick="event.stopPropagation()">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
@@ -1682,10 +1683,17 @@
             ? '<span style="color:var(--color-green);font-size:0.82rem;font-weight:600">&#10003; Completed</span>'
             : `<span class="xp-sparkle">+${xpAmount} XP</span>`;
 
+        const isVideo = item.type === 'video';
+        const watchedLabel = isVideo ? 'Mark as watched' : 'Mark as read';
+        const doneLabel = isVideo ? 'Watched' : 'Read';
+        const modalLabelSpan = dom.modalWatchedCheckbox.parentElement.querySelector('span');
+        if (modalLabelSpan) modalLabelSpan.textContent = isWatched(itemId) ? doneLabel : watchedLabel;
         dom.modalWatchedCheckbox.checked = isWatched(itemId);
+        dom.modalWatchedCheckbox.dataset.contentType = item.type;
         dom.modalWatchedCheckbox.onchange = (e) => {
             toggleWatched(itemId, e);
             dom.modalWatchedCheckbox.checked = isWatched(itemId);
+            if (modalLabelSpan) modalLabelSpan.textContent = isWatched(itemId) ? doneLabel : watchedLabel;
             dom.modalXPHint.innerHTML = isWatched(itemId)
                 ? '<span style="color:var(--color-green);font-size:0.82rem;font-weight:600">&#10003; Completed</span>'
                 : `<span class="xp-sparkle">+${xpAmount} XP</span>`;

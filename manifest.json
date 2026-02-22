@@ -2,7 +2,7 @@
   "name": "Haileybury Tech Tips Training Hub",
   "short_name": "Tech Tips",
   "description": "Interactive staff training videos, guides and resources for Haileybury digital tools",
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#9b1844",
   "theme_color": "#9b1844",
