@@ -266,11 +266,68 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* --- Digital Learning Philosophy --- */
 .philosophy-section {
-    background: linear-gradient(160deg, #0f0c29 0%, #1a1040 30%, #302b63 60%, #24243e 100%);
     position: relative;
     overflow: hidden;
-    padding: var(--space-4xl) var(--space-lg);
     color: #fff;
+}
+
+/* --- Philosophy Toggle Button --- */
+.philosophy-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-xl);
+    background: linear-gradient(135deg, #1a1040 0%, #302b63 50%, #24243e 100%);
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    color: #fff;
+    transition: background var(--transition-normal);
+}
+.philosophy-toggle:hover {
+    background: linear-gradient(135deg, #1f1350 0%, #3a3580 50%, #2c2c50 100%);
+}
+.philosophy-toggle-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+.philosophy-toggle-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-magenta) 0%, var(--color-royal-blue) 100%);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 12px rgba(155, 24, 68, 0.3);
+}
+.philosophy-toggle-title {
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.01em;
+}
+.philosophy-toggle-chevron {
+    transition: transform 0.3s ease;
+    opacity: 0.6;
+}
+.philosophy-toggle[aria-expanded="true"] .philosophy-toggle-chevron {
+    transform: rotate(180deg);
+}
+
+/* --- Philosophy Collapsible Content --- */
+.philosophy-collapsible {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(160deg, #0f0c29 0%, #1a1040 30%, #302b63 60%, #24243e 100%);
+    position: relative;
+}
+.philosophy-collapsible--open {
+    max-height: 3000px;
+    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.philosophy-collapsible .philosophy-inner {
+    padding: var(--space-2xl) var(--space-lg) var(--space-4xl);
 }
 
 .philosophy-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
@@ -593,12 +650,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* Dark mode adjustments (already dark, just tweak) */
-[data-theme="dark"] .philosophy-section {
+[data-theme="dark"] .philosophy-toggle {
+    background: linear-gradient(135deg, #0a0618 0%, #18133a 50%, #111125 100%);
+}
+[data-theme="dark"] .philosophy-collapsible {
     background: linear-gradient(160deg, #050510 0%, #0d0820 30%, #1a1540 60%, #111125 100%);
 }
 
 @media (max-width: 700px) {
-    .philosophy-section { padding: var(--space-2xl) var(--space-md); }
+    .philosophy-toggle { padding: var(--space-sm) var(--space-md); }
+    .philosophy-toggle-title { font-size: 0.88rem; }
+    .philosophy-collapsible .philosophy-inner { padding: var(--space-xl) var(--space-md) var(--space-2xl); }
     .philosophy-flow { flex-direction: column; gap: var(--space-sm); }
     .philosophy-flow-step { min-width: auto; width: 100%; flex-direction: row; padding: var(--space-md); border-radius: var(--radius-md); }
     .philosophy-flow-connector { padding: 0; }
@@ -2691,7 +2753,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     color: rgba(255,255,255,0.7); margin-bottom: 4px;
 }
 .weekly-challenge-title { font-size: 1.3rem; font-weight: var(--font-weight-black); margin-bottom: 4px; }
-.weekly-challenge-desc { font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+.weekly-challenge-desc { font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-bottom: var(--space-md); }
+.weekly-challenge-btn {
+    display: inline-flex; align-items: center; gap: var(--space-xs);
+    background: rgba(255,255,255,0.2); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius-full);
+    color: #fff; font-weight: var(--font-weight-bold); font-size: 0.88rem;
+    padding: 10px 22px; cursor: pointer;
+    transition: all var(--transition-fast);
+}
+.weekly-challenge-btn:hover { background: rgba(255,255,255,0.3); transform: translateY(-1px); }
 .weekly-challenge-progress { margin-top: var(--space-md); }
 .weekly-challenge-bar { height: 8px; background: rgba(255,255,255,0.2); border-radius: var(--radius-full); overflow: hidden; }
 .weekly-challenge-fill { height: 100%; background: #fff; border-radius: var(--radius-full); transition: width 0.8s ease; }
@@ -2742,6 +2813,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .leaderboard-name { flex: 1; font-weight: var(--font-weight-semibold); font-size: 0.92rem; }
 .leaderboard-xp { font-weight: var(--font-weight-bold); font-size: 0.85rem; color: var(--color-amber); }
 .leaderboard-level { font-size: 1.2rem; line-height: 1; }
+.leaderboard-inner { text-align: center; }
+.leaderboard-user { display: flex; align-items: center; gap: var(--space-md); justify-content: center; margin-bottom: var(--space-lg); }
+.leaderboard-info { text-align: left; }
+.leaderboard-info .leaderboard-name { font-size: 1.1rem; }
+.leaderboard-info .leaderboard-xp { font-size: 0.85rem; color: var(--color-text-secondary); }
+.leaderboard-progress { margin-bottom: var(--space-lg); }
+.leaderboard-progress-bar { height: 8px; background: var(--color-border); border-radius: var(--radius-full); overflow: hidden; }
+.leaderboard-progress-fill { height: 100%; background: linear-gradient(90deg, var(--color-magenta), var(--color-amber)); border-radius: var(--radius-full); transition: width 0.8s ease; }
+.leaderboard-progress-label { font-size: 0.78rem; color: var(--color-text-secondary); margin-top: var(--space-xs); }
+.leaderboard-stats-row { display: flex; justify-content: center; gap: var(--space-2xl); }
+.leaderboard-stat { display: flex; flex-direction: column; align-items: center; }
+.leaderboard-stat-val { font-size: 1.4rem; font-weight: var(--font-weight-black); color: var(--color-text); }
+.leaderboard-stat-label { font-size: 0.75rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
 
 /* --- Most Popular --- */
 .most-popular-section { margin-bottom: var(--space-2xl); }
