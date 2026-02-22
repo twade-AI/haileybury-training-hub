@@ -178,6 +178,7 @@
 
     const dom = {
         darkModeToggle: $('#darkModeToggle'),
+        headerBrand: $('#headerBrand'),
         heroSection: $('#heroSection'),
         philosophySection: $('#philosophySection'),
         philosophyToggle: $('#philosophyToggle'),
@@ -205,6 +206,8 @@
         learningPathsSection: $('#learningPathsSection'),
         learningPathsGrid: $('#learningPathsGrid'),
         startHereSection: $('#startHereSection'),
+        startHereToggle: $('#startHereToggle'),
+        startHereContent: $('#startHereContent'),
         featuredGrid: $('#featuredGrid'),
         categoriesSection: $('#categoriesSection'),
         categoryGrid: $('#categoryGrid'),
@@ -287,7 +290,9 @@
         initHeroParticles();
         initKeyboardShortcuts();
         initMobileNav();
+        initHeaderBrand();
         initPhilosophyToggle();
+        initStartHereToggle();
         Effects.init();
 
         try {
@@ -942,6 +947,17 @@
         });
     }
 
+    // --- Header Brand (Home Link) ---
+    function initHeaderBrand() {
+        if (!dom.headerBrand) return;
+        dom.headerBrand.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.hash = '';
+            showHome();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // --- Philosophy Toggle ---
     function initPhilosophyToggle() {
         if (!dom.philosophyToggle || !dom.philosophyContent) return;
@@ -949,6 +965,16 @@
             const expanded = dom.philosophyToggle.getAttribute('aria-expanded') === 'true';
             dom.philosophyToggle.setAttribute('aria-expanded', !expanded);
             dom.philosophyContent.classList.toggle('philosophy-collapsible--open', !expanded);
+        });
+    }
+
+    // --- Start Here Toggle ---
+    function initStartHereToggle() {
+        if (!dom.startHereToggle || !dom.startHereContent) return;
+        dom.startHereToggle.addEventListener('click', () => {
+            const expanded = dom.startHereToggle.getAttribute('aria-expanded') === 'true';
+            dom.startHereToggle.setAttribute('aria-expanded', !expanded);
+            dom.startHereContent.classList.toggle('start-here-collapsible--open', !expanded);
         });
     }
 
@@ -1540,14 +1566,8 @@
     // --- Thumbnail URL ---
     function getThumbnailUrl(item) {
         if (!item.driveFileId) return '';
-        // Google Drive provides thumbnail images for files
-        if (item.type === 'video') {
-            return `https://drive.google.com/thumbnail?id=${item.driveFileId}&sz=w640`;
-        }
-        if (item.type === 'pdf' || item.type === 'image') {
-            return `https://drive.google.com/thumbnail?id=${item.driveFileId}&sz=w640`;
-        }
-        return '';
+        // Google Drive provides thumbnail images for all file types
+        return `https://drive.google.com/thumbnail?id=${item.driveFileId}&sz=w640`;
     }
 
     // --- Content Card ---
