@@ -51,6 +51,22 @@
         }
     };
 
+    // --- Teaching & Learning Strategies ---
+    const STRATEGIES = {
+        'Adaptive Teaching':      { color: '#009870', icon: '🎯' },
+        'Formative Assessment':   { color: '#009fe3', icon: '📋' },
+        'Retrieval Practice':     { color: '#7c3aed', icon: '🔁' },
+        'Extended Thinking':      { color: '#2a2b7c', icon: '🔬' },
+        'Feedback & Marking':     { color: '#e6007e', icon: '✏️' },
+        'Scaffolding':            { color: '#ec6608', icon: '🪜' },
+        'Collaborative Learning': { color: '#0d9488', icon: '🤝' },
+        'Dual Coding':            { color: '#f59e0b', icon: '🖼️' },
+        'Metacognition':          { color: '#9b1844', icon: '🧠' },
+        'Classroom Management':   { color: '#64748b', icon: '📐' }
+    };
+
+    let activeStrategy = null; // Currently selected strategy filter
+
     // --- Learning Paths ---
     const LEARNING_PATHS = [
         {
@@ -163,6 +179,9 @@
     const dom = {
         darkModeToggle: $('#darkModeToggle'),
         heroSection: $('#heroSection'),
+        philosophySection: $('#philosophySection'),
+        philosophyToggle: $('#philosophyToggle'),
+        philosophyContent: $('#philosophyContent'),
         heroStats: $('#heroStats'),
         heroLevelBadge: $('#heroLevelBadge'),
         heroLevelIcon: $('#heroLevelIcon'),
@@ -174,6 +193,7 @@
         searchInput: $('#searchInput'),
         searchClear: $('#searchClear'),
         filterChips: $('#filterChips'),
+        strategyFilters: $('#strategyFilters'),
         votdSection: $('#votdSection'),
         votdCard: $('#votdCard'),
         votdPreview: $('#votdPreview'),
@@ -267,6 +287,7 @@
         initHeroParticles();
         initKeyboardShortcuts();
         initMobileNav();
+        initPhilosophyToggle();
         Effects.init();
 
         try {
@@ -516,6 +537,29 @@
             activeFilter = chip.dataset.filter;
             renderCurrentView();
         });
+
+        // Strategy filter chips
+        if (dom.strategyFilters) {
+            dom.strategyFilters.innerHTML =
+                '<span class="strategy-filters-label">Strategy:</span>' +
+                Object.entries(STRATEGIES).map(([name, s]) =>
+                    `<button class="strategy-chip" data-strategy="${name}" style="--strat-color: ${s.color}"><span class="strategy-chip-icon">${s.icon}</span>${name}</button>`
+                ).join('');
+
+            dom.strategyFilters.addEventListener('click', (e) => {
+                const chip = e.target.closest('.strategy-chip');
+                if (!chip) return;
+                const wasActive = chip.classList.contains('active');
+                dom.strategyFilters.querySelectorAll('.strategy-chip').forEach(c => c.classList.remove('active'));
+                if (wasActive) {
+                    activeStrategy = null;
+                } else {
+                    chip.classList.add('active');
+                    activeStrategy = chip.dataset.strategy;
+                }
+                renderCurrentView();
+            });
+        }
     }
 
     // --- Watched State ---
@@ -679,18 +723,31 @@
 
     // --- Filtering ---
     function filterContent(items) {
-        if (activeFilter === 'all') return items;
-        return items.filter(item => {
-            switch (activeFilter) {
-                case 'new': return isNew(item);
-                case 'video': return item.type === 'video';
-                case 'pdf': return item.type === 'pdf';
-                case 'ai': return item.tags && item.tags.some(t => ['ai', 'gemini', 'brisk', 'notebooklm', 'chatgpt', 'perplexity', 'magicschool', 'diffit', 'cove', 'comet', 'napkin', 'gamma', 'deep-research'].includes(t.toLowerCase()));
-                case 'google': return item.tags && item.tags.some(t => ['google', 'gmail', 'classroom', 'slides', 'docs', 'forms', 'calendar', 'workspace', 'gemini'].includes(t.toLowerCase()));
-                case 'beginner': return item.difficulty === 'beginner';
-                default: return true;
-            }
-        });
+        let filtered = items;
+
+        // Apply type/tag filter
+        if (activeFilter !== 'all') {
+            filtered = filtered.filter(item => {
+                switch (activeFilter) {
+                    case 'new': return isNew(item);
+                    case 'video': return item.type === 'video';
+                    case 'pdf': return item.type === 'pdf';
+                    case 'ai': return item.tags && item.tags.some(t => ['ai', 'gemini', 'brisk', 'notebooklm', 'chatgpt', 'perplexity', 'magicschool', 'diffit', 'cove', 'comet', 'napkin', 'gamma', 'deep-research'].includes(t.toLowerCase()));
+                    case 'google': return item.tags && item.tags.some(t => ['google', 'gmail', 'classroom', 'slides', 'docs', 'forms', 'calendar', 'workspace', 'gemini'].includes(t.toLowerCase()));
+                    case 'beginner': return item.difficulty === 'beginner';
+                    default: return true;
+                }
+            });
+        }
+
+        // Apply strategy filter
+        if (activeStrategy) {
+            filtered = filtered.filter(item =>
+                item.strategies && item.strategies.includes(activeStrategy)
+            );
+        }
+
+        return filtered;
     }
 
     function isNew(item) {
@@ -884,6 +941,16 @@
         });
     }
 
+    // --- Philosophy Toggle ---
+    function initPhilosophyToggle() {
+        if (!dom.philosophyToggle || !dom.philosophyContent) return;
+        dom.philosophyToggle.addEventListener('click', () => {
+            const expanded = dom.philosophyToggle.getAttribute('aria-expanded') === 'true';
+            dom.philosophyToggle.setAttribute('aria-expanded', !expanded);
+            dom.philosophyContent.classList.toggle('philosophy-collapsible--open', !expanded);
+        });
+    }
+
     // --- Routing ---
     let isFirstRoute = true;
 
@@ -924,10 +991,10 @@
 
     // --- Views ---
     function hideAllSections() {
-        const sections = [dom.heroSection, dom.votdSection, dom.essentialCta, dom.learningPathsSection,
-            dom.startHereSection, dom.categoriesSection, dom.categoryDetail, dom.searchResults,
-            dom.achievementsSection, dom.savedSection, dom.widerReadingSection, dom.progressSection,
-            dom.recentlyWatchedSection, dom.whatsNewSection, dom.mostPopularSection,
+        const sections = [dom.heroSection, dom.philosophySection, dom.votdSection, dom.essentialCta,
+            dom.learningPathsSection, dom.startHereSection, dom.categoriesSection, dom.categoryDetail,
+            dom.searchResults, dom.achievementsSection, dom.savedSection, dom.widerReadingSection,
+            dom.progressSection, dom.recentlyWatchedSection, dom.whatsNewSection, dom.mostPopularSection,
             dom.weeklyChallengeSection, dom.leaderboardSection, dom.statsSection];
         sections.forEach(s => { if (s) s.style.display = 'none'; });
     }
@@ -937,6 +1004,7 @@
         currentCategory = null;
         hideAllSections();
         dom.heroSection.style.display = '';
+        if (dom.philosophySection) dom.philosophySection.style.display = '';
         dom.votdSection.style.display = '';
         dom.essentialCta.style.display = '';
         dom.learningPathsSection.style.display = '';
@@ -1058,7 +1126,80 @@
         attachSaveListeners(dom.whatsNewGrid);
     }
 
-    // --- Saved Items ---
+    // --- Most Popular ---
+    function renderMostPopular() {
+        if (!contentData.length) { dom.mostPopularSection.style.display = 'none'; return; }
+        // Sort by thumbs-up ratings count, then by view count
+        const popular = contentData.slice()
+            .sort((a, b) => {
+                const aUp = ratings[a.id] === 'up' ? 1 : 0;
+                const bUp = ratings[b.id] === 'up' ? 1 : 0;
+                if (bUp !== aUp) return bUp - aUp;
+                return (viewCounts[b.id] || 0) - (viewCounts[a.id] || 0);
+            })
+            .slice(0, 8);
+
+        if (!popular.length) { dom.mostPopularSection.style.display = 'none'; return; }
+        dom.mostPopularSection.style.display = '';
+        dom.mostPopularGrid.innerHTML = popular.map(i => renderContentCard(i)).join('');
+        attachCardListeners(dom.mostPopularGrid);
+        attachSaveListeners(dom.mostPopularGrid);
+    }
+
+    // --- Weekly Challenge ---
+    function renderWeeklyChallenge() {
+        if (!contentData.length) { dom.weeklyChallengeSection.style.display = 'none'; return; }
+        // Pick a "challenge" video deterministically based on the current week
+        const weekNum = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000));
+        const unwatched = contentData.filter(i => i.type === 'video' && !isWatched(i.id));
+        const pool = unwatched.length ? unwatched : contentData.filter(i => i.type === 'video');
+        if (!pool.length) { dom.weeklyChallengeSection.style.display = 'none'; return; }
+        const challenge = pool[weekNum % pool.length];
+        const cat = CATEGORIES[challenge.category] || {};
+
+        dom.weeklyChallengeCard.innerHTML = `
+            <div class="weekly-challenge-inner">
+                <div class="weekly-challenge-label">Weekly Challenge</div>
+                <h3 class="weekly-challenge-title">${escAttr(challenge.title)}</h3>
+                <p class="weekly-challenge-desc">${escAttr(challenge.description || '')}</p>
+                <button class="weekly-challenge-btn" data-id="${challenge.id}">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    Watch Now &mdash; Earn ${Gamification.getXPRewards().watchVideo || 25} XP
+                </button>
+            </div>
+        `;
+        dom.weeklyChallengeCard.querySelector('.weekly-challenge-btn').addEventListener('click', () => openModal(challenge.id));
+    }
+
+    // --- Leaderboard ---
+    function renderLeaderboard() {
+        const state = Gamification.getState();
+        const level = Gamification.getLevel();
+        const progress = Gamification.getXPProgress();
+
+        dom.leaderboardCard.innerHTML = `
+            <div class="leaderboard-inner">
+                <div class="leaderboard-user">
+                    <div class="leaderboard-rank">${level.icon || '🏅'}</div>
+                    <div class="leaderboard-info">
+                        <div class="leaderboard-name">${level.title}</div>
+                        <div class="leaderboard-xp">${state.xp} XP total</div>
+                    </div>
+                </div>
+                <div class="leaderboard-progress">
+                    <div class="leaderboard-progress-bar">
+                        <div class="leaderboard-progress-fill" style="width: ${progress.percentage}%"></div>
+                    </div>
+                    <div class="leaderboard-progress-label">${progress.current} / ${progress.needed} XP to next level</div>
+                </div>
+                <div class="leaderboard-stats-row">
+                    <div class="leaderboard-stat"><span class="leaderboard-stat-val">${Object.keys(watchedItems).length}</span><span class="leaderboard-stat-label">Completed</span></div>
+                    <div class="leaderboard-stat"><span class="leaderboard-stat-val">${state.streak || 0}</span><span class="leaderboard-stat-label">Day Streak</span></div>
+                    <div class="leaderboard-stat"><span class="leaderboard-stat-val">${state.achievements ? state.achievements.length : 0}</span><span class="leaderboard-stat-label">Badges</span></div>
+                </div>
+            </div>
+        `;
+    }
     function renderSaved() {
         const savedIds = Object.entries(savedItems)
             .sort((a, b) => b[1] - a[1])
@@ -1226,7 +1367,8 @@
         const results = filterContent(contentData.filter(i => {
             return i.title.toLowerCase().includes(q) ||
                 (i.description && i.description.toLowerCase().includes(q)) ||
-                (i.tags && i.tags.some(t => t.toLowerCase().includes(q)));
+                (i.tags && i.tags.some(t => t.toLowerCase().includes(q))) ||
+                (i.strategies && i.strategies.some(s => s.toLowerCase().includes(q)));
         }));
 
         dom.searchResultsTitle.textContent = `Search Results (${results.length})`;
@@ -1415,6 +1557,10 @@
         const typeBadge = `<span class="thumb-badge-type type-${item.type}">${item.type}</span>`;
         const diffBadge = item.difficulty ? `<span class="meta-badge difficulty-${item.difficulty}">${cap(item.difficulty)}</span>` : '';
         const catBadge = cat.title ? `<span class="meta-badge">${cat.title}</span>` : '';
+        const stratBadges = (item.strategies || []).map(s => {
+            const strat = STRATEGIES[s];
+            return strat ? `<span class="strategy-badge" style="--strat-color: ${strat.color}" title="${s}">${strat.icon} ${s}</span>` : '';
+        }).join('');
         const thumbUrl = getThumbnailUrl(item);
 
         // Build thumbnail: real image with fallback to placeholder
@@ -1434,6 +1580,7 @@
                     <div class="content-card-title">${esc(item.title)}</div>
                     ${item.description ? `<div class="content-card-desc">${esc(item.description)}</div>` : ''}
                     <div class="content-card-meta">${diffBadge}${catBadge}</div>
+                    ${stratBadges ? `<div class="content-card-strategies">${stratBadges}</div>` : ''}
                 </div>
                 <div class="content-card-footer">
                     <label class="watched-indicator ${watched ? 'is-watched' : ''}" onclick="event.stopPropagation()">
