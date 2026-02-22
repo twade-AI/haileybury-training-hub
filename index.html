@@ -27,11 +27,11 @@
     <!-- Header -->
     <header class="site-header">
         <div class="header-inner">
-            <div class="header-brand">
+            <a href="#" class="header-brand" id="headerBrand" aria-label="Go to homepage">
                 <img src="assets/tech-tips-banner.jpg" alt="Tech Tips" class="tech-tips-logo">
                 <span class="header-divider"></span>
                 <img src="assets/haileybury-logo.png" alt="Haileybury" class="haileybury-logo">
-            </div>
+            </a>
             <div class="header-actions">
                 <!-- XP Bar in header -->
                 <div class="header-xp" id="headerXP">
@@ -306,20 +306,38 @@
             </div>
         </section>
 
-        <!-- Start Here Section — Featured content -->
+        <!-- Start Here Section — Featured content (collapsible) -->
         <section class="start-here-section reveal-on-scroll" id="startHereSection">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span class="section-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <button class="start-here-toggle" id="startHereToggle" aria-expanded="true" aria-controls="startHereContent">
+                <div class="start-here-toggle-left">
+                    <span class="start-here-toggle-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                         </svg>
                     </span>
-                    Start Here
-                </h2>
-                <p class="section-subtitle">Featured guides and resources to get you up to speed</p>
+                    <div>
+                        <span class="start-here-toggle-title">Start Here</span>
+                        <span class="start-here-toggle-subtitle">Featured guides and resources to get you up to speed</span>
+                    </div>
+                </div>
+                <span class="start-here-toggle-chevron">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </span>
+            </button>
+            <div class="start-here-collapsible start-here-collapsible--open" id="startHereContent">
+                <div class="content-grid featured-grid" id="featuredGrid">
+                    <!-- Populated by JS -->
+                </div>
             </div>
-            <div class="content-grid featured-grid" id="featuredGrid">
+        </section>
+
+        <!-- Category Cards (moved up: after Start Here) -->
+        <section class="categories-section reveal-on-scroll" id="categoriesSection">
+            <div class="section-header">
+                <h2 class="section-title">Browse by Category</h2>
+                <p class="section-subtitle">Explore training resources organised by topic</p>
+            </div>
+            <div class="category-grid" id="categoryGrid">
                 <!-- Populated by JS -->
             </div>
         </section>
@@ -361,17 +379,6 @@
                 <p class="section-subtitle">Follow guided journeys to build your skills step by step</p>
             </div>
             <div class="learning-paths-grid" id="learningPathsGrid">
-                <!-- Populated by JS -->
-            </div>
-        </section>
-
-        <!-- Category Cards -->
-        <section class="categories-section reveal-on-scroll" id="categoriesSection">
-            <div class="section-header">
-                <h2 class="section-title">Browse by Category</h2>
-                <p class="section-subtitle">Explore training resources organised by topic</p>
-            </div>
-            <div class="category-grid" id="categoryGrid">
                 <!-- Populated by JS -->
             </div>
         </section>

@@ -123,7 +123,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     height: var(--header-height);
 }
 
-.header-brand { display: flex; align-items: center; gap: var(--space-md); }
+.header-brand { display: flex; align-items: center; gap: var(--space-md); text-decoration: none; cursor: pointer; }
+.header-brand:hover { opacity: 0.9; }
 .tech-tips-logo { height: 44px; width: auto; }
 .header-divider { width: 1.5px; height: 32px; background: rgba(255,255,255,0.3); }
 .haileybury-logo { height: 40px; width: auto; filter: brightness(0) invert(1); }
@@ -882,7 +883,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-lg);
 }
 
@@ -1637,8 +1638,69 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 
-/* --- Start Here --- */
+/* --- Start Here (Collapsible) --- */
 .start-here-section { margin-bottom: var(--space-3xl); }
+
+.start-here-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    color: var(--color-text);
+    transition: all var(--transition-normal);
+    margin-bottom: var(--space-lg);
+}
+.start-here-toggle:hover {
+    border-color: var(--color-magenta);
+    box-shadow: 0 4px 16px rgba(155, 24, 68, 0.1);
+}
+.start-here-toggle-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+.start-here-toggle-icon {
+    width: 40px; height: 40px;
+    border-radius: var(--radius-md);
+    background: color-mix(in srgb, var(--color-magenta) 12%, transparent);
+    color: var(--color-magenta);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.start-here-toggle-title {
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-bold);
+    display: block;
+}
+.start-here-toggle-subtitle {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    display: block;
+    margin-top: 2px;
+}
+.start-here-toggle-chevron {
+    transition: transform 0.3s ease;
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+.start-here-toggle[aria-expanded="true"] .start-here-toggle-chevron {
+    transform: rotate(180deg);
+}
+
+.start-here-collapsible {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.start-here-collapsible--open {
+    max-height: 3000px;
+    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /* --- Animations --- */
 @keyframes cardAppear {
@@ -2267,7 +2329,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* --- Responsive --- */
 @media (max-width: 1023px) {
-    .category-grid { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+    .category-grid { grid-template-columns: repeat(4, 1fr); }
     .content-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
     .reading-items-grid { grid-template-columns: 1fr; }
     .votd-card { grid-template-columns: 1fr; }
