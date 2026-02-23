@@ -110,7 +110,52 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 24px rgba(155, 24, 68, 0.35);
+    box-shadow: none;
+}
+
+/* --- Category Navigation Bar --- */
+.category-nav {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: var(--header-height);
+    z-index: 99;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.category-nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 var(--space-md);
+}
+.category-nav-inner::-webkit-scrollbar { display: none; }
+
+.category-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+    cursor: pointer;
+}
+.category-nav-item:hover {
+    color: var(--color-text);
+}
+.category-nav-item.active {
+    color: var(--color-magenta);
+    border-bottom-color: var(--color-magenta);
 }
 
 .header-inner {
@@ -844,6 +889,69 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     white-space: nowrap;
     line-height: 1.4;
 }
+
+/* --- Executive Function Badges on Cards --- */
+.ef-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: 0.68rem;
+    font-weight: var(--font-weight-semibold);
+    background: color-mix(in srgb, var(--ef-color) 10%, var(--color-surface));
+    color: var(--ef-color);
+    border: 1px solid color-mix(in srgb, var(--ef-color) 20%, transparent);
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+/* --- Executive Function Filters --- */
+.ef-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-xs);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-border);
+}
+
+.ef-filters-label {
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+.ef-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--ef-color);
+    background: color-mix(in srgb, var(--ef-color) 8%, var(--color-surface));
+    border: 1.5px solid color-mix(in srgb, var(--ef-color) 20%, transparent);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+.ef-chip:hover {
+    background: color-mix(in srgb, var(--ef-color) 15%, var(--color-surface));
+    border-color: var(--ef-color);
+}
+.ef-chip.active {
+    background: var(--ef-color);
+    color: #fff;
+    border-color: var(--ef-color);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--ef-color) 30%, transparent);
+}
+.ef-chip-icon { font-size: 0.85rem; }
 
 /* --- Main Content --- */
 .main-content {
@@ -2362,6 +2470,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     .filter-chips::-webkit-scrollbar { display: none; }
     .strategy-filters { overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
     .strategy-filters::-webkit-scrollbar { display: none; }
+    .ef-filters { overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .ef-filters::-webkit-scrollbar { display: none; }
+    .category-nav-item { padding: 8px 10px; font-size: 0.72rem; }
     .category-detail-title { font-size: 1.6rem; }
     .hero-orb-1 { width: 250px; height: 250px; }
     .hero-orb-2 { width: 200px; height: 200px; }
