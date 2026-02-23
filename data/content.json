@@ -23,6 +23,9 @@
     ],
     "executiveFunctions": [
       "Working Memory"
+    ],
+    "departments": [
+      "All Departments"
     ]
   },
   {
@@ -46,6 +49,9 @@
     ],
     "executiveFunctions": [
       "Working Memory"
+    ],
+    "departments": [
+      "All Departments"
     ]
   },
   {
@@ -67,7 +73,10 @@
     "strategies": [
       "Collaborative Learning"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "gemini-revision-prompts",
@@ -92,6 +101,9 @@
     ],
     "executiveFunctions": [
       "Working Memory"
+    ],
+    "departments": [
+      "Languages"
     ]
   },
   {
@@ -113,7 +125,10 @@
     "featured": true,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "gc-classroom-sharing-link",
@@ -136,7 +151,10 @@
     "strategies": [
       "Collaborative Learning"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "gc-visiting-a-classroom",
@@ -159,7 +177,10 @@
     "strategies": [
       "Collaborative Learning"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "gc-mark-work-as-missing",
@@ -182,7 +203,10 @@
     "strategies": [
       "Feedback & Marking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "gc-weighted-marks",
@@ -208,6 +232,9 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
+    ],
+    "departments": [
+      "All Departments"
     ]
   },
   {
@@ -234,6 +261,9 @@
     ],
     "executiveFunctions": [
       "Working Memory"
+    ],
+    "departments": [
+      "All Departments"
     ]
   },
   {
@@ -260,6 +290,9 @@
     ],
     "executiveFunctions": [
       "Working Memory"
+    ],
+    "departments": [
+      "All Departments"
     ]
   },
   {
@@ -287,6 +320,9 @@
     ],
     "executiveFunctions": [
       "Working Memory"
+    ],
+    "departments": [
+      "All Departments"
     ]
   },
   {
@@ -310,7 +346,10 @@
     "strategies": [
       "Feedback & Marking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "gc-marking-scales",
@@ -333,7 +372,10 @@
     "strategies": [
       "Feedback & Marking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "gc-checking-for-plagiarism",
@@ -356,7 +398,10 @@
     "strategies": [
       "Feedback & Marking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "gc-pupils-checking-comments",
@@ -380,7 +425,10 @@
     "strategies": [
       "Feedback & Marking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "gc-creating-a-practice-set",
@@ -407,6 +455,10 @@
     ],
     "executiveFunctions": [
       "Sustained Attention"
+    ],
+    "departments": [
+      "Sciences",
+      "Mathematics"
     ]
   },
   {
@@ -434,6 +486,10 @@
     ],
     "executiveFunctions": [
       "Sustained Attention"
+    ],
+    "departments": [
+      "Sciences",
+      "Mathematics"
     ]
   },
   {
@@ -456,7 +512,8 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "gc-notebooklm-and-google-classroom",
@@ -481,7 +538,8 @@
       "Retrieval Practice",
       "Metacognition"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "gc-student-selector-11",
@@ -507,7 +565,8 @@
     "executiveFunctions": [
       "Sustained Attention",
       "Cognitive Flexibility"
-    ]
+    ],
+    "departments": []
   },
   {
     "id": "gc-student-selector-12",
@@ -533,7 +592,8 @@
     "executiveFunctions": [
       "Sustained Attention",
       "Cognitive Flexibility"
-    ]
+    ],
+    "departments": []
   },
   {
     "id": "google-slides-speaker-spotlight",
@@ -556,7 +616,10 @@
     "strategies": [
       "Dual Coding"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "Creative Arts"
+    ]
   },
   {
     "id": "google-slides-timers",
@@ -581,7 +644,8 @@
     ],
     "executiveFunctions": [
       "Sustained Attention"
-    ]
+    ],
+    "departments": []
   },
   {
     "id": "gmail-settings-and-customisation",
@@ -603,7 +667,10 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "gmail-email-filters",
@@ -625,7 +692,10 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "google-calendar-importing-birthdays",
@@ -647,7 +717,8 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "google-calendar-appointment-schedule",
@@ -668,7 +739,8 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "google-forms-updates",
@@ -689,7 +761,8 @@
     "strategies": [
       "Formative Assessment"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "google-workspace-updates",
@@ -708,7 +781,8 @@
     "featured": false,
     "dateAdded": "2025-09-01",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "gemini-and-google-workspace",
@@ -728,7 +802,8 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "tech-tips-gems",
@@ -750,7 +825,8 @@
     "strategies": [
       "Scaffolding"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "visual-stories-ai",
@@ -774,6 +850,10 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
+    ],
+    "departments": [
+      "English",
+      "Creative Arts"
     ]
   },
   {
@@ -794,7 +874,8 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "comet-ai",
@@ -815,7 +896,8 @@
     "strategies": [
       "Scaffolding"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "brisk-pro-marking-example",
@@ -839,7 +921,10 @@
     "strategies": [
       "Feedback & Marking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "English"
+    ]
   },
   {
     "id": "brisk-activities",
@@ -866,6 +951,10 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
+    ],
+    "departments": [
+      "English",
+      "Languages"
     ]
   },
   {
@@ -891,7 +980,10 @@
       "Feedback & Marking",
       "Scaffolding"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "English"
+    ]
   },
   {
     "id": "brisk-next",
@@ -914,7 +1006,10 @@
     "strategies": [
       "Feedback & Marking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "English"
+    ]
   },
   {
     "id": "perplexity-new",
@@ -939,6 +1034,10 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
+    ],
+    "departments": [
+      "Sciences",
+      "Humanities"
     ]
   },
   {
@@ -962,7 +1061,14 @@
       "Retrieval Practice",
       "Feedback & Marking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "Sciences",
+      "English",
+      "Humanities",
+      "Mathematics",
+      "Languages"
+    ]
   },
   {
     "id": "notebooklm-setup-guide",
@@ -987,7 +1093,8 @@
     ],
     "executiveFunctions": [
       "Working Memory"
-    ]
+    ],
+    "departments": []
   },
   {
     "id": "notebooklm-overview",
@@ -1013,6 +1120,11 @@
     ],
     "executiveFunctions": [
       "Working Memory"
+    ],
+    "departments": [
+      "Sciences",
+      "Humanities",
+      "Languages"
     ]
   },
   {
@@ -1040,6 +1152,12 @@
     ],
     "executiveFunctions": [
       "Working Memory"
+    ],
+    "departments": [
+      "Sciences",
+      "Humanities",
+      "Mathematics",
+      "Languages"
     ]
   },
   {
@@ -1067,6 +1185,9 @@
     ],
     "executiveFunctions": [
       "Working Memory"
+    ],
+    "departments": [
+      "Sciences"
     ]
   },
   {
@@ -1093,6 +1214,10 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
+    ],
+    "departments": [
+      "Sciences",
+      "Humanities"
     ]
   },
   {
@@ -1118,7 +1243,10 @@
       "Extended Thinking",
       "Collaborative Learning"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "Humanities"
+    ]
   },
   {
     "id": "deep-research-gemini",
@@ -1142,6 +1270,10 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
+    ],
+    "departments": [
+      "Sciences",
+      "Humanities"
     ]
   },
   {
@@ -1163,7 +1295,8 @@
     "strategies": [
       "Extended Thinking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "gamma-and-quizizz",
@@ -1188,6 +1321,9 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
+    ],
+    "departments": [
+      "Creative Arts"
     ]
   },
   {
@@ -1212,7 +1348,10 @@
       "Collaborative Learning",
       "Dual Coding"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "Creative Arts"
+    ]
   },
   {
     "id": "ai-image-editing",
@@ -1234,7 +1373,10 @@
     "strategies": [
       "Dual Coding"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "Creative Arts"
+    ]
   },
   {
     "id": "cove-ai",
@@ -1260,6 +1402,9 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
+    ],
+    "departments": [
+      "Creative Arts"
     ]
   },
   {
@@ -1284,6 +1429,10 @@
     ],
     "executiveFunctions": [
       "Working Memory"
+    ],
+    "departments": [
+      "Sciences",
+      "Creative Arts"
     ]
   },
   {
@@ -1306,7 +1455,10 @@
     "strategies": [
       "Formative Assessment"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "English"
+    ]
   },
   {
     "id": "magicschool-text-questions",
@@ -1333,6 +1485,10 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
+    ],
+    "departments": [
+      "English",
+      "Languages"
     ]
   },
   {
@@ -1358,7 +1514,10 @@
       "Formative Assessment",
       "Feedback & Marking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "English"
+    ]
   },
   {
     "id": "magicstudent",
@@ -1385,6 +1544,9 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
+    ],
+    "departments": [
+      "English"
     ]
   },
   {
@@ -1412,7 +1574,8 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
-    ]
+    ],
+    "departments": []
   },
   {
     "id": "ai-assessment-planning",
@@ -1440,7 +1603,8 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
-    ]
+    ],
+    "departments": []
   },
   {
     "id": "ai-assessment-collaboration",
@@ -1468,7 +1632,8 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
-    ]
+    ],
+    "departments": []
   },
   {
     "id": "ai-assessment-full-ai",
@@ -1495,7 +1660,8 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
-    ]
+    ],
+    "departments": []
   },
   {
     "id": "ai-assessment-teacher-version",
@@ -1521,7 +1687,8 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
-    ]
+    ],
+    "departments": []
   },
   {
     "id": "ai-assessment-pupil-version",
@@ -1548,7 +1715,8 @@
     ],
     "executiveFunctions": [
       "Cognitive Flexibility"
-    ]
+    ],
+    "departments": []
   },
   {
     "id": "screen-mirroring",
@@ -1570,7 +1738,10 @@
     "strategies": [
       "Dual Coding"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "wristbands-replacement",
@@ -1589,7 +1760,8 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "apple-sidecar-part-1",
@@ -1613,7 +1785,8 @@
     "strategies": [
       "Dual Coding"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "apple-sidecar-part-2",
@@ -1637,7 +1810,8 @@
     "strategies": [
       "Dual Coding"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "apple-notes-transcript",
@@ -1657,7 +1831,8 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "canva-basics",
@@ -1682,6 +1857,10 @@
     ],
     "executiveFunctions": [
       "Working Memory"
+    ],
+    "departments": [
+      "All Departments",
+      "Creative Arts"
     ]
   },
   {
@@ -1702,7 +1881,10 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "signing-out",
@@ -1721,7 +1903,10 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "bulk-print",
@@ -1741,7 +1926,10 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   },
   {
     "id": "isams-pupil-preferred-name",
@@ -1762,7 +1950,8 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "isams-into-google-calendar",
@@ -1783,7 +1972,8 @@
     "featured": false,
     "dateAdded": "2025-01-15",
     "strategies": [],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "apple-classroom-viewing-locking-screens",
@@ -1809,6 +1999,9 @@
     ],
     "executiveFunctions": [
       "Sustained Attention"
+    ],
+    "departments": [
+      "All Departments"
     ]
   },
   {
@@ -1835,6 +2028,9 @@
     ],
     "executiveFunctions": [
       "Sustained Attention"
+    ],
+    "departments": [
+      "All Departments"
     ]
   },
   {
@@ -1862,6 +2058,9 @@
     "executiveFunctions": [
       "Sustained Attention",
       "Cognitive Flexibility"
+    ],
+    "departments": [
+      "All Departments"
     ]
   },
   {
@@ -1891,6 +2090,9 @@
     "executiveFunctions": [
       "Sustained Attention",
       "Working Memory"
+    ],
+    "departments": [
+      "All Departments"
     ]
   },
   {
@@ -1919,6 +2121,9 @@
     ],
     "executiveFunctions": [
       "Sustained Attention"
+    ],
+    "departments": [
+      "All Departments"
     ]
   },
   {
@@ -1943,7 +2148,8 @@
     "strategies": [
       "Metacognition"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "notability-backing-up",
@@ -1966,7 +2172,8 @@
     "strategies": [
       "Metacognition"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "notability-organising-documents",
@@ -1991,7 +2198,8 @@
     ],
     "executiveFunctions": [
       "Working Memory"
-    ]
+    ],
+    "departments": []
   },
   {
     "id": "notability-templates",
@@ -2017,7 +2225,8 @@
     ],
     "executiveFunctions": [
       "Working Memory"
-    ]
+    ],
+    "departments": []
   },
   {
     "id": "clickview",
@@ -2043,6 +2252,12 @@
     ],
     "executiveFunctions": [
       "Sustained Attention"
+    ],
+    "departments": [
+      "Sciences",
+      "English",
+      "Humanities",
+      "Languages"
     ]
   },
   {
@@ -2067,7 +2282,11 @@
     "strategies": [
       "Extended Thinking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "English",
+      "Humanities"
+    ]
   },
   {
     "id": "credo-source",
@@ -2089,7 +2308,12 @@
     "strategies": [
       "Extended Thinking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "Sciences",
+      "English",
+      "Humanities"
+    ]
   },
   {
     "id": "pressreader-overview",
@@ -2113,7 +2337,11 @@
     "strategies": [
       "Extended Thinking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "English",
+      "Humanities"
+    ]
   },
   {
     "id": "pressreader-login",
@@ -2136,7 +2364,11 @@
     "strategies": [
       "Extended Thinking"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": [
+      "English",
+      "Humanities"
+    ]
   },
   {
     "id": "macbook-keyboard-shortcuts",
@@ -2159,6 +2391,9 @@
     ],
     "executiveFunctions": [
       "Working Memory"
+    ],
+    "departments": [
+      "All Departments"
     ]
   },
   {
@@ -2183,7 +2418,8 @@
     ],
     "executiveFunctions": [
       "Working Memory"
-    ]
+    ],
+    "departments": []
   },
   {
     "id": "educators-ai-guide-2026",
@@ -2207,7 +2443,8 @@
       "Extended Thinking",
       "Metacognition"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "pupil-tech-tips-2",
@@ -2228,7 +2465,8 @@
     "strategies": [
       "Scaffolding"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   },
   {
     "id": "pupil-tech-tips-1",
@@ -2249,6 +2487,7 @@
     "strategies": [
       "Scaffolding"
     ],
-    "executiveFunctions": []
+    "executiveFunctions": [],
+    "departments": []
   }
 ]

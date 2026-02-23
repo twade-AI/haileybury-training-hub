@@ -72,7 +72,14 @@
         'Cognitive Flexibility':  { color: '#059669', icon: '🔀' }
     };
 
+    // --- Departments ---
+    const DEPARTMENTS = [
+        'All Departments', 'Sciences', 'English', 'Humanities',
+        'Creative Arts', 'Mathematics', 'Languages'
+    ];
+
     let activeExecutiveFunction = null; // Currently selected EF filter
+    let activeDepartment = null; // Currently selected department filter
     let activeStrategy = null; // Currently selected strategy filter
 
     // --- Learning Paths ---
@@ -205,6 +212,7 @@
         filterChips: $('#filterChips'),
         strategyFilters: $('#strategyFilters'),
         efFilters: $('#efFilters'),
+        deptFilters: $('#deptFilters'),
         votdSection: $('#votdSection'),
         votdCard: $('#votdCard'),
         votdPreview: $('#votdPreview'),
@@ -599,6 +607,29 @@
                 renderCurrentView();
             });
         }
+
+        // Department filter chips
+        if (dom.deptFilters) {
+            dom.deptFilters.innerHTML =
+                '<span class="dept-filters-label">Department:</span>' +
+                DEPARTMENTS.map(name =>
+                    `<button class="dept-chip" data-dept="${name}">${name}</button>`
+                ).join('');
+
+            dom.deptFilters.addEventListener('click', (e) => {
+                const chip = e.target.closest('.dept-chip');
+                if (!chip) return;
+                const wasActive = chip.classList.contains('active');
+                dom.deptFilters.querySelectorAll('.dept-chip').forEach(c => c.classList.remove('active'));
+                if (wasActive) {
+                    activeDepartment = null;
+                } else {
+                    chip.classList.add('active');
+                    activeDepartment = chip.dataset.dept;
+                }
+                renderCurrentView();
+            });
+        }
     }
 
     // --- Watched State ---
@@ -791,6 +822,13 @@
         if (activeExecutiveFunction) {
             filtered = filtered.filter(item =>
                 item.executiveFunctions && item.executiveFunctions.includes(activeExecutiveFunction)
+            );
+        }
+
+        // Apply department filter
+        if (activeDepartment) {
+            filtered = filtered.filter(item =>
+                item.departments && item.departments.includes(activeDepartment)
             );
         }
 
@@ -1211,6 +1249,49 @@
         attachSaveListeners(dom.recentlyWatchedGrid);
     }
 
+    // --- Group series items into series cards for homepage grids ---
+    function renderItemsGrouped(items) {
+        const seriesMap = {};
+        const standalone = [];
+        const seriesOrder = [];
+        items.forEach(i => {
+            if (i.series) {
+                if (!seriesMap[i.series]) {
+                    seriesMap[i.series] = [];
+                    seriesOrder.push(i.series);
+                }
+                seriesMap[i.series].push(i);
+            } else {
+                standalone.push(i);
+            }
+        });
+        Object.values(seriesMap).forEach(s => s.sort((a, b) => (a.seriesOrder || 0) - (b.seriesOrder || 0)));
+
+        let html = '';
+        // Render in original encounter order: standalone cards + series cards
+        let sIdx = 0, stIdx = 0;
+        const allEntries = [];
+        items.forEach(i => {
+            if (i.series) {
+                if (!allEntries.find(e => e.type === 'series' && e.name === i.series)) {
+                    allEntries.push({ type: 'series', name: i.series });
+                }
+            } else {
+                allEntries.push({ type: 'item', item: i });
+            }
+        });
+        allEntries.forEach(entry => {
+            if (entry.type === 'series') {
+                const sItems = seriesMap[entry.name];
+                const cat = CATEGORIES[sItems[0].category] || {};
+                html += renderSeriesCard(entry.name, sItems, cat.color || '#9b1844');
+            } else {
+                html += renderContentCard(entry.item);
+            }
+        });
+        return html;
+    }
+
     // --- What's New ---
     function renderWhatsNew() {
         const newItems = contentData
@@ -1223,9 +1304,10 @@
             return;
         }
         dom.whatsNewSection.style.display = '';
-        dom.whatsNewGrid.innerHTML = newItems.map(i => renderContentCard(i)).join('');
+        dom.whatsNewGrid.innerHTML = renderItemsGrouped(newItems);
         attachCardListeners(dom.whatsNewGrid);
         attachSaveListeners(dom.whatsNewGrid);
+        attachSeriesListeners(dom.whatsNewGrid);
     }
 
     // --- Most Popular ---
@@ -1243,9 +1325,10 @@
 
         if (!popular.length) { dom.mostPopularSection.style.display = 'none'; return; }
         dom.mostPopularSection.style.display = '';
-        dom.mostPopularGrid.innerHTML = popular.map(i => renderContentCard(i)).join('');
+        dom.mostPopularGrid.innerHTML = renderItemsGrouped(popular);
         attachCardListeners(dom.mostPopularGrid);
         attachSaveListeners(dom.mostPopularGrid);
+        attachSeriesListeners(dom.mostPopularGrid);
     }
 
     // --- Weekly Challenge ---
@@ -1389,9 +1472,10 @@
         const featured = contentData.filter(i => i.featured);
         if (!featured.length) { dom.startHereSection.style.display = 'none'; return; }
         dom.startHereSection.style.display = '';
-        dom.featuredGrid.innerHTML = featured.map(i => renderContentCard(i)).join('');
+        dom.featuredGrid.innerHTML = renderItemsGrouped(featured);
         attachCardListeners(dom.featuredGrid);
         attachSaveListeners(dom.featuredGrid);
+        attachSeriesListeners(dom.featuredGrid);
     }
 
     // --- Categories ---
@@ -1470,7 +1554,9 @@
             return i.title.toLowerCase().includes(q) ||
                 (i.description && i.description.toLowerCase().includes(q)) ||
                 (i.tags && i.tags.some(t => t.toLowerCase().includes(q))) ||
-                (i.strategies && i.strategies.some(s => s.toLowerCase().includes(q)));
+                (i.strategies && i.strategies.some(s => s.toLowerCase().includes(q))) ||
+                (i.executiveFunctions && i.executiveFunctions.some(ef => ef.toLowerCase().includes(q))) ||
+                (i.departments && i.departments.some(d => d.toLowerCase().includes(q)));
         }));
 
         dom.searchResultsTitle.textContent = `Search Results (${results.length})`;
@@ -1728,9 +1814,27 @@
     // --- Listeners ---
     function attachCardListeners(container) {
         container.querySelectorAll('.content-card').forEach(card => {
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
             card.addEventListener('click', (e) => {
                 if (e.target.closest('.watched-indicator')) return;
                 openModal(card.dataset.id);
+            });
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openModal(card.dataset.id);
+                }
+            });
+        });
+        container.querySelectorAll('.category-card').forEach(card => {
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.click();
+                }
             });
         });
         container.querySelectorAll('input[data-watched-id]').forEach(cb => {
@@ -1746,7 +1850,15 @@
 
     function attachSeriesListeners(container) {
         container.querySelectorAll('.series-item').forEach(el => {
+            el.setAttribute('tabindex', '0');
+            el.setAttribute('role', 'button');
             el.addEventListener('click', () => { openModal(el.dataset.id); });
+            el.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openModal(el.dataset.id);
+                }
+            });
         });
     }
 
@@ -1775,7 +1887,32 @@
         let meta = '';
         if (item.description) meta += `<p class="modal-meta-desc">${esc(item.description)}</p>`;
         if (item.tags && item.tags.length) meta += `<div class="modal-meta-tags">${item.tags.map(t => `<span class="meta-badge">${esc(t)}</span>`).join('')}</div>`;
+
+        // Related resources
+        const related = getRelatedResources(item, 3);
+        if (related.length) {
+            meta += `<div class="modal-related"><div class="modal-related-title">You might also like</div><div class="modal-related-list">`;
+            related.forEach(r => {
+                const rCat = CATEGORIES[r.category] || {};
+                meta += `<div class="modal-related-item" data-id="${r.id}" tabindex="0" role="button">
+                    <div class="modal-related-icon type-${r.type}">${typeIcon(r.type)}</div>
+                    <div class="modal-related-info">
+                        <div class="modal-related-name">${esc(r.title)}</div>
+                        <div class="modal-related-cat">${rCat.title || ''}</div>
+                    </div>
+                </div>`;
+            });
+            meta += `</div></div>`;
+        }
+
         dom.modalMeta.innerHTML = meta;
+
+        // Attach related resource click handlers
+        dom.modalMeta.querySelectorAll('.modal-related-item').forEach(el => {
+            const handler = () => { openModal(el.dataset.id); };
+            el.addEventListener('click', handler);
+            el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handler(); } });
+        });
 
         // XP hint
         const xpAmount = item.type === 'video' ? 25 : 15;
@@ -1799,14 +1936,53 @@
                 : `<span class="xp-sparkle">+${xpAmount} XP</span>`;
         };
 
+        previouslyFocusedElement = document.activeElement;
         dom.videoModal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        dom.modalClose.focus();
     }
+
+    let previouslyFocusedElement = null;
 
     function closeModal() {
         dom.videoModal.classList.remove('active');
         dom.videoContainer.innerHTML = '';
         document.body.style.overflow = '';
+        if (previouslyFocusedElement) {
+            previouslyFocusedElement.focus();
+            previouslyFocusedElement = null;
+        }
+    }
+
+    // --- Related Resources ---
+    function getRelatedResources(item, count = 3) {
+        const scores = contentData
+            .filter(i => i.id !== item.id)
+            .map(i => {
+                let score = 0;
+                // Same category
+                if (i.category === item.category) score += 2;
+                // Shared strategies
+                if (item.strategies && i.strategies) {
+                    score += item.strategies.filter(s => i.strategies.includes(s)).length * 2;
+                }
+                // Shared executive functions
+                if (item.executiveFunctions && i.executiveFunctions) {
+                    score += item.executiveFunctions.filter(ef => i.executiveFunctions.includes(ef)).length * 2;
+                }
+                // Shared tags
+                if (item.tags && i.tags) {
+                    score += item.tags.filter(t => i.tags.includes(t)).length;
+                }
+                // Same series (boost)
+                if (item.series && i.series === item.series) score += 3;
+                return { item: i, score };
+            })
+            .filter(r => r.score > 0)
+            .sort((a, b) => b.score - a.score)
+            .slice(0, count)
+            .map(r => r.item);
+        return scores;
     }
 
     // --- Utils ---
