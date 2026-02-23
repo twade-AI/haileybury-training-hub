@@ -65,6 +65,14 @@
         'Classroom Management':   { color: '#64748b', icon: '📐' }
     };
 
+    // --- Executive Functions ---
+    const EXECUTIVE_FUNCTIONS = {
+        'Sustained Attention':    { color: '#d97706', icon: '🔍' },
+        'Working Memory':         { color: '#2563eb', icon: '🧩' },
+        'Cognitive Flexibility':  { color: '#059669', icon: '🔀' }
+    };
+
+    let activeExecutiveFunction = null; // Currently selected EF filter
     let activeStrategy = null; // Currently selected strategy filter
 
     // --- Learning Paths ---
@@ -179,6 +187,7 @@
     const dom = {
         darkModeToggle: $('#darkModeToggle'),
         headerBrand: $('#headerBrand'),
+        categoryNav: $('#categoryNav'),
         heroSection: $('#heroSection'),
         philosophySection: $('#philosophySection'),
         philosophyToggle: $('#philosophyToggle'),
@@ -195,6 +204,7 @@
         searchClear: $('#searchClear'),
         filterChips: $('#filterChips'),
         strategyFilters: $('#strategyFilters'),
+        efFilters: $('#efFilters'),
         votdSection: $('#votdSection'),
         votdCard: $('#votdCard'),
         votdPreview: $('#votdPreview'),
@@ -291,6 +301,7 @@
         initKeyboardShortcuts();
         initMobileNav();
         initHeaderBrand();
+        initCategoryNav();
         initPhilosophyToggle();
         initStartHereToggle();
         Effects.init();
@@ -565,6 +576,29 @@
                 renderCurrentView();
             });
         }
+
+        // Executive Function filter chips
+        if (dom.efFilters) {
+            dom.efFilters.innerHTML =
+                '<span class="ef-filters-label">Executive Function:</span>' +
+                Object.entries(EXECUTIVE_FUNCTIONS).map(([name, ef]) =>
+                    `<button class="ef-chip" data-ef="${name}" style="--ef-color: ${ef.color}"><span class="ef-chip-icon">${ef.icon}</span>${name}</button>`
+                ).join('');
+
+            dom.efFilters.addEventListener('click', (e) => {
+                const chip = e.target.closest('.ef-chip');
+                if (!chip) return;
+                const wasActive = chip.classList.contains('active');
+                dom.efFilters.querySelectorAll('.ef-chip').forEach(c => c.classList.remove('active'));
+                if (wasActive) {
+                    activeExecutiveFunction = null;
+                } else {
+                    chip.classList.add('active');
+                    activeExecutiveFunction = chip.dataset.ef;
+                }
+                renderCurrentView();
+            });
+        }
     }
 
     // --- Watched State ---
@@ -750,6 +784,13 @@
         if (activeStrategy) {
             filtered = filtered.filter(item =>
                 item.strategies && item.strategies.includes(activeStrategy)
+            );
+        }
+
+        // Apply executive function filter
+        if (activeExecutiveFunction) {
+            filtered = filtered.filter(item =>
+                item.executiveFunctions && item.executiveFunctions.includes(activeExecutiveFunction)
             );
         }
 
@@ -958,6 +999,34 @@
         });
     }
 
+    // --- Category Navigation Bar ---
+    function initCategoryNav() {
+        if (!dom.categoryNav) return;
+        dom.categoryNav.addEventListener('click', (e) => {
+            const item = e.target.closest('.category-nav-item');
+            if (!item) return;
+            e.preventDefault();
+            const cat = item.dataset.cat;
+            if (cat === 'home') {
+                window.location.hash = '';
+                showHome();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                window.location.hash = 'category/' + cat;
+            }
+        });
+    }
+
+    function updateCategoryNav() {
+        if (!dom.categoryNav) return;
+        dom.categoryNav.querySelectorAll('.category-nav-item').forEach(item => {
+            const cat = item.dataset.cat;
+            const isActive = (cat === 'home' && currentView === 'home') ||
+                (currentView === 'category' && currentCategory === cat);
+            item.classList.toggle('active', isActive);
+        });
+    }
+
     // --- Philosophy Toggle ---
     function initPhilosophyToggle() {
         if (!dom.philosophyToggle || !dom.philosophyContent) return;
@@ -1051,6 +1120,7 @@
         renderLeaderboard();
         if (window.location.hash) history.pushState(null, '', window.location.pathname);
         updateMobileNav();
+        updateCategoryNav();
     }
 
     function showCategoryDetail(catId) {
@@ -1061,6 +1131,7 @@
         dom.categoryDetail.style.display = '';
         renderCategoryDetail(catId);
         updateMobileNav();
+        updateCategoryNav();
     }
 
     function showSearchResults(query) {
@@ -1069,6 +1140,7 @@
         dom.searchResults.style.display = '';
         renderSearchResults(query);
         updateMobileNav();
+        updateCategoryNav();
     }
 
     function showAchievements() {
@@ -1077,6 +1149,7 @@
         dom.achievementsSection.style.display = '';
         renderAchievements();
         updateMobileNav();
+        updateCategoryNav();
     }
 
     function showSaved() {
@@ -1085,6 +1158,7 @@
         dom.savedSection.style.display = '';
         renderSaved();
         updateMobileNav();
+        updateCategoryNav();
     }
 
     function showStats() {
@@ -1093,6 +1167,7 @@
         dom.statsSection.style.display = '';
         renderStats();
         updateMobileNav();
+        updateCategoryNav();
     }
 
     function renderCurrentView() {
@@ -1582,6 +1657,10 @@
             const strat = STRATEGIES[s];
             return strat ? `<span class="strategy-badge" style="--strat-color: ${strat.color}" title="${s}">${strat.icon} ${s}</span>` : '';
         }).join('');
+        const efBadges = (item.executiveFunctions || []).map(ef => {
+            const func = EXECUTIVE_FUNCTIONS[ef];
+            return func ? `<span class="ef-badge" style="--ef-color: ${func.color}" title="${ef}">${func.icon} ${ef}</span>` : '';
+        }).join('');
         const thumbUrl = getThumbnailUrl(item);
 
         // Build thumbnail: real image with fallback to placeholder
@@ -1602,6 +1681,7 @@
                     ${item.description ? `<div class="content-card-desc">${esc(item.description)}</div>` : ''}
                     <div class="content-card-meta">${diffBadge}${catBadge}</div>
                     ${stratBadges ? `<div class="content-card-strategies">${stratBadges}</div>` : ''}
+                    ${efBadges ? `<div class="content-card-strategies">${efBadges}</div>` : ''}
                 </div>
                 <div class="content-card-footer">
                     <label class="watched-indicator ${watched ? 'is-watched' : ''}" onclick="event.stopPropagation()">

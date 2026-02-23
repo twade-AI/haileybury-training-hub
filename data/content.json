@@ -20,6 +20,9 @@
       "Formative Assessment",
       "Feedback & Marking",
       "Dual Coding"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -40,6 +43,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Scaffolding"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -60,7 +66,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Collaborative Learning"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "gemini-revision-prompts",
@@ -82,6 +89,9 @@
     "strategies": [
       "Formative Assessment",
       "Retrieval Practice"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -102,7 +112,8 @@
     "seriesOrder": 1,
     "featured": true,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "gc-classroom-sharing-link",
@@ -124,7 +135,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Collaborative Learning"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "gc-visiting-a-classroom",
@@ -146,7 +158,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Collaborative Learning"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "gc-mark-work-as-missing",
@@ -168,7 +181,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Feedback & Marking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "gc-weighted-marks",
@@ -191,6 +205,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Feedback & Marking"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -214,6 +231,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Feedback & Marking"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -237,6 +257,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Feedback & Marking"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -261,6 +284,9 @@
     "strategies": [
       "Feedback & Marking",
       "Scaffolding"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -283,7 +309,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Feedback & Marking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "gc-marking-scales",
@@ -305,7 +332,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Feedback & Marking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "gc-checking-for-plagiarism",
@@ -327,7 +355,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Feedback & Marking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "gc-pupils-checking-comments",
@@ -350,7 +379,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Feedback & Marking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "gc-creating-a-practice-set",
@@ -374,6 +404,9 @@
       "Formative Assessment",
       "Retrieval Practice",
       "Feedback & Marking"
+    ],
+    "executiveFunctions": [
+      "Sustained Attention"
     ]
   },
   {
@@ -398,6 +431,9 @@
     "strategies": [
       "Formative Assessment",
       "Retrieval Practice"
+    ],
+    "executiveFunctions": [
+      "Sustained Attention"
     ]
   },
   {
@@ -419,7 +455,8 @@
     "seriesOrder": 3,
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "gc-notebooklm-and-google-classroom",
@@ -443,7 +480,8 @@
     "strategies": [
       "Retrieval Practice",
       "Metacognition"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "gc-student-selector-11",
@@ -465,6 +503,10 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Adaptive Teaching"
+    ],
+    "executiveFunctions": [
+      "Sustained Attention",
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -487,6 +529,10 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Adaptive Teaching"
+    ],
+    "executiveFunctions": [
+      "Sustained Attention",
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -509,7 +555,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Dual Coding"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "google-slides-timers",
@@ -531,6 +578,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Dual Coding"
+    ],
+    "executiveFunctions": [
+      "Sustained Attention"
     ]
   },
   {
@@ -552,7 +602,8 @@
     "seriesOrder": 1,
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "gmail-email-filters",
@@ -573,7 +624,8 @@
     "seriesOrder": 2,
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "google-calendar-importing-birthdays",
@@ -594,7 +646,8 @@
     "seriesOrder": 1,
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "google-calendar-appointment-schedule",
@@ -614,7 +667,8 @@
     "seriesOrder": 2,
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "google-forms-updates",
@@ -634,7 +688,8 @@
     "dateAdded": "2025-09-01",
     "strategies": [
       "Formative Assessment"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "google-workspace-updates",
@@ -652,7 +707,8 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-09-01",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "gemini-and-google-workspace",
@@ -671,7 +727,8 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "tech-tips-gems",
@@ -692,7 +749,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Scaffolding"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "visual-stories-ai",
@@ -713,6 +771,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Dual Coding"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -732,7 +793,8 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "comet-ai",
@@ -752,7 +814,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Scaffolding"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "brisk-pro-marking-example",
@@ -775,7 +838,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Feedback & Marking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "brisk-activities",
@@ -799,6 +863,9 @@
     "strategies": [
       "Formative Assessment",
       "Scaffolding"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -823,7 +890,8 @@
     "strategies": [
       "Feedback & Marking",
       "Scaffolding"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "brisk-next",
@@ -845,7 +913,8 @@
     "dateAdded": "2025-09-01",
     "strategies": [
       "Feedback & Marking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "perplexity-new",
@@ -867,6 +936,9 @@
     "dateAdded": "2025-09-01",
     "strategies": [
       "Extended Thinking"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -889,7 +961,8 @@
     "strategies": [
       "Retrieval Practice",
       "Feedback & Marking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "notebooklm-setup-guide",
@@ -911,6 +984,9 @@
     "strategies": [
       "Scaffolding",
       "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -934,6 +1010,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -958,6 +1037,9 @@
     "strategies": [
       "Retrieval Practice",
       "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -982,6 +1064,9 @@
     "strategies": [
       "Dual Coding",
       "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -1005,6 +1090,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Extended Thinking"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -1029,7 +1117,8 @@
     "strategies": [
       "Extended Thinking",
       "Collaborative Learning"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "deep-research-gemini",
@@ -1050,6 +1139,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Extended Thinking"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -1070,7 +1162,8 @@
     "dateAdded": "2025-09-01",
     "strategies": [
       "Extended Thinking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "gamma-and-quizizz",
@@ -1092,6 +1185,9 @@
     "strategies": [
       "Formative Assessment",
       "Dual Coding"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -1115,7 +1211,8 @@
       "Scaffolding",
       "Collaborative Learning",
       "Dual Coding"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "ai-image-editing",
@@ -1136,7 +1233,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Dual Coding"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "cove-ai",
@@ -1159,6 +1257,9 @@
       "Scaffolding",
       "Collaborative Learning",
       "Dual Coding"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -1180,6 +1281,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Dual Coding"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -1201,7 +1305,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Formative Assessment"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "magicschool-text-questions",
@@ -1225,6 +1330,9 @@
     "strategies": [
       "Adaptive Teaching",
       "Formative Assessment"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -1249,7 +1357,8 @@
     "strategies": [
       "Formative Assessment",
       "Feedback & Marking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "magicstudent",
@@ -1273,6 +1382,9 @@
     "strategies": [
       "Metacognition",
       "Adaptive Teaching"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -1297,6 +1409,9 @@
     "strategies": [
       "Dual Coding",
       "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -1322,6 +1437,9 @@
       "Scaffolding",
       "Dual Coding",
       "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -1347,6 +1465,9 @@
       "Collaborative Learning",
       "Dual Coding",
       "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -1371,6 +1492,9 @@
     "strategies": [
       "Dual Coding",
       "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -1394,6 +1518,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -1418,6 +1545,9 @@
     "strategies": [
       "Collaborative Learning",
       "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -1439,7 +1569,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Dual Coding"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "wristbands-replacement",
@@ -1457,7 +1588,8 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "apple-sidecar-part-1",
@@ -1480,7 +1612,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Dual Coding"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "apple-sidecar-part-2",
@@ -1503,7 +1636,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Dual Coding"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "apple-notes-transcript",
@@ -1522,7 +1656,8 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "canva-basics",
@@ -1544,6 +1679,9 @@
     "strategies": [
       "Scaffolding",
       "Dual Coding"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -1563,7 +1701,8 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "signing-out",
@@ -1581,7 +1720,8 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "bulk-print",
@@ -1600,7 +1740,8 @@
     "difficulty": "beginner",
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "isams-pupil-preferred-name",
@@ -1620,7 +1761,8 @@
     "seriesOrder": 1,
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "isams-into-google-calendar",
@@ -1640,7 +1782,8 @@
     "seriesOrder": 2,
     "featured": false,
     "dateAdded": "2025-01-15",
-    "strategies": []
+    "strategies": [],
+    "executiveFunctions": []
   },
   {
     "id": "apple-classroom-viewing-locking-screens",
@@ -1663,6 +1806,9 @@
     "strategies": [
       "Adaptive Teaching",
       "Classroom Management"
+    ],
+    "executiveFunctions": [
+      "Sustained Attention"
     ]
   },
   {
@@ -1686,6 +1832,9 @@
     "strategies": [
       "Adaptive Teaching",
       "Classroom Management"
+    ],
+    "executiveFunctions": [
+      "Sustained Attention"
     ]
   },
   {
@@ -1709,6 +1858,10 @@
     "strategies": [
       "Adaptive Teaching",
       "Classroom Management"
+    ],
+    "executiveFunctions": [
+      "Sustained Attention",
+      "Cognitive Flexibility"
     ]
   },
   {
@@ -1734,6 +1887,10 @@
       "Adaptive Teaching",
       "Scaffolding",
       "Classroom Management"
+    ],
+    "executiveFunctions": [
+      "Sustained Attention",
+      "Working Memory"
     ]
   },
   {
@@ -1759,6 +1916,9 @@
       "Adaptive Teaching",
       "Scaffolding",
       "Classroom Management"
+    ],
+    "executiveFunctions": [
+      "Sustained Attention"
     ]
   },
   {
@@ -1782,7 +1942,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Metacognition"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "notability-backing-up",
@@ -1804,7 +1965,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Metacognition"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "notability-organising-documents",
@@ -1826,6 +1988,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -1849,6 +2014,9 @@
     "strategies": [
       "Scaffolding",
       "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -1872,6 +2040,9 @@
       "Dual Coding",
       "Scaffolding",
       "Extended Thinking"
+    ],
+    "executiveFunctions": [
+      "Sustained Attention"
     ]
   },
   {
@@ -1895,7 +2066,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Extended Thinking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "credo-source",
@@ -1916,7 +2088,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Extended Thinking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "pressreader-overview",
@@ -1939,7 +2112,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Extended Thinking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "pressreader-login",
@@ -1961,7 +2135,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Extended Thinking"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "macbook-keyboard-shortcuts",
@@ -1981,6 +2156,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Scaffolding"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -2002,6 +2180,9 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
     ]
   },
   {
@@ -2025,7 +2206,8 @@
     "strategies": [
       "Extended Thinking",
       "Metacognition"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "pupil-tech-tips-2",
@@ -2045,7 +2227,8 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Scaffolding"
-    ]
+    ],
+    "executiveFunctions": []
   },
   {
     "id": "pupil-tech-tips-1",
@@ -2065,6 +2248,7 @@
     "dateAdded": "2025-01-15",
     "strategies": [
       "Scaffolding"
-    ]
+    ],
+    "executiveFunctions": []
   }
 ]
