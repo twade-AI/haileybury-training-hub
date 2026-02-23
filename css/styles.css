@@ -103,6 +103,60 @@ a:hover { color: var(--color-magenta-light); }
 img { max-width: 100%; height: auto; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; font-size: inherit; color: inherit; }
 
+/* --- WCAG 2.2 Focus Styles --- */
+:focus-visible {
+    outline: 3px solid var(--color-magenta);
+    outline-offset: 2px;
+}
+button:focus-visible,
+.filter-chip:focus-visible,
+.strategy-chip:focus-visible,
+.ef-chip:focus-visible,
+.category-nav-item:focus-visible {
+    outline: 3px solid var(--color-magenta);
+    outline-offset: 2px;
+    border-radius: var(--radius-md);
+}
+.header-brand:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+    border-radius: var(--radius-md);
+}
+.dark-mode-toggle:focus-visible,
+.focus-mode-toggle:focus-visible,
+.header-achievements-btn:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+    border-radius: var(--radius-full);
+}
+.content-card:focus-visible {
+    outline: 3px solid var(--color-magenta);
+    outline-offset: 2px;
+    border-radius: var(--radius-lg);
+}
+.category-card:focus-visible {
+    outline: 3px solid var(--color-magenta);
+    outline-offset: 2px;
+    border-radius: var(--radius-lg);
+}
+.series-item:focus-visible {
+    outline: 3px solid var(--color-magenta);
+    outline-offset: 2px;
+}
+.modal-close:focus-visible {
+    outline: 3px solid var(--color-magenta);
+    outline-offset: 2px;
+    border-radius: var(--radius-full);
+}
+.back-button:focus-visible {
+    outline: 3px solid var(--color-magenta);
+    outline-offset: 2px;
+}
+.footer-sub a:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
 /* --- Header --- */
 .site-header {
     background: var(--color-magenta);
@@ -953,6 +1007,50 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .ef-chip-icon { font-size: 0.85rem; }
 
+/* --- Department Filters --- */
+.dept-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-xs);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-border);
+}
+.dept-filters-label {
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+.dept-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-secondary);
+    background: var(--color-surface-elevated);
+    border: 1.5px solid var(--color-border);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+.dept-chip:hover {
+    background: color-mix(in srgb, var(--color-magenta) 10%, var(--color-surface));
+    border-color: var(--color-magenta);
+    color: var(--color-magenta);
+}
+.dept-chip.active {
+    background: var(--color-magenta);
+    color: #fff;
+    border-color: var(--color-magenta);
+    box-shadow: 0 2px 8px rgba(155, 24, 68, 0.25);
+}
+
 /* --- Main Content --- */
 .main-content {
     max-width: var(--max-width);
@@ -1488,6 +1586,48 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .modal-meta { padding: var(--space-lg) var(--space-xl); }
 .modal-meta-desc { font-size: 0.95rem; color: var(--color-text-secondary); margin-bottom: var(--space-md); line-height: 1.6; }
 .modal-meta-tags { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+
+/* --- Related Resources in Modal --- */
+.modal-related {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+}
+.modal-related-title {
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+}
+.modal-related-list { display: flex; flex-direction: column; gap: var(--space-xs); }
+.modal-related-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+.modal-related-item:hover { background: var(--color-surface-elevated); }
+.modal-related-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.modal-related-icon svg { width: 16px; height: 16px; }
+.modal-related-icon.type-video { background: #fee2e2; color: #dc2626; }
+.modal-related-icon.type-pdf { background: #dbeafe; color: #2563eb; }
+.modal-related-icon.type-gdoc { background: #d1fae5; color: #059669; }
+.modal-related-icon.type-image { background: #fef3c7; color: #d97706; }
+.modal-related-name { font-size: 0.85rem; font-weight: var(--font-weight-semibold); color: var(--color-text); }
+.modal-related-cat { font-size: 0.72rem; color: var(--color-text-muted); }
 
 .modal-footer {
     padding: var(--space-md) var(--space-xl);
@@ -2472,6 +2612,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     .strategy-filters::-webkit-scrollbar { display: none; }
     .ef-filters { overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
     .ef-filters::-webkit-scrollbar { display: none; }
+    .dept-filters { overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .dept-filters::-webkit-scrollbar { display: none; }
     .category-nav-item { padding: 8px 10px; font-size: 0.72rem; }
     .category-detail-title { font-size: 1.6rem; }
     .hero-orb-1 { width: 250px; height: 250px; }
