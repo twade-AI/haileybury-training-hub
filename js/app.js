@@ -259,6 +259,10 @@
         headerStreak: $('#headerStreak'),
         streakCount: $('#streakCount'),
         toastContainer: $('#toastContainer'),
+        filterResultsSection: $('#filterResultsSection'),
+        filterResultsTitle: $('#filterResultsTitle'),
+        filterResultsGrid: $('#filterResultsGrid'),
+        filterResultsClear: $('#filterResultsClear'),
         recentlyWatchedSection: $('#recentlyWatchedSection'),
         recentlyWatchedGrid: $('#recentlyWatchedGrid'),
         whatsNewSection: $('#whatsNewSection'),
@@ -627,6 +631,23 @@
                     chip.classList.add('active');
                     activeDepartment = chip.dataset.dept;
                 }
+                renderCurrentView();
+            });
+        }
+
+        // Clear all filters button (in filter results section)
+        if (dom.filterResultsClear) {
+            dom.filterResultsClear.addEventListener('click', () => {
+                activeFilter = 'all';
+                activeStrategy = null;
+                activeExecutiveFunction = null;
+                activeDepartment = null;
+                dom.filterChips.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                const allChip = dom.filterChips.querySelector('[data-filter="all"]');
+                if (allChip) allChip.classList.add('active');
+                if (dom.strategyFilters) dom.strategyFilters.querySelectorAll('.strategy-chip').forEach(c => c.classList.remove('active'));
+                if (dom.efFilters) dom.efFilters.querySelectorAll('.ef-chip').forEach(c => c.classList.remove('active'));
+                if (dom.deptFilters) dom.deptFilters.querySelectorAll('.dept-chip').forEach(c => c.classList.remove('active'));
                 renderCurrentView();
             });
         }
@@ -1129,7 +1150,7 @@
             dom.learningPathsSection, dom.startHereSection, dom.categoriesSection, dom.categoryDetail,
             dom.searchResults, dom.achievementsSection, dom.savedSection, dom.widerReadingSection,
             dom.progressSection, dom.recentlyWatchedSection, dom.whatsNewSection, dom.mostPopularSection,
-            dom.weeklyChallengeSection, dom.leaderboardSection, dom.statsSection];
+            dom.weeklyChallengeSection, dom.leaderboardSection, dom.statsSection, dom.filterResultsSection];
         sections.forEach(s => { if (s) s.style.display = 'none'; });
     }
 
@@ -1216,9 +1237,52 @@
         else renderApp();
     }
 
+    // --- Check if any filter is active ---
+    function isFilterActive() {
+        return activeStrategy || activeExecutiveFunction || activeDepartment || (activeFilter && activeFilter !== 'all');
+    }
+
+    // --- Render filtered results section ---
+    function renderFilterResults() {
+        const filtered = filterContent(contentData);
+        const labels = [];
+        if (activeStrategy) labels.push(activeStrategy);
+        if (activeExecutiveFunction) labels.push(activeExecutiveFunction);
+        if (activeDepartment) labels.push(activeDepartment);
+        if (activeFilter && activeFilter !== 'all') labels.push(activeFilter);
+
+        dom.filterResultsTitle.textContent = `${labels.join(' + ')} (${filtered.length} resource${filtered.length !== 1 ? 's' : ''})`;
+
+        if (!filtered.length) {
+            dom.filterResultsGrid.innerHTML = `<div class="empty-state"><p>No resources match the selected filters.</p></div>`;
+        } else {
+            dom.filterResultsGrid.innerHTML = renderItemsGrouped(filtered);
+            attachCardListeners(dom.filterResultsGrid);
+            attachSaveListeners(dom.filterResultsGrid);
+            attachSeriesListeners(dom.filterResultsGrid);
+        }
+    }
+
     // --- Render App ---
     function renderApp() {
         renderHeroStats();
+
+        if (isFilterActive()) {
+            // Show filter results, hide normal homepage sections
+            dom.filterResultsSection.style.display = '';
+            renderFilterResults();
+            // Hide homepage-only sections
+            [dom.recentlyWatchedSection, dom.whatsNewSection, dom.mostPopularSection,
+             dom.startHereSection, dom.votdSection, dom.essentialCta,
+             dom.learningPathsSection, dom.weeklyChallengeSection, dom.leaderboardSection,
+             dom.widerReadingSection, dom.progressSection].forEach(s => { if (s) s.style.display = 'none'; });
+            // Still show categories with filtered counts
+            renderCategories();
+            Effects.refreshScrollReveal();
+            return;
+        }
+
+        dom.filterResultsSection.style.display = 'none';
         renderRecentlyWatched(); // Continue Watching
         renderWhatsNew();        // What's New
         renderFeatured();        // Start Here — top of content
