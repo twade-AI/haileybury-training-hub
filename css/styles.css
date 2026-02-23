@@ -1058,6 +1058,35 @@ button:focus-visible,
     padding: var(--space-2xl) var(--space-lg) var(--space-3xl);
 }
 
+/* --- Filter Results Section --- */
+.filter-results-section {
+    padding: var(--space-xl) var(--space-lg);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+.filter-results-section .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+}
+.filter-results-clear {
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-magenta);
+    background: color-mix(in srgb, var(--color-magenta) 8%, var(--color-surface));
+    border: 1.5px solid var(--color-magenta);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+.filter-results-clear:hover {
+    background: var(--color-magenta);
+    color: #fff;
+}
+
 /* Section Headers */
 .section-header { margin-bottom: var(--space-xl); }
 

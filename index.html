@@ -276,6 +276,17 @@
 
     <!-- Main Content -->
     <main class="main-content" id="mainContent">
+        <!-- Filter Results (shown when strategy/EF/dept filter is active) -->
+        <section class="filter-results-section" id="filterResultsSection" style="display:none;">
+            <div class="section-header">
+                <h2 class="section-title" id="filterResultsTitle">Filtered Resources</h2>
+                <button class="filter-results-clear" id="filterResultsClear">Clear filters</button>
+            </div>
+            <div class="content-grid" id="filterResultsGrid">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
         <!-- Recently Watched (hidden if empty) -->
         <section class="recently-watched-section reveal-on-scroll" id="recentlyWatchedSection" style="display:none;">
             <div class="section-header">
