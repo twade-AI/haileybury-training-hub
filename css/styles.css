@@ -1201,6 +1201,7 @@ button:focus-visible,
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--space-lg);
+    align-items: start;
 }
 .featured-grid { margin-bottom: var(--space-2xl); }
 
@@ -2829,6 +2830,7 @@ button:focus-visible,
 .recently-watched-scroll,
 .whats-new-scroll {
     display: flex;
+    align-items: start;
     gap: var(--space-lg);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -3198,7 +3200,7 @@ button:focus-visible,
     color: var(--color-pink);
 }
 .most-popular-scroll {
-    display: flex; gap: var(--space-lg);
+    display: flex; gap: var(--space-lg); align-items: start;
     overflow-x: auto; scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-bottom: var(--space-sm);
