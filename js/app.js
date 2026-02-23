@@ -1233,7 +1233,10 @@
     // --- Recently Watched ---
     function renderRecentlyWatched() {
         // Get watched items sorted by most recently watched
+        const filtered = filterContent(contentData);
+        const filteredIds = new Set(filtered.map(i => i.id));
         const recentIds = Object.entries(watchedItems)
+            .filter(([id]) => filteredIds.has(id))
             .sort((a, b) => b[1] - a[1])
             .slice(0, 6)
             .map(([id]) => id);
@@ -1294,8 +1297,7 @@
 
     // --- What's New ---
     function renderWhatsNew() {
-        const newItems = contentData
-            .filter(i => isNew(i))
+        const newItems = filterContent(contentData.filter(i => isNew(i)))
             .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded))
             .slice(0, 8);
 
@@ -1312,9 +1314,10 @@
 
     // --- Most Popular ---
     function renderMostPopular() {
-        if (!contentData.length) { dom.mostPopularSection.style.display = 'none'; return; }
+        const pool = filterContent(contentData);
+        if (!pool.length) { dom.mostPopularSection.style.display = 'none'; return; }
         // Sort by thumbs-up ratings count, then by view count
-        const popular = contentData.slice()
+        const popular = pool.slice()
             .sort((a, b) => {
                 const aUp = ratings[a.id] === 'up' ? 1 : 0;
                 const bUp = ratings[b.id] === 'up' ? 1 : 0;
@@ -1407,12 +1410,14 @@
 
     // --- Hero Stats ---
     function renderHeroStats() {
-        const videos = contentData.filter(i => i.type === 'video').length;
-        const cats = Object.keys(CATEGORIES).length;
-        const watched = Object.keys(watchedItems).length;
+        const filtered = filterContent(contentData);
+        const isFiltered = filtered.length !== contentData.length;
+        const videos = filtered.filter(i => i.type === 'video').length;
+        const cats = new Set(filtered.map(i => i.category)).size;
+        const watched = filtered.filter(i => isWatched(i.id)).length;
 
         dom.heroStats.innerHTML = `
-            <div class="hero-stat"><div class="hero-stat-value counter-animate">${videos}</div><div class="hero-stat-label">Videos</div></div>
+            <div class="hero-stat"><div class="hero-stat-value counter-animate">${isFiltered ? filtered.length : videos}</div><div class="hero-stat-label">${isFiltered ? 'Matching' : 'Videos'}</div></div>
             <div class="hero-stat"><div class="hero-stat-value counter-animate">${cats}</div><div class="hero-stat-label">Categories</div></div>
             <div class="hero-stat"><div class="hero-stat-value counter-animate">${watched}</div><div class="hero-stat-label">Completed</div></div>
         `;
@@ -1469,7 +1474,7 @@
 
     // --- Featured ---
     function renderFeatured() {
-        const featured = contentData.filter(i => i.featured);
+        const featured = filterContent(contentData).filter(i => i.featured);
         if (!featured.length) { dom.startHereSection.style.display = 'none'; return; }
         dom.startHereSection.style.display = '';
         dom.featuredGrid.innerHTML = renderItemsGrouped(featured);
@@ -1480,8 +1485,9 @@
 
     // --- Categories ---
     function renderCategories() {
+        const filtered = filterContent(contentData);
         dom.categoryGrid.innerHTML = Object.entries(CATEGORIES).map(([id, cat]) => {
-            const items = contentData.filter(i => i.category === id);
+            const items = filtered.filter(i => i.category === id);
             const watched = items.filter(i => isWatched(i.id)).length;
             const pct = items.length > 0 ? Math.round((watched / items.length) * 100) : 0;
             const isComplete = pct === 100 && items.length > 0;
@@ -1643,7 +1649,7 @@
 
     // --- Wider Reading ---
     function renderWiderReading() {
-        const items = contentData.filter(i => ['pdf', 'gdoc', 'image'].includes(i.type));
+        const items = filterContent(contentData).filter(i => ['pdf', 'gdoc', 'image'].includes(i.type));
         if (!items.length) { dom.widerReadingSection.style.display = 'none'; return; }
 
         const groups = {};
@@ -1697,7 +1703,7 @@
 
     // --- Progress ---
     function renderProgress() {
-        const allVideos = contentData.filter(i => i.type === 'video');
+        const allVideos = filterContent(contentData).filter(i => i.type === 'video');
         const allWatched = allVideos.filter(i => isWatched(i.id)).length;
         const pct = allVideos.length > 0 ? Math.round((allWatched / allVideos.length) * 100) : 0;
 
