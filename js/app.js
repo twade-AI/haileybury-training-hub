@@ -265,6 +265,8 @@
         filterResultsClear: $('#filterResultsClear'),
         recentlyWatchedSection: $('#recentlyWatchedSection'),
         recentlyWatchedGrid: $('#recentlyWatchedGrid'),
+        upNextSection: $('#upNextSection'),
+        upNextGrid: $('#upNextGrid'),
         whatsNewSection: $('#whatsNewSection'),
         whatsNewGrid: $('#whatsNewGrid'),
         savedSection: $('#savedSection'),
@@ -1149,7 +1151,7 @@
         const sections = [dom.heroSection, dom.philosophySection, dom.votdSection, dom.essentialCta,
             dom.learningPathsSection, dom.startHereSection, dom.categoriesSection, dom.categoryDetail,
             dom.searchResults, dom.achievementsSection, dom.savedSection, dom.widerReadingSection,
-            dom.progressSection, dom.recentlyWatchedSection, dom.whatsNewSection, dom.mostPopularSection,
+            dom.progressSection, dom.recentlyWatchedSection, dom.upNextSection, dom.whatsNewSection, dom.mostPopularSection,
             dom.weeklyChallengeSection, dom.leaderboardSection, dom.statsSection, dom.filterResultsSection];
         sections.forEach(s => { if (s) s.style.display = 'none'; });
     }
@@ -1168,11 +1170,13 @@
         dom.widerReadingSection.style.display = '';
         dom.progressSection.style.display = '';
         dom.recentlyWatchedSection.style.display = '';
+        dom.upNextSection.style.display = '';
         dom.whatsNewSection.style.display = '';
         dom.mostPopularSection.style.display = '';
         dom.weeklyChallengeSection.style.display = '';
         dom.leaderboardSection.style.display = '';
         renderRecentlyWatched();
+        renderUpNext();
         renderWhatsNew();
         renderMostPopular();
         renderWeeklyChallenge();
@@ -1272,7 +1276,7 @@
             dom.filterResultsSection.style.display = '';
             renderFilterResults();
             // Hide homepage-only sections
-            [dom.recentlyWatchedSection, dom.whatsNewSection, dom.mostPopularSection,
+            [dom.recentlyWatchedSection, dom.upNextSection, dom.whatsNewSection, dom.mostPopularSection,
              dom.startHereSection, dom.votdSection, dom.essentialCta,
              dom.learningPathsSection, dom.weeklyChallengeSection, dom.leaderboardSection,
              dom.widerReadingSection, dom.progressSection].forEach(s => { if (s) s.style.display = 'none'; });
@@ -1284,6 +1288,7 @@
 
         dom.filterResultsSection.style.display = 'none';
         renderRecentlyWatched(); // Continue Watching
+        renderUpNext();          // Recommended for You
         renderWhatsNew();        // What's New
         renderFeatured();        // Start Here — top of content
         renderVideoOfTheDay();   // VOTD — after featured
@@ -1314,6 +1319,85 @@
         dom.recentlyWatchedGrid.innerHTML = recentItems.map(i => renderContentCard(i)).join('');
         attachCardListeners(dom.recentlyWatchedGrid);
         attachSaveListeners(dom.recentlyWatchedGrid);
+    }
+
+    // --- Up Next Recommendations ---
+    function renderUpNext() {
+        const watchedIds = Object.keys(watchedItems);
+        if (!watchedIds.length || !contentData.length) {
+            dom.upNextSection.style.display = 'none';
+            return;
+        }
+
+        const watchedSet = new Set(watchedIds);
+        const unwatched = contentData.filter(i => !watchedSet.has(i.id));
+        if (!unwatched.length) {
+            dom.upNextSection.style.display = 'none';
+            return;
+        }
+
+        // Build a profile of what the user has engaged with
+        const watchedData = watchedIds.map(id => contentData.find(i => i.id === id)).filter(Boolean);
+        const catCounts = {};
+        const stratCounts = {};
+        const efCounts = {};
+        const tagCounts = {};
+        const startedSeries = new Set();
+
+        watchedData.forEach(item => {
+            catCounts[item.category] = (catCounts[item.category] || 0) + 1;
+            if (item.strategies) item.strategies.forEach(s => { stratCounts[s] = (stratCounts[s] || 0) + 1; });
+            if (item.executiveFunctions) item.executiveFunctions.forEach(ef => { efCounts[ef] = (efCounts[ef] || 0) + 1; });
+            if (item.tags) item.tags.forEach(t => { tagCounts[t] = (tagCounts[t] || 0) + 1; });
+            if (item.series) startedSeries.add(item.series);
+        });
+
+        // Score each unwatched item
+        const scored = unwatched.map(item => {
+            let score = 0;
+
+            // Category affinity (weighted by how much they've watched in that category)
+            score += (catCounts[item.category] || 0) * 2;
+
+            // Strategy overlap
+            if (item.strategies) item.strategies.forEach(s => { score += (stratCounts[s] || 0) * 2; });
+
+            // EF overlap
+            if (item.executiveFunctions) item.executiveFunctions.forEach(ef => { score += (efCounts[ef] || 0) * 2; });
+
+            // Tag overlap
+            if (item.tags) item.tags.forEach(t => { score += (tagCounts[t] || 0); });
+
+            // Big boost for items in a series the user has started but not finished
+            if (item.series && startedSeries.has(item.series)) score += 10;
+
+            // Boost for items in learning paths the user has partially started
+            LEARNING_PATHS.forEach(path => {
+                if (path.steps.includes(item.id)) {
+                    const pathStarted = path.steps.some(s => watchedSet.has(s));
+                    const pathComplete = path.steps.every(s => watchedSet.has(s));
+                    if (pathStarted && !pathComplete) score += 8;
+                }
+            });
+
+            return { item, score };
+        });
+
+        const recommended = scored
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 6)
+            .filter(r => r.score > 0)
+            .map(r => r.item);
+
+        if (!recommended.length) {
+            dom.upNextSection.style.display = 'none';
+            return;
+        }
+
+        dom.upNextSection.style.display = '';
+        dom.upNextGrid.innerHTML = recommended.map(i => renderContentCard(i)).join('');
+        attachCardListeners(dom.upNextGrid);
+        attachSaveListeners(dom.upNextGrid);
     }
 
     // --- Group series items into series cards for homepage grids ---
@@ -1527,12 +1611,25 @@
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         ${path.xpReward} XP for completion
                     </div>
+                    ${isComplete ? `<button class="cert-button" data-cert-type="path" data-cert-id="${path.id}">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        Download CPD Certificate
+                    </button>` : ''}
                 </div>`;
         }).join('');
 
         // Attach click handlers to steps
         dom.learningPathsGrid.querySelectorAll('.learning-path-step').forEach(el => {
             el.addEventListener('click', () => openModal(el.dataset.id));
+        });
+
+        // Attach certificate button handlers
+        dom.learningPathsGrid.querySelectorAll('.cert-button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const path = LEARNING_PATHS.find(p => p.id === btn.dataset.certId);
+                if (path) generateCertificate(path.title, 'Learning Path', path.steps.length);
+            });
         });
     }
 
@@ -1581,6 +1678,7 @@
         const watchedCount = allCatItems.filter(i => isWatched(i.id)).length;
         const pct = allCatItems.length > 0 ? Math.round((watchedCount / allCatItems.length) * 100) : 0;
 
+        const catComplete = pct === 100 && allCatItems.length > 0;
         dom.categoryDetailHeader.innerHTML = `
             <div class="category-detail-banner" style="--cat-color: ${cat.color}">
                 <div class="category-detail-banner-icon">${cat.icon}</div>
@@ -1590,9 +1688,19 @@
                     <div class="category-detail-banner-progress">
                         <div class="category-detail-banner-progress-fill" style="width:${pct}%"></div>
                     </div>
+                    ${catComplete ? `<button class="cert-button cert-button-banner" onclick="event.stopPropagation()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        Download CPD Certificate
+                    </button>` : ''}
                 </div>
             </div>
         `;
+
+        if (catComplete) {
+            dom.categoryDetailHeader.querySelector('.cert-button').addEventListener('click', () => {
+                generateCertificate(cat.title, 'Category', allCatItems.length);
+            });
+        }
 
         const seriesMap = {};
         const standalone = [];
@@ -2022,6 +2130,82 @@
             previouslyFocusedElement.focus();
             previouslyFocusedElement = null;
         }
+    }
+
+    // --- CPD Certificate Generator ---
+    function generateCertificate(title, type, resourceCount) {
+        const date = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+        const level = Gamification.getLevel();
+        const certHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CPD Certificate — ${title}</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+@page { size: landscape; margin: 0; }
+body { width: 297mm; height: 210mm; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; background: #f5f5f5; }
+.cert { width: 277mm; height: 190mm; background: #fff; border: 3px solid #9b1844; border-radius: 8px; padding: 40px 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; text-align: center; }
+.cert::before, .cert::after { content: ''; position: absolute; border: 1.5px solid #9b1844; border-radius: 4px; }
+.cert::before { inset: 8px; }
+.cert::after { inset: 12px; border-color: rgba(155,24,68,0.2); }
+.corner { position: absolute; width: 60px; height: 60px; }
+.corner svg { width: 100%; height: 100%; }
+.corner-tl { top: 20px; left: 20px; }
+.corner-tr { top: 20px; right: 20px; transform: scaleX(-1); }
+.corner-bl { bottom: 20px; left: 20px; transform: scaleY(-1); }
+.corner-br { bottom: 20px; right: 20px; transform: scale(-1); }
+.logo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.logo-text { font-family: 'Playfair Display', serif; font-size: 22px; color: #9b1844; letter-spacing: 0.02em; }
+.divider { width: 120px; height: 2px; background: linear-gradient(90deg, transparent, #9b1844, transparent); margin: 12px 0; }
+.heading { font-family: 'Playfair Display', serif; font-size: 36px; color: #2a2b7c; margin: 8px 0; letter-spacing: 0.03em; }
+.subheading { font-size: 13px; color: #666; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 8px; }
+.title-awarded { font-family: 'Playfair Display', serif; font-size: 26px; color: #9b1844; margin: 10px 0; }
+.details { font-size: 13px; color: #555; line-height: 1.8; margin: 8px 0; }
+.details strong { color: #333; }
+.footer-row { display: flex; align-items: center; justify-content: center; gap: 40px; margin-top: 16px; padding-top: 12px; border-top: 1px solid #eee; }
+.footer-item { text-align: center; }
+.footer-label { font-size: 10px; color: #999; text-transform: uppercase; letter-spacing: 0.1em; }
+.footer-value { font-size: 13px; color: #333; font-weight: 600; margin-top: 2px; }
+.print-btn { position: fixed; top: 20px; right: 20px; padding: 10px 24px; background: #9b1844; color: #fff; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; font-family: 'Inter', sans-serif; z-index: 10; }
+.print-btn:hover { background: #7a1336; }
+@media print { .print-btn { display: none; } body { background: #fff; } }
+</style>
+</head>
+<body>
+<button class="print-btn" onclick="window.print()">Print Certificate</button>
+<div class="cert">
+    <div class="corner corner-tl"><svg viewBox="0 0 60 60"><path d="M0 60 Q0 0 60 0" fill="none" stroke="#9b1844" stroke-width="2"/></svg></div>
+    <div class="corner corner-tr"><svg viewBox="0 0 60 60"><path d="M0 60 Q0 0 60 0" fill="none" stroke="#9b1844" stroke-width="2"/></svg></div>
+    <div class="corner corner-bl"><svg viewBox="0 0 60 60"><path d="M0 60 Q0 0 60 0" fill="none" stroke="#9b1844" stroke-width="2"/></svg></div>
+    <div class="corner corner-br"><svg viewBox="0 0 60 60"><path d="M0 60 Q0 0 60 0" fill="none" stroke="#9b1844" stroke-width="2"/></svg></div>
+
+    <div class="logo-row">
+        <div class="logo-text">Haileybury</div>
+    </div>
+    <div class="subheading">Continuing Professional Development</div>
+    <div class="divider"></div>
+    <div class="heading">Certificate of Completion</div>
+    <div class="divider"></div>
+    <p class="subheading">This certifies completion of the ${type.toLowerCase()}</p>
+    <div class="title-awarded">${title}</div>
+    <div class="details">
+        <strong>${resourceCount}</strong> resources completed<br>
+        Awarded on <strong>${date}</strong>
+    </div>
+    <div class="footer-row">
+        <div class="footer-item"><div class="footer-label">Level</div><div class="footer-value">${level.icon} ${level.title}</div></div>
+        <div class="footer-item"><div class="footer-label">Date</div><div class="footer-value">${date}</div></div>
+        <div class="footer-item"><div class="footer-label">Type</div><div class="footer-value">${type}</div></div>
+    </div>
+</div>
+</body>
+</html>`;
+
+        const win = window.open('', '_blank');
+        win.document.write(certHtml);
+        win.document.close();
     }
 
     // --- Related Resources ---

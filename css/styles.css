@@ -2434,6 +2434,32 @@ button:focus-visible,
     color: var(--color-amber);
 }
 
+/* --- CPD Certificate Button --- */
+.cert-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    margin: var(--space-sm) var(--space-xl) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-bold);
+    color: #fff;
+    background: linear-gradient(135deg, #9b1844 0%, #2a2b7c 100%);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 2px 8px rgba(155, 24, 68, 0.3);
+}
+.cert-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(155, 24, 68, 0.4);
+}
+.cert-button svg { flex-shrink: 0; }
+.cert-button-banner {
+    margin: var(--space-sm) 0 0;
+}
+
 /* --- Achievements Section --- */
 .achievements-section { animation: fadeSlideUp 0.4s ease both; }
 
@@ -2822,6 +2848,11 @@ button:focus-visible,
     background: color-mix(in srgb, var(--color-green) 12%, transparent);
     color: var(--color-green);
 }
+.section-icon-upnext {
+    background: color-mix(in srgb, var(--color-magenta) 12%, transparent);
+    color: var(--color-magenta);
+}
+.up-next-section { margin-bottom: var(--space-2xl); }
 .section-icon-saved {
     background: color-mix(in srgb, var(--color-orange) 12%, transparent);
     color: var(--color-orange);
