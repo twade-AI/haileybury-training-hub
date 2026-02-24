@@ -2469,6 +2469,28 @@
     "departments": []
   },
   {
+    "id": "pupil-tech-tips-3",
+    "title": "Pupil Tech Tips 3",
+    "description": "The latest collection of printable technology tips for students, with handy shortcuts, tools and digital skills guidance.",
+    "type": "pdf",
+    "category": "pupil-tech-tips",
+    "driveFileId": "13v9Iv6Cjrnm3f_U-ahZiAIk9q4vnkrdH",
+    "tags": [
+      "pupils",
+      "tech tips",
+      "student guide",
+      "handout"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-02-24",
+    "strategies": [
+      "Scaffolding"
+    ],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
     "id": "pupil-tech-tips-1",
     "title": "Tech Tips 1",
     "description": "A printable handout of essential technology tips for students, covering key apps, shortcuts and good digital habits.",
