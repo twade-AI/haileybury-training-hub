@@ -1,5 +1,32 @@
 [
   {
+    "id": "sustained-attention-timer",
+    "title": "Sustained Attention Timer",
+    "description": "An interactive focus timer designed for classroom use, helping students build sustained attention through timed work intervals.",
+    "type": "link",
+    "category": "pupil-tech-tips",
+    "driveFileId": null,
+    "externalUrl": "https://sites.google.com/haileybury.com/focus-timer/home",
+    "tags": [
+      "focus",
+      "attention",
+      "timer",
+      "classroom tool",
+      "student wellbeing"
+    ],
+    "difficulty": "beginner",
+    "featured": true,
+    "dateAdded": "2026-03-03",
+    "strategies": [
+      "Metacognition",
+      "Scaffolding"
+    ],
+    "executiveFunctions": [
+      "Sustained Attention"
+    ],
+    "departments": []
+  },
+  {
     "id": "apps-for-tasks-2526",
     "title": "Apps for Tasks 2025-26",
     "description": "A one-page guide mapping common teaching tasks such as marking, quizzes and presentations to the best app for each job.",
