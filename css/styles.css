@@ -1315,6 +1315,7 @@ button:focus-visible,
 .thumb-badge-type.type-doc, .thumb-badge-type.type-gdoc { background: var(--color-blue); color: #fff; }
 .thumb-badge-type.type-image { background: var(--color-green); color: #fff; }
 .thumb-badge-type.type-audio { background: var(--color-royal-blue); color: #fff; }
+.thumb-badge-type.type-link { background: var(--color-teal); color: #fff; }
 
 .content-card-body { padding: var(--space-md) var(--space-lg) var(--space-sm); }
 .content-card-title {
@@ -1656,6 +1657,7 @@ button:focus-visible,
 .modal-related-icon.type-pdf { background: #dbeafe; color: #2563eb; }
 .modal-related-icon.type-gdoc { background: #d1fae5; color: #059669; }
 .modal-related-icon.type-image { background: #fef3c7; color: #d97706; }
+.modal-related-icon.type-link { background: #ccfbf1; color: #0d9488; }
 .modal-related-name { font-size: 0.85rem; font-weight: var(--font-weight-semibold); color: var(--color-text); }
 .modal-related-cat { font-size: 0.72rem; color: var(--color-text-muted); }
 
