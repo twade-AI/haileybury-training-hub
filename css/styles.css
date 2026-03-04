@@ -801,6 +801,37 @@ button:focus-visible,
     top: var(--header-height);
     z-index: 90;
     box-shadow: 0 2px 16px var(--color-shadow);
+    transition: all 0.3s ease;
+}
+
+.search-section.collapsed .filter-chips,
+.search-section.collapsed .strategy-filters,
+.search-section.collapsed .ef-filters,
+.search-section.collapsed .dept-filters {
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.2s ease, margin 0.3s ease;
+}
+
+.search-section .filter-chips,
+.search-section .strategy-filters,
+.search-section .ef-filters,
+.search-section .dept-filters {
+    max-height: 200px;
+    opacity: 1;
+    transition: max-height 0.3s ease, opacity 0.2s ease 0.1s, margin 0.3s ease;
+}
+
+.search-section.collapsed .search-inner {
+    padding: var(--space-sm) var(--space-lg);
+}
+
+.search-section.collapsed #searchInput {
+    padding: 10px 48px 10px 54px;
+    font-size: 0.92rem;
 }
 
 .search-inner {
