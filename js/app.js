@@ -304,6 +304,7 @@
         initFocusMode();
         initWelcomeBanner();
         initSearch();
+        initSearchCollapse();
         initFilterChips();
         initModal();
         initQuizModal();
@@ -550,6 +551,29 @@
             dom.searchInput.value = '';
             dom.searchClear.classList.remove('visible');
             showHome();
+        });
+    }
+
+    // --- Search Section Auto-Collapse on Scroll ---
+    function initSearchCollapse() {
+        const searchSection = document.querySelector('.search-section');
+        if (!searchSection) return;
+        let lastScrollY = 0;
+        const scrollThreshold = 80;
+
+        window.addEventListener('scroll', () => {
+            const currentY = window.scrollY;
+            if (currentY > scrollThreshold && currentY > lastScrollY) {
+                searchSection.classList.add('collapsed');
+            } else if (currentY < lastScrollY || currentY <= scrollThreshold) {
+                searchSection.classList.remove('collapsed');
+            }
+            lastScrollY = currentY;
+        }, { passive: true });
+
+        // Expand when search input is focused
+        dom.searchInput.addEventListener('focus', () => {
+            searchSection.classList.remove('collapsed');
         });
     }
 
