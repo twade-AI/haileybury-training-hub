@@ -559,19 +559,24 @@
         const searchSection = document.querySelector('.search-section');
         const toggleBtn = document.getElementById('searchCollapseToggle');
         if (!searchSection || !toggleBtn) return;
+        const label = toggleBtn.querySelector('.search-collapse-label');
 
-        toggleBtn.addEventListener('click', () => {
+        function updateToggle(collapsed) {
+            toggleBtn.setAttribute('aria-expanded', String(!collapsed));
+            if (label) label.textContent = collapsed ? 'Show filters' : 'Hide filters';
+        }
+
+        toggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             searchSection.classList.toggle('collapsed');
-            const isCollapsed = searchSection.classList.contains('collapsed');
-            toggleBtn.setAttribute('aria-expanded', !isCollapsed);
-            toggleBtn.title = isCollapsed ? 'Show filters' : 'Hide filters';
+            updateToggle(searchSection.classList.contains('collapsed'));
         });
 
         // Expand when search input is focused
         dom.searchInput.addEventListener('focus', () => {
             searchSection.classList.remove('collapsed');
-            toggleBtn.setAttribute('aria-expanded', 'true');
-            toggleBtn.title = 'Hide filters';
+            updateToggle(false);
         });
     }
 
