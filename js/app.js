@@ -554,26 +554,24 @@
         });
     }
 
-    // --- Search Section Auto-Collapse on Scroll ---
+    // --- Search Section Manual Collapse Toggle ---
     function initSearchCollapse() {
         const searchSection = document.querySelector('.search-section');
-        if (!searchSection) return;
-        let lastScrollY = 0;
-        const scrollThreshold = 80;
+        const toggleBtn = document.getElementById('searchCollapseToggle');
+        if (!searchSection || !toggleBtn) return;
 
-        window.addEventListener('scroll', () => {
-            const currentY = window.scrollY;
-            if (currentY > scrollThreshold && currentY > lastScrollY) {
-                searchSection.classList.add('collapsed');
-            } else if (currentY < lastScrollY || currentY <= scrollThreshold) {
-                searchSection.classList.remove('collapsed');
-            }
-            lastScrollY = currentY;
-        }, { passive: true });
+        toggleBtn.addEventListener('click', () => {
+            searchSection.classList.toggle('collapsed');
+            const isCollapsed = searchSection.classList.contains('collapsed');
+            toggleBtn.setAttribute('aria-expanded', !isCollapsed);
+            toggleBtn.title = isCollapsed ? 'Show filters' : 'Hide filters';
+        });
 
         // Expand when search input is focused
         dom.searchInput.addEventListener('focus', () => {
             searchSection.classList.remove('collapsed');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            toggleBtn.title = 'Hide filters';
         });
     }
 
