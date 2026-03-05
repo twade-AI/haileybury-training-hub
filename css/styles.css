@@ -801,7 +801,6 @@ button:focus-visible,
     top: var(--header-height);
     z-index: 90;
     box-shadow: 0 2px 16px var(--color-shadow);
-    transition: all 0.3s ease;
 }
 
 .search-section.collapsed .filter-chips,
@@ -823,15 +822,6 @@ button:focus-visible,
     max-height: 200px;
     opacity: 1;
     transition: max-height 0.3s ease, opacity 0.2s ease 0.1s, margin 0.3s ease;
-}
-
-.search-section.collapsed .search-inner {
-    padding: var(--space-sm) var(--space-lg);
-}
-
-.search-section.collapsed #searchInput {
-    padding: 10px 48px 10px 54px;
-    font-size: 0.92rem;
 }
 
 .search-collapse-toggle {

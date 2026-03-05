@@ -572,12 +572,6 @@
             searchSection.classList.toggle('collapsed');
             updateToggle(searchSection.classList.contains('collapsed'));
         });
-
-        // Expand when search input is focused
-        dom.searchInput.addEventListener('focus', () => {
-            searchSection.classList.remove('collapsed');
-            updateToggle(false);
-        });
     }
 
     // --- Filter Chips ---
