@@ -48,6 +48,11 @@
             title: 'Pupil Tech Tips',
             color: '#0d9488',
             icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`
+        },
+        'goodnotes': {
+            title: 'Goodnotes',
+            color: '#84cc16',
+            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>`
         }
     };
 
@@ -146,6 +151,23 @@
                 'gc-checking-for-plagiarism',
                 'brisk-pro-marking-example',
                 'answering-exam-papers'
+            ]
+        },
+        {
+            id: 'goodnotes-module-1',
+            title: 'Goodnotes: Module 1',
+            description: 'Get started with Goodnotes — from signing in to creating your first lesson',
+            icon: '📝',
+            color: '#84cc16',
+            xpReward: 200,
+            steps: [
+                'goodnotes-signing-in',
+                'goodnotes-navigating-the-app',
+                'goodnotes-personal-documents',
+                'goodnotes-exploring-the-toolbar',
+                'goodnotes-creating-a-class-folder',
+                'goodnotes-creating-your-first-lesson',
+                'goodnotes-module-1-certificate'
             ]
         }
     ];
@@ -473,7 +495,7 @@
 
     // --- Video of the Day ---
     function getVideoOfTheDay() {
-        const videos = contentData.filter(i => i.type === 'video' && i.driveFileId);
+        const videos = contentData.filter(i => i.type === 'video' && (i.driveFileId || i.youtubeId));
         if (!videos.length) return null;
         const today = new Date();
         const daysSinceEpoch = Math.floor(today.getTime() / (1000 * 60 * 60 * 24));
@@ -1925,6 +1947,9 @@
 
     // --- Thumbnail URL ---
     function getThumbnailUrl(item) {
+        if (item.youtubeId) {
+            return `https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`;
+        }
         if (!item.driveFileId) return '';
         // Google Drive provides thumbnail images for all file types
         return `https://drive.google.com/thumbnail?id=${item.driveFileId}&sz=w640`;
@@ -2075,7 +2100,9 @@
 
         dom.modalTitle.textContent = item.title;
 
-        if (item.externalUrl) {
+        if (item.youtubeId) {
+            dom.videoContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${item.youtubeId}?rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen style="border:none"></iframe>`;
+        } else if (item.externalUrl) {
             dom.videoContainer.innerHTML = `<iframe src="${item.externalUrl}" allow="autoplay" style="border:none"></iframe>`;
         } else if (item.type === 'gdoc') {
             dom.videoContainer.innerHTML = `<iframe src="https://docs.google.com/document/d/${item.driveFileId}/preview" allow="autoplay"></iframe>`;
