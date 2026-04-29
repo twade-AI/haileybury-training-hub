@@ -2585,5 +2585,203 @@
     ],
     "executiveFunctions": [],
     "departments": []
+  },
+  {
+    "id": "goodnotes-signing-in",
+    "title": "Signing In",
+    "description": "Sign in to Goodnotes with your Haileybury account so your notebooks sync across all your devices.",
+    "type": "video",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "youtubeId": "3OT0Gkh2XE0",
+    "tags": [
+      "goodnotes",
+      "sign in",
+      "account",
+      "setup",
+      "ipad"
+    ],
+    "difficulty": "beginner",
+    "series": "Goodnotes: Module 1",
+    "seriesOrder": 1,
+    "featured": true,
+    "dateAdded": "2026-04-29",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
+    "id": "goodnotes-navigating-the-app",
+    "title": "Navigating the App",
+    "description": "A quick tour of the Goodnotes interface so you can find your documents, folders and tools with confidence.",
+    "type": "video",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "youtubeId": "27OBVyRqwws",
+    "tags": [
+      "goodnotes",
+      "navigation",
+      "interface",
+      "tour",
+      "ipad"
+    ],
+    "difficulty": "beginner",
+    "series": "Goodnotes: Module 1",
+    "seriesOrder": 2,
+    "featured": false,
+    "dateAdded": "2026-04-29",
+    "strategies": [],
+    "executiveFunctions": [
+      "Working Memory"
+    ],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
+    "id": "goodnotes-personal-documents",
+    "title": "Personal Documents",
+    "description": "Create and organise your own personal documents in Goodnotes for planning, notes and reflection.",
+    "type": "video",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "youtubeId": "heVGe4Yekak",
+    "tags": [
+      "goodnotes",
+      "documents",
+      "organisation",
+      "personal",
+      "ipad"
+    ],
+    "difficulty": "beginner",
+    "series": "Goodnotes: Module 1",
+    "seriesOrder": 3,
+    "featured": false,
+    "dateAdded": "2026-04-29",
+    "strategies": [
+      "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
+    ],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
+    "id": "goodnotes-exploring-the-toolbar",
+    "title": "Exploring the Toolbar",
+    "description": "Get to know the Goodnotes toolbar — pens, highlighters, shapes, the lasso tool and more — to annotate effectively.",
+    "type": "video",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "youtubeId": "JuA66h3qXo0",
+    "tags": [
+      "goodnotes",
+      "toolbar",
+      "tools",
+      "annotation",
+      "ipad"
+    ],
+    "difficulty": "beginner",
+    "series": "Goodnotes: Module 1",
+    "seriesOrder": 4,
+    "featured": false,
+    "dateAdded": "2026-04-29",
+    "strategies": [
+      "Dual Coding"
+    ],
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
+    "id": "goodnotes-creating-a-class-folder",
+    "title": "Creating a Class Folder",
+    "description": "Set up a class folder structure in Goodnotes so all your lessons and resources for a class are kept together.",
+    "type": "video",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "youtubeId": "wdh-SAJPYcQ",
+    "tags": [
+      "goodnotes",
+      "folders",
+      "organisation",
+      "classes",
+      "ipad"
+    ],
+    "difficulty": "beginner",
+    "series": "Goodnotes: Module 1",
+    "seriesOrder": 5,
+    "featured": false,
+    "dateAdded": "2026-04-29",
+    "strategies": [
+      "Scaffolding"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
+    ],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
+    "id": "goodnotes-creating-your-first-lesson",
+    "title": "Creating Your First Lesson",
+    "description": "Build your first lesson in Goodnotes, bringing together notes, annotations and resources ready to teach from.",
+    "type": "video",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "youtubeId": "26dVtoo6B78",
+    "tags": [
+      "goodnotes",
+      "lesson planning",
+      "teaching",
+      "ipad"
+    ],
+    "difficulty": "beginner",
+    "series": "Goodnotes: Module 1",
+    "seriesOrder": 6,
+    "featured": true,
+    "dateAdded": "2026-04-29",
+    "strategies": [
+      "Scaffolding",
+      "Dual Coding"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
+    ],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
+    "id": "goodnotes-module-1-certificate",
+    "title": "Download Your Module 1 Training Certificate",
+    "description": "Once you've completed Module 1, watch this short video to download your Goodnotes Module 1 training certificate.",
+    "type": "video",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "youtubeId": "AbSVYu2hAfs",
+    "tags": [
+      "goodnotes",
+      "certificate",
+      "module 1",
+      "completion",
+      "cpd"
+    ],
+    "difficulty": "beginner",
+    "series": "Goodnotes: Module 1",
+    "seriesOrder": 7,
+    "featured": false,
+    "dateAdded": "2026-04-29",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
   }
 ]
