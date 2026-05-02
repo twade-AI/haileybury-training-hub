@@ -34,6 +34,11 @@
             color: '#ec6608',
             icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`
         },
+        'apps-social-media': {
+            title: 'Apps & Social Media Info',
+            color: '#0ea5e9',
+            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>`
+        },
         'learning-resource-hub': {
             title: 'Learning Resource Hub',
             color: '#7c3aed',
@@ -2094,13 +2099,38 @@
         dom.backButton.addEventListener('click', () => { window.location.hash = ''; showHome(); });
     }
 
+    function renderAppInfo(item) {
+        const ai = item.appInfo || {};
+        const risks = (ai.keyRisks || []).map(r => `<li>${esc(r)}</li>`).join('');
+        const tips = (ai.safetyTips || []).map(t => `<li>${esc(t)}</li>`).join('');
+        const ageBadge = ai.ageRating ? `<span class="app-info-badge app-info-age">Age ${esc(ai.ageRating)}</span>` : '';
+        const catBadge = ai.appCategory ? `<span class="app-info-badge">${esc(ai.appCategory)}</span>` : '';
+        const sourceLink = ai.sourceUrl
+            ? `<a href="${esc(ai.sourceUrl)}" target="_blank" rel="noopener noreferrer">Read the full guide on Hwb &rarr;</a>`
+            : '';
+        return `
+            <div class="app-info-panel">
+                <div class="app-info-badges">${ageBadge}${catBadge}</div>
+                ${ai.whatIsIt ? `<section><h4>What is it?</h4><p>${esc(ai.whatIsIt)}</p></section>` : ''}
+                ${risks ? `<section><h4>Key risks to be aware of</h4><ul>${risks}</ul></section>` : ''}
+                ${tips ? `<section><h4>Safety tips</h4><ul>${tips}</ul></section>` : ''}
+                <section class="app-info-source">
+                    ${sourceLink}
+                    <p class="app-info-attribution">Adapted from Hwb (Welsh Government) under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="noopener noreferrer">Open Government Licence v3.0</a>.</p>
+                </section>
+            </div>
+        `;
+    }
+
     function openModal(itemId) {
         const item = contentData.find(i => i.id === itemId);
         if (!item) return;
 
         dom.modalTitle.textContent = item.title;
 
-        if (item.youtubeId) {
+        if (item.type === 'app-info') {
+            dom.videoContainer.innerHTML = renderAppInfo(item);
+        } else if (item.youtubeId) {
             dom.videoContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${item.youtubeId}?rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen style="border:none"></iframe>`;
         } else if (item.externalUrl) {
             dom.videoContainer.innerHTML = `<iframe src="${item.externalUrl}" allow="autoplay" style="border:none"></iframe>`;

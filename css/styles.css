@@ -3425,3 +3425,44 @@ button:focus-visible,
     display: flex; align-items: center; gap: var(--space-md);
     margin-left: auto;
 }
+
+/* --- App Info Panel (Apps & Social Media Info) --- */
+.video-container:has(.app-info-panel) { padding-top: 0; background: var(--color-surface, #fff); }
+.app-info-panel {
+    padding: var(--space-lg) var(--space-xl);
+    max-height: 60vh;
+    overflow-y: auto;
+    color: var(--color-text-primary);
+    line-height: 1.55;
+}
+.app-info-panel section { margin-bottom: var(--space-md); }
+.app-info-panel h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 var(--space-xs);
+    color: var(--color-magenta, #9b1844);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.app-info-panel p { font-size: 0.95rem; color: var(--color-text-secondary); margin: 0 0 var(--space-sm); }
+.app-info-panel ul { margin: 0; padding-left: 1.25rem; }
+.app-info-panel li { font-size: 0.92rem; margin-bottom: 0.25rem; color: var(--color-text-secondary); }
+.app-info-badges { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-bottom: var(--space-md); }
+.app-info-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: rgba(14, 165, 233, 0.12);
+    color: #0369a1;
+}
+.app-info-badge.app-info-age { background: rgba(155, 24, 68, 0.12); color: var(--color-magenta, #9b1844); }
+.app-info-source {
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+}
+.app-info-source a { color: var(--color-magenta, #9b1844); font-weight: 600; text-decoration: none; }
+.app-info-source a:hover { text-decoration: underline; }
+.app-info-attribution { font-size: 0.78rem; color: var(--color-text-muted); margin-top: var(--space-xs); }
