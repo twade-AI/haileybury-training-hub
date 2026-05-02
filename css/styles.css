@@ -3482,3 +3482,51 @@ button:focus-visible,
     background: rgba(14, 165, 233, 0.92);
     color: #fff;
 }
+
+/* --- App icon thumbnails (Apps & Social Media cards) --- */
+.content-card-thumb.is-app-icon-thumb {
+    background: linear-gradient(135deg,
+        color-mix(in srgb, var(--cat-color, #0ea5e9) 90%, #000) 0%,
+        color-mix(in srgb, var(--cat-color, #0ea5e9) 50%, #1a1a2e) 100%);
+}
+.content-card-thumb-img.is-app-icon {
+    width: 64px;
+    height: 64px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    background: #fff;
+    padding: 8px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+.content-card:hover .content-card-thumb-img.is-app-icon {
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* --- App icon in the modal info panel header --- */
+.app-info-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+}
+.app-info-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    background: #fff;
+    padding: 6px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+.app-info-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-text-primary);
+}
