@@ -1965,7 +1965,9 @@
         const cat = CATEGORIES[item.category] || {};
         const watched = isWatched(item.id);
         const newBadge = isNew(item) ? '<span class="thumb-badge-new">New</span>' : '';
-        const typeBadge = `<span class="thumb-badge-type type-${item.type}">${item.type}</span>`;
+        const ageBadge = (item.type === 'app-info' && item.appInfo && item.appInfo.ageRating)
+            ? `<span class="thumb-badge-age">${esc(item.appInfo.ageRating)}</span>` : '';
+        const typeBadge = `<span class="thumb-badge-type type-${item.type}">${item.type === 'app-info' ? 'Info' : item.type}</span>`;
         const diffBadge = item.difficulty ? `<span class="meta-badge difficulty-${item.difficulty}">${cap(item.difficulty)}</span>` : '';
         const catBadge = cat.title ? `<span class="meta-badge">${cat.title}</span>` : '';
         const stratBadges = (item.strategies || []).map(s => {
@@ -1988,7 +1990,7 @@
             <div class="content-card tilt-card" data-id="${item.id}" style="--cat-color: ${cat.color || '#9b1844'}">
                 <div class="content-card-thumb">
                     ${thumbContent}
-                    ${newBadge}${typeBadge}
+                    ${newBadge}${ageBadge}${typeBadge}
                     ${watched ? '<span class="thumb-badge-watched">&#10003;</span>' : ''}
                 </div>
                 <div class="content-card-body">
