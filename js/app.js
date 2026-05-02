@@ -1950,10 +1950,58 @@
         dom.progressGrid.innerHTML = html;
     }
 
+    // --- App icon domains for Apps & Social Media Info cards ---
+    // Each maps to the brand's primary domain so we can hotlink its favicon
+    // via Google's favicon service. No assets are bundled.
+    const APP_ICON_DOMAINS = {
+        'app-info-among-us': 'innersloth.com',
+        'app-info-apex-legends': 'ea.com',
+        'app-info-bitlife': 'candywriter.com',
+        'app-info-call-of-duty': 'callofduty.com',
+        'app-info-characterai': 'character.ai',
+        'app-info-chatgpt': 'openai.com',
+        'app-info-clash-of-clans': 'supercell.com',
+        'app-info-discord': 'discord.com',
+        'app-info-fifa-mobile': 'ea.com',
+        'app-info-facebook': 'facebook.com',
+        'app-info-fortnite-battle-royale': 'fortnite.com',
+        'app-info-gacha-life': 'lunime.com',
+        'app-info-grand-theft-auto': 'rockstargames.com',
+        'app-info-instagram': 'instagram.com',
+        'app-info-messenger': 'messenger.com',
+        'app-info-minecraft': 'minecraft.net',
+        'app-info-only-fans': 'onlyfans.com',
+        'app-info-pinterest': 'pinterest.com',
+        'app-info-pokemon-go': 'pokemongolive.com',
+        'app-info-reddit': 'reddit.com',
+        'app-info-replika': 'replika.com',
+        'app-info-roblox': 'roblox.com',
+        'app-info-rocket-league': 'rocketleague.com',
+        'app-info-snapchat': 'snapchat.com',
+        'app-info-spotify': 'spotify.com',
+        'app-info-telegram': 'telegram.org',
+        'app-info-threads': 'threads.net',
+        'app-info-tiktok': 'tiktok.com',
+        'app-info-twitch': 'twitch.tv',
+        'app-info-wattpad': 'wattpad.com',
+        'app-info-whatsapp': 'whatsapp.com',
+        'app-info-wizz': 'wizz.app',
+        'app-info-x': 'x.com',
+        'app-info-youtube': 'youtube.com'
+    };
+
+    function getAppIconUrl(item) {
+        const domain = APP_ICON_DOMAINS[item.id];
+        return domain ? `https://www.google.com/s2/favicons?domain=${domain}&sz=128` : '';
+    }
+
     // --- Thumbnail URL ---
     function getThumbnailUrl(item) {
         if (item.youtubeId) {
             return `https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`;
+        }
+        if (item.type === 'app-info') {
+            return getAppIconUrl(item);
         }
         if (!item.driveFileId) return '';
         // Google Drive provides thumbnail images for all file types
@@ -1979,16 +2027,19 @@
             return func ? `<span class="ef-badge" style="--ef-color: ${func.color}" title="${ef}">${func.icon} ${ef}</span>` : '';
         }).join('');
         const thumbUrl = getThumbnailUrl(item);
+        const isAppIcon = item.type === 'app-info';
 
         // Build thumbnail: real image with fallback to placeholder
+        const thumbImgClass = isAppIcon ? 'content-card-thumb-img is-app-icon' : 'content-card-thumb-img';
         const thumbContent = thumbUrl
-            ? `<img class="content-card-thumb-img" src="${thumbUrl}" alt="${escAttr(item.title)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            ? `<img class="${thumbImgClass}" src="${thumbUrl}" alt="${escAttr(item.title)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                <div class="content-card-thumb-placeholder" style="display:none;--cat-color: ${cat.color || '#9b1844'}">${typeIcon(item.type)}</div>`
             : `<div class="content-card-thumb-placeholder" style="--cat-color: ${cat.color || '#9b1844'}">${typeIcon(item.type)}</div>`;
 
+        const thumbClass = isAppIcon ? 'content-card-thumb is-app-icon-thumb' : 'content-card-thumb';
         return `
             <div class="content-card tilt-card" data-id="${item.id}" style="--cat-color: ${cat.color || '#9b1844'}">
-                <div class="content-card-thumb">
+                <div class="${thumbClass}">
                     ${thumbContent}
                     ${newBadge}${ageBadge}${typeBadge}
                     ${watched ? '<span class="thumb-badge-watched">&#10003;</span>' : ''}
@@ -2107,11 +2158,16 @@
         const tips = (ai.safetyTips || []).map(t => `<li>${esc(t)}</li>`).join('');
         const ageBadge = ai.ageRating ? `<span class="app-info-badge app-info-age">Age ${esc(ai.ageRating)}</span>` : '';
         const catBadge = ai.appCategory ? `<span class="app-info-badge">${esc(ai.appCategory)}</span>` : '';
+        const iconUrl = getAppIconUrl(item);
+        const iconHeader = iconUrl
+            ? `<div class="app-info-header"><img class="app-info-icon" src="${iconUrl}" alt="${escAttr(item.title)} icon" onerror="this.style.display='none'"><h2 class="app-info-name">${esc(item.title)}</h2></div>`
+            : '';
         const sourceLink = ai.sourceUrl
             ? `<a href="${esc(ai.sourceUrl)}" target="_blank" rel="noopener noreferrer">Read the full guide on Hwb &rarr;</a>`
             : '';
         return `
             <div class="app-info-panel">
+                ${iconHeader}
                 <div class="app-info-badges">${ageBadge}${catBadge}</div>
                 ${ai.whatIsIt ? `<section><h4>What is it?</h4><p>${esc(ai.whatIsIt)}</p></section>` : ''}
                 ${risks ? `<section><h4>Key risks to be aware of</h4><ul>${risks}</ul></section>` : ''}
