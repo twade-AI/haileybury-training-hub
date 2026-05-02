@@ -225,7 +225,7 @@ button:focus-visible,
 
 .header-brand { display: flex; align-items: center; gap: var(--space-md); text-decoration: none; cursor: pointer; }
 .header-brand:hover { opacity: 0.9; }
-.tech-tips-logo { height: 44px; width: auto; }
+.tech-tips-logo { height: 44px; width: auto; mix-blend-mode: screen; }
 .header-divider { width: 1.5px; height: 32px; background: rgba(255,255,255,0.3); }
 .haileybury-logo { height: 40px; width: auto; filter: brightness(0) invert(1); }
 
