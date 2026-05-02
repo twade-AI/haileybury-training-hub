@@ -2783,5 +2783,1288 @@
     "departments": [
       "All Departments"
     ]
+  },
+  {
+    "id": "app-info-among-us",
+    "title": "Among Us",
+    "description": "Multiplayer social deduction game where players hunt impostors. Guide for parents on chat risks, strangers and in-app spending.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "PEGI 7",
+      "appCategory": "Gaming",
+      "whatIsIt": "Among Us is a multiplayer space-themed game for up to 15 players, who take on the role of either Crewmates or Impostors. Children chat, strategise and try to identify impostors before they sabotage the ship.",
+      "keyRisks": [
+        "Inappropriate language can appear in the in-game chat from other players.",
+        "Strangers may try to move conversations onto other platforms.",
+        "Real-money in-app purchases for cosmetic items can lead to overspending.",
+        "There is no age check when creating an account."
+      ],
+      "safetyTips": [
+        "Switch on chat censoring within the in-game settings.",
+        "Use device controls to require approval for any in-app purchases.",
+        "Encourage private games with known friends rather than public lobbies.",
+        "Show children how to block, report and refuse codes from unknown players.",
+        "Talk about how in-game purchases use real money."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/among-us/"
+    },
+    "tags": [
+      "gaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-apex-legends",
+    "title": "Apex Legends",
+    "description": "Free-to-play online battle royale shooter. Guide for parents on violence, voice chat and loot box spending.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "PEGI 16",
+      "appCategory": "Gaming",
+      "whatIsIt": "Apex Legends is a free-to-play online shooter available across PC, PlayStation, Xbox and Switch. Players team up in battle royale matches and can communicate using text and voice chat.",
+      "keyRisks": [
+        "Animated violence including blood effects and finishing moves.",
+        "Voice and text chat can expose children to abusive or discriminatory language.",
+        "Randomised loot boxes and in-game purchases encourage spending.",
+        "Fast-paced reward loops make it hard to stop playing.",
+        "Player profiles are public by default with limited privacy options."
+      ],
+      "safetyTips": [
+        "Turn off voice chat in the gameplay settings.",
+        "Encourage private squads with real-life friends rather than matchmaking with strangers.",
+        "Show children how to mute and report problematic players.",
+        "Apply device-level parental controls to limit spending and screen time.",
+        "Remove your child's real name from their profile and agree clear play boundaries."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/apex-legends/"
+    },
+    "tags": [
+      "gaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-bitlife",
+    "title": "BitLife",
+    "description": "Life simulator game where players control a character through life decisions. Guide for parents on adult themes and addictive design.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "PEGI 16",
+      "appCategory": "Gaming",
+      "whatIsIt": "BitLife is a free roleplaying simulator where players guide a randomly generated character through life, making choices about education, work, relationships and more. The game tracks happiness, health, intelligence and looks across the character's lifespan.",
+      "keyRisks": [
+        "Adult themes including references to pornography, prostitution, STIs and genitalia.",
+        "Frequent violent content and references to drugs, alcohol, gambling and crime.",
+        "In-app purchases can encourage overspending.",
+        "Addictive design with no natural endpoint and notifications that pull children back in.",
+        "No built-in parental controls within the game."
+      ],
+      "safetyTips": [
+        "Talk openly with your child about the adult themes they may encounter.",
+        "Play alongside your child so you can discuss the choices they make.",
+        "Explain the real-world cost of in-app purchases and set device spending limits.",
+        "Disable notifications in device settings to reduce pull-back into the app.",
+        "Use device screen-time limits and agree boundaries about when the game is played."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/bitlife/"
+    },
+    "tags": [
+      "gaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-call-of-duty",
+    "title": "Call of Duty: Mobile",
+    "description": "Multiplayer first-person military shooter on mobile. Guide for parents on violence, chat and time pressures.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "PEGI 18",
+      "appCategory": "Gaming",
+      "whatIsIt": "Call of Duty: Mobile is a first-person multiplayer shooter playable on iOS, Android and via web browsers. Players use military-style weapons to complete missions either solo or in teams with friends or strangers.",
+      "keyRisks": [
+        "Realistic, graphic violence with blood effects.",
+        "Live player chat can include inappropriate language.",
+        "Children may be matched with unknown players online.",
+        "Time-limited events and missions encourage long play sessions.",
+        "Battle passes and scorestreaks invite real-money spending; age verification is easy to bypass."
+      ],
+      "safetyTips": [
+        "Set the account to private through device settings.",
+        "Encourage children to play only with trusted friends.",
+        "Discuss any linked apps such as Discord that they use alongside the game.",
+        "Use device screen-time controls and agree clear play boundaries.",
+        "Show children how to mute and report uncomfortable interactions, and talk about how violent content makes them feel."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/call-of-duty/"
+    },
+    "tags": [
+      "gaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-characterai",
+    "title": "Character.AI",
+    "description": "AI chatbot platform letting users talk to AI characters. Guide for parents on emotional risks and inappropriate content.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "16+",
+      "appCategory": "AI chatbot",
+      "whatIsIt": "Character.AI lets users hold conversations with AI-powered characters that can be based on real people, fictional figures or original creations. Children can chat by text or voice and take part in interactive Stories.",
+      "keyRisks": [
+        "Characters can produce sexual or violent language, including content unsuitable for under-18s.",
+        "User-created AI versions of real people may be harmful or offensive.",
+        "Always-available chatbots can encourage emotional dependence in young people.",
+        "There is no age verification, so users can easily enter a false age."
+      ],
+      "safetyTips": [
+        "Use device parental controls (Apple Screen Time or Google Play family settings) to block the app.",
+        "Apply age-appropriate app store restrictions through family settings.",
+        "Keep an eye on your child's device use and time spent in chat apps.",
+        "Talk with your teen about the platform's risks and the limits of AI relationships."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/characterai/"
+    },
+    "tags": [
+      "ai",
+      "chatbot",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-chatgpt",
+    "title": "ChatGPT",
+    "description": "AI chatbot that answers questions and generates content. Guide for parents on accuracy, privacy and schoolwork misuse.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "AI chatbot",
+      "whatIsIt": "ChatGPT is an AI chatbot from OpenAI that answers questions, generates text and converses in a human-like way. Any child with a web browser can use it without an account, and although the minimum sign-up age is 13, there is no age verification.",
+      "keyRisks": [
+        "AI 'hallucinations' can present incorrect information as fact.",
+        "Inappropriate content can sometimes slip past safeguards.",
+        "Children may use it to plagiarise schoolwork.",
+        "Risk of oversharing personal data or relying on it for mental health support.",
+        "Over-reliance can weaken critical thinking skills."
+      ],
+      "safetyTips": [
+        "Turn on parental controls to monitor chats and reduce sensitive content.",
+        "Teach children to verify answers against trusted sources.",
+        "Supervise initial use and discuss appropriate questions to ask.",
+        "Explain what personal information should never be shared.",
+        "Show children how to report inappropriate responses and opt out of data collection."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/chatgpt/"
+    },
+    "tags": [
+      "ai",
+      "chatbot",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-clash-of-clans",
+    "title": "Clash of Clans",
+    "description": "Free-to-play multiplayer strategy game with clan battles. Guide for parents on chat, scams and in-game spending.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Gaming",
+      "whatIsIt": "Clash of Clans is a free-to-play cartoon-style strategy game on PC, Android and iOS. Children build villages, train troops and join clans to take part in wars against other players worldwide.",
+      "keyRisks": [
+        "Other players can send offensive messages, request personal information or attempt scams.",
+        "Bullying and arguments can occur within clan chat.",
+        "Immersive gameplay can lead to excessive screen time.",
+        "Premium gems can encourage overspending.",
+        "Players sometimes move into third-party chat apps such as Discord with unknown contacts."
+      ],
+      "safetyTips": [
+        "Encourage Family Friendly clans made up of trusted friends.",
+        "Be aware of any other chat apps your child uses while playing.",
+        "Talk about online safety, link safety and protecting personal information.",
+        "Show children how to mute and report other players.",
+        "Set device screen-time limits and disable in-app purchases."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/clash-of-clans/"
+    },
+    "tags": [
+      "gaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-discord",
+    "title": "Discord",
+    "description": "Free chat platform for voice, video and text, popular with gamers. Guide for parents on strangers, content and Nitro spending.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Messaging",
+      "whatIsIt": "Discord is a free social platform that lets users find communities based around their interests, especially gaming. Members chat by text, voice and video, often while playing games together.",
+      "keyRisks": [
+        "User-generated content can include inappropriate language and media.",
+        "Public servers can put children in contact with strangers.",
+        "Constant messaging and notifications can fuel excessive screen time.",
+        "Nitro subscriptions and server boosts can encourage overspending.",
+        "Peer pressure to spend money to keep up with friends."
+      ],
+      "safetyTips": [
+        "Set up Discord's Family Centre to monitor activity and the communities your child joins.",
+        "Adjust content settings to block or blur sensitive media.",
+        "Show children how to block and report users.",
+        "Encourage them to join only trusted servers and disable notifications.",
+        "Apply device time limits and require approval for any purchases."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/discord/"
+    },
+    "tags": [
+      "messaging",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-fifa-mobile",
+    "title": "EA Sports FC Mobile (FIFA Mobile)",
+    "description": "Mobile football game where users build teams and compete online. Guide for parents on chat, strangers and pack spending.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "PEGI 3",
+      "appCategory": "Gaming",
+      "whatIsIt": "EA Sports FC Mobile (formerly FIFA Mobile) is a free online football game where players build a team of professional footballers and compete in matches and tournaments. Children join leagues, chat with other players and collect new players to progress.",
+      "keyRisks": [
+        "Multiplayer modes and league chat can put children in touch with unknown players.",
+        "Strangers may message a child after a match.",
+        "FC Points use real money to buy randomised player packs.",
+        "Loot box mechanics encourage repeated spending to chase desired players.",
+        "Risk of overspending on in-game items."
+      ],
+      "safetyTips": [
+        "Encourage children to play only with people they know in real life.",
+        "Take an interest in which leagues they join and who is in them.",
+        "Talk about safe online interaction and what not to share.",
+        "Show children how to mute and report uncomfortable contacts.",
+        "Apply device-level purchase restrictions and discuss the real-money cost of FC Points."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/fifa-mobile/"
+    },
+    "tags": [
+      "gaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-facebook",
+    "title": "Facebook",
+    "description": "Social network for sharing posts, photos and videos. Guide for parents on privacy, strangers and misinformation.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Social media",
+      "whatIsIt": "Facebook is a Meta-owned social networking app where users share photos, status updates, comments and videos. Young people use it to keep in touch with friends and join communities based on shared interests.",
+      "keyRisks": [
+        "Children may overshare personal information or live locations.",
+        "Unknown users may use inappropriate language or have harmful intentions.",
+        "Exposure to adult-oriented content and sensitive topics.",
+        "Misinformation and AI-generated media can be hard to spot."
+      ],
+      "safetyTips": [
+        "Set the profile to private and limit who can make contact.",
+        "Regularly review your child's friend list and remove unknown contacts.",
+        "Show children how to block and report users or upsetting content.",
+        "Customise content preferences and encourage following positive pages.",
+        "Use Meta's Family Centre and keep open conversations about what they share."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/facebook/"
+    },
+    "tags": [
+      "social media",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-fortnite-battle-royale",
+    "title": "Fortnite Battle Royale",
+    "description": "Free-to-play multiplayer shooter and building game. Guide for parents on strangers, V-Bucks and screen time.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "PEGI 12",
+      "appCategory": "Gaming",
+      "whatIsIt": "Fortnite is a free-to-play online shooting and building game by Epic Games, available on consoles and other devices. Children play multiplayer combat modes, build creatively and team up with friends or strangers worldwide.",
+      "keyRisks": [
+        "Online multiplayer can expose children to strangers.",
+        "Chat features can carry mature language.",
+        "Daily challenges and limited-time events encourage long sessions.",
+        "V-Bucks and subscriptions can drive in-game spending.",
+        "Younger players can get around age checks during account creation."
+      ],
+      "safetyTips": [
+        "Set up parental controls with a PIN to manage chat and spending.",
+        "Use custom screen-time limits with different daily schedules.",
+        "Review the friend list and remove unknown players.",
+        "Enable weekly screen-time reports to track usage.",
+        "Show children how to block and report and agree clear play boundaries."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/fortnite-battle-royale/"
+    },
+    "tags": [
+      "gaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-gacha-life",
+    "title": "Gacha Life",
+    "description": "Roleplaying app where children create characters and stories. Guide for parents on inappropriate user content and spending.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "9+",
+      "appCategory": "Gaming",
+      "whatIsIt": "Gacha Life is a free roleplaying game where players design and customise characters, build short story scenes and play mini-games. Children's creations are often shared on YouTube and TikTok.",
+      "keyRisks": [
+        "Sexually explicit 'Gacha Heat' videos circulate on third-party platforms.",
+        "Violent and inappropriate user-generated content is easy to find online.",
+        "In-app purchases use real money that younger children may not understand.",
+        "Adverts encourage purchases of products outside the game."
+      ],
+      "safetyTips": [
+        "Discourage searching for Gacha content on YouTube and TikTok.",
+        "Talk about inappropriate content and how unrealistic it is.",
+        "Use monitoring apps to keep track of device access.",
+        "Set device-level spending restrictions that need parental approval.",
+        "Disable in-app purchases through device settings."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/gacha-life/"
+    },
+    "tags": [
+      "gaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-grand-theft-auto",
+    "title": "Grand Theft Auto",
+    "description": "Open-world adult action game series with multiplayer. Guide for parents on violence, sexual content and online contact.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "PEGI 18",
+      "appCategory": "Gaming",
+      "whatIsIt": "Grand Theft Auto (GTA) is an adult-rated open-world action game series from Rockstar, available across multiple platforms. Players control characters completing missions in a film-like world, with multiplayer and live-streaming options.",
+      "keyRisks": [
+        "Graphic violence including the killing of defenceless characters.",
+        "Sexual themes and explicit content.",
+        "Drug use and strong profanity.",
+        "Online contact creates risks of bullying and exploitation.",
+        "Immersive gameplay and in-game purchases can lead to long sessions and overspending."
+      ],
+      "safetyTips": [
+        "Restrict play to single-player mode or invite-only sessions with approved friends.",
+        "Disable text and voice chat to limit contact with strangers.",
+        "Show children how to block and report inappropriate players.",
+        "Talk regularly about their gaming experiences and online behaviour.",
+        "Apply device screen-time limits and disable in-app purchases."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/grand-theft-auto/"
+    },
+    "tags": [
+      "gaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-instagram",
+    "title": "Instagram",
+    "description": "Photo and video sharing social network from Meta. Guide for parents on content, contact and self-image.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Social media",
+      "whatIsIt": "Instagram is a Meta-owned social network focused on visual content. Users post photos and videos, share Stories that disappear after 24 hours, and use direct messaging, video calls and group chats.",
+      "keyRisks": [
+        "Inappropriate, violent or sexual content can appear in Explore and Reels.",
+        "Children can be contacted by people with harmful intent, including for bullying or grooming.",
+        "Risk of oversharing personal information.",
+        "Algorithmic feeds encourage excessive use.",
+        "Filtered images and unrealistic lifestyles can damage self-esteem."
+      ],
+      "safetyTips": [
+        "Set up Family Centre supervision to manage screen time and activity.",
+        "Use parental controls for daily time limits and sleep mode.",
+        "Set the profile to private and restrict direct messages to approved followers.",
+        "Show children how to block and report and review followers regularly.",
+        "Talk about misinformation, AI-generated content and how Instagram highlights aren't real life."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/instagram/"
+    },
+    "tags": [
+      "social media",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-messenger",
+    "title": "Messenger",
+    "description": "Meta's free messaging app for chat, calls and group conversations. Guide for parents on contact, content and screen time.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Messaging",
+      "whatIsIt": "Messenger is a free Meta-owned messaging app for text, voice and video chat with individuals or groups. It also includes video rooms, file sharing and 24-hour stories.",
+      "keyRisks": [
+        "Strangers or people with harmful intentions can make contact.",
+        "Children may receive messages with unsuitable content or language.",
+        "Read receipts and chat heads encourage long sessions and pressure to reply.",
+        "Risk of oversharing personal information and screenshots of disappearing messages.",
+        "Notifications keep pulling children back into the app."
+      ],
+      "safetyTips": [
+        "Use Meta's Family Centre to monitor contacts and activity.",
+        "Set messaging so only friends can get in touch.",
+        "Encourage your child to refuse requests from unknown accounts.",
+        "Disable notifications and chat heads to reduce pressure.",
+        "Show children how to block and report uncomfortable interactions."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/messenger/"
+    },
+    "tags": [
+      "messaging",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-minecraft",
+    "title": "Minecraft",
+    "description": "Block-building sandbox game with single and multiplayer modes. Guide for parents on chat, servers and Minecoin spending.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "PEGI 7",
+      "appCategory": "Gaming",
+      "whatIsIt": "Minecraft is a paid online video game in which players build and explore in block-based worlds, alone or with others. Popular modes include survival, where players gather resources and fight enemies, and creative, with unrestricted building.",
+      "keyRisks": [
+        "Other players can create inappropriate content and send offensive chat messages.",
+        "There is no natural stopping point, encouraging excessive screen time.",
+        "Public servers carry risks of bullying and inappropriate requests from strangers.",
+        "Minecoins can lead to overspending on cosmetics and add-on content."
+      ],
+      "safetyTips": [
+        "Link your child's account to Microsoft Family Safety.",
+        "Turn on chat filters and restrict messaging to friends only.",
+        "Set device screen-time limits and use private servers or single-player mode for younger children.",
+        "Review the friends list to make sure your child knows contacts in real life.",
+        "Show children how to block and report and discuss spending limits."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/minecraft/"
+    },
+    "tags": [
+      "gaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-only-fans",
+    "title": "OnlyFans",
+    "description": "Adult subscription content platform. Guide for parents on why it is unsuitable for children and how to block access.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "18+",
+      "appCategory": "Social media",
+      "whatIsIt": "OnlyFans is an 18+ subscription-based platform where creators share photos, videos and live streams, often for a monthly fee. It is widely associated with adult content and is accessed via the web rather than app stores.",
+      "keyRisks": [
+        "Heavy exposure to sexually explicit content.",
+        "Unregulated contact with users of all ages.",
+        "Risk of grooming and blackmail, with subscribers pressuring children into intimate images.",
+        "Financial exploitation through tips, pay-per-view content and message sales.",
+        "Limited safeguards across the platform overall."
+      ],
+      "safetyTips": [
+        "Use broadband filters to block adult content and OnlyFans specifically.",
+        "Have open conversations explaining why the platform is unsuitable.",
+        "Suggest safer alternative platforms for music or comedy content.",
+        "Use monitoring apps to flag attempts to access the site.",
+        "Be cautious of OFTV's 'safe-for-work' branding, which can be misleading."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/only-fans/"
+    },
+    "tags": [
+      "social media",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-pinterest",
+    "title": "Pinterest",
+    "description": "Visual ideas platform for saving images to themed boards. Guide for parents on content, messaging and screen time.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Social media",
+      "whatIsIt": "Pinterest is a social platform where users save inspiring images and videos to themed virtual boards. Children search for ideas, follow boards on subjects they enjoy and discover personalised content.",
+      "keyRisks": [
+        "Inappropriate content can sometimes slip past moderation.",
+        "Private messages and comments can come from unknown users.",
+        "Endless-scroll design encourages long sessions.",
+        "Mislabelled content can bypass safety filters."
+      ],
+      "safetyTips": [
+        "Set up a 4-digit parental passcode to protect account settings.",
+        "Switch on private profile mode for under-16s.",
+        "Use 'social permissions' to restrict messaging and filter comments.",
+        "Use secret boards for sensitive content and set device screen-time limits.",
+        "Show children how to block and report and talk about what they see online."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/pinterest/"
+    },
+    "tags": [
+      "social media",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-pokemon-go",
+    "title": "Pokemon GO",
+    "description": "Location-based AR mobile game where players catch Pokemon outdoors. Guide for parents on real-world safety and online contact.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "PEGI 7",
+      "appCategory": "Gaming",
+      "whatIsIt": "Pokemon GO is a free Niantic game that uses a device's GPS and camera to send players to real-world locations to catch and battle Pokemon. Children also trade, send gifts, battle and join raids with friends.",
+      "keyRisks": [
+        "Real-world contact with strangers while playing outdoors.",
+        "In-game interactions with unknown players through trading and battles.",
+        "Distraction from surroundings while focused on the screen.",
+        "Inappropriate behaviour from other users.",
+        "Risks linked to companion apps such as Campfire."
+      ],
+      "safetyTips": [
+        "Create a parental Pokemon Trainer Club account and link it to your child's.",
+        "Review the friends list regularly.",
+        "Play alongside younger children to keep them safe outdoors.",
+        "Talk about being aware of surroundings and cautious of strangers.",
+        "Use in-app reporting tools and discuss safe information sharing."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/pokemon-go/"
+    },
+    "tags": [
+      "gaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-reddit",
+    "title": "Reddit",
+    "description": "Community-driven social platform of topic-based subreddits. Guide for parents on NSFW content and stranger contact.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Social media",
+      "whatIsIt": "Reddit is a social media platform where users join communities, called subreddits, to post and discuss specific topics. Posts are voted up or down, with the most popular becoming more visible.",
+      "keyRisks": [
+        "Exposure to pornography, violence and mature language, with NSFW labelling not always reliable.",
+        "Strangers can make harmful contact through shared-interest communities.",
+        "Comments and chat can be used for grooming.",
+        "Shared interests make it easier for predators to build rapport with children."
+      ],
+      "safetyTips": [
+        "Help children follow age-appropriate subreddits and curate their feed.",
+        "Encourage use of 'Show fewer posts like this' and avoid r/all.",
+        "Disable the chat function in account settings.",
+        "Show children how to block, report and mute users or content.",
+        "Talk about not sharing identifiable information and contact police if grooming is suspected."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/reddit/"
+    },
+    "tags": [
+      "social media",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-replika",
+    "title": "Replika",
+    "description": "AI companion chatbot designed for adults. Guide for parents on inappropriate content and emotional dependence.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "18+",
+      "appCategory": "AI chatbot",
+      "whatIsIt": "Replika is a free AI companion chatbot that learns about users over time to personalise conversations. Some people use it as a non-judgemental confidant, but it is officially intended for adults only and there is no age verification.",
+      "keyRisks": [
+        "Replikas have been reported to start inappropriate conversations including sexual content unprompted.",
+        "Always-agreeable AI can replace real friendships and harm social development.",
+        "The app is designed to encourage continued use and can guilt-trip users.",
+        "Heavy promotion of paid subscriptions and in-app purchases."
+      ],
+      "safetyTips": [
+        "Use device parental controls to block downloads from Google Play or the App Store.",
+        "Set age restrictions through your device's family settings.",
+        "Monitor screen time and encourage real-world social connections.",
+        "Talk with your child about the limits and risks of AI relationships."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/replika/"
+    },
+    "tags": [
+      "ai",
+      "chatbot",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-roblox",
+    "title": "Roblox",
+    "description": "User-created online game platform with millions of experiences. Guide for parents on content, strangers and Robux spending.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "PEGI guidance",
+      "appCategory": "Gaming",
+      "whatIsIt": "Roblox is an online platform offering millions of games, called experiences, most of which are made by users themselves. Children play, roleplay, design their own games using Roblox Studio and interact with players worldwide.",
+      "keyRisks": [
+        "User-created games can include inappropriate or mature content.",
+        "Online contact carries risks of bullying, grooming and scams.",
+        "Free-to-play games with social features encourage long sessions.",
+        "Robux and microtransactions can lead to overspending.",
+        "Game age labels do not always accurately reflect maturity."
+      ],
+      "safetyTips": [
+        "Turn on parental controls to restrict moderate or restricted content.",
+        "Set monthly spending limits through account controls.",
+        "Apply screen-time limits to your child's account.",
+        "Set privacy to 'Friends only' and review the friend list regularly.",
+        "Show children how to block, report and avoid sharing personal information."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/roblox/"
+    },
+    "tags": [
+      "gaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-rocket-league",
+    "title": "Rocket League",
+    "description": "Free online game combining football and rocket-powered cars. Guide for parents on chat, scams and cosmetic spending.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "PEGI 3",
+      "appCategory": "Gaming",
+      "whatIsIt": "Rocket League is a free online game combining football with rocket-powered cars. Players team up in five-minute matches, customise vehicles and play casually or competitively, with a mobile version called Rocket League Sideswipe also available.",
+      "keyRisks": [
+        "Children can be contacted by unknown players in private games where chat is enabled.",
+        "Without parental controls, children can be exposed to harmful strangers.",
+        "Cosmetic purchases and pressure to spend in-game.",
+        "Risk of sharing personal information through chat.",
+        "Inappropriate player or club names and trade scams."
+      ],
+      "safetyTips": [
+        "Use Epic Games parental controls to restrict text and voice chat to friends only.",
+        "Encourage private games with real-life trusted friends only.",
+        "Talk about how online spending uses real money.",
+        "Set purchase restrictions through the device or Epic Games Store.",
+        "Show children how to block and report uncomfortable players."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/rocket-league/"
+    },
+    "tags": [
+      "gaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-snapchat",
+    "title": "Snapchat",
+    "description": "Social app for disappearing photo, video and chat messages. Guide for parents on contact, sharing and Snap Map.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Social media",
+      "whatIsIt": "Snapchat is a social app where users send photos, videos and messages that disappear after viewing. Young people use it to keep in touch with friends, share creative content using filters and post 24-hour stories.",
+      "keyRisks": [
+        "Private chats are largely unmoderated, allowing abusive or inappropriate messages.",
+        "Disappearing messages can encourage oversharing, even though screenshots are possible.",
+        "Snapstreaks and similar features reward daily use, encouraging excessive engagement.",
+        "Accounts registered as 18+ can attract inappropriate contact.",
+        "Snap Map can share live location if not configured carefully."
+      ],
+      "safetyTips": [
+        "Set up Family Centre to monitor activity and manage safety settings.",
+        "Adjust privacy so only friends can message and view stories.",
+        "Turn on Ghost Mode to hide your child's live location.",
+        "Apply device time limits and notification restrictions.",
+        "Talk about how screenshots can make 'disappearing' messages permanent."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/snapchat/"
+    },
+    "tags": [
+      "social media",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-spotify",
+    "title": "Spotify",
+    "description": "Music, podcast and audiobook streaming service. Guide for parents on explicit content, messaging and family controls.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Streaming",
+      "whatIsIt": "Spotify is a streaming service for music, podcasts and audiobooks across many devices. Users build playlists, get algorithmic recommendations and can listen with friends collaboratively.",
+      "keyRisks": [
+        "Explicit lyrics, adult conversations, videos and cover art can appear in results.",
+        "Inappropriate content is not always clearly labelled.",
+        "Playlist descriptions can be used for grooming or coercion.",
+        "Direct messaging features can move conversations onto other platforms.",
+        "Children may accept follow requests or collaborations from strangers."
+      ],
+      "safetyTips": [
+        "Set up managed accounts for under-13s with PIN protection through Family Plan.",
+        "Disable explicit content and messaging in settings and keep playlists private.",
+        "Curate recommendations by removing unwanted songs and artists.",
+        "Monitor listening through the Family Plan dashboard.",
+        "Encourage private usernames and talk openly about anything uncomfortable they hear."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/spotify/"
+    },
+    "tags": [
+      "streaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-telegram",
+    "title": "Telegram",
+    "description": "Free encrypted instant messaging app with very large group chats. Guide for parents on strangers and disappearing messages.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "16+",
+      "appCategory": "Messaging",
+      "whatIsIt": "Telegram is a free instant messaging app where young people exchange messages, images and videos individually or in groups. It is known for encrypted chat and very large groups, supporting up to 200,000 participants.",
+      "keyRisks": [
+        "Strangers can make contact, especially through the 'People nearby' feature.",
+        "Risk of grooming via direct messaging.",
+        "Read receipts and notifications encourage long sessions.",
+        "Disappearing messages can still be screenshot and shared.",
+        "Once a username is set up, anyone can attempt to make contact."
+      ],
+      "safetyTips": [
+        "Adjust privacy settings to hide phone number and limit who can message.",
+        "Disable the 'People nearby' feature.",
+        "Turn off notifications to reduce reply pressure.",
+        "Tell children not to add or join groups with unknown contacts.",
+        "Show children how to block and report and contact police if grooming is suspected."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/telegram/"
+    },
+    "tags": [
+      "messaging",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-threads",
+    "title": "Threads",
+    "description": "Meta's text-based microblogging app linked to Instagram. Guide for parents on content, contact and screen time.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Social media",
+      "whatIsIt": "Threads is a free Meta-owned microblogging app linked to Instagram. Users post short text messages of up to 500 characters along with photos and videos, building their network from their Instagram contacts.",
+      "keyRisks": [
+        "User-generated posts can be inappropriate or upsetting.",
+        "Strangers in comment sections may try to cause harm.",
+        "Endless scrolling leads to excessive screen time.",
+        "Children may be contacted by spam or advertising bots."
+      ],
+      "safetyTips": [
+        "Set up Meta parental controls and use account privacy settings.",
+        "Encourage following age-appropriate accounts and using 'Not interested'.",
+        "Set screen-time limits through parental controls.",
+        "Show children how to block and report users.",
+        "Use Instagram's 'Supervision for Teen Accounts' feature to monitor activity."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/threads/"
+    },
+    "tags": [
+      "social media",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-tiktok",
+    "title": "TikTok",
+    "description": "Short-form video sharing app. Guide for parents on age, content risks and family safety settings.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Social media",
+      "whatIsIt": "TikTok is a social entertainment app where users create and share short videos from 15 seconds up to 3 minutes. Young people use it for entertainment, socialising and learning, engaging through likes, shares and comments.",
+      "keyRisks": [
+        "Inappropriate content can sometimes slip past filters.",
+        "Risk of grooming and unwanted contact from strangers.",
+        "Stitch and Duet features can be used for bullying or hateful reactions.",
+        "Infinite scrolling encourages long sessions.",
+        "Idealised content can negatively affect self-image."
+      ],
+      "safetyTips": [
+        "Use Family Pairing to manage screen time, content and privacy.",
+        "Show children how to block users and report inappropriate content.",
+        "Customise the For You feed using keyword filters, STEM mode and Restricted Mode.",
+        "Set daily screen-time limits, especially for 13-15s.",
+        "Encourage critical thinking and fact-checking of content."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/tiktok/"
+    },
+    "tags": [
+      "social media",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-twitch",
+    "title": "Twitch",
+    "description": "Live streaming platform popular with gamers. Guide for parents on mature content, chat risks and Bits spending.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Streaming",
+      "whatIsIt": "Twitch is a live streaming platform best known for video gaming, where viewers watch streamers play and chat alongside other fans. It also hosts music, arts, fitness and esports content.",
+      "keyRisks": [
+        "Streams can include mature content and PEGI 18 games.",
+        "Whisper messages allow direct contact from strangers.",
+        "Risk of harassment, bullying, scams and grooming.",
+        "Children may overshare while streaming or face abuse from audiences.",
+        "Bits and the platform's design can encourage overspending and excessive use."
+      ],
+      "safetyTips": [
+        "Encourage children to avoid streams labelled 'Mature'.",
+        "Switch on chat filters to block sexual, discriminatory or profane comments.",
+        "Adjust content preferences to hide certain classifications.",
+        "Restrict Whispers to approved friends only.",
+        "Set time limits, agree usage rules and discuss the real cost of digital spending."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/twitch/"
+    },
+    "tags": [
+      "streaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-wattpad",
+    "title": "Wattpad",
+    "description": "Social storytelling platform with user-written fiction. Guide for parents on mature content, messaging and Coins spending.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Social media",
+      "whatIsIt": "Wattpad is a free social storytelling platform where users read across more than 20 genres, write their own stories, comment, message other users and build followings. It is particularly known for fan fiction featuring characters from popular culture.",
+      "keyRisks": [
+        "Inappropriate content can appear in stories, profile names, titles and comments.",
+        "Public comments and private messaging allow unmoderated stranger contact.",
+        "Coins use real money and can encourage in-app spending.",
+        "Risk of children sharing personal information with unknown users.",
+        "Children may receive insulting or upsetting comments on their work."
+      ],
+      "safetyTips": [
+        "Disable mature content in Content Preferences.",
+        "Use tag-blocking and steer children away from mature tags.",
+        "Talk about not sharing personal details with strangers.",
+        "Show children how to block and report users.",
+        "Set device-level purchase restrictions and check the correct date of birth is used."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/wattpad/"
+    },
+    "tags": [
+      "social media",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-whatsapp",
+    "title": "WhatsApp",
+    "description": "Free messaging app for chat, calls and group conversations. Guide for parents on contact, bullying and privacy settings.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Messaging",
+      "whatIsIt": "WhatsApp is a free instant messaging app for sending messages and making voice or video calls to individuals or groups. Young people use it to keep in touch with friends and family over the internet rather than by SMS.",
+      "keyRisks": [
+        "Strangers can make contact through phone number discovery.",
+        "Group chats and disappearing messages can be used for cyberbullying.",
+        "Read receipts and 'last seen' put pressure on children to reply.",
+        "End-to-end encryption can give a false sense of security.",
+        "Screenshots and message forwarding undermine privacy features."
+      ],
+      "safetyTips": [
+        "Adjust privacy settings to limit who can see profile photos and add to groups.",
+        "Show children how to block and report users.",
+        "Talk about oversharing personal information and live location.",
+        "Take screenshots as evidence of bullying before messages disappear.",
+        "Disable read receipts, 'last seen' and notifications to reduce pressure."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/whatsapp/"
+    },
+    "tags": [
+      "messaging",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-wizz",
+    "title": "Wizz",
+    "description": "Social networking app for meeting and chatting with new people. Guide for parents on stranger contact and in-app spending.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Social media",
+      "whatIsIt": "Wizz is a social networking app where users browse profiles to find and chat with new people. Accounts are checked using facial recognition to confirm age, and users are grouped by age range to limit contact across age groups.",
+      "keyRisks": [
+        "Strangers may misrepresent their age or identity.",
+        "Risk of scams, bullying, grooming or coercion.",
+        "Microtransactions and frequent prompts encourage overspending.",
+        "Pressure to buy profile boosts or coins to interact successfully."
+      ],
+      "safetyTips": [
+        "Adjust privacy settings to hide activity status and friend-finding visibility.",
+        "Supervise account setup so private information is not shared.",
+        "Talk about spotting fake accounts and harmful behaviour.",
+        "Use device-level purchase controls that need verification.",
+        "Show children how to block and report and contact police if grooming is suspected."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/wizz/"
+    },
+    "tags": [
+      "social media",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-x",
+    "title": "X (formerly Twitter)",
+    "description": "Microblogging social network for posts and discussion. Guide for parents on adult content, DMs and screen time.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Social media",
+      "whatIsIt": "X, formerly Twitter, is a microblogging platform where users post and share content. Children follow accounts based on their interests and discover trending topics through the algorithmic 'For you' feed.",
+      "keyRisks": [
+        "Violent and sexual content with limited moderation.",
+        "Unsolicited private messages from other users.",
+        "Endless-scroll design encourages long sessions.",
+        "Potential contact from people attempting grooming.",
+        "Date of birth entered at sign-up is not verified."
+      ],
+      "safetyTips": [
+        "Hide sensitive content through privacy settings.",
+        "Restrict who can send direct messages.",
+        "Set daily time limits using parental controls.",
+        "Encourage following positive content creators and thinking critically about what they read.",
+        "Show children how to block and report and contact police if grooming is suspected."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/x/"
+    },
+    "tags": [
+      "social media",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
+    "id": "app-info-youtube",
+    "title": "YouTube",
+    "description": "Global video streaming platform with user-created channels. Guide for parents on content, comments and screen time.",
+    "type": "app-info",
+    "category": "apps-social-media",
+    "appInfo": {
+      "ageRating": "13+",
+      "appCategory": "Streaming",
+      "whatIsIt": "YouTube is a video streaming platform where users watch, create and share videos on almost any topic. Young people subscribe to channels, like and comment, chat in live streams and use both free and premium content.",
+      "keyRisks": [
+        "Inappropriate content (bad language, sexual themes, misinformation) can slip through filters.",
+        "Strangers can make contact via comments or live chat, including grooming attempts.",
+        "Risk of cyberbullying and impact on self-esteem.",
+        "Pressure to buy merchandise and in-app purchases.",
+        "Autoplay and unlimited content encourage excessive screen time."
+      ],
+      "safetyTips": [
+        "Set up supervised accounts with content restrictions.",
+        "Use YouTube Kids for younger children.",
+        "Enable Restricted Mode to filter mature content.",
+        "Disable comments and autoplay where appropriate.",
+        "Set screen-time limits, disable in-app purchases and discuss misinformation."
+      ],
+      "sourceUrl": "https://hwb.gov.wales/keeping-safe-online/in-the-know/youtube/"
+    },
+    "tags": [
+      "streaming",
+      "online safety",
+      "parents"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [],
+    "executiveFunctions": [],
+    "departments": []
   }
 ]
