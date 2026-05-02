@@ -2783,5 +2783,36 @@
     "departments": [
       "All Departments"
     ]
+  },
+  {
+    "id": "notebooklm-24-ways",
+    "title": "24 Ways to Use NotebookLM",
+    "description": "A practical reference sheet of 24 classroom and CPD use-cases for NotebookLM, covering planning, knowledge organisers, retrieval practice, marking and more.",
+    "type": "pdf",
+    "category": "ai-tools",
+    "driveFileId": null,
+    "externalUrl": "assets/24-ways-to-use-notebooklm.pdf",
+    "tags": [
+      "notebooklm",
+      "ai",
+      "use cases",
+      "reference",
+      "planning",
+      "cpd"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-05-02",
+    "strategies": [
+      "Retrieval Practice",
+      "Scaffolding",
+      "Dual Coding"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
+    ],
+    "departments": [
+      "All Departments"
+    ]
   }
 ]
