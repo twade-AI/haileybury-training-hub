@@ -2813,6 +2813,269 @@
     ]
   },
   {
+    "id": "goodnotes-modes-and-views",
+    "title": "Different Modes & Views",
+    "description": "Switch between Goodnotes' edit, read and presentation modes — and the different page views — so the app fits whatever you're doing in the lesson.",
+    "type": "video",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "youtubeId": "ZMsa5pVLaTc",
+    "tags": [
+      "goodnotes",
+      "modes",
+      "views",
+      "presentation",
+      "teaching"
+    ],
+    "difficulty": "intermediate",
+    "series": "Goodnotes: Key Features for Teaching",
+    "seriesOrder": 1,
+    "featured": true,
+    "dateAdded": "2026-05-12",
+    "strategies": [
+      "Adaptive Teaching"
+    ],
+    "executiveFunctions": [
+      "Cognitive Flexibility"
+    ],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
+    "id": "goodnotes-answer-zones",
+    "title": "Creating an Answer Zone",
+    "description": "Add answer zones to a worksheet so students respond in a defined space — making tasks interactive and quick to mark.",
+    "type": "video",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "youtubeId": "Z0w6OFoUI-w",
+    "tags": [
+      "goodnotes",
+      "answer zones",
+      "worksheets",
+      "interactive",
+      "assessment"
+    ],
+    "difficulty": "intermediate",
+    "series": "Goodnotes: Key Features for Teaching",
+    "seriesOrder": 2,
+    "featured": false,
+    "dateAdded": "2026-05-12",
+    "strategies": [
+      "Formative Assessment",
+      "Scaffolding"
+    ],
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
+    "id": "goodnotes-using-elements",
+    "title": "Using Elements to Make Lessons More Engaging",
+    "description": "Drop in interactive Elements — buttons, links, audio, video and more — to make Goodnotes lessons more engaging and save preparation time.",
+    "type": "video",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "youtubeId": "uxGO2HYKLB8",
+    "tags": [
+      "goodnotes",
+      "elements",
+      "interactive",
+      "engagement",
+      "lesson design"
+    ],
+    "difficulty": "intermediate",
+    "series": "Goodnotes: Key Features for Teaching",
+    "seriesOrder": 3,
+    "featured": false,
+    "dateAdded": "2026-05-12",
+    "strategies": [
+      "Dual Coding"
+    ],
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
+    "id": "goodnotes-interactive-worksheets",
+    "title": "Making Interactive Worksheets for Your Classes",
+    "description": "A Goodnotes guide to turning static worksheets into interactive ones using answer zones, visual elements and AI-powered hints.",
+    "type": "link",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "externalUrl": "https://www.goodnotes.com/learning-center/making-interactive-worksheets-for-classes",
+    "tags": [
+      "goodnotes",
+      "worksheets",
+      "interactive",
+      "lesson design",
+      "guide"
+    ],
+    "difficulty": "intermediate",
+    "series": "Goodnotes: Key Features for Teaching",
+    "seriesOrder": 4,
+    "featured": true,
+    "dateAdded": "2026-05-12",
+    "strategies": [
+      "Formative Assessment",
+      "Scaffolding"
+    ],
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
+    "id": "goodnotes-engagement-efficiency-tips",
+    "title": "Two Teacher Tips for Engagement and Efficiency",
+    "description": "Two quick tips from a teacher for getting more engagement out of students and working more efficiently with Goodnotes in the classroom.",
+    "type": "video",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "youtubeId": "vJwLlEdc7Sc",
+    "tags": [
+      "goodnotes",
+      "tips",
+      "engagement",
+      "efficiency",
+      "teaching"
+    ],
+    "difficulty": "intermediate",
+    "series": "Goodnotes: Key Features for Teaching",
+    "seriesOrder": 5,
+    "featured": false,
+    "dateAdded": "2026-05-12",
+    "strategies": [
+      "Classroom Management"
+    ],
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
+    "id": "goodnotes-instant-feedback-maths",
+    "title": "Instantaneous Feedback During Maths Lessons",
+    "description": "How one maths teacher uses Goodnotes Classroom to see and mark student work in real time, giving feedback on the spot during the lesson.",
+    "type": "link",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "externalUrl": "https://www.goodnotes.com/learning-center/instantaneous-feedback-math-lessons",
+    "tags": [
+      "goodnotes",
+      "feedback",
+      "live marking",
+      "maths",
+      "classroom"
+    ],
+    "difficulty": "intermediate",
+    "series": "Goodnotes: Key Features for Teaching",
+    "seriesOrder": 6,
+    "featured": false,
+    "dateAdded": "2026-05-12",
+    "strategies": [
+      "Feedback & Marking",
+      "Formative Assessment"
+    ],
+    "executiveFunctions": [],
+    "departments": [
+      "Mathematics"
+    ]
+  },
+  {
+    "id": "goodnotes-anonymous-responses",
+    "title": "Using Anonymous Responses to Drive Discussion",
+    "description": "Use Goodnotes Classroom's anonymous responses to build psychological safety so every student feels able to contribute to class discussion.",
+    "type": "video",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "youtubeId": "y4VGgHivEmg",
+    "tags": [
+      "goodnotes",
+      "classroom",
+      "anonymous",
+      "discussion",
+      "participation"
+    ],
+    "difficulty": "intermediate",
+    "series": "Goodnotes: Key Features for Teaching",
+    "seriesOrder": 7,
+    "featured": false,
+    "dateAdded": "2026-05-12",
+    "strategies": [
+      "Collaborative Learning",
+      "Formative Assessment"
+    ],
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
+    "id": "goodnotes-gamifying-lessons",
+    "title": "Gamifying Lessons with Goodnotes Classroom",
+    "description": "Practical ways to bring game-based learning into your classroom with Goodnotes Classroom, with real lesson examples and the features that make it work.",
+    "type": "link",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "externalUrl": "https://www.goodnotes.com/learning-center/gamifying-lessons-with-goodnotes-classroom",
+    "tags": [
+      "goodnotes",
+      "classroom",
+      "gamification",
+      "engagement",
+      "game-based learning"
+    ],
+    "difficulty": "intermediate",
+    "series": "Goodnotes: Key Features for Teaching",
+    "seriesOrder": 8,
+    "featured": false,
+    "dateAdded": "2026-05-12",
+    "strategies": [
+      "Collaborative Learning"
+    ],
+    "executiveFunctions": [
+      "Sustained Attention"
+    ],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
+    "id": "goodnotes-fishbone-diagrams",
+    "title": "Enhancing Critical Thinking with Fishbone Diagrams",
+    "description": "A three-step lesson approach for using fishbone (cause-and-effect) diagrams in Goodnotes Classroom to build students' critical thinking and analysis.",
+    "type": "link",
+    "category": "goodnotes",
+    "driveFileId": null,
+    "externalUrl": "https://www.goodnotes.com/learning-center/enhancing-critical-thinking-skills-fishbone-diagrams",
+    "tags": [
+      "goodnotes",
+      "classroom",
+      "critical thinking",
+      "fishbone diagram",
+      "analysis"
+    ],
+    "difficulty": "intermediate",
+    "series": "Goodnotes: Key Features for Teaching",
+    "seriesOrder": 9,
+    "featured": false,
+    "dateAdded": "2026-05-12",
+    "strategies": [
+      "Extended Thinking",
+      "Metacognition"
+    ],
+    "executiveFunctions": [
+      "Working Memory"
+    ],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
     "id": "app-info-among-us",
     "title": "Among Us",
     "description": "Multiplayer social deduction game where players hunt impostors. Guide for parents on chat risks, strangers and in-app spending.",

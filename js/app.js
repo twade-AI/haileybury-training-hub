@@ -174,6 +174,25 @@
                 'goodnotes-creating-your-first-lesson',
                 'goodnotes-module-1-certificate'
             ]
+        },
+        {
+            id: 'goodnotes-key-features',
+            title: 'Goodnotes: Key Features for Teaching',
+            description: 'Go beyond the basics — modes & views, interactive worksheets, instant feedback and gamified lessons',
+            icon: '🧰',
+            color: '#65a30d',
+            xpReward: 250,
+            steps: [
+                'goodnotes-modes-and-views',
+                'goodnotes-answer-zones',
+                'goodnotes-using-elements',
+                'goodnotes-interactive-worksheets',
+                'goodnotes-engagement-efficiency-tips',
+                'goodnotes-instant-feedback-maths',
+                'goodnotes-anonymous-responses',
+                'goodnotes-gamifying-lessons',
+                'goodnotes-fishbone-diagrams'
+            ]
         }
     ];
 
@@ -2190,6 +2209,12 @@
             dom.videoContainer.innerHTML = renderAppInfo(item);
         } else if (item.youtubeId) {
             dom.videoContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${item.youtubeId}?rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen style="border:none"></iframe>`;
+        } else if (item.type === 'link' && item.externalUrl) {
+            dom.videoContainer.innerHTML = `<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center;background:var(--color-surface)">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--color-magenta)"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <p style="margin:0;color:var(--color-text-secondary);font-size:0.95rem;max-width:340px">This resource opens on an external website.</p>
+                <a href="${escAttr(item.externalUrl)}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:var(--color-magenta);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none">Open resource &rarr;</a>
+            </div>`;
         } else if (item.externalUrl) {
             dom.videoContainer.innerHTML = `<iframe src="${item.externalUrl}" allow="autoplay" style="border:none"></iframe>`;
         } else if (item.type === 'gdoc') {
