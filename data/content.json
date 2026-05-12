@@ -1039,6 +1039,34 @@
     ]
   },
   {
+    "id": "brisk-gemini-integration",
+    "title": "Brisk Integration with Gemini",
+    "description": "See how the Brisk AI tool integrates directly into Gemini, letting you create resources, generate feedback and build activities without leaving your Google workflow.",
+    "type": "video",
+    "category": "ai-tools",
+    "driveFileId": "1MxaiuopENWZxsw5ltkvzR43v9lh0FiTv",
+    "tags": [
+      "brisk",
+      "gemini",
+      "ai",
+      "integration",
+      "google workspace"
+    ],
+    "difficulty": "beginner",
+    "series": "Brisk",
+    "seriesOrder": 5,
+    "featured": true,
+    "dateAdded": "2026-05-12",
+    "strategies": [
+      "Feedback & Marking",
+      "Scaffolding"
+    ],
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
     "id": "perplexity-new",
     "title": "Perplexity (Updated)",
     "description": "An updated walkthrough of Perplexity AI, the search engine that gives source-backed answers and is ideal for checking facts and exploring topics quickly.",
