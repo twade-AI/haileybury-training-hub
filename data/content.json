@@ -3076,6 +3076,34 @@
     ]
   },
   {
+    "id": "goodnotes-creating-a-workbook",
+    "title": "Creating a Workbook",
+    "description": "Build a structured workbook in Goodnotes, combining templates, pages and interactive elements into a reusable resource your students can work through at their own pace.",
+    "type": "video",
+    "category": "goodnotes",
+    "driveFileId": "1eYLjHoLYEqnjN3AE5wnCqhVZP_lMZAYP",
+    "tags": [
+      "goodnotes",
+      "workbook",
+      "resources",
+      "lesson design",
+      "ipad"
+    ],
+    "difficulty": "intermediate",
+    "series": "Goodnotes: Key Features for Teaching",
+    "seriesOrder": 10,
+    "featured": false,
+    "dateAdded": "2026-06-04",
+    "strategies": [
+      "Scaffolding",
+      "Dual Coding"
+    ],
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
     "id": "app-info-among-us",
     "title": "Among Us",
     "description": "Multiplayer social deduction game where players hunt impostors. Guide for parents on chat risks, strangers and in-app spending.",
