@@ -45,7 +45,7 @@
             icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`
         },
         'reading': {
-            title: 'Reading',
+            title: 'Wider Reading',
             color: '#e6007e',
             icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`
         },
@@ -200,7 +200,7 @@
     const WELCOME_TIPS = [
         "Did you know? You can mark videos as watched to track your progress across all categories.",
         "Try using the search bar to quickly find training on any tool or topic.",
-        "New to Haileybury tech? Check out the Start Here section for essential guides.",
+        "New to Haileybury tech? Start with Essential Reading for the must-read guides.",
         "Use Gemini in Google Workspace to draft emails, create slides, and more.",
         "Brisk can help you mark work faster with AI-powered feedback.",
         "PressReader gives you access to thousands of newspapers and magazines for free.",
@@ -288,8 +288,6 @@
         achievementsGrid: $('#achievementsGrid'),
         achievementsBtn: $('#achievementsBtn'),
         achievementsBadge: $('#achievementsBadge'),
-        widerReadingSection: $('#widerReadingSection'),
-        readingList: $('#readingList'),
         progressSection: $('#progressSection'),
         progressGrid: $('#progressGrid'),
         videoModal: $('#videoModal'),
@@ -371,7 +369,6 @@
             const resp = await fetch('data/content.json');
             contentData = await resp.json();
             renderApp();
-            Gamification.checkAchievements(contentData);
             updateGamificationUI();
             Effects.refreshScrollReveal();
         } catch (err) {
@@ -1217,7 +1214,7 @@
     function hideAllSections() {
         const sections = [dom.heroSection, dom.philosophySection, dom.votdSection, dom.essentialCta,
             dom.learningPathsSection, dom.startHereSection, dom.categoriesSection, dom.categoryDetail,
-            dom.searchResults, dom.achievementsSection, dom.savedSection, dom.widerReadingSection,
+            dom.searchResults, dom.achievementsSection, dom.savedSection,
             dom.progressSection, dom.recentlyWatchedSection, dom.upNextSection, dom.whatsNewSection, dom.mostPopularSection,
             dom.weeklyChallengeSection, dom.leaderboardSection, dom.statsSection, dom.filterResultsSection];
         sections.forEach(s => { if (s) s.style.display = 'none'; });
@@ -1234,20 +1231,14 @@
         dom.learningPathsSection.style.display = '';
         dom.startHereSection.style.display = '';
         dom.categoriesSection.style.display = '';
-        dom.widerReadingSection.style.display = '';
-        dom.progressSection.style.display = '';
         dom.recentlyWatchedSection.style.display = '';
         dom.upNextSection.style.display = '';
         dom.whatsNewSection.style.display = '';
         dom.mostPopularSection.style.display = '';
-        dom.weeklyChallengeSection.style.display = '';
-        dom.leaderboardSection.style.display = '';
         renderRecentlyWatched();
         renderUpNext();
         renderWhatsNew();
         renderMostPopular();
-        renderWeeklyChallenge();
-        renderLeaderboard();
         if (window.location.hash) history.pushState(null, '', window.location.pathname);
         updateMobileNav();
         updateCategoryNav();
@@ -1277,7 +1268,13 @@
         currentView = 'achievements';
         hideAllSections();
         dom.achievementsSection.style.display = '';
+        dom.weeklyChallengeSection.style.display = '';
+        dom.leaderboardSection.style.display = '';
+        dom.progressSection.style.display = '';
         renderAchievements();
+        renderWeeklyChallenge();
+        renderLeaderboard();
+        renderProgress();
         updateMobileNav();
         updateCategoryNav();
     }
@@ -1303,7 +1300,12 @@
     function renderCurrentView() {
         if (currentView === 'category' && currentCategory) renderCategoryDetail(currentCategory);
         else if (currentView === 'search') renderSearchResults(dom.searchInput.value.trim());
-        else if (currentView === 'achievements') renderAchievements();
+        else if (currentView === 'achievements') {
+            renderAchievements();
+            renderWeeklyChallenge();
+            renderLeaderboard();
+            renderProgress();
+        }
         else if (currentView === 'saved') renderSaved();
         else renderApp();
     }
@@ -1345,8 +1347,7 @@
             // Hide homepage-only sections
             [dom.recentlyWatchedSection, dom.upNextSection, dom.whatsNewSection, dom.mostPopularSection,
              dom.startHereSection, dom.votdSection, dom.essentialCta,
-             dom.learningPathsSection, dom.weeklyChallengeSection, dom.leaderboardSection,
-             dom.widerReadingSection, dom.progressSection].forEach(s => { if (s) s.style.display = 'none'; });
+             dom.learningPathsSection].forEach(s => { if (s) s.style.display = 'none'; });
             // Still show categories with filtered counts
             renderCategories();
             Effects.refreshScrollReveal();
@@ -1354,15 +1355,13 @@
         }
 
         dom.filterResultsSection.style.display = 'none';
+        renderCategories();      // Browse by Category
         renderRecentlyWatched(); // Continue Watching
         renderUpNext();          // Recommended for You
         renderWhatsNew();        // What's New
-        renderFeatured();        // Start Here — top of content
-        renderVideoOfTheDay();   // VOTD — after featured
+        renderFeatured();        // Featured Resources
+        renderVideoOfTheDay();   // VOTD
         renderLearningPaths();   // Learning Paths
-        renderCategories();      // Browse by Category
-        renderWiderReading();    // Wider Reading docs
-        renderProgress();        // Your Progress summary
         Effects.refreshScrollReveal();
     }
 
@@ -1704,8 +1703,20 @@
     function renderFeatured() {
         const featured = filterContent(contentData).filter(i => i.featured);
         if (!featured.length) { dom.startHereSection.style.display = 'none'; return; }
+        // Cap at 6 cards (a series collapses into one card, so count it once
+        // but keep all of its items so the series card stays complete)
+        const capped = [];
+        const includedSeries = new Set();
+        let cardCount = 0;
+        featured.forEach(item => {
+            if (item.series && includedSeries.has(item.series)) { capped.push(item); return; }
+            if (cardCount >= 6) return;
+            if (item.series) includedSeries.add(item.series);
+            capped.push(item);
+            cardCount++;
+        });
         dom.startHereSection.style.display = '';
-        dom.featuredGrid.innerHTML = renderItemsGrouped(featured);
+        dom.featuredGrid.innerHTML = renderItemsGrouped(capped);
         attachCardListeners(dom.featuredGrid);
         attachSaveListeners(dom.featuredGrid);
         attachSeriesListeners(dom.featuredGrid);
@@ -1886,60 +1897,6 @@
         };
     }
 
-    // --- Wider Reading ---
-    function renderWiderReading() {
-        const items = filterContent(contentData).filter(i => ['pdf', 'gdoc', 'image'].includes(i.type));
-        if (!items.length) { dom.widerReadingSection.style.display = 'none'; return; }
-
-        const groups = {};
-        items.forEach(i => {
-            const cat = CATEGORIES[i.category];
-            if (!groups[i.category]) groups[i.category] = { title: cat ? cat.title : 'Other', color: cat ? cat.color : '#9b1844', items: [] };
-            groups[i.category].items.push(i);
-        });
-
-        let html = '';
-        Object.entries(groups).forEach(([catId, group]) => {
-            const iconSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`;
-
-            html += `<div class="reading-group">`;
-            html += `<h3 class="reading-group-title"><span class="reading-group-icon" style="background: color-mix(in srgb, ${group.color} 12%, transparent); color: ${group.color}">${iconSvg}</span>${esc(group.title)}</h3>`;
-            html += `<div class="reading-items-grid">`;
-
-            group.items.forEach(i => {
-                const iconClass = i.type === 'pdf' ? 'icon-pdf' : i.type === 'image' ? 'icon-image' : 'icon-doc';
-                const icon = i.type === 'pdf'
-                    ? `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`
-                    : i.type === 'image'
-                    ? `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`
-                    : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`;
-                const typeLabel = i.type === 'pdf' ? 'PDF' : i.type === 'image' ? 'Image' : 'Google Doc';
-
-                html += `
-                    <div class="reading-item" data-id="${i.id}" data-drive-id="${i.driveFileId || ''}" data-type="${i.type}" data-title="${escAttr(i.title)}" style="--reading-color: ${group.color}">
-                        <div class="reading-item-icon ${iconClass}">${icon}</div>
-                        <div class="reading-item-body">
-                            <div class="reading-item-title">${esc(i.title)}</div>
-                            ${i.description ? `<div class="reading-item-desc">${esc(i.description)}</div>` : ''}
-                            <div class="reading-item-type">${typeLabel}</div>
-                        </div>
-                        <div class="reading-item-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
-                    </div>`;
-            });
-            html += `</div></div>`;
-        });
-
-        dom.readingList.innerHTML = html;
-        dom.readingList.querySelectorAll('.reading-item').forEach(el => {
-            el.addEventListener('click', () => {
-                const type = el.dataset.type;
-                const driveId = el.dataset.driveId;
-                if (type === 'gdoc') window.open(`https://docs.google.com/document/d/${driveId}/edit`, '_blank');
-                else if (driveId) openModal(el.dataset.id);
-            });
-        });
-    }
-
     // --- Progress ---
     function renderProgress() {
         const allVideos = filterContent(contentData).filter(i => i.type === 'video');
@@ -2037,14 +1994,20 @@
         const typeBadge = `<span class="thumb-badge-type type-${item.type}">${item.type === 'app-info' ? 'Info' : item.type}</span>`;
         const diffBadge = item.difficulty ? `<span class="meta-badge difficulty-${item.difficulty}">${cap(item.difficulty)}</span>` : '';
         const catBadge = cat.title ? `<span class="meta-badge">${cat.title}</span>` : '';
-        const stratBadges = (item.strategies || []).map(s => {
-            const strat = STRATEGIES[s];
-            return strat ? `<span class="strategy-badge" style="--strat-color: ${strat.color}" title="${s}">${strat.icon} ${s}</span>` : '';
-        }).join('');
-        const efBadges = (item.executiveFunctions || []).map(ef => {
-            const func = EXECUTIVE_FUNCTIONS[ef];
-            return func ? `<span class="ef-badge" style="--ef-color: ${func.color}" title="${ef}">${func.icon} ${ef}</span>` : '';
-        }).join('');
+        // One row of tag pills, capped at 3 with a "+N more" overflow chip
+        const allTagBadges = [
+            ...(item.strategies || []).map(s => {
+                const strat = STRATEGIES[s];
+                return strat ? `<span class="strategy-badge" style="--strat-color: ${strat.color}" title="${s}">${strat.icon} ${s}</span>` : '';
+            }),
+            ...(item.executiveFunctions || []).map(ef => {
+                const func = EXECUTIVE_FUNCTIONS[ef];
+                return func ? `<span class="ef-badge" style="--ef-color: ${func.color}" title="${ef}">${func.icon} ${ef}</span>` : '';
+            })
+        ].filter(Boolean);
+        const hiddenTagCount = allTagBadges.length - 3;
+        const tagBadges = allTagBadges.slice(0, 3).join('')
+            + (hiddenTagCount > 0 ? `<span class="badge-more" title="${hiddenTagCount} more tag${hiddenTagCount !== 1 ? 's' : ''}">+${hiddenTagCount} more</span>` : '');
         const thumbUrl = getThumbnailUrl(item);
         const isAppIcon = item.type === 'app-info';
 
@@ -2067,8 +2030,7 @@
                     <div class="content-card-title">${esc(item.title)}</div>
                     ${item.description ? `<div class="content-card-desc">${esc(item.description)}</div>` : ''}
                     <div class="content-card-meta">${diffBadge}${catBadge}</div>
-                    ${stratBadges ? `<div class="content-card-strategies">${stratBadges}</div>` : ''}
-                    ${efBadges ? `<div class="content-card-strategies">${efBadges}</div>` : ''}
+                    ${allTagBadges.length ? `<div class="content-card-strategies">${tagBadges}</div>` : ''}
                 </div>
                 <div class="content-card-footer">
                     <label class="watched-indicator ${watched ? 'is-watched' : ''}" onclick="event.stopPropagation()">
@@ -2281,6 +2243,9 @@
         dom.videoModal.classList.add('active');
         document.body.style.overflow = 'hidden';
         dom.modalClose.focus();
+
+        incrementViewCount(itemId);
+        Gamification.onItemOpened(contentData);
     }
 
     let previouslyFocusedElement = null;

@@ -57,7 +57,7 @@ const Gamification = (function () {
         { id: 'series-master', title: 'Series Master', description: 'Complete 6 video series', icon: '🎬', category: 'series', check: (s) => s.seriesCompleted >= 6 },
 
         // Streaks
-        { id: 'day-1', title: 'Day One', description: 'Start your learning streak', icon: '🔥', category: 'streaks', check: (s) => s.currentStreak >= 1 },
+        { id: 'day-1', title: 'Day One', description: 'Start your learning streak', icon: '🔥', category: 'streaks', check: (s) => s.engaged && s.currentStreak >= 1 },
         { id: 'hot-streak', title: 'Hot Streak', description: 'Maintain a 3-day learning streak', icon: '🔥', category: 'streaks', check: (s) => s.currentStreak >= 3 },
         { id: 'on-fire', title: 'On Fire!', description: 'Maintain a 7-day learning streak', icon: '💥', category: 'streaks', check: (s) => s.currentStreak >= 7 },
         { id: 'unstoppable', title: 'Unstoppable', description: 'Maintain a 14-day learning streak', icon: '⚡', category: 'streaks', check: (s) => s.currentStreak >= 14 },
@@ -77,6 +77,7 @@ const Gamification = (function () {
         currentStreak: 0,
         longestStreak: 0,
         lastActiveDate: null,
+        engaged: false, // true once the user has opened or completed a resource
         totalWatched: 0,
         categoriesStarted: 0,
         categoriesCompleted: {},
@@ -223,10 +224,19 @@ const Gamification = (function () {
     }
 
     // --- Public Action Methods ---
+    function onItemOpened(contentData) {
+        if (!state.engaged) {
+            state.engaged = true;
+            save();
+        }
+        checkAchievements(contentData);
+    }
+
     function onItemWatched(itemId, item, contentData, allWatched) {
         const hour = new Date().getHours();
         if (hour >= 21) state.nightOwl = true;
         if (hour < 7) state.earlyBird = true;
+        state.engaged = true;
 
         const wasFirstEver = state.totalWatched === 0;
         state.totalWatched = Object.keys(allWatched).length;
@@ -334,6 +344,7 @@ const Gamification = (function () {
         getLevels,
         getXPRewards,
         checkAchievements,
+        onItemOpened,
         onItemWatched,
         onItemUnwatched,
         onSearch,
