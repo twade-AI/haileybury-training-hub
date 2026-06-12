@@ -1,5 +1,5 @@
 // Service Worker for Haileybury Tech Tips Training Hub
-const CACHE_NAME = 'techtips-v5';
+const CACHE_NAME = 'techtips-v6';
 const ASSETS = [
   './',
   './index.html',

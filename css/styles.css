@@ -252,7 +252,7 @@ button:focus-visible,
     background: linear-gradient(135deg, #9b1844 0%, #6b1040 25%, #2a2b7c 60%, #009fe3 100%);
     position: relative;
     overflow: hidden;
-    padding: var(--space-lg) var(--space-lg) var(--space-md);
+    padding: var(--space-md) var(--space-lg) var(--space-md);
 }
 
 .hero-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
@@ -310,8 +310,8 @@ button:focus-visible,
 }
 
 .hero-logo {
-    max-width: 280px;
-    width: 60%;
+    max-width: 230px;
+    width: 50%;
     margin: 0 auto var(--space-xs);
     mix-blend-mode: screen;
     animation: heroLogoIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
@@ -327,7 +327,7 @@ button:focus-visible,
     color: rgba(255,255,255,0.9);
     font-weight: var(--font-weight-medium);
     max-width: 520px;
-    margin: 0 auto var(--space-md);
+    margin: 0 auto var(--space-sm);
     animation: fadeSlideUp 0.6s 0.3s ease both;
     text-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
@@ -337,7 +337,7 @@ button:focus-visible,
     justify-content: center;
     gap: var(--space-xl);
     flex-wrap: wrap;
-    margin-top: var(--space-md);
+    margin-top: var(--space-sm);
     animation: fadeSlideUp 0.6s 0.5s ease both;
 }
 
@@ -1005,6 +1005,21 @@ button:focus-visible,
     background: color-mix(in srgb, var(--ef-color) 10%, var(--color-surface));
     color: var(--ef-color);
     border: 1px solid color-mix(in srgb, var(--ef-color) 20%, transparent);
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+/* Overflow chip when a card has more tags than it shows */
+.badge-more {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: 0.68rem;
+    font-weight: var(--font-weight-semibold);
+    background: var(--color-bg);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
     white-space: nowrap;
     line-height: 1.4;
 }
@@ -2697,7 +2712,7 @@ button:focus-visible,
     .header-divider { display: none; }
     .haileybury-logo { display: none; }
     .hero-section { padding: var(--space-md) var(--space-md) var(--space-md); }
-    .hero-logo { max-width: 200px; width: 60%; }
+    .hero-logo { max-width: 170px; width: 50%; }
     .hero-stat-value { font-size: 1.4rem; }
     .hero-stats { gap: var(--space-lg); }
     .search-inner { padding: var(--space-md); }
@@ -2939,6 +2954,17 @@ button:focus-visible,
     scroll-snap-align: start;
 }
 
+/* Series cards rendered inside horizontal scrollers need the same
+   protection as content cards, or flexbox crushes them to a sliver */
+.recently-watched-scroll > .series-card,
+.whats-new-scroll > .series-card,
+.most-popular-scroll > .series-card {
+    min-width: 380px;
+    max-width: 420px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
 /* --- Bookmark / Save Button --- */
 .save-button {
     display: flex;
@@ -3089,6 +3115,9 @@ button:focus-visible,
     .recently-watched-scroll > .content-card,
     .whats-new-scroll > .content-card { min-width: 240px; max-width: 280px; }
     .most-popular-scroll > .content-card { min-width: 240px; max-width: 280px; }
+    .recently-watched-scroll > .series-card,
+    .whats-new-scroll > .series-card,
+    .most-popular-scroll > .series-card { min-width: 290px; max-width: 320px; }
     .leaderboard-card { padding: var(--space-lg) !important; }
     .stats-grid { grid-template-columns: 1fr !important; }
     .request-fab { bottom: 76px; }
