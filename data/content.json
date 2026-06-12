@@ -2615,6 +2615,38 @@
     "departments": []
   },
   {
+    "id": "pupil-tech-tips-6",
+    "title": "Pupil Tech Tips 6",
+    "description": "Issue six of the pupil tech newsletter: what Claude is (and Gemini as the school's official AI tool), Canva 2.0's new AI design features, the September Goodnotes launch, the best iPad screen protectors and the pupil AI survey.",
+    "type": "pdf",
+    "category": "pupil-tech-tips",
+    "driveFileId": "1K39gnEQTPzdF3txlMdeGECDt_msTzBVc",
+    "tags": [
+      "pupils",
+      "tech tips",
+      "student guide",
+      "handout",
+      "newsletter"
+    ],
+    "keywords": [
+      "claude",
+      "gemini",
+      "canva",
+      "goodnotes",
+      "ai survey",
+      "screen protector",
+      "ipad"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-06-12",
+    "strategies": [
+      "Scaffolding"
+    ],
+    "executiveFunctions": [],
+    "departments": []
+  },
+  {
     "id": "ways-to-use-gemini",
     "title": "Ways to Use Gemini",
     "description": "A visual diagram showing practical ways teachers can use Google Gemini to support planning, feedback, differentiation and more.",
