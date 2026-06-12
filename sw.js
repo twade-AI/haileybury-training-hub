@@ -1,5 +1,5 @@
 // Service Worker for Haileybury Tech Tips Training Hub
-const CACHE_NAME = 'techtips-v6';
+const CACHE_NAME = 'techtips-v7';
 const ASSETS = [
   './',
   './index.html',
@@ -31,6 +31,24 @@ self.addEventListener('activate', (e) => {
 });
 
 self.addEventListener('fetch', (e) => {
+  const url = new URL(e.request.url);
+
+  // Content data is network-first so newly added resources appear on the
+  // same visit; the cached copy is only a fallback when offline.
+  if (url.pathname.endsWith('/data/content.json')) {
+    e.respondWith(
+      fetch(e.request).then((response) => {
+        if (response && response.status === 200) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(e.request, clone));
+        }
+        return response;
+      }).catch(() => caches.match(e.request))
+    );
+    return;
+  }
+
+  // Everything else: cache-first with a background refresh.
   e.respondWith(
     caches.match(e.request).then((cached) => {
       const fetched = fetch(e.request).then((response) => {

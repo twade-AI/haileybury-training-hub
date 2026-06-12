@@ -20,7 +20,7 @@
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <a href="#mainContent" class="skip-to-content">Skip to content</a>
@@ -54,7 +54,7 @@
                     </svg>
                     <span class="achievements-badge" id="achievementsBadge">0</span>
                 </button>
-                <button class="focus-mode-toggle" id="focusModeToggle" aria-label="Toggle focus mode" title="Focus Mode — hide gamification">
+                <button class="focus-mode-toggle" id="focusModeToggle" aria-label="Turn on XP, streaks &amp; awards" title="Turn on XP, streaks &amp; awards" aria-pressed="false">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 </button>
                 <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
@@ -260,6 +260,9 @@
                 <input type="text" id="searchInput" placeholder="Search training videos and resources..." aria-label="Search">
                 <button class="search-clear" id="searchClear" aria-label="Clear search">&times;</button>
                 <span class="search-shortcut-hint">/</span>
+            </div>
+            <div class="task-shortcuts" id="taskShortcuts">
+                <!-- Populated by JS -->
             </div>
             <button class="search-collapse-toggle" id="searchCollapseToggle" aria-expanded="false" type="button">
                 <svg class="search-collapse-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
@@ -633,14 +636,14 @@
                 <button class="modal-close" id="requestModalClose" aria-label="Close">&times;</button>
             </div>
             <div class="request-body">
-                <label for="requestInput" class="request-desc">What training topic would you like to see? We'll review all suggestions.</label>
+                <label for="requestInput" class="request-desc">What training topic would you like to see? Submitting opens an email to the Digital Strategy team &mdash; just press send.</label>
                 <textarea class="request-input" id="requestInput" placeholder="e.g. How to use Google Forms for quizzes..." rows="4"></textarea>
                 <div class="request-actions">
                     <button class="request-submit-btn" id="requestSubmit">Submit Suggestion</button>
                 </div>
                 <div class="request-thanks" id="requestThanks" style="display:none;">
                     <span class="request-thanks-icon">&#10003;</span>
-                    <span>Thanks! Your suggestion has been recorded.</span>
+                    <span>Thanks! An email has opened with your suggestion &mdash; press send and it's on its way.</span>
                 </div>
             </div>
         </div>
