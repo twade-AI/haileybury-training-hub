@@ -25,7 +25,7 @@
     --color-surface-hover: #faf8ff;
     --color-text: #111827;
     --color-text-secondary: #4b5563;
-    --color-text-muted: #9ca3af;
+    --color-text-muted: #6b7280; /* >= 4.5:1 on white for WCAG AA */
     --color-border: #e5e7eb;
     --color-shadow: rgba(0, 0, 0, 0.06);
     --color-shadow-md: rgba(0, 0, 0, 0.1);
@@ -71,7 +71,7 @@
     --color-surface-hover: #1a1a30;
     --color-text: #f1f5f9;
     --color-text-secondary: #94a3b8;
-    --color-text-muted: #64748b;
+    --color-text-muted: #8b98ab; /* >= 4.5:1 on dark surfaces for WCAG AA */
     --color-border: #1e293b;
     --color-shadow: rgba(0, 0, 0, 0.4);
     --color-shadow-md: rgba(0, 0, 0, 0.5);
@@ -826,6 +826,52 @@ button:focus-visible,
     transition: max-height 0.3s ease, opacity 0.2s ease 0.1s, margin 0.3s ease;
 }
 
+/* --- "I want to..." task shortcuts --- */
+.task-shortcuts {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+.task-shortcuts-label {
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: var(--space-xs);
+}
+.task-chip {
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: var(--font-weight-semibold);
+    background: var(--color-bg);
+    color: var(--color-text-secondary);
+    border: 1.5px solid var(--color-border);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: inherit;
+}
+.task-chip:hover {
+    border-color: var(--color-magenta);
+    color: var(--color-magenta);
+    background: color-mix(in srgb, var(--color-magenta) 6%, var(--color-surface));
+}
+@media (max-width: 767px) {
+    .task-shortcuts {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 2px;
+    }
+    .task-shortcuts::-webkit-scrollbar { display: none; }
+    .task-chip { white-space: nowrap; flex-shrink: 0; }
+    .task-shortcuts-label { white-space: nowrap; flex-shrink: 0; }
+}
+
 .search-collapse-toggle {
     display: flex;
     align-items: center;
@@ -1525,64 +1571,6 @@ button:focus-visible,
 .category-detail-title { font-size: 2.2rem; font-weight: var(--font-weight-black); letter-spacing: -0.5px; }
 .category-detail-count { color: var(--color-text-secondary); font-size: 1rem; font-weight: var(--font-weight-medium); }
 
-/* --- Wider Reading --- */
-.wider-reading-section {
-    margin-top: var(--space-3xl);
-    padding-top: var(--space-2xl);
-    border-top: 2px solid var(--color-border);
-}
-
-.reading-group { margin-bottom: var(--space-xl); }
-.reading-group-title {
-    font-size: 1.1rem; font-weight: var(--font-weight-bold);
-    margin-bottom: var(--space-md);
-    display: flex; align-items: center; gap: var(--space-sm);
-}
-.reading-group-icon {
-    width: 34px; height: 34px;
-    border-radius: var(--radius-sm);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-}
-.reading-items-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: var(--space-md);
-}
-
-.reading-item {
-    display: flex; align-items: center; gap: var(--space-md);
-    padding: var(--space-lg);
-    background: var(--color-surface);
-    border-radius: var(--radius-lg);
-    border: 2px solid var(--color-border);
-    cursor: pointer;
-    transition: all var(--transition-spring);
-}
-.reading-item:hover {
-    transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 12px 30px var(--color-shadow-md);
-    border-color: color-mix(in srgb, var(--reading-color, var(--color-magenta)) 40%, var(--color-border));
-}
-
-.reading-item-icon {
-    width: 50px; height: 50px;
-    border-radius: var(--radius-md);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-}
-.reading-item-icon.icon-pdf { background: color-mix(in srgb, var(--color-orange) 12%, transparent); color: var(--color-orange); }
-.reading-item-icon.icon-doc { background: color-mix(in srgb, var(--color-blue) 12%, transparent); color: var(--color-blue); }
-.reading-item-icon.icon-image { background: color-mix(in srgb, var(--color-green) 12%, transparent); color: var(--color-green); }
-
-.reading-item-body { flex: 1; min-width: 0; }
-.reading-item-title { font-weight: var(--font-weight-bold); font-size: 0.95rem; }
-.reading-item-desc { font-size: 0.82rem; color: var(--color-text-secondary); margin-top: 4px; line-height: 1.4; }
-.reading-item-type { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: var(--font-weight-bold); color: var(--color-text-muted); margin-top: 4px; }
-
-.reading-item-arrow { color: var(--color-text-muted); flex-shrink: 0; transition: all var(--transition-fast); }
-.reading-item:hover .reading-item-arrow { transform: translateX(6px); color: var(--color-magenta); }
-
 /* --- Progress Section --- */
 .progress-section {
     margin-top: var(--space-3xl);
@@ -2057,7 +2045,6 @@ button:focus-visible,
 .revealed .content-card,
 .revealed .category-card,
 .revealed .series-card,
-.revealed .reading-item,
 .revealed .progress-card {
     animation: cardAppear 0.4s ease both;
 }
@@ -2697,7 +2684,6 @@ button:focus-visible,
 @media (max-width: 1023px) {
     .category-grid { grid-template-columns: repeat(4, 1fr); }
     .content-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-    .reading-items-grid { grid-template-columns: 1fr; }
     .votd-card { grid-template-columns: 1fr; }
     .votd-info { padding: var(--space-xl); }
     .votd-title { font-size: 1.4rem; }
@@ -3150,16 +3136,18 @@ button:focus-visible,
 .focus-mode-toggle:hover { background: rgba(255,255,255,0.2); }
 .focus-mode-toggle.active { background: rgba(255,255,255,0.3); }
 
+/* Gamification is opt-in: data-focus-mode="true" (the default) hides XP,
+   streaks and awards. Learning Paths and watched ticks stay visible —
+   they're content and progress, not points. */
 [data-focus-mode="true"] .header-xp,
 [data-focus-mode="true"] .header-streak,
 [data-focus-mode="true"] .header-achievements-btn,
 [data-focus-mode="true"] .hero-level-badge,
-[data-focus-mode="true"] .learning-paths-section,
 [data-focus-mode="true"] .leaderboard-section,
 [data-focus-mode="true"] .weekly-challenge-section,
 [data-focus-mode="true"] .xp-sparkle,
 [data-focus-mode="true"] .learning-path-xp,
-[data-focus-mode="true"] .thumb-badge-watched {
+[data-focus-mode="true"] .mobile-nav-item[data-nav="achievements"] {
     display: none !important;
 }
 

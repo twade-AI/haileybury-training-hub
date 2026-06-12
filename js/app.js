@@ -88,6 +88,31 @@
         'Creative Arts', 'Mathematics', 'Languages'
     ];
 
+    // --- Usage analytics (anonymous, no-op until an endpoint is configured) ---
+    // Deploy the Apps Script described in docs/analytics-setup.md, then paste
+    // its web app URL here to start collecting events.
+    const ANALYTICS_ENDPOINT = '';
+    function track(event, props) {
+        if (!ANALYTICS_ENDPOINT) return;
+        try {
+            const payload = JSON.stringify({ event, ...props, ts: Date.now() });
+            if (navigator.sendBeacon) navigator.sendBeacon(ANALYTICS_ENDPOINT, payload);
+            else fetch(ANALYTICS_ENDPOINT, { method: 'POST', body: payload, keepalive: true }).catch(() => {});
+        } catch {}
+    }
+
+    // --- "I want to..." task shortcuts (each runs a search) ---
+    const TASK_SHORTCUTS = [
+        { label: 'Mark work faster', query: 'marking' },
+        { label: 'Get started with Gemini', query: 'gemini' },
+        { label: 'Share my screen', query: 'screen mirroring' },
+        { label: 'Make interactive worksheets', query: 'worksheet' },
+        { label: 'Run a quiz', query: 'quiz' },
+        { label: 'Use my iPad better', query: 'ipad' },
+        { label: 'Find pupil info', query: 'pupil' },
+        { label: 'Help pupils revise', query: 'revision' }
+    ];
+
     let activeExecutiveFunction = null; // Currently selected EF filter
     let activeDepartment = null; // Currently selected department filter
     let activeStrategy = null; // Currently selected strategy filter
@@ -206,10 +231,10 @@
         "PressReader gives you access to thousands of newspapers and magazines for free.",
         "NotebookLM can create flashcards, mind maps and audio overviews from your documents.",
         "Check out the Pupil Tech Tips section for resources to share with students.",
-        "Watch resources to earn XP and level up! Can you reach Legend status?",
-        "Build a daily streak by watching at least one resource per day!",
+        "Like a bit of competition? Turn on XP, streaks and awards with the eye icon at the top.",
+        "Use the filters under the search bar to find resources by strategy or department.",
         "Follow Learning Paths for guided step-by-step skill building.",
-        "Unlock achievements by exploring different categories and completing series!"
+        "Press / to jump straight to the search bar from anywhere."
     ];
 
     // --- Filter Chips ---
@@ -348,6 +373,7 @@
         initFocusMode();
         initWelcomeBanner();
         initSearch();
+        initTaskShortcuts();
         initSearchCollapse();
         initFilterChips();
         initModal();
@@ -371,6 +397,7 @@
             renderApp();
             updateGamificationUI();
             Effects.refreshScrollReveal();
+            track('visit', {});
         } catch (err) {
             console.error('Failed to load content data:', err);
             dom.categoryGrid.innerHTML = '<div class="empty-state"><p>Unable to load training content. Please check that data/content.json exists.</p></div>';
@@ -381,8 +408,11 @@
     function initGamification() {
         Gamification.init();
 
-        // Listen for events
+        // Listen for events. Progress is always recorded, but celebrations
+        // only show for users who have turned gamification on.
         Gamification.on('achievement-unlocked', (achievement) => {
+            updateGamificationUI();
+            if (!isGamificationOn()) return;
             showToast({
                 type: 'achievement',
                 icon: achievement.icon,
@@ -390,10 +420,11 @@
                 desc: `${achievement.title} — ${achievement.description}`,
             });
             Confetti.miniCelebrate(window.innerWidth - 60, 60);
-            updateGamificationUI();
         });
 
         Gamification.on('level-up', (data) => {
+            updateGamificationUI();
+            if (!isGamificationOn()) return;
             showToast({
                 type: 'levelup',
                 icon: data.newLevel.icon,
@@ -401,7 +432,6 @@
                 desc: data.newLevel.title,
             });
             Confetti.celebrate();
-            updateGamificationUI();
         });
 
         Gamification.on('xp-gained', (data) => {
@@ -597,6 +627,26 @@
         });
     }
 
+    // --- "I want to..." Task Shortcuts ---
+    function initTaskShortcuts() {
+        const container = document.getElementById('taskShortcuts');
+        if (!container) return;
+        container.innerHTML =
+            '<span class="task-shortcuts-label">I want to&hellip;</span>' +
+            TASK_SHORTCUTS.map(t =>
+                `<button class="task-chip" data-query="${escAttr(t.query)}">${esc(t.label)}</button>`
+            ).join('');
+        container.addEventListener('click', (e) => {
+            const chip = e.target.closest('.task-chip');
+            if (!chip) return;
+            const q = chip.dataset.query;
+            dom.searchInput.value = q;
+            dom.searchClear.classList.add('visible');
+            showSearchResults(q);
+            track('task', { task: q });
+        });
+    }
+
     // --- Search Section Manual Collapse Toggle ---
     function initSearchCollapse() {
         const searchSection = document.querySelector('.search-section');
@@ -753,17 +803,13 @@
         // Gamification
         if (!wasWatched && item) {
             Gamification.onItemWatched(id, item, contentData, watchedItems);
+            track('complete', { id, type: item.type, category: item.category });
 
-            // Show floating XP near the clicked element
-            if (e && e.target) {
+            // Floating XP and confetti only for users with gamification on
+            if (e && e.target && isGamificationOn()) {
                 const rect = e.target.getBoundingClientRect();
                 const xpAmount = item.type === 'video' ? 25 : 15;
                 showFloatingXP(rect.left + rect.width / 2, rect.top, xpAmount);
-            }
-
-            // Mini confetti burst
-            if (e && e.target) {
-                const rect = e.target.getBoundingClientRect();
                 Confetti.miniCelebrate(rect.left + rect.width / 2, rect.top + rect.height / 2);
             }
         } else if (wasWatched) {
@@ -864,18 +910,35 @@
         saveViewCounts();
     }
 
-    // --- Focus Mode ---
+    // --- Gamification visibility (opt-in: XP, streaks and awards are hidden
+    //     until the user turns them on; data-focus-mode="true" means hidden) ---
+    function isGamificationOn() {
+        return document.documentElement.getAttribute('data-focus-mode') !== 'true';
+    }
+
+    function applyGamificationVisibility(hidden) {
+        document.documentElement.setAttribute('data-focus-mode', String(hidden));
+        dom.focusModeToggle.classList.toggle('active', !hidden);
+        const label = hidden ? 'Turn on XP, streaks & awards' : 'Turn off XP, streaks & awards';
+        dom.focusModeToggle.setAttribute('aria-label', label);
+        dom.focusModeToggle.setAttribute('title', label);
+        dom.focusModeToggle.setAttribute('aria-pressed', String(!hidden));
+    }
+
     function initFocusMode() {
         const saved = localStorage.getItem('tt-focus-mode');
-        if (saved === 'true') {
-            document.documentElement.setAttribute('data-focus-mode', 'true');
-            dom.focusModeToggle.classList.add('active');
-        }
+        // Hidden by default; only an explicit earlier choice to show survives
+        const hidden = saved === null ? true : saved === 'true';
+        applyGamificationVisibility(hidden);
         dom.focusModeToggle.addEventListener('click', () => {
-            const isActive = document.documentElement.getAttribute('data-focus-mode') === 'true';
-            document.documentElement.setAttribute('data-focus-mode', String(!isActive));
-            dom.focusModeToggle.classList.toggle('active', !isActive);
-            localStorage.setItem('tt-focus-mode', String(!isActive));
+            const nowHidden = isGamificationOn();
+            applyGamificationVisibility(nowHidden);
+            localStorage.setItem('tt-focus-mode', String(nowHidden));
+            if (!nowHidden) {
+                updateGamificationUI();
+                showToast({ icon: '🏆', title: 'Gamification on!', desc: 'Earn XP, build streaks and unlock awards as you learn.' });
+            }
+            track('gamification-toggle', { on: !nowHidden });
         });
     }
 
@@ -1065,6 +1128,12 @@
             if (!text) return;
             contentRequests.push({ text, date: Date.now() });
             try { localStorage.setItem('tt-requests', JSON.stringify(contentRequests)); } catch {}
+            track('suggest', {});
+            // Deliver via a pre-filled email to the Digital Strategy team —
+            // the site has no backend, so this is the delivery mechanism
+            const subject = encodeURIComponent('Tech Tips topic suggestion');
+            const body = encodeURIComponent(`${text}\n\n—\nSent from the Tech Tips training hub`);
+            window.location.href = `mailto:t.wade@haileybury.com?subject=${subject}&body=${body}`;
             dom.requestInput.style.display = 'none';
             document.querySelector('.request-actions').style.display = 'none';
             document.querySelector('.request-desc').style.display = 'none';
@@ -1804,16 +1873,26 @@
     }
 
     // --- Search Results ---
+    let searchTrackTimer;
     function renderSearchResults(query) {
         const q = query.toLowerCase();
         const results = filterContent(contentData.filter(i => {
             return i.title.toLowerCase().includes(q) ||
                 (i.description && i.description.toLowerCase().includes(q)) ||
                 (i.tags && i.tags.some(t => t.toLowerCase().includes(q))) ||
+                (i.transcript && i.transcript.toLowerCase().includes(q)) ||
+                (i.keywords && i.keywords.some(k => k.toLowerCase().includes(q))) ||
                 (i.strategies && i.strategies.some(s => s.toLowerCase().includes(q))) ||
                 (i.executiveFunctions && i.executiveFunctions.some(ef => ef.toLowerCase().includes(q))) ||
                 (i.departments && i.departments.some(d => d.toLowerCase().includes(q)));
         }));
+
+        // Report the settled query once typing pauses — zero-result searches
+        // are the strongest signal for what content to make next
+        clearTimeout(searchTrackTimer);
+        if (q.length >= 3) {
+            searchTrackTimer = setTimeout(() => track('search', { q, results: results.length }), 1200);
+        }
 
         dom.searchResultsTitle.textContent = `Search Results (${results.length})`;
         if (!results.length) {
@@ -2129,7 +2208,12 @@
     function initModal() {
         dom.modalClose.addEventListener('click', closeModal);
         dom.videoModal.addEventListener('click', (e) => { if (e.target === dom.videoModal) closeModal(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+        document.addEventListener('keydown', (e) => {
+            if (e.key !== 'Escape') return;
+            closeModal();
+            dom.quizModal.classList.remove('active');
+            dom.requestModal.classList.remove('active');
+        });
         dom.backButton.addEventListener('click', () => { window.location.hash = ''; showHome(); });
     }
 
@@ -2246,6 +2330,7 @@
 
         incrementViewCount(itemId);
         Gamification.onItemOpened(contentData);
+        track('open', { id: item.id, type: item.type, category: item.category });
     }
 
     let previouslyFocusedElement = null;
