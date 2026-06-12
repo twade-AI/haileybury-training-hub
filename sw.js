@@ -1,9 +1,10 @@
 // Service Worker for Haileybury Tech Tips Training Hub
-const CACHE_NAME = 'techtips-v8';
+const CACHE_NAME = 'techtips-v9';
 const ASSETS = [
   './',
   './index.html',
   './css/styles.css',
+  './js/auth.js',
   './js/app.js',
   './js/gamification.js',
   './js/confetti.js',

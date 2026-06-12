@@ -88,20 +88,40 @@
         'Creative Arts', 'Mathematics', 'Languages'
     ];
 
-    // --- Usage analytics (anonymous) ---
+    // --- Usage analytics ---
     // Events are appended to the Digital Strategy analytics Sheet via the
-    // Apps Script web app below — see docs/analytics-setup.md.
+    // Apps Script web app below — see docs/analytics-setup.md. Anonymous by
+    // default; when the sign-in gate is enabled (js/auth.js) each event also
+    // carries the signed-in staff email.
     const ANALYTICS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwPlt103iwa62OcCIlMuUCBzJxn0LCK1YObif9v6wg0C8LJCbvaWPEJSPMkKPkLAG3obw/exec';
     function track(event, props) {
         if (!ANALYTICS_ENDPOINT) return;
         // Don't report local development or CI smoke-test traffic
         if (['localhost', '127.0.0.1'].includes(location.hostname)) return;
         try {
-            const payload = JSON.stringify({ event, ...props, ts: Date.now() });
+            const account = window.HubAuth ? window.HubAuth.user() : null;
+            const payload = JSON.stringify({
+                event,
+                ...(account ? { user: account.email } : {}),
+                ...props,
+                ts: Date.now()
+            });
             if (navigator.sendBeacon) navigator.sendBeacon(ANALYTICS_ENDPOINT, payload);
             else fetch(ANALYTICS_ENDPOINT, { method: 'POST', body: payload, keepalive: true }).catch(() => {});
         } catch {}
     }
+
+    // While the sign-in gate is up we don't know who's visiting, so hold the
+    // visit event back and send it (plus a login event) once they sign in.
+    let visitHeld = false;
+    function trackVisit() {
+        if (window.HubAuth && window.HubAuth.gateActive()) { visitHeld = true; return; }
+        track('visit', {});
+    }
+    document.addEventListener('hub:signed-in', (e) => {
+        if (e.detail && e.detail.fresh) track('login', {});
+        if (visitHeld) { visitHeld = false; track('visit', {}); }
+    });
 
     // --- "I want to..." task shortcuts (each runs a search) ---
     const TASK_SHORTCUTS = [
@@ -399,7 +419,7 @@
             renderApp();
             updateGamificationUI();
             Effects.refreshScrollReveal();
-            track('visit', {});
+            trackVisit();
         } catch (err) {
             console.error('Failed to load content data:', err);
             dom.categoryGrid.innerHTML = '<div class="empty-state"><p>Unable to load training content. Please check that data/content.json exists.</p></div>';

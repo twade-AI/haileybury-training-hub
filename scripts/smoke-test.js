@@ -52,6 +52,10 @@ async function main() {
   await page.waitForTimeout(1500);
 
   check('no uncaught JS errors on load', pageErrors.length === 0);
+  check('sso gate dormant on localhost', await page.evaluate(
+    () => Boolean(window.HubAuth) && !window.HubAuth.enabled()
+        && !document.documentElement.classList.contains('sso-locked')
+  ));
   check('category grid renders', (await page.locator('#categoryGrid .category-card').count()) >= 8);
   check('task shortcuts render', (await page.locator('#taskShortcuts .task-chip').count()) >= 4);
   check('gamification hidden by default', !(await page.locator('#headerXP').isVisible()));
