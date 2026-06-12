@@ -88,12 +88,14 @@
         'Creative Arts', 'Mathematics', 'Languages'
     ];
 
-    // --- Usage analytics (anonymous, no-op until an endpoint is configured) ---
-    // Deploy the Apps Script described in docs/analytics-setup.md, then paste
-    // its web app URL here to start collecting events.
-    const ANALYTICS_ENDPOINT = '';
+    // --- Usage analytics (anonymous) ---
+    // Events are appended to the Digital Strategy analytics Sheet via the
+    // Apps Script web app below — see docs/analytics-setup.md.
+    const ANALYTICS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwPlt103iwa62OcCIlMuUCBzJxn0LCK1YObif9v6wg0C8LJCbvaWPEJSPMkKPkLAG3obw/exec';
     function track(event, props) {
         if (!ANALYTICS_ENDPOINT) return;
+        // Don't report local development or CI smoke-test traffic
+        if (['localhost', '127.0.0.1'].includes(location.hostname)) return;
         try {
             const payload = JSON.stringify({ event, ...props, ts: Date.now() });
             if (navigator.sendBeacon) navigator.sendBeacon(ANALYTICS_ENDPOINT, payload);
