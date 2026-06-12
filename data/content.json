@@ -2284,6 +2284,31 @@
     "departments": []
   },
   {
+    "id": "pupil-hub-support-register",
+    "title": "Pupil Hub - Support Register",
+    "description": "Access the Support Register in Pupil Hub to see which pupils have identified learning support needs and the recommended strategies to use in your lessons.",
+    "type": "video",
+    "category": "general-tips",
+    "driveFileId": "1Snlm-O82om1IdvzToTN1oESyO7RB8qbt",
+    "tags": [
+      "pupil hub",
+      "support register",
+      "learning support",
+      "pupil data",
+      "inclusion"
+    ],
+    "difficulty": "beginner",
+    "featured": false,
+    "dateAdded": "2026-06-12",
+    "strategies": [
+      "Adaptive Teaching"
+    ],
+    "executiveFunctions": [],
+    "departments": [
+      "All Departments"
+    ]
+  },
+  {
     "id": "clickview",
     "title": "ClickView",
     "description": "Browse, assign and track educational videos from ClickView's curated library of curriculum-aligned content.",
