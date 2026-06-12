@@ -10,6 +10,7 @@ for the school's digital tools. Plain HTML/CSS/JS — no framework, no bundler.
 | `index.html` | Single page; all views are sections toggled by `js/app.js` |
 | `data/content.json` | **All content lives here** — one object per resource |
 | `js/app.js` | Rendering, routing, search/filters, modals, analytics hook |
+| `js/auth.js` | Optional Google sign-in gate (off until a client ID is set) |
 | `js/gamification.js` | XP, streaks, achievements (localStorage; opt-in UI) |
 | `js/effects.js`, `js/confetti.js` | Scroll reveals and celebration effects |
 | `css/styles.css` | All styling, light + dark themes |
@@ -50,6 +51,10 @@ Run locally: `node scripts/validate-content.js` and
 - **Suggestions** ("Suggest a Topic" button) compose a pre-filled email to
   t.wade@haileybury.com — the site has no backend.
 - **Analytics are off** until an endpoint is configured — see
+  `docs/analytics-setup.md`.
+- **Sign-in is off** until an OAuth client ID is set in `js/auth.js`. When
+  enabled, staff must sign in with an @haileybury.com Google account and
+  analytics events carry their email (never on localhost/CI) — see
   `docs/analytics-setup.md`.
 - **Service worker**: `data/content.json` is fetched network-first (new
   content appears immediately); other assets are cache-first, so bump

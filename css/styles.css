@@ -3548,3 +3548,47 @@ button:focus-visible,
     margin: 0;
     color: var(--color-text-primary);
 }
+
+/* --- Staff sign-in gate (Google SSO — see js/auth.js) --- */
+/* Hidden unless js/auth.js puts .sso-locked on <html> before first paint. */
+.sso-gate { display: none; }
+html.sso-locked { overflow: hidden; }
+html.sso-locked .sso-gate {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 12000;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    background: linear-gradient(135deg, var(--color-magenta-dark), var(--color-magenta) 55%, var(--color-magenta-light));
+}
+.sso-card {
+    background: #fff;
+    color: var(--color-text);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl) var(--space-xl);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+}
+.sso-logo { height: 56px; margin-bottom: var(--space-lg); }
+.sso-card h1 { font-size: 1.5rem; font-weight: var(--font-weight-black); margin: 0 0 var(--space-sm); }
+.sso-text { color: var(--color-text-secondary); margin: 0 0 var(--space-lg); }
+.sso-button { display: flex; justify-content: center; min-height: 44px; }
+.sso-error { color: #b91c1c; font-weight: var(--font-weight-semibold); font-size: 0.88rem; margin: var(--space-md) 0 0; }
+.sso-smallprint { color: var(--color-text-muted); font-size: 0.78rem; margin: var(--space-lg) 0 0; }
+
+/* Signed-in account line in the footer */
+.footer-signout {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: border-color var(--transition-fast);
+}
+.footer-signout:hover { border-color: #fff; }

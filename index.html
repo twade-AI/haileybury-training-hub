@@ -13,6 +13,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="apple-touch-icon" href="assets/icon-192.png">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Optional staff sign-in gate; inert until a client ID is set in js/auth.js.
+         Loaded synchronously so signed-out visitors never see a flash of content. -->
+    <script src="js/auth.js"></script>
     <!-- Skip to content for accessibility -->
     <style>
         .skip-to-content { position: absolute; top: -100px; left: 50%; transform: translateX(-50%); z-index: 10000; background: var(--color-magenta, #9b1844); color: #fff; padding: 12px 24px; border-radius: 0 0 12px 12px; font-weight: 700; text-decoration: none; transition: top 0.2s ease; }
@@ -24,6 +27,19 @@
 </head>
 <body>
     <a href="#mainContent" class="skip-to-content">Skip to content</a>
+
+    <!-- Staff sign-in gate — only displayed when SSO is enabled in js/auth.js -->
+    <div class="sso-gate" id="ssoGate" role="dialog" aria-modal="true" aria-labelledby="ssoTitle">
+        <div class="sso-card">
+            <img src="assets/tech-tips-logo.png" alt="Tech Tips" class="sso-logo">
+            <h1 id="ssoTitle">Staff sign-in</h1>
+            <p class="sso-text">Sign in with your <strong>@haileybury.com</strong> Google account to use the Training Hub.</p>
+            <div class="sso-button" id="ssoButton"></div>
+            <p class="sso-error" id="ssoError" hidden></p>
+            <p class="sso-smallprint">Signing in links your activity on this site to your name, so the Digital Strategy team can see how training is used.</p>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="site-header">
         <div class="header-inner">
@@ -662,6 +678,7 @@
             </div>
             <p class="footer-text">Haileybury Digital Strategy &mdash; Tech Tips Training Hub</p>
             <p class="footer-sub">Questions? Contact <a href="mailto:t.wade@haileybury.com">t.wade@haileybury.com</a></p>
+            <p class="footer-sub footer-account" id="footerAccount" hidden>Signed in as <span id="footerAccountEmail"></span> &middot; <button type="button" class="footer-signout" id="signOutBtn">Sign out</button></p>
         </div>
     </footer>
 
